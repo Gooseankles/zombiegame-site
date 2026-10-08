@@ -24,22 +24,17 @@
                   ]
     },
     {
-        "value":  [
-                      {
-                          "build":  202610082040,
-                          "version":  "2026.10.08-2040",
-                          "date":  "2026-10-08 20:45",
-                          "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082040/zombiegame_2026-10-08_2040.zip",
-                          "sha256":  "C4E93FA68F644F2CE801FB39723F6C83A6688C99B8ED618A94250739FE5F1D8D",
-                          "size":  695690453,
-                          "notes":  [
-                                        "First public build: play together over Steam, with voice and a headless server",
-                                        "Melee: kitchen knife, hammer and felling axe (PvP is a server setting, off by default)",
-                                        "Rain soaks by body area: rain jacket, rain trousers and a sou\u0027wester keep you dry",
-                                        "The start screen tells you when a new version is out and updates the game"
-                                    ]
-                      }
-                  ],
-        "Count":  1
+        "build":  202610082040,
+        "version":  "2026.10.08-2040",
+        "date":  "2026-10-08 20:45",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082040/zombiegame_2026-10-08_2040.zip",
+        "sha256":  "C4E93FA68F644F2CE801FB39723F6C83A6688C99B8ED618A94250739FE5F1D8D",
+        "size":  695690453,
+        "notes":  [
+                      "First public build: play together over Steam, with voice and a headless server",
+                      "Melee: kitchen knife, hammer and felling axe (PvP is a server setting, off by default)",
+                      "Rain soaks by body area: rain jacket, rain trousers and a sou\u0027wester keep you dry",
+                      "The start screen tells you when a new version is out and updates the game"
+                  ]
     }
 ]
