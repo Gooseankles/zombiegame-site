@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zombie Survival</title>
-<meta name="description" content="An open-world zombie survival game for a group of friends, on a cold Norwegian-style coast. In development.">
+<meta name="description" content="An open-world zombie survival game for a group of friends, on a cold Norwegian-style coast. Early alpha.">
 <!-- For friends while in development: kept out of search engines. Remove this line to be found. -->
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23172026'/%3E%3Cpath d='M7 24 L16 7 L25 24 Z' fill='none' stroke='%23f0794a' stroke-width='3'/%3E%3C/svg%3E">
@@ -17,7 +17,6 @@
 @font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap; src: url(fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2"); }
 @font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
 @font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); }
-@font-face { font-family: "IBM Plex Mono"; font-weight: 500; font-display: swap; src: url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2"); }
 
 :root {
   --bg: #eef1f1;          /* snow paper */
@@ -28,7 +27,6 @@
   --accent: #c2461b;      /* signal flare */
   --accent-ink: #ffffff;
   --done: #2f7651;        /* pine */
-  --shot-bg: #1d2428;
   --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -36,7 +34,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #11171a; --surface: #172025; --ink: #e3e8e9; --muted: #95a3a9; --line: #2b383e;
-    --accent: #f0794a; --accent-ink: #11171a; --done: #5fb98a; --shot-bg: #0b0f11; color-scheme: dark;
+    --accent: #f0794a; --accent-ink: #11171a; --done: #5fb98a; color-scheme: dark;
   }
 }
 
@@ -45,79 +43,41 @@ html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
 a { color: inherit; }
 h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; margin: 0; text-wrap: balance; }
-h1 { font-size: clamp(46px, 9vw, 96px); text-transform: uppercase; letter-spacing: 0.005em; }
+h1 { font-size: clamp(46px, 9vw, 92px); text-transform: uppercase; letter-spacing: 0.005em; }
 h2 { font-size: clamp(28px, 4vw, 36px); text-transform: uppercase; letter-spacing: 0.02em; }
-h3 { font-size: 21px; letter-spacing: 0.01em; }
+h3 { font-size: 15px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 p { margin: 0; }
-code, .mono { font-family: var(--mono); font-size: 0.86em; }
-code { background: var(--surface); border: 1px solid var(--line); padding: 0 5px; border-radius: 2px; white-space: nowrap; }
+code { font-family: var(--mono); font-size: 0.86em; background: var(--surface); border: 1px solid var(--line); padding: 0 5px; border-radius: 2px; white-space: nowrap; }
 .label { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.stage-tag { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border: 1.5px solid var(--accent); padding: 1px 8px; border-radius: 2px; }
 
 /* ---------- top bar ---------- */
 .bar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
-.bar-in { max-width: 1120px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; gap: 12px 24px; flex-wrap: wrap; }
+.bar-in { max-width: 920px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; gap: 12px 24px; flex-wrap: wrap; }
 .mark { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; margin-right: auto; }
 .bar nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 14px; }
 .bar nav a { text-decoration: none; color: var(--muted); }
 .bar nav a:hover { color: var(--ink); }
 
-.page { max-width: 1120px; margin: 0 auto; padding: 32px 20px 64px; display: grid; gap: 72px; }
-section { display: grid; gap: 22px; }
+.page { max-width: 920px; margin: 0 auto; padding: 40px 20px 64px; display: grid; gap: 72px; }
+section { display: grid; gap: 20px; }
 .section-head { display: grid; gap: 6px; }
-.section-head p { color: var(--muted); max-width: 68ch; }
+.section-head p { color: var(--muted); max-width: 64ch; }
 
-/* ---------- hero ---------- */
-.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
-.hero-text { display: grid; gap: 18px; }
-.lede { font-size: 19px; max-width: 46ch; }
-.download { display: grid; gap: 10px; justify-items: start; padding-top: 6px; }
-.btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: var(--accent-ink); font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; padding: 12px 22px; border-radius: 3px; }
+/* ---------- intro and download ---------- */
+.intro { display: grid; gap: 18px; justify-items: start; }
+.lede { font-size: 19px; max-width: 54ch; }
+.alpha { color: var(--muted); font-size: 14.5px; max-width: 60ch; }
+.download { display: grid; gap: 10px; justify-items: start; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; width: 100%; }
+.btn { display: inline-flex; align-items: center; background: var(--accent); color: var(--accent-ink); font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; padding: 12px 22px; border-radius: 3px; }
 .btn:hover { filter: brightness(1.08); }
 .btn[aria-disabled="true"] { background: var(--line); color: var(--muted); pointer-events: none; }
 .dl-meta { color: var(--muted); font-size: 14px; }
-.dl-help { font-size: 14px; max-width: 52ch; }
-.hero figure { margin: 0; }
-.hero img { width: 100%; height: auto; display: block; aspect-ratio: 1400 / 788; object-fit: cover; background: var(--shot-bg); border-radius: 3px; }
-
-/* ---------- screens ---------- */
-.shots { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
-.shot { margin: 0; display: grid; gap: 6px; align-content: start; min-width: 0; }
-.shot img { width: 100%; height: auto; display: block; aspect-ratio: 5 / 3; object-fit: cover; background: var(--shot-bg); border-radius: 2px; }
-.shot img.top-left { object-position: top left; }
-figcaption { color: var(--muted); font-size: 13.5px; }
-.w3 { grid-column: span 3; }
-.w2 { grid-column: span 2; }
-.w6 { grid-column: span 6; }
-.year { grid-column: span 6; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-.year figure { margin: 0; position: relative; }
-.year img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
-.year span { position: absolute; left: 8px; bottom: 6px; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
-
-.systems { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px 34px; }
-.system { display: grid; gap: 8px; align-content: start; border-top: 2px solid var(--done); padding-top: 12px; }
-.system ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
-.system li::marker { color: var(--done); }
-
-/* ---------- how-to steps ---------- */
-.howto { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); counter-reset: n; }
-.howto li { background: var(--surface); padding: 16px; display: grid; gap: 6px; align-content: start; counter-increment: n; }
-.howto li::before { content: counter(n, decimal-leading-zero); font-family: var(--display); font-weight: 700; font-size: 28px; line-height: 1; color: var(--accent); }
-.howto p { color: var(--muted); font-size: 14.5px; }
-.keys { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 14px; }
-kbd { font-family: var(--mono); font-size: 12px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 3px; padding: 0 5px; background: var(--surface); color: var(--ink); }
-
-/* ---------- server ---------- */
-.server { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
-.server ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
-table { border-collapse: collapse; width: 100%; font-size: 14.5px; background: var(--surface); border: 1px solid var(--line); }
-th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-th { font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
-td:first-child { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
-.note { border-left: 3px solid var(--accent); background: var(--surface); padding: 12px 16px; max-width: 80ch; font-size: 14.5px; }
+.dl-help { font-size: 14.5px; max-width: 64ch; display: grid; gap: 4px; }
 
 /* ---------- updates ---------- */
-.updates { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
-.updates > li { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 4px 22px; padding: 14px 0; border-top: 1px solid var(--line); }
+.updates { list-style: none; margin: 0; padding: 0; display: grid; }
+.updates > li { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px 22px; padding: 14px 0; border-top: 1px solid var(--line); }
 .updates .when { display: grid; gap: 2px; align-content: start; }
 .updates .ver { font-family: var(--display); font-weight: 700; font-size: 20px; }
 .updates .date { color: var(--muted); font-size: 13.5px; }
@@ -125,22 +85,21 @@ td:first-child { font-family: var(--mono); font-size: 13px; white-space: nowrap;
 .updates > .latest .ver::after { content: "Newest"; margin-left: 8px; font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--done); border: 1px solid var(--done); padding: 0 6px; border-radius: 2px; vertical-align: 3px; }
 .empty { color: var(--muted); }
 
-/* ---------- next ---------- */
-.next { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.next li { background: var(--surface); padding: 12px 14px; display: grid; gap: 3px; align-content: start; }
-.next b { font-family: var(--display); font-weight: 600; font-size: 18px; }
-.next span { color: var(--muted); font-size: 13.5px; }
-.next .built b::after { content: " \2713"; color: var(--done); }
+/* ---------- roadmap ---------- */
+.stage { display: grid; gap: 10px; }
+.road { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.road li { background: var(--surface); padding: 12px 14px; display: grid; gap: 3px; align-content: start; }
+.road b { font-family: var(--display); font-weight: 600; font-size: 18px; }
+.road span { color: var(--muted); font-size: 13.5px; }
+.road .built b::after { content: " \2713"; color: var(--done); }
+.road .now { box-shadow: inset 3px 0 0 var(--accent); }
+.road .now b::after { content: "Next"; margin-left: 8px; font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0 6px; border-radius: 2px; vertical-align: 3px; }
+.goal { border-left: 3px solid var(--done); background: var(--surface); padding: 12px 16px; max-width: 72ch; }
 
 footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); padding-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
 
-@media (max-width: 820px) {
-  .hero, .server { grid-template-columns: 1fr; }
-  .shots { grid-template-columns: 1fr; }
-  .w3, .w2, .w6, .year { grid-column: auto; }
-  .year { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) {
   .updates > li { grid-template-columns: 1fr; }
-  td:first-child { white-space: normal; }
 }
 </style>
 </head>
@@ -151,121 +110,26 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <a class="mark" href="#top">Zombie Survival</a>
     <nav aria-label="Sections">
       <a href="#download">Download</a>
-      <a href="#game">The game</a>
-      <a href="#together">Play together</a>
-      <a href="#server">Server</a>
       <a href="#updates">Updates</a>
+      <a href="#roadmap">Roadmap</a>
     </nav>
   </div>
 </div>
 
 <main class="page" id="top">
 
-<section class="hero" id="download" aria-labelledby="title">
-  <div class="hero-text">
-    <span class="label">Working title &middot; in development</span>
-    <h1 id="title">Zombie Survival</h1>
-    <p class="lede">An open-world survival game for a group of friends, on a cold Norwegian-style coast. Get out of the town, find somewhere quiet to build, stay warm and dry, and in the end clear the zombies and bring the world back.</p>
-    <div class="download">
-      <a class="btn" id="dl" href="#updates" aria-disabled="true">Download for Windows</a>
-      <span class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</span>
-      <p class="dl-help">Unzip it anywhere and run <code>zombiegame.exe</code>. When a new version is out, the game says so on its start screen and updates itself with one button.</p>
+<section class="intro" id="download" aria-labelledby="title">
+  <span class="stage-tag">Early alpha</span>
+  <h1 id="title">Zombie Survival</h1>
+  <p class="lede">An open-world survival game for a group of friends, on a cold Norwegian-style coast. Get out of the town, find somewhere quiet to build, stay warm and dry, and in the end clear the zombies and bring the world back.</p>
+  <p class="alpha">Early alpha: placeholder art, missing pieces, and things that break between versions. There are no zombies yet. Working title.</p>
+  <div class="download">
+    <a class="btn" id="dl" href="#updates" aria-disabled="true">Download for Windows</a>
+    <span class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</span>
+    <div class="dl-help">
+      <p>Unzip it anywhere and run <code>zombiegame.exe</code>. Start Steam first to play with friends.</p>
+      <p>When a new version is out, the game says so on its start screen and updates itself with one button.</p>
     </div>
-  </div>
-  <figure>
-    <img src="img/valley.jpg" alt="Aerial view of a river valley with mountains behind" width="1400" height="788">
-  </figure>
-</section>
-
-<section id="game" aria-labelledby="game-h">
-  <div class="section-head">
-    <span class="label">In the game now</span>
-    <h2 id="game-h">What you can do today</h2>
-    <p>Placeholder art: furniture and boxes stand in for houses and item models until the village and the art passes. Things change and break between versions.</p>
-  </div>
-  <div class="shots">
-    <figure class="shot w3"><img src="img/melee.jpg" alt="First-person view holding an axe in front of a training dummy" loading="lazy"><figcaption>Swing a knife, a hammer or an axe. Head hits count more; weapons wear out.</figcaption></figure>
-    <figure class="shot w3"><img class="top-left" src="img/inventory.jpg" alt="Inventory screen with worn clothes and an open wardrobe" loading="lazy"><figcaption>Clothes give pockets, a backpack gives room. Search furniture for what a house would hold.</figcaption></figure>
-    <figure class="shot w3"><img src="img/spawn.jpg" alt="A survivor in the snow facing a row of furniture" loading="lazy"><figcaption>A fresh survivor with almost nothing. A t-shirt in early spring gets you very cold within an hour.</figcaption></figure>
-    <figure class="shot w3"><img src="img/start.jpg" alt="Start screen with Host a game and Find games" loading="lazy"><figcaption>Host a game or find a friend's through Steam. No port forwarding.</figcaption></figure>
-    <div class="year" role="group" aria-label="The same map through a day and the year">
-      <figure><img src="img/summer.jpg" alt="Midday with dry grass" loading="lazy"><span>Midday</span></figure>
-      <figure><img src="img/sunset.jpg" alt="Sunset over the valley" loading="lazy"><span>Sunset</span></figure>
-      <figure><img src="img/moonrise.jpg" alt="Night with the moon rising behind clouds" loading="lazy"><span>Moonrise</span></figure>
-      <figure><img src="img/winter.jpg" alt="Snow-covered ground in winter" loading="lazy"><span>Winter</span></figure>
-    </div>
-  </div>
-  <div class="systems">
-    <div class="system">
-      <h3>Staying alive</h3>
-      <ul>
-        <li>Hunger, thirst, body temperature, blood and wetness, shown as plain symptoms, not bars</li>
-        <li>Rain soaks what it falls on; a rain jacket keeps your top dry, rain trousers your legs</li>
-        <li>You can freeze, starve, die of thirst or bleed out</li>
-      </ul>
-    </div>
-    <div class="system">
-      <h3>Fighting</h3>
-      <ul>
-        <li>Knife, hammer, felling axe, or bare fists</li>
-        <li>The server decides every hit, so nobody can cheat their swings</li>
-        <li>Players can only hurt each other if the host turns PvP on</li>
-      </ul>
-    </div>
-    <div class="system">
-      <h3>The world</h3>
-      <ul>
-        <li>A 4 &times; 4 km map: coast, fjord, river valley, lake, mountains, a town site</li>
-        <li>Real sun and moon for 61&deg; N, four seasons, a snow line that moves</li>
-        <li>4 real hours per game day</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="together" aria-labelledby="together-h">
-  <div class="section-head">
-    <span class="label">Play together</span>
-    <h2 id="together-h">Getting your friends in</h2>
-    <p>Everyone needs the same version. The start screen tells you when there is a newer one.</p>
-  </div>
-  <ol class="howto">
-    <li><h3>Download</h3><p>Get the zip above and unzip it anywhere, for example in Documents. Windows may ask to allow the game through the firewall: allow it.</p></li>
-    <li><h3>Open Steam</h3><p>Start Steam and sign in before the game. Steam connects you, so nobody has to forward ports.</p></li>
-    <li><h3>Host or join</h3><p>One of you presses <b>Host a game</b>. The others press <b>Find games</b>, or the host invites them from the Esc menu while their game is open.</p></li>
-    <li><h3>Talk</h3><p>Hold <kbd>V</kbd> to talk to players near you. Voice fades with distance.</p></li>
-  </ol>
-  <div class="keys" aria-label="Keys">
-    <span><kbd>W A S D</kbd> move</span><span><kbd>Shift</kbd> sprint</span><span><kbd>Ctrl</kbd> crouch</span><span><kbd>Z</kbd> prone</span>
-    <span><kbd>Q</kbd> <kbd>E</kbd> lean</span><span><kbd>F</kbd> use or search</span><span><kbd>Tab</kbd> inventory</span>
-    <span><kbd>Left click</kbd> swing, eat, bandage</span><span><kbd>X</kbd> put away</span><span><kbd>Esc</kbd> menu</span><span><kbd>F9</kbd> report a problem</span>
-  </div>
-</section>
-
-<section id="server" aria-labelledby="server-h">
-  <div class="section-head">
-    <span class="label">Run a server</span>
-    <h2 id="server-h">A world that keeps running</h2>
-    <p>Any PC can run the game as a server with no window and no player of its own, so friends can play when the host is away.</p>
-  </div>
-  <div class="server">
-    <ol>
-      <li>Unzip the game on the PC that will be the server.</li>
-      <li>Edit <code>zombiegame\ServerSettings.ini</code> if you like (below).</li>
-      <li>Start Steam on that PC, then run <code>start_server.bat</code>. It restarts the server if it stops; close its window to stop it.</li>
-      <li>Friends find it under <b>Find games</b>. Without Steam, add <code>-nosteam</code> to the bat file; friends then join by IP, and UDP port 7777 must be forwarded to the server.</li>
-    </ol>
-    <table>
-      <thead><tr><th scope="col">Setting</th><th scope="col">What it does</th></tr></thead>
-      <tbody>
-        <tr><td>ServerName</td><td>The name friends see in the list</td></tr>
-        <tr><td>Map</td><td>The map to run</td></tr>
-        <tr><td>MaxPlayers</td><td>Most players at once (12)</td></tr>
-        <tr><td>TickRate</td><td>Server updates a second (30). Higher is smoother and uses more CPU</td></tr>
-        <tr><td>PvP</td><td>Players can hurt each other (off)</td></tr>
-        <tr><td>Preset</td><td>Difficulty: casual, standard or hardcore (coming)</td></tr>
-      </tbody>
-    </table>
   </div>
 </section>
 
@@ -273,39 +137,60 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
   <div class="section-head">
     <span class="label">Updates</span>
     <h2 id="updates-h">What changed</h2>
-    <p>Newest first. The game updates itself from its start screen; you can also download any version here.</p>
+    <p>Newest first. Versions are numbered Alpha 0.1.x while the first village is being built; every one can be downloaded here.</p>
   </div>
   <ul class="updates" id="updates-list">
-    <li><p class="empty">The first public version is on its way.</p></li>
+    <li><p class="empty">The first version is on its way.</p></li>
   </ul>
 </section>
 
-<section aria-labelledby="next-h">
+<section id="roadmap" aria-labelledby="roadmap-h">
   <div class="section-head">
-    <span class="label">Coming next</span>
-    <h2 id="next-h">One village that holds the whole game</h2>
-    <p>Before the world grows, a small area near the town gets every part of the game and is made fun for an evening with friends.</p>
+    <span class="label">Roadmap</span>
+    <h2 id="roadmap-h">Where the game is going</h2>
+    <p>First one small village gets every part of the game and is made fun for an evening with friends. Then the world grows.</p>
   </div>
-  <ul class="next">
-    <li class="built"><b>Play online</b><span>Steam, voice, a server, updates</span></li>
-    <li class="built"><b>Melee</b><span>Knife, hammer, axe</span></li>
-    <li><b>Hands and bodies</b><span>Animated arms and bodies</span></li>
-    <li><b>Stamina and cold</b><span>Cold that changes how you play</span></li>
-    <li><b>Fire and crafting</b><span>Wood, campfires, torches</span></li>
-    <li><b>The village</b><span>Real houses to search</span></li>
-    <li><b>Zombies</b><span>They hear you</span></li>
-    <li><b>A base</b><span>Take over a cabin or build one</span></li>
-    <li><b>First guns</b><span>Rare and loud</span></li>
-    <li><b>Weather</b><span>Rain and snow you can see</span></li>
-  </ul>
-</section>
 
-<section aria-labelledby="bug-h">
-  <div class="section-head">
-    <span class="label">Something broke?</span>
-    <h2 id="bug-h">Press F9</h2>
-    <p>F9 in the game opens &ldquo;Report a problem&rdquo;. Write what happened; a screenshot and the recent log are saved with it in <code>zombiegame\Saved\BugReports</code>. Send that folder along and it gets looked at.</p>
+  <div class="stage">
+    <h3>Built</h3>
+    <ul class="road">
+      <li class="built"><b>The map</b><span>4 &times; 4 km of coast, fjord, valley and mountains; real sun, moon and seasons</span></li>
+      <li class="built"><b>Staying alive</b><span>Hunger, thirst, cold, bleeding and wet clothes</span></li>
+      <li class="built"><b>Loot</b><span>Clothes with pockets, backpacks, searchable furniture</span></li>
+      <li class="built"><b>Play online</b><span>Steam, voice, your own server, updates</span></li>
+      <li class="built"><b>Melee</b><span>Knife, hammer, axe</span></li>
+      <li class="built"><b>Rain clothes</b><span>Rain jacket and trousers keep you dry</span></li>
+    </ul>
   </div>
+
+  <div class="stage">
+    <h3>Now: one village that holds the whole game (Alpha 0.1)</h3>
+    <ul class="road">
+      <li class="now"><b>Hands and bodies</b><span>Animated arms and bodies</span></li>
+      <li><b>Stamina and cold</b><span>Cold that changes how you play</span></li>
+      <li><b>Fire and crafting</b><span>Wood, campfires, torches</span></li>
+      <li><b>The village</b><span>Real houses to search</span></li>
+      <li><b>Zombies</b><span>They hear you</span></li>
+      <li><b>A base</b><span>Take over a cabin or build one</span></li>
+      <li><b>First guns</b><span>Rare and loud</span></li>
+      <li><b>Weather</b><span>Rain and snow you can see</span></li>
+      <li><b>Death and spawns</b><span>Your things stay where you fell</span></li>
+    </ul>
+  </div>
+
+  <div class="stage">
+    <h3>After that</h3>
+    <ul class="road">
+      <li><b>Saving</b><span>Worlds that keep going between sessions</span></li>
+      <li><b>Zombies at scale</b><span>Hundreds at once, and worse kinds</span></li>
+      <li><b>Bases and power</b><span>Building in full, generators, lights</span></li>
+      <li><b>The rest of the map</b><span>The town, farms, roads, the dam</span></li>
+      <li><b>Military and bunkers</b><span>Hidden places with codes to find</span></li>
+      <li><b>12 &times; 12 km and vehicles</b><span>A second city, cars and boats</span></li>
+    </ul>
+  </div>
+
+  <p class="goal"><b>The goal:</b> find and shut down the source of the outbreak, clear the zombies zone by zone, get power, water and the radio running again, and call in the ship that ends the game.</p>
 </section>
 
 <footer>
@@ -317,7 +202,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
 
 <script>
 // The download button and the update list come from latest.json and releases.json, which tools/publish.ps1 writes
-// with each new build. The page works without them (before the first build) and never needs a server of its own.
+// with each new build. The page works without them and never needs a server of its own.
 (function () {
   function mb(bytes) { return Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB"; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
@@ -327,8 +212,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     var btn = document.getElementById("dl");
     btn.href = latest.url;
     btn.removeAttribute("aria-disabled");
-    btn.textContent = "Download for Windows";
-    document.getElementById("dl-meta").textContent = "Version " + latest.version + " · " + mb(latest.size) + (latest.date ? " · " + latest.date : "");
+    document.getElementById("dl-meta").textContent = latest.version + " · " + mb(latest.size) + " · Windows 64-bit";
     document.getElementById("foot-version").textContent = "Newest version " + latest.version;
   }).catch(function () {
     document.getElementById("dl-meta").textContent = "No version is out yet. Soon.";
@@ -339,6 +223,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     var list = document.getElementById("updates-list");
     list.textContent = "";
     releases.forEach(function (rel, i) {
+      if (!rel || !rel.version) return;
       var li = el("li", i === 0 ? "latest" : "");
       var when = el("div", "when");
       when.appendChild(el("span", "ver", rel.version));
