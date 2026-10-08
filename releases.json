@@ -1,5 +1,16 @@
 [
     {
+        "build":  202610082124,
+        "version":  "2026.10.08-2124",
+        "date":  "2026-10-08 21:29",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082124/zombiegame_2026-10-08_2124.zip",
+        "sha256":  "D8714A83E95CF5A6021B2BCA8434CAC7839FD896DD453579F733BDEECE3224C0",
+        "size":  695694156,
+        "notes":  [
+                      "The update check reads the website address correctly (builds before this one cannot update themselves: download this one from the website)"
+                  ]
+    },
+    {
         "build":  202610082108,
         "version":  "2026.10.08-2108",
         "date":  "2026-10-08 21:17",
