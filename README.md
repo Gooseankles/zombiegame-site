@@ -1,4 +1,4 @@
-# Zombie Survival: website and downloads
+# Zombie Dawn: website and downloads
 
 The website at https://zombie.rode.live and the game's builds (under Releases). The game is in development; its code
 lives in a separate private repository. This repository is written by the game's publish script, so changes made
