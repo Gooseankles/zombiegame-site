@@ -1,11 +1,11 @@
 {
     "build":  202610082141,
-    "version":  "Alpha 0.1.5",
+    "version":  "Pre-alpha 0.1.5",
     "date":  "2026-10-08 21:45",
     "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082141/zombiegame_2026-10-08_2141.zip",
     "sha256":  "7224EB85834E1E97E3EFB870D608949D0417B8EB113105A7D4008D82F7456C1D",
     "size":  695694207,
     "notes":  [
-                  "Versions are numbered: this is Alpha 0.1.5, shown on the start screen"
+                  "Versions are numbered: this is Pre-alpha 0.1.5, shown on the start screen"
               ]
 }

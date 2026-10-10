@@ -1,18 +1,18 @@
 [
     {
         "build":  202610082141,
-        "version":  "Alpha 0.1.5",
+        "version":  "Pre-alpha 0.1.5",
         "date":  "2026-10-08 21:45",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082141/zombiegame_2026-10-08_2141.zip",
         "sha256":  "7224EB85834E1E97E3EFB870D608949D0417B8EB113105A7D4008D82F7456C1D",
         "size":  695694207,
         "notes":  [
-                      "Versions are numbered: this is Alpha 0.1.5, shown on the start screen"
+                      "Versions are numbered: this is Pre-alpha 0.1.5, shown on the start screen"
                   ]
     },
     {
         "build":  202610082124,
-        "version":  "Alpha 0.1.4",
+        "version":  "Pre-alpha 0.1.4",
         "date":  "2026-10-08 21:29",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082124/zombiegame_2026-10-08_2124.zip",
         "sha256":  "D8714A83E95CF5A6021B2BCA8434CAC7839FD896DD453579F733BDEECE3224C0",
@@ -23,7 +23,7 @@
     },
     {
         "build":  202610082108,
-        "version":  "Alpha 0.1.3",
+        "version":  "Pre-alpha 0.1.3",
         "date":  "2026-10-08 21:17",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082108/zombiegame_2026-10-08_2108.zip",
         "sha256":  "9B034219823979E6513BB79A9BE05F3832606BAA97389F19B89D422C087B0CBE",
@@ -35,7 +35,7 @@
     },
     {
         "build":  202610082052,
-        "version":  "Alpha 0.1.2",
+        "version":  "Pre-alpha 0.1.2",
         "date":  "2026-10-08 20:58",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082052/zombiegame_2026-10-08_2052.zip",
         "sha256":  "C0CB50F109C0B891A7508914558758ABF6B0982E3469CC1658EE567416442187",
@@ -47,7 +47,7 @@
     },
     {
         "build":  202610082040,
-        "version":  "Alpha 0.1.1",
+        "version":  "Pre-alpha 0.1.1",
         "date":  "2026-10-08 20:45",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082040/zombiegame_2026-10-08_2040.zip",
         "sha256":  "C4E93FA68F644F2CE801FB39723F6C83A6688C99B8ED618A94250739FE5F1D8D",
