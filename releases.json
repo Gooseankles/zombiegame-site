@@ -1,5 +1,60 @@
 [
     {
+        "build":  202610111749,
+        "version":  "Pre-alpha 0.1.7.0",
+        "date":  "2026-10-11 17:55",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111749/zombiegame_2026-10-11_1749.zip",
+        "sha256":  "60AF898C079B8B534C1F5DE55440B3BE595F8271C6AD03E80EB6C8667A3D2A96",
+        "size":  667686834,
+        "notes":  [
+                      "Bug reports now say where you were on the map as a grid square such as G7-5 (columns A to L, rows 1 to 12, and a keypad 1 to 9 inside each square). The console command zg.Where shows it.",
+                      "Doors swing with your hand: the door starts to move when your hand reaches it and opens over the rest of the push, instead of flying open before you touch it.",
+                      "Zombies chase like a mob: each comes in from its own side, at its own pace, and they spread around you instead of running after each other in a line.",
+                      "Fixed an animation error (running) that could freeze the game for a few seconds.",
+                      "The map is still the small test map; the big map is not in yet.",
+                      "Zombies are capsules and make no sounds yet.",
+                      "Doors, items lying on the ground and zombies are not saved yet."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Bug reports now say where you were on the map as a grid square such as G7-5 (columns A to L, rows 1 to 12, and a keypad 1 to 9 inside each square). The console command zg.Where shows it."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Doors swing with your hand: the door starts to move when your hand reaches it and opens over the rest of the push, instead of flying open before you touch it."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies chase like a mob: each comes in from its own side, at its own pace, and they spread around you instead of running after each other in a line."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed an animation error (running) that could freeze the game for a few seconds."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The map is still the small test map; the big map is not in yet."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies are capsules and make no sounds yet."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Doors, items lying on the ground and zombies are not saved yet."
+                     }
+                 ]
+    },
+    {
         "build":  202610111215,
         "version":  "Pre-alpha 0.1.6",
         "date":  "2026-10-11 12:30",

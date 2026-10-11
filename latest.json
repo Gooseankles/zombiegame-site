@@ -1,23 +1,18 @@
 {
-    "build":  202610111215,
-    "version":  "Pre-alpha 0.1.6",
-    "date":  "2026-10-11 12:30",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111215/zombiegame_2026-10-11_1215.zip",
-    "sha256":  "3760CFC20541D3A52667C8B0ED01F9D0BA0F798DB40FE642121B9C18EB31A297",
-    "size":  667620322,
+    "build":  202610111749,
+    "version":  "Pre-alpha 0.1.7.0",
+    "date":  "2026-10-11 17:55",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111749/zombiegame_2026-10-11_1749.zip",
+    "sha256":  "60AF898C079B8B534C1F5DE55440B3BE595F8271C6AD03E80EB6C8667A3D2A96",
+    "size":  667686834,
     "notes":  [
-                  "Zombies (placeholder capsules for now): they hear noise, see you, chase, lose track, search and wander. Near you they are real bodies; farther away they are a crowd drawn cheaply.",
-                  "Zombies bite. A bite is a bleeding wound; stop it with a bandage. They attack from arm\u0027s length with a short wind-up, so you can step out of reach.",
-                  "Your game now saves: the world clock, where you stand, your body, everything you carry and every container you have searched. It saves every 5 minutes, when someone leaves and when you quit, and you pick up where you left off.",
-                  "Zombies in a mob: only a few can bite you at once (6 to start), the others crowd in close and grab, which slows you down and stops you sprinting if several hold on. When one is killed another steps in.",
-                  "Doors you can open and close (F), with a hand animation.",
-                  "Vaulting over low obstacles and climbing onto ledges when you jump at them.",
-                  "A full set of character animations: walking, strafing, crouching, crawling in prone, jumping, with smooth transitions.",
-                  "The start screen and the website now say Pre-alpha, which is what this is.",
+                  "Bug reports now say where you were on the map as a grid square such as G7-5 (columns A to L, rows 1 to 12, and a keypad 1 to 9 inside each square). The console command zg.Where shows it.",
+                  "Doors swing with your hand: the door starts to move when your hand reaches it and opens over the rest of the push, instead of flying open before you touch it.",
+                  "Zombies chase like a mob: each comes in from its own side, at its own pace, and they spread around you instead of running after each other in a line.",
+                  "Fixed an animation error (running) that could freeze the game for a few seconds.",
+                  "The map is still the small test map; the big map is not in yet.",
                   "Zombies are capsules and make no sounds yet.",
-                  "Doors, items lying on the ground and zombies are not saved yet.",
-                  "Crowd zombies running at you can look a few metres off their real position on a client.",
-                  "Nothing has been balanced; expect odd numbers."
+                  "Doors, items lying on the ground and zombies are not saved yet."
               ],
     "body":  [
                  {
@@ -26,39 +21,27 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies (placeholder capsules for now): they hear noise, see you, chase, lose track, search and wander. Near you they are real bodies; farther away they are a crowd drawn cheaply."
+                     "text":  "Bug reports now say where you were on the map as a grid square such as G7-5 (columns A to L, rows 1 to 12, and a keypad 1 to 9 inside each square). The console command zg.Where shows it."
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies bite. A bite is a bleeding wound; stop it with a bandage. They attack from arm\u0027s length with a short wind-up, so you can step out of reach."
+                     "text":  "Doors swing with your hand: the door starts to move when your hand reaches it and opens over the rest of the push, instead of flying open before you touch it."
                  },
                  {
                      "t":  "li",
-                     "text":  "Your game now saves: the world clock, where you stand, your body, everything you carry and every container you have searched. It saves every 5 minutes, when someone leaves and when you quit, and you pick up where you left off."
+                     "text":  "Zombies chase like a mob: each comes in from its own side, at its own pace, and they spread around you instead of running after each other in a line."
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies in a mob: only a few can bite you at once (6 to start), the others crowd in close and grab, which slows you down and stops you sprinting if several hold on. When one is killed another steps in."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Doors you can open and close (F), with a hand animation."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Vaulting over low obstacles and climbing onto ledges when you jump at them."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "A full set of character animations: walking, strafing, crouching, crawling in prone, jumping, with smooth transitions."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "The start screen and the website now say Pre-alpha, which is what this is."
+                     "text":  "Fixed an animation error (running) that could freeze the game for a few seconds."
                  },
                  {
                      "t":  "h",
                      "text":  "Known problems"
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "The map is still the small test map; the big map is not in yet."
                  },
                  {
                      "t":  "li",
@@ -67,14 +50,6 @@
                  {
                      "t":  "li",
                      "text":  "Doors, items lying on the ground and zombies are not saved yet."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Crowd zombies running at you can look a few metres off their real position on a client."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Nothing has been balanced; expect odd numbers."
                  }
              ]
 }
