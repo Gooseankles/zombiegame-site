@@ -82,6 +82,9 @@ section { display: grid; gap: 20px; }
 .updates .ver { font-family: var(--display); font-weight: 700; font-size: 20px; }
 .updates .date { color: var(--muted); font-size: 13.5px; }
 .updates ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+.updates .notes { display: grid; gap: 8px; }
+.updates h4 { margin: 8px 0 0; font-family: var(--display); font-weight: 600; font-size: 16px; }
+.updates .notes p { margin: 0; max-width: 70ch; }
 .updates > .latest .ver::after { content: "Newest"; margin-left: 8px; font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--done); border: 1px solid var(--done); padding: 0 6px; border-radius: 2px; vertical-align: 3px; }
 .empty { color: var(--muted); }
 
@@ -122,7 +125,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
   <span class="stage-tag">Pre-alpha</span>
   <h1 id="title">Zombie Dawn</h1>
   <p class="lede">An open-world survival game for a group of friends, on a cold northern coast. Get out of the town, find somewhere quiet to build, stay warm and dry, and in the end clear the zombies and bring the world back.</p>
-  <p class="alpha">Pre-alpha: placeholder art, missing pieces, and things that break between versions. There are no zombies yet. Working title.</p>
+  <p class="alpha">Pre-alpha: placeholder art, missing pieces, and things that break between versions. Working title.</p>
   <div class="download">
     <a class="btn" id="dl" href="#updates" aria-disabled="true">Download for Windows</a>
     <span class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</span>
@@ -231,9 +234,22 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       dl.href = rel.url;
       when.appendChild(dl);
       li.appendChild(when);
-      var notes = el("ul");
-      (rel.notes && rel.notes.length ? rel.notes : ["Fixes and small changes."]).forEach(function (n) { notes.appendChild(el("li", "", n)); });
-      li.appendChild(notes);
+      var box = el("div", "notes");
+      var hasHeads = Array.isArray(rel.body) && rel.body.some(function (b) { return b.t === "h"; });
+      if (hasHeads || (Array.isArray(rel.body) && rel.body.some(function (b) { return b.t === "p"; }))) {
+        // Full patch notes: headings, paragraphs and bullet lists in the order they were written.
+        var ul = null;
+        rel.body.forEach(function (b) {
+          if (b.t === "li") { if (!ul) { ul = el("ul"); box.appendChild(ul); } ul.appendChild(el("li", "", b.text)); return; }
+          ul = null;
+          box.appendChild(el(b.t === "h" ? "h4" : "p", "", b.text));
+        });
+      } else {
+        var notes = el("ul");
+        (rel.notes && rel.notes.length ? rel.notes : ["Fixes and small changes."]).forEach(function (n) { notes.appendChild(el("li", "", n)); });
+        box.appendChild(notes);
+      }
+      li.appendChild(box);
       list.appendChild(li);
     });
   }).catch(function () {});

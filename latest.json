@@ -1,11 +1,80 @@
 {
-    "build":  202610082141,
-    "version":  "Pre-alpha 0.1.5",
-    "date":  "2026-10-08 21:45",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610082141/zombiegame_2026-10-08_2141.zip",
-    "sha256":  "7224EB85834E1E97E3EFB870D608949D0417B8EB113105A7D4008D82F7456C1D",
-    "size":  695694207,
+    "build":  202610111215,
+    "version":  "Pre-alpha 0.1.6",
+    "date":  "2026-10-11 12:30",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111215/zombiegame_2026-10-11_1215.zip",
+    "sha256":  "3760CFC20541D3A52667C8B0ED01F9D0BA0F798DB40FE642121B9C18EB31A297",
+    "size":  667620322,
     "notes":  [
-                  "Versions are numbered: this is Pre-alpha 0.1.5, shown on the start screen"
-              ]
+                  "Zombies (placeholder capsules for now): they hear noise, see you, chase, lose track, search and wander. Near you they are real bodies; farther away they are a crowd drawn cheaply.",
+                  "Zombies bite. A bite is a bleeding wound; stop it with a bandage. They attack from arm\u0027s length with a short wind-up, so you can step out of reach.",
+                  "Your game now saves: the world clock, where you stand, your body, everything you carry and every container you have searched. It saves every 5 minutes, when someone leaves and when you quit, and you pick up where you left off.",
+                  "Zombies in a mob: only a few can bite you at once (6 to start), the others crowd in close and grab, which slows you down and stops you sprinting if several hold on. When one is killed another steps in.",
+                  "Doors you can open and close (F), with a hand animation.",
+                  "Vaulting over low obstacles and climbing onto ledges when you jump at them.",
+                  "A full set of character animations: walking, strafing, crouching, crawling in prone, jumping, with smooth transitions.",
+                  "The start screen and the website now say Pre-alpha, which is what this is.",
+                  "Zombies are capsules and make no sounds yet.",
+                  "Doors, items lying on the ground and zombies are not saved yet.",
+                  "Crowd zombies running at you can look a few metres off their real position on a client.",
+                  "Nothing has been balanced; expect odd numbers."
+              ],
+    "body":  [
+                 {
+                     "t":  "h",
+                     "text":  "New"
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Zombies (placeholder capsules for now): they hear noise, see you, chase, lose track, search and wander. Near you they are real bodies; farther away they are a crowd drawn cheaply."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Zombies bite. A bite is a bleeding wound; stop it with a bandage. They attack from arm\u0027s length with a short wind-up, so you can step out of reach."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Your game now saves: the world clock, where you stand, your body, everything you carry and every container you have searched. It saves every 5 minutes, when someone leaves and when you quit, and you pick up where you left off."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Zombies in a mob: only a few can bite you at once (6 to start), the others crowd in close and grab, which slows you down and stops you sprinting if several hold on. When one is killed another steps in."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Doors you can open and close (F), with a hand animation."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Vaulting over low obstacles and climbing onto ledges when you jump at them."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "A full set of character animations: walking, strafing, crouching, crawling in prone, jumping, with smooth transitions."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "The start screen and the website now say Pre-alpha, which is what this is."
+                 },
+                 {
+                     "t":  "h",
+                     "text":  "Known problems"
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Zombies are capsules and make no sounds yet."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Doors, items lying on the ground and zombies are not saved yet."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Crowd zombies running at you can look a few metres off their real position on a client."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Nothing has been balanced; expect odd numbers."
+                 }
+             ]
 }
