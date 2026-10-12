@@ -1,5 +1,50 @@
 [
     {
+        "build":  202610121333,
+        "version":  "Pre-alpha 0.2.0.0",
+        "date":  "2026-10-12 13:40",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121333/zombiegame_2026-10-12_1333.zip",
+        "sha256":  "7AD1B7B1BB5B8F5C956824A8C330C6F62E173809157D47830C92F645D9566453",
+        "size":  915620520,
+        "notes":  [
+                      "A new world: Vintermark, 12 x 12 km (was 4 x 4 km), with the central valley, Storwater, the Blackwater dam, the Skar mountains, the Vellsund coast and a southern fjord. Bare terrain for now: no roads, rivers, towns or trees yet.",
+                      "You start at the edge of Haldersfield or Lundford in the central valley.",
+                      "A furnished house stands on the hillside in front of one of the start points: walk in through the porch, open the doors with F, and search the kitchen, bedroom, hall and bathroom furniture.",
+                      "Fixed: the vault, mantle, door and prone animations were missing from the packaged game.",
+                      "At the other two start points the test furniture still stands on bare ground; the old lake and sea are placeholder planes."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A new world: Vintermark, 12 x 12 km (was 4 x 4 km), with the central valley, Storwater, the Blackwater dam, the Skar mountains, the Vellsund coast and a southern fjord. Bare terrain for now: no roads, rivers, towns or trees yet."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "You start at the edge of Haldersfield or Lundford in the central valley."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A furnished house stands on the hillside in front of one of the start points: walk in through the porch, open the doors with F, and search the kitchen, bedroom, hall and bathroom furniture."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed: the vault, mantle, door and prone animations were missing from the packaged game."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "At the other two start points the test furniture still stands on bare ground; the old lake and sea are placeholder planes."
+                     }
+                 ]
+    },
+    {
         "build":  202610121138,
         "version":  "Pre-alpha 0.1.8.0",
         "date":  "2026-10-12 11:44",
