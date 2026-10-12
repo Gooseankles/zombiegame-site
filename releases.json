@@ -1,5 +1,70 @@
 [
     {
+        "build":  202610121931,
+        "version":  "Pre-alpha 0.2.1.0",
+        "date":  "2026-10-12 19:38",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121931/zombiegame_2026-10-12_1931.zip",
+        "sha256":  "349F2C4AD0D6BA981B928A68B4F856C8D27CB9630C52292441D9C82C076E6282",
+        "size":  1235685236,
+        "notes":  [
+                      "Settings screen (Settings on the start screen and in the Esc menu): quality preset (Low, Medium, High, Epic) and each graphics group, resolution scale, screen mode, resolution, vertical sync, frame rate limit, a frame rate counter, master and voice chat volume, field of view and mouse sensitivity. Settings are kept between updates.",
+                      "The first start measures your PC once and picks graphics to suit it (never above High). Hardware ray tracing is off for everyone (it cost a lot on older graphics cards), and the Effects setting now makes the clouds and the sky lighting cheaper on Low, Medium and High.",
+                      "Zombies now live in the world from the start: every settlement has a group of them by its size (a few in a hamlet, dozens in the cities and the dangerous mountain sites), and small groups stand along the roads. Spawn points stay calm: none within 120 m, and none within 250 m during the first minute. The host\u0027s zombie density setting scales the numbers.",
+                      "Campfires: make a campfire kit, then use it (right-click it, or hold it and left click) to put the fire down in front of you. Press F with a lighter or fire steel to light it and F with firewood or kindling to feed it (firewood burns about 1.5 game hours). A burning fire lights up the night, warms you and dries wet clothes within a few metres, and lets you cook (steak, fish, small game, boiling water) within 3 m. Its crackle can draw zombies. When it is out, F (or crouch and F) takes the stones back; crouch and F picks up an unlit fire as its kit. Placed fires are saved.",
+                      "Gathering: the land now has spruce forests, rocks, fallen sticks and loose stones. Press F on a stick or a stone to pick it up. Hold an axe (6 blows) or a stone axe (12) and left click a tree to fell it: it topples and leaves 2-3 logs and 3-5 sticks. Rocks need a pickaxe (8 blows) or a stone pickaxe (14) and give 3-5 stones and sometimes flint; an axe just bounces off. Chopping and breaking rock is loud (about 30 m) and wears the tool. What you take grows back after a while (sticks in a day, trees in a week) and stays gone through a save.",
+                      "New items: pickaxe (found in garages and sheds), stone pickaxe (craft from 2 stones, a stick and cord) and flint. Axes now turn up in sheds too. The stone axe can now be swung.",
+                      "First sounds: footsteps for every survivor and for zombies close by. They follow how you move (walking, jogging, sprinting, a quiet crouch, an almost silent crawl, a jump and a landing, a scuff when you stop) and what you walk on (wood floors in houses, concrete and roads, grass and dirt, forest leaves, beach sand, rocky slopes, snow above the snow line, mud in heavy rain). Doors knock when they open, close and lock, and rattle when locked; an axe thuds into a tree.",
+                      "The sounds are a first pass: doors and chopping share one wood knock, and footsteps are heard through walls.",
+                      "Trees and rocks still use pack models without their own sounds or a chopping animation; zombies may bump into trees on their way."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Settings screen (Settings on the start screen and in the Esc menu): quality preset (Low, Medium, High, Epic) and each graphics group, resolution scale, screen mode, resolution, vertical sync, frame rate limit, a frame rate counter, master and voice chat volume, field of view and mouse sensitivity. Settings are kept between updates."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The first start measures your PC once and picks graphics to suit it (never above High). Hardware ray tracing is off for everyone (it cost a lot on older graphics cards), and the Effects setting now makes the clouds and the sky lighting cheaper on Low, Medium and High."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies now live in the world from the start: every settlement has a group of them by its size (a few in a hamlet, dozens in the cities and the dangerous mountain sites), and small groups stand along the roads. Spawn points stay calm: none within 120 m, and none within 250 m during the first minute. The host\u0027s zombie density setting scales the numbers."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Campfires: make a campfire kit, then use it (right-click it, or hold it and left click) to put the fire down in front of you. Press F with a lighter or fire steel to light it and F with firewood or kindling to feed it (firewood burns about 1.5 game hours). A burning fire lights up the night, warms you and dries wet clothes within a few metres, and lets you cook (steak, fish, small game, boiling water) within 3 m. Its crackle can draw zombies. When it is out, F (or crouch and F) takes the stones back; crouch and F picks up an unlit fire as its kit. Placed fires are saved."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Gathering: the land now has spruce forests, rocks, fallen sticks and loose stones. Press F on a stick or a stone to pick it up. Hold an axe (6 blows) or a stone axe (12) and left click a tree to fell it: it topples and leaves 2-3 logs and 3-5 sticks. Rocks need a pickaxe (8 blows) or a stone pickaxe (14) and give 3-5 stones and sometimes flint; an axe just bounces off. Chopping and breaking rock is loud (about 30 m) and wears the tool. What you take grows back after a while (sticks in a day, trees in a week) and stays gone through a save."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "New items: pickaxe (found in garages and sheds), stone pickaxe (craft from 2 stones, a stick and cord) and flint. Axes now turn up in sheds too. The stone axe can now be swung."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "First sounds: footsteps for every survivor and for zombies close by. They follow how you move (walking, jogging, sprinting, a quiet crouch, an almost silent crawl, a jump and a landing, a scuff when you stop) and what you walk on (wood floors in houses, concrete and roads, grass and dirt, forest leaves, beach sand, rocky slopes, snow above the snow line, mud in heavy rain). Doors knock when they open, close and lock, and rattle when locked; an axe thuds into a tree."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The sounds are a first pass: doors and chopping share one wood knock, and footsteps are heard through walls."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Trees and rocks still use pack models without their own sounds or a chopping animation; zombies may bump into trees on their way."
+                     }
+                 ]
+    },
+    {
         "build":  202610121333,
         "version":  "Pre-alpha 0.2.0.0",
         "date":  "2026-10-12 13:40",
