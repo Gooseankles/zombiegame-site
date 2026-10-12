@@ -1,18 +1,13 @@
 {
-    "build":  202610111749,
-    "version":  "Pre-alpha 0.1.7.0",
-    "date":  "2026-10-11 17:55",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111749/zombiegame_2026-10-11_1749.zip",
-    "sha256":  "60AF898C079B8B534C1F5DE55440B3BE595F8271C6AD03E80EB6C8667A3D2A96",
-    "size":  667686834,
+    "build":  202610121138,
+    "version":  "Pre-alpha 0.1.8.0",
+    "date":  "2026-10-12 11:44",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121138/zombiegame_2026-10-12_1138.zip",
+    "sha256":  "63CB06762803CFE8A1C9C60ACDDB5AC936A48E51B2158EA6601CC905BA2DF8C4",
+    "size":  668157774,
     "notes":  [
-                  "Bug reports now say where you were on the map as a grid square such as G7-5 (columns A to L, rows 1 to 12, and a keypad 1 to 9 inside each square). The console command zg.Where shows it.",
-                  "Doors swing with your hand: the door starts to move when your hand reaches it and opens over the rest of the push, instead of flying open before you touch it.",
-                  "Zombies chase like a mob: each comes in from its own side, at its own pace, and they spread around you instead of running after each other in a line.",
-                  "Fixed an animation error (running) that could freeze the game for a few seconds.",
-                  "The map is still the small test map; the big map is not in yet.",
-                  "Zombies are capsules and make no sounds yet.",
-                  "Doors, items lying on the ground and zombies are not saved yet."
+                  "Crafting: the inventory screen (Tab) has a \"Make\" list. Recipes you can make now come first; the rest show what is missing. Click one to make it, with a progress bar and a Cancel button while you work.",
+                  "Fixed: in the packaged game you could not move or look after pressing Host on the start screen (the start screen kept the mouse cursor and ignored the keys)."
               ],
     "body":  [
                  {
@@ -21,35 +16,19 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "Bug reports now say where you were on the map as a grid square such as G7-5 (columns A to L, rows 1 to 12, and a keypad 1 to 9 inside each square). The console command zg.Where shows it."
+                     "text":  "Crafting: the inventory screen (Tab) has a \"Make\" list. Recipes you can make now come first; the rest show what is missing. Click one to make it, with a progress bar and a Cancel button while you work."
                  },
                  {
                      "t":  "li",
-                     "text":  "Doors swing with your hand: the door starts to move when your hand reaches it and opens over the rest of the push, instead of flying open before you touch it."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Zombies chase like a mob: each comes in from its own side, at its own pace, and they spread around you instead of running after each other in a line."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Fixed an animation error (running) that could freeze the game for a few seconds."
+                     "text":  "Fixed: in the packaged game you could not move or look after pressing Host on the start screen (the start screen kept the mouse cursor and ignored the keys)."
                  },
                  {
                      "t":  "h",
                      "text":  "Known problems"
                  },
                  {
-                     "t":  "li",
-                     "text":  "The map is still the small test map; the big map is not in yet."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Zombies are capsules and make no sounds yet."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Doors, items lying on the ground and zombies are not saved yet."
+                     "t":  "p",
+                     "text":  "-"
                  }
              ]
 }
