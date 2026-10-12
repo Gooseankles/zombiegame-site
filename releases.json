@@ -1,5 +1,50 @@
 [
     {
+        "build":  202610122335,
+        "version":  "Pre-alpha 0.2.2.0",
+        "date":  "2026-10-12 23:49",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610122335/zombiegame_2026-10-12_2335.zip",
+        "sha256":  "B7942385F916A4253C4C000B1D7F302674AC5F297C5944B39089CFBA8311661E",
+        "size":  1609430904,
+        "notes":  [
+                      "The land has colour: green meadows, mossy forest floor where the spruce forest grows, grey rock on cliffs and steep mountain sides, stony fell above the trees, snow patches on the high peaks, sand and shingle at the sea, gravel river beds, wet mud by rivers and bogs, and asphalt and gravel roads.",
+                      "The sea is now the engine\u0027s ocean water (flat blue for now, waves and a proper shoreline come later), at sea level around the whole coast.",
+                      "The four lakes (Storwater, Mirror Lake, Blackwater Reservoir, High Tarn) now hold water at their own heights, with their islands showing.",
+                      "River water bodies are placed along all rivers (not visible in game yet).",
+                      "Rivers are placed as water bodies but do not draw yet, so river beds still show bare mud and stones. Lake water is a muddy brown for now."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The land has colour: green meadows, mossy forest floor where the spruce forest grows, grey rock on cliffs and steep mountain sides, stony fell above the trees, snow patches on the high peaks, sand and shingle at the sea, gravel river beds, wet mud by rivers and bogs, and asphalt and gravel roads."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The sea is now the engine\u0027s ocean water (flat blue for now, waves and a proper shoreline come later), at sea level around the whole coast."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The four lakes (Storwater, Mirror Lake, Blackwater Reservoir, High Tarn) now hold water at their own heights, with their islands showing."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "River water bodies are placed along all rivers (not visible in game yet)."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Rivers are placed as water bodies but do not draw yet, so river beds still show bare mud and stones. Lake water is a muddy brown for now."
+                     }
+                 ]
+    },
+    {
         "build":  202610121931,
         "version":  "Pre-alpha 0.2.1.0",
         "date":  "2026-10-12 19:38",
