@@ -1,5 +1,22 @@
 [
     {
+        "build":  202610131639,
+        "version":  "Pre-alpha 0.2.5.1",
+        "date":  "2026-10-13 16:47",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131639/ZombieDawn_2026-10-13_1639.zip",
+        "sha256":  "BC0763C18283FA1B52519D0CB74E88D291DB2D42F8450FEF5E51C1651A1E8224",
+        "size":  1619116389,
+        "notes":  [
+                      "The game file is now called ZombieDawn.exe."
+                  ],
+        "body":  [
+                     {
+                         "t":  "li",
+                         "text":  "The game file is now called ZombieDawn.exe."
+                     }
+                 ]
+    },
+    {
         "build":  202610131410,
         "version":  "Pre-alpha 0.2.5.0",
         "date":  "2026-10-13 14:20",
