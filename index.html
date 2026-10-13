@@ -128,6 +128,13 @@ section { display: grid; gap: 20px; }
 .board.done b::after { content: " \2713"; color: var(--done); }
 .board.now li { box-shadow: inset 3px 0 0 var(--accent); }
 
+/* ---------- story ---------- */
+.story-text { max-width: 62ch; display: grid; gap: 14px; font-size: 17px; line-height: 1.65; }
+.story-text p { margin: 0; }
+.story-text .line { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; border-left: 3px solid var(--accent); padding-left: 14px; }
+.story-text .note { color: var(--muted); font-size: 14.5px; font-style: italic; }
+.story-text hr { border: 0; border-top: 1px solid var(--line); width: 60px; margin: 6px 0; }
+
 footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); padding-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
 
 @media (max-width: 700px) {
@@ -143,6 +150,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <nav aria-label="Sections">
       <a href="#download">Download</a>
       <a href="#screenshots">Screenshots</a>
+      <a href="#story">Story</a>
       <a href="#updates">Updates</a>
       <a href="#roadmap">Roadmap</a>
     </nav>
@@ -193,6 +201,29 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
   <ul class="updates" id="updates-list">
     <li><p class="empty">The first version is on its way.</p></li>
   </ul>
+</section>
+
+<section id="story" aria-labelledby="story-h">
+  <div class="section-head">
+    <span class="label">Story</span>
+    <h2 id="story-h">The Walking Winter</h2>
+    <p>The opening of a story from the island. The game lets you find the rest yourself.</p>
+  </div>
+  <div class="story-text">
+    <p>I woke up on a road with gravel in my cheek and a sound in my head like a kettle that would not stop.</p>
+    <p>The last thing I remembered was the harbour at Vellport. A man in a hi-vis vest shouting at a ferry that was already gone. A woman holding a child so tightly her knuckles were white, and the child looking over her shoulder at something behind me. Then the noise, and the sky turning sideways.</p>
+    <p>A sign said HALDERSFIELD 2. Someone had left a car across the lane with its door open. The radio inside was still talking in the flat voice they use for numbers. <em>All crossings to the mainland are closed until further notice. Do not approach the water. Do not try to leave the island.</em></p>
+    <p>It was full morning, and along the village street the lamps were still burning. Nobody had come to switch them off.</p>
+    <p>Someone had painted on the wall by the village sign, in a hurry:</p>
+    <p class="line">To find a cure you need to search where it all began.</p>
+    <p>Under it, in another hand: <em>Don&rsquo;t trust the city. Don&rsquo;t trust the radio.</em> A few steps on, an official notice, stamped, promised that the city across the water was safe, and told everyone to report to a harbour there.</p>
+    <p>I looked up. Past the end of the island, over the water, was the city. A long grey line of towers, very clear, a few lights still in the windows. Between us and it a thin black thread went out over the sea and ended in nothing. Somebody had blown the bridge.</p>
+    <p>I took a knife from the car&rsquo;s glovebox, bound my head with a rag, and went down into the village.</p>
+    <hr>
+    <p>The first three days I did what anyone does. I found a house with a stove and a woodpile. I learned that the river water would make me sick, and that if I boiled it, it would not. I learned that the dead in Haldersfield did not stay dead, and that they were drawn to noise, to fire, and to the smell of a living thing. I learned to move at the edge of a street, to leave doors closed, to hold my breath when one passed.</p>
+    <p>I found a kitchen table set for breakfast, with nobody in the house. I found a delivery van with its rear doors open and a garden hose still running into the road.</p>
+    <p class="note">The rest of the story is in the game.</p>
+  </div>
 </section>
 
 <section id="roadmap" aria-labelledby="roadmap-h">
