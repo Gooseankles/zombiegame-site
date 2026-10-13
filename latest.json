@@ -1,16 +1,23 @@
 {
-    "build":  202610122335,
-    "version":  "Pre-alpha 0.2.2.0",
-    "date":  "2026-10-12 23:49",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610122335/zombiegame_2026-10-12_2335.zip",
-    "sha256":  "B7942385F916A4253C4C000B1D7F302674AC5F297C5944B39089CFBA8311661E",
-    "size":  1609430904,
+    "build":  202610130912,
+    "version":  "Pre-alpha 0.2.3.0",
+    "date":  "2026-10-13 09:20",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610130912/zombiegame_2026-10-13_0912.zip",
+    "sha256":  "2BDECEE99604CB1B9EA9A0007110F9707308BAE3CE7C47958AB26322D1A1A814",
+    "size":  1381927336,
     "notes":  [
-                  "The land has colour: green meadows, mossy forest floor where the spruce forest grows, grey rock on cliffs and steep mountain sides, stony fell above the trees, snow patches on the high peaks, sand and shingle at the sea, gravel river beds, wet mud by rivers and bogs, and asphalt and gravel roads.",
-                  "The sea is now the engine\u0027s ocean water (flat blue for now, waves and a proper shoreline come later), at sea level around the whole coast.",
-                  "The four lakes (Storwater, Mirror Lake, Blackwater Reservoir, High Tarn) now hold water at their own heights, with their islands showing.",
-                  "River water bodies are placed along all rivers (not visible in game yet).",
-                  "Rivers are placed as water bodies but do not draw yet, so river beds still show bare mud and stones. Lake water is a muddy brown for now."
+                  "A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.",
+                  "The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right.",
+                  "The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge.",
+                  "A small \"Talking\" mark shows bottom left while you hold V.",
+                  "Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world.",
+                  "Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version.",
+                  "Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept.",
+                  "Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.",
+                  "The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).",
+                  "The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.",
+                  "The download is about 0.3 GB smaller: the debug symbols are no longer in the zip.",
+                  "The download is about 100 MB smaller: two unused denoiser plugins are no longer included."
               ],
     "body":  [
                  {
@@ -19,27 +26,51 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "The land has colour: green meadows, mossy forest floor where the spruce forest grows, grey rock on cliffs and steep mountain sides, stony fell above the trees, snow patches on the high peaks, sand and shingle at the sea, gravel river beds, wet mud by rivers and bogs, and asphalt and gravel roads."
+                     "text":  "A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom."
                  },
                  {
                      "t":  "li",
-                     "text":  "The sea is now the engine\u0027s ocean water (flat blue for now, waves and a proper shoreline come later), at sea level around the whole coast."
+                     "text":  "The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right."
                  },
                  {
                      "t":  "li",
-                     "text":  "The four lakes (Storwater, Mirror Lake, Blackwater Reservoir, High Tarn) now hold water at their own heights, with their islands showing."
+                     "text":  "The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge."
                  },
                  {
                      "t":  "li",
-                     "text":  "River water bodies are placed along all rivers (not visible in game yet)."
-                 },
-                 {
-                     "t":  "h",
-                     "text":  "Known problems"
+                     "text":  "A small \"Talking\" mark shows bottom left while you hold V."
                  },
                  {
                      "t":  "li",
-                     "text":  "Rivers are placed as water bodies but do not draw yet, so river beds still show bare mud and stones. Lake water is a muddy brown for now."
+                     "text":  "Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels)."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "The download is about 0.3 GB smaller: the debug symbols are no longer in the zip."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "The download is about 100 MB smaller: two unused denoiser plugins are no longer included."
                  }
              ]
 }
