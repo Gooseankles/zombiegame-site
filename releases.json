@@ -4,7 +4,7 @@
         "version":  "Pre-alpha 0.2.3.0",
         "date":  "2026-10-13 09:20",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610130912/zombiegame_2026-10-13_0912.zip",
-        "sha256":  "2BDECEE99604CB1B9EA9A0007110F9707308BAE3CE7C47958AB26322D1A1A814",
+        "sha256":  "",
         "size":  1381927336,
         "notes":  [
                       "A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.",
@@ -17,8 +17,7 @@
                       "Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.",
                       "The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).",
                       "The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.",
-                      "The download is about 0.3 GB smaller: the debug symbols are no longer in the zip.",
-                      "The download is about 100 MB smaller: two unused denoiser plugins are no longer included."
+                      "The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."
                   ],
         "body":  [
                      {
@@ -67,11 +66,7 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "The download is about 0.3 GB smaller: the debug symbols are no longer in the zip."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The download is about 100 MB smaller: two unused denoiser plugins are no longer included."
+                         "text":  "The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."
                      }
                  ]
     },
