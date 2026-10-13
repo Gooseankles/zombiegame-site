@@ -99,6 +99,14 @@ section { display: grid; gap: 20px; }
 .road .now b::after { content: "Next"; margin-left: 8px; font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0 6px; border-radius: 2px; vertical-align: 3px; }
 .goal { border-left: 3px solid var(--done); background: var(--surface); padding: 12px 16px; max-width: 72ch; }
 
+/* ---------- screenshots ---------- */
+.shots { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.shots figure { margin: 0; display: grid; gap: 6px; }
+.shots a { display: block; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; background: var(--surface); }
+.shots img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .25s ease; }
+.shots a:hover img { transform: scale(1.03); }
+.shots figcaption { color: var(--muted); font-size: 13.5px; }
+
 footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); padding-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
 
 @media (max-width: 700px) {
@@ -113,6 +121,7 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <a class="mark" href="#top">Zombie Dawn</a>
     <nav aria-label="Sections">
       <a href="#download">Download</a>
+      <a href="#screenshots">Screenshots</a>
       <a href="#updates">Updates</a>
       <a href="#roadmap">Roadmap</a>
     </nav>
@@ -134,6 +143,26 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
       <p>When a new version is out, the game says so on its start screen and updates itself with one button.</p>
     </div>
   </div>
+</section>
+
+<section id="screenshots" aria-labelledby="shots-h">
+  <div class="section-head">
+    <span class="label">Screenshots</span>
+    <h2 id="shots-h">From the game</h2>
+    <p>Taken in the editor while building. Everything here is still being worked on. Click a picture to see it larger.</p>
+  </div>
+  <ul class="shots">
+    <li><figure><a href="screens/start.jpg"><img src="screens/start.jpg" alt="The Zombie Dawn start screen over a snowy mountain scene" loading="lazy"></a><figcaption>The new start screen</figcaption></figure></li>
+    <li><figure><a href="screens/village-air.jpg"><img src="screens/village-air.jpg" alt="The village seen from the air" loading="lazy"></a><figcaption>The village from the air</figcaption></figure></li>
+    <li><figure><a href="screens/village-dusk.jpg"><img src="screens/village-dusk.jpg" alt="The village street at dusk with the street lamps lit" loading="lazy"></a><figcaption>Street lamps come on at dusk, until the power fails</figcaption></figure></li>
+    <li><figure><a href="screens/zombie.jpg"><img src="screens/zombie.jpg" alt="A group of zombies on the village street at dusk" loading="lazy"></a><figcaption>A group on the village street at dusk</figcaption></figure></li>
+    <li><figure><a href="screens/valley.jpg"><img src="screens/valley.jpg" alt="A green valley at noon" loading="lazy"></a><figcaption>The valley at noon</figcaption></figure></li>
+    <li><figure><a href="screens/sea.jpg"><img src="screens/sea.jpg" alt="The sea seen from a beach" loading="lazy"></a><figcaption>The sea from the beach</figcaption></figure></li>
+    <li><figure><a href="screens/lake.jpg"><img src="screens/lake.jpg" alt="Storwater lake from its shore" loading="lazy"></a><figcaption>Storwater lake</figcaption></figure></li>
+    <li><figure><a href="screens/river.jpg"><img src="screens/river.jpg" alt="A river bank" loading="lazy"></a><figcaption>A river bank</figcaption></figure></li>
+    <li><figure><a href="screens/worlds.jpg"><img src="screens/worlds.jpg" alt="The list of saved worlds" loading="lazy"></a><figcaption>Solo play and saved worlds</figcaption></figure></li>
+    <li><figure><a href="screens/hud.jpg"><img src="screens/hud.jpg" alt="The in-game status display" loading="lazy"></a><figcaption>The in-game HUD</figcaption></figure></li>
+  </ul>
 </section>
 
 <section id="updates" aria-labelledby="updates-h">
