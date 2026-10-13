@@ -1,22 +1,24 @@
 {
-    "build":  202610130912,
-    "version":  "Pre-alpha 0.2.3.0",
-    "date":  "2026-10-13 09:20",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610130912/zombiegame_2026-10-13_0912.zip",
-    "sha256":  "",
-    "size":  1381927336,
+    "build":  202610131216,
+    "version":  "Pre-alpha 0.2.4.0",
+    "date":  "2026-10-13 12:25",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131216/zombiegame_2026-10-13_1216.zip",
+    "sha256":  "DAD2212C6DFBA1429CD963695B0EBD71728553014E0B6F40E7E379F9840563FC",
+    "size":  1579267481,
     "notes":  [
-                  "A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.",
-                  "The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right.",
-                  "The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge.",
-                  "A small \"Talking\" mark shows bottom left while you hold V.",
-                  "Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world.",
-                  "Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version.",
-                  "Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept.",
-                  "Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.",
-                  "The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).",
-                  "The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.",
-                  "The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."
+                  "Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark).",
+                  "A torch held in hand now gives light (craft one, then right-click it to take it in hand).",
+                  "One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river.",
+                  "Trees no longer grow inside village houses, and furniture no longer pokes through house walls.",
+                  "Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner\u0027s house, a handyman\u0027s place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves.",
+                  "Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot.",
+                  "Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had.",
+                  "Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise).",
+                  "The sea has gentle moving waves and the lakes small ripples.",
+                  "The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all.",
+                  "Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet).",
+                  "Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge.",
+                  "There is no foam where the sea meets the beach yet."
               ],
     "body":  [
                  {
@@ -25,47 +27,59 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom."
+                     "text":  "Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark)."
                  },
                  {
                      "t":  "li",
-                     "text":  "The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right."
+                     "text":  "A torch held in hand now gives light (craft one, then right-click it to take it in hand)."
                  },
                  {
                      "t":  "li",
-                     "text":  "The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge."
+                     "text":  "One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river."
                  },
                  {
                      "t":  "li",
-                     "text":  "A small \"Talking\" mark shows bottom left while you hold V."
+                     "text":  "Trees no longer grow inside village houses, and furniture no longer pokes through house walls."
                  },
                  {
                      "t":  "li",
-                     "text":  "Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world."
+                     "text":  "Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner\u0027s house, a handyman\u0027s place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves."
                  },
                  {
                      "t":  "li",
-                     "text":  "Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version."
+                     "text":  "Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot."
                  },
                  {
                      "t":  "li",
-                     "text":  "Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept."
+                     "text":  "Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had."
                  },
                  {
                      "t":  "li",
-                     "text":  "Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days."
+                     "text":  "Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise)."
                  },
                  {
                      "t":  "li",
-                     "text":  "The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels)."
+                     "text":  "The sea has gentle moving waves and the lakes small ripples."
                  },
                  {
                      "t":  "li",
-                     "text":  "The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor."
+                     "text":  "The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all."
+                 },
+                 {
+                     "t":  "h",
+                     "text":  "Known problems"
                  },
                  {
                      "t":  "li",
-                     "text":  "The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."
+                     "text":  "Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet)."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "There is no foam where the sea meets the beach yet."
                  }
              ]
 }

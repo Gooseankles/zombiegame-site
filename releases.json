@@ -1,5 +1,90 @@
 [
     {
+        "build":  202610131216,
+        "version":  "Pre-alpha 0.2.4.0",
+        "date":  "2026-10-13 12:25",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131216/zombiegame_2026-10-13_1216.zip",
+        "sha256":  "DAD2212C6DFBA1429CD963695B0EBD71728553014E0B6F40E7E379F9840563FC",
+        "size":  1579267481,
+        "notes":  [
+                      "Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark).",
+                      "A torch held in hand now gives light (craft one, then right-click it to take it in hand).",
+                      "One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river.",
+                      "Trees no longer grow inside village houses, and furniture no longer pokes through house walls.",
+                      "Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner\u0027s house, a handyman\u0027s place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves.",
+                      "Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot.",
+                      "Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had.",
+                      "Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise).",
+                      "The sea has gentle moving waves and the lakes small ripples.",
+                      "The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all.",
+                      "Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet).",
+                      "Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge.",
+                      "There is no foam where the sea meets the beach yet."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A torch held in hand now gives light (craft one, then right-click it to take it in hand)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Trees no longer grow inside village houses, and furniture no longer pokes through house walls."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner\u0027s house, a handyman\u0027s place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The sea has gentle moving waves and the lakes small ripples."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "There is no foam where the sea meets the beach yet."
+                     }
+                 ]
+    },
+    {
         "build":  202610130912,
         "version":  "Pre-alpha 0.2.3.0",
         "date":  "2026-10-13 09:20",
