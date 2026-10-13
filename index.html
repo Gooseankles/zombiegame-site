@@ -107,6 +107,27 @@ section { display: grid; gap: 20px; }
 .shots a:hover img { transform: scale(1.03); }
 .shots figcaption { color: var(--muted); font-size: 13.5px; }
 
+
+/* ---------- roadmap board ---------- */
+.rm { --c-surv:#4f9a3f; --c-world:#3f7fc0; --c-fight:#c24a3a; --c-craft:#d98a2b; --c-online:#8a5bc0; --c-look:#2fa3a0; display: grid; gap: 20px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13.5px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.dia { --c: var(--c-surv); position: relative; width: 30px; height: 30px; flex: none; display: inline-grid; place-items: center; }
+.dia::before { content: ""; position: absolute; inset: 3px; transform: rotate(45deg); background: var(--c); border-radius: 3px; box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--c) 55%, #000) inset; }
+.dia svg { position: relative; width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dia.surv { --c: var(--c-surv); } .dia.world { --c: var(--c-world); } .dia.fight { --c: var(--c-fight); }
+.dia.craft { --c: var(--c-craft); } .dia.online { --c: var(--c-online); } .dia.look { --c: var(--c-look); }
+.ongoing { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.ongoing li { display: grid; justify-items: center; gap: 6px; padding: 14px 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; text-align: center; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; }
+.board { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.board li { display: grid; grid-template-columns: 34px minmax(0, 1fr); align-items: center; gap: 4px 10px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; }
+.board li .dia { grid-row: 1 / span 2; }
+.board b { font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.1; }
+.board span.t { color: var(--muted); font-size: 13px; line-height: 1.3; }
+.board.done li { box-shadow: inset 3px 0 0 var(--done); }
+.board.done b::after { content: " \2713"; color: var(--done); }
+.board.now li { box-shadow: inset 3px 0 0 var(--accent); }
+
 footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); padding-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
 
 @media (max-width: 700px) {
@@ -158,10 +179,8 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <li><figure><a href="screens/zombie.jpg"><img src="screens/zombie.jpg" alt="A group of zombies on the village street at dusk" loading="lazy"></a><figcaption>A group on the village street at dusk</figcaption></figure></li>
     <li><figure><a href="screens/valley.jpg"><img src="screens/valley.jpg" alt="A green valley at noon" loading="lazy"></a><figcaption>The valley at noon</figcaption></figure></li>
     <li><figure><a href="screens/sea.jpg"><img src="screens/sea.jpg" alt="The sea seen from a beach" loading="lazy"></a><figcaption>The sea from the beach</figcaption></figure></li>
-    <li><figure><a href="screens/lake.jpg"><img src="screens/lake.jpg" alt="Storwater lake from its shore" loading="lazy"></a><figcaption>Storwater lake</figcaption></figure></li>
     <li><figure><a href="screens/river.jpg"><img src="screens/river.jpg" alt="A river bank" loading="lazy"></a><figcaption>A river bank</figcaption></figure></li>
     <li><figure><a href="screens/worlds.jpg"><img src="screens/worlds.jpg" alt="The list of saved worlds" loading="lazy"></a><figcaption>Solo play and saved worlds</figcaption></figure></li>
-    <li><figure><a href="screens/hud.jpg"><img src="screens/hud.jpg" alt="The in-game status display" loading="lazy"></a><figcaption>The in-game HUD</figcaption></figure></li>
   </ul>
 </section>
 
@@ -183,46 +202,62 @@ footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--lin
     <p>First one small village gets every part of the game and is made fun for an evening with friends. Then the world grows.</p>
   </div>
 
+  <div class="rm">
+  <div class="legend" aria-label="Icon legend"><span><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span>Survival</span><span><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span>World</span><span><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span>Combat and zombies</span><span><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span>Crafting and bases</span><span><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span>Online and saving</span><span><span class="dia look"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span>Look and sound</span></div>
+
+  <div class="stage">
+    <h3>Ongoing improvements</h3>
+    <ul class="ongoing"><li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span>Combat</li><li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span>World</li><li><span class="dia look"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span>Look</li><li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span>Survival</li><li><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span>Online</li><li><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span>Building</li></ul>
+  </div>
+
   <div class="stage">
     <h3>Built</h3>
-    <ul class="road">
-      <li class="built"><b>The map</b><span>12 &times; 12 km of coast, fjord, valley and mountains, with rivers, lakes and a sea; real sun, moon and seasons</span></li>
-      <li class="built"><b>Staying alive</b><span>Hunger, thirst, cold, bleeding and wet clothes</span></li>
-      <li class="built"><b>Loot</b><span>Clothes with pockets, backpacks, searchable furniture; different in every new world</span></li>
-      <li class="built"><b>The village</b><span>Ten houses to search, street lamps and a blackout after some days</span></li>
-      <li class="built"><b>Fire and crafting</b><span>Campfires, gathering wood and stone, tools and recipes</span></li>
-      <li class="built"><b>Zombies</b><span>They hear you, chase you and bite; a real model, a crowd in the distance</span></li>
-      <li class="built"><b>Melee</b><span>Knife, hammer, axe</span></li>
-      <li class="built"><b>Play online or alone</b><span>Steam, voice, your own server, several saved worlds, updates</span></li>
-      <li class="built"><b>Rain clothes</b><span>Rain jacket and trousers keep you dry</span></li>
+    <ul class="board done">
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>The map</b><span class="t">12 &times; 12 km of coast, fjord, valley and mountains; real sun, moon and seasons</span></li>
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Water</b><span class="t">A sea with waves, four lakes and seven rivers</span></li>
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>The village</b><span class="t">Ten houses to search, street lamps, a blackout after some days</span></li>
+      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Staying alive</b><span class="t">Hunger, thirst, cold, bleeding and wet clothes</span></li>
+      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Loot</b><span class="t">Pockets, backpacks, searchable furniture; different in every new world</span></li>
+      <li><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span><b>Fire and crafting</b><span class="t">Campfires, gathering wood and stone, tools and recipes</span></li>
+      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>Zombies</b><span class="t">They hear you, chase you and bite; a real model, a crowd in the distance</span></li>
+      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>Melee</b><span class="t">Knife, hammer, axe</span></li>
+      <li><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span><b>Online or alone</b><span class="t">Steam, voice, your own server, solo play, several saved worlds, updates</span></li>
+      <li><span class="dia look"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span><b>A new look</b><span class="t">Start screen, menus and a cleaner HUD; footsteps and sounds</span></li>
     </ul>
   </div>
 
   <div class="stage">
-    <h3>Now: finishing the village that holds the whole game</h3>
-    <ul class="road">
-      <li class="now"><b>Stamina and cold</b><span>Cold and tiredness that change how you play</span></li>
-      <li><b>Rarity and wear</b><span>Rare finds, and tools and weapons that wear out</span></li>
-      <li><b>Hands and bodies</b><span>Animated arms and bodies</span></li>
-      <li><b>A base</b><span>Take over a cabin or build one</span></li>
-      <li><b>First guns</b><span>Rare and loud</span></li>
-      <li><b>Weather</b><span>Rain and snow you can see</span></li>
-      <li><b>Death and spawns</b><span>Your things stay where you fell</span></li>
+    <h3>In development: finishing the village that holds the whole game</h3>
+    <ul class="board now">
+      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Stamina and cold</b><span class="t">Cold and tiredness that change how you play</span></li>
+      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Rarity and wear</b><span class="t">Rare finds, tools and weapons that wear out</span></li>
+      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>Hands and bodies</b><span class="t">Animated arms and bodies</span></li>
+      <li><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span><b>A base</b><span class="t">Take over a cabin or build one</span></li>
+      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>First guns</b><span class="t">Rare and loud</span></li>
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Weather</b><span class="t">Rain and snow you can see</span></li>
+      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Death and spawns</b><span class="t">Your things stay where you fell</span></li>
     </ul>
   </div>
 
   <div class="stage">
     <h3>After that</h3>
-    <ul class="road">
-      <li><b>Signs of the outbreak</b><span>Population signs that change as the world falls apart</span></li>
-      <li><b>Zombies at scale</b><span>Hundreds at once, and worse kinds</span></li>
-      <li><b>Bases and power</b><span>Building in full, generators, getting the lights back</span></li>
-      <li><b>The research lab</b><span>Clear it, power it, and work towards a cure</span></li>
-      <li><b>The rest of the map</b><span>Roads, more towns, farms, the dam</span></li>
-      <li><b>Military and bunkers</b><span>Hidden places with codes to find</span></li>
-      <li><b>Vehicles and a second map</b><span>Cars and boats, and another place to survive</span></li>
+    <ul class="board later">
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Signs of the outbreak</b><span class="t">Population signs that change as the world falls apart</span></li>
+      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>Zombies at scale</b><span class="t">Hundreds at once, and worse kinds</span></li>
+      <li><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span><b>Bases and power</b><span class="t">Building in full, generators, getting the lights back</span></li>
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>The research lab</b><span class="t">Clear it, power it, work towards a cure</span></li>
+      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Skills and animals</b><span class="t">Hunting, butchering and getting better at crafts</span></li>
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>The rest of the map</b><span class="t">Roads, more towns, farms, the dam</span></li>
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Military and bunkers</b><span class="t">Hidden places with codes to find</span></li>
+      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Vehicles and a second map</b><span class="t">Cars and boats, and another place to survive</span></li>
+      <li><span class="dia look"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span><b>Water and shore polish</b><span class="t">Foam, clear shallows, rain on the surface</span></li>
+      <li><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span><b>Server dashboard</b><span class="t">See who is playing and read problem reports</span></li>
+      <li><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span><b>On Steam</b><span class="t">Our own Steam page and automatic small updates</span></li>
     </ul>
   </div>
+  </div>
+
+  <p class="alpha">The stage becomes Alpha when one village is fun for a whole evening with friends. There is no release date yet.</p>
 
   <p class="goal"><b>The goal:</b> find and shut down the source of the outbreak, clear the zombies zone by zone, get power, water and the radio running again, and call in the ship that ends the game.</p>
 </section>
