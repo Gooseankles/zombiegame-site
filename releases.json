@@ -1,5 +1,70 @@
 [
     {
+        "build":  202610131410,
+        "version":  "Pre-alpha 0.2.5.0",
+        "date":  "2026-10-13 14:20",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131410/zombiegame_2026-10-13_1410.zip",
+        "sha256":  "1DB1E324CF6A4863D4C38293429F78D2ADD0DD94AFF877F8AF1099E400582417",
+        "size":  1619023950,
+        "notes":  [
+                      "Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump.",
+                      "Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference.",
+                      "Street lamps along the village road switch on at dusk and off at dawn while the power grid works.",
+                      "The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark.",
+                      "Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die.",
+                      "Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk.",
+                      "No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game.",
+                      "Houses have no working lamps yet, and nothing brings the power back yet.",
+                      "Every zombie wears the same clothes for now (one character model); more models will follow."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Street lamps along the village road switch on at dusk and off at dawn while the power grid works."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Houses have no working lamps yet, and nothing brings the power back yet."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Every zombie wears the same clothes for now (one character model); more models will follow."
+                     }
+                 ]
+    },
+    {
         "build":  202610131216,
         "version":  "Pre-alpha 0.2.4.0",
         "date":  "2026-10-13 12:25",
