@@ -1,17 +1,39 @@
 {
-    "build":  202610131639,
-    "version":  "Pre-alpha 0.2.5.1",
-    "date":  "2026-10-13 16:47",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131639/ZombieDawn_2026-10-13_1639.zip",
-    "sha256":  "BC0763C18283FA1B52519D0CB74E88D291DB2D42F8450FEF5E51C1651A1E8224",
-    "size":  1619116389,
+    "build":  202610131745,
+    "version":  "Pre-alpha 0.2.6.0",
+    "date":  "2026-10-13 17:54",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131745/ZombieDawn_2026-10-13_1745.zip",
+    "sha256":  "0813D690B75336179F5CC8CBE8B9F1C805F7427617D678FA46780FA6A1ACE665",
+    "size":  1619162812,
     "notes":  [
-                  "The game file is now called ZombieDawn.exe."
+                  "The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.",
+                  "Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.",
+                  "A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."
               ],
     "body":  [
                  {
+                     "t":  "h",
+                     "text":  "New"
+                 },
+                 {
                      "t":  "li",
-                     "text":  "The game file is now called ZombieDawn.exe."
+                     "text":  "The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."
+                 },
+                 {
+                     "t":  "h",
+                     "text":  "Known problems"
+                 },
+                 {
+                     "t":  "p",
+                     "text":  "-"
                  }
              ]
 }
