@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en" data-time="day" data-snow="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zombie Dawn</title>
+<meta name="description" content="Vintermark: the island of Zombie Dawn, an open-world zombie survival game for friends. The map, the places, and pictures from the game. Pre-alpha.">
+<!-- For friends while in development: kept out of search engines. Remove this line to be found. -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B1014'/%3E%3Cpath d='M7 24 L16 7 L25 24 Z' fill='none' stroke='%23D9763A' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+/* Self-hosted fonts (SIL Open Font License, see fonts/LICENSES.txt): no requests to other sites. */
+@font-face { font-family: "Barlow Condensed"; font-weight: 500; font-display: swap; src: url(fonts/barlow-condensed-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap; src: url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap; src: url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap; src: url(fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); }
+
+/* The game's own palette (UI/ZGUIStyle). */
+:root {
+  --night: #0B1014; --slate: #141C22; --raised: #1F2A32; --hover: #2B3A45; --line: #3A4B57;
+  --frost: #E4ECF0; --mist: #8D9FAA; --ice: #9CC4D6;
+  --ember: #D9763A; --ember-hover: #EE8A4B; --ember-pressed: #B35E2B; --ink-on-ember: #1A0E07;
+  --warn: #F0B04A; --danger: #EF5A4F; --good: #7CD08E;
+  --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --gutter: clamp(16px, 3vw, 36px);
+  --sky-a: #121a21; --sky-b: #0B1014;
+  color-scheme: dark;
+}
+:root[data-time="dusk"] { --sky-a: #2a1f22; --sky-b: #0B1014; }
+:root[data-time="night"] { --sky-a: #080c11; --sky-b: #05080a; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--night); color: var(--frost); font-family: var(--body); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; line-height: 1.05; text-wrap: balance; font-family: var(--display); }
+h2 { font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); letter-spacing: 0.03em; text-transform: uppercase; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--ice); outline-offset: 3px; border-radius: 3px; }
+.skip { position: absolute; left: 16px; top: -60px; background: var(--ember); color: var(--ink-on-ember); padding: 8px 14px; font-weight: 600; z-index: 100; border-radius: 3px; }
+.skip:focus { top: 12px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.label { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
+.label.ember { color: var(--ember); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 6px 18px; border-radius: 4px; border: 1.5px solid transparent; font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; background: var(--raised); color: var(--frost); }
+.btn:hover { background: var(--hover); }
+.btn-primary { background: var(--ember); color: var(--ink-on-ember); }
+.btn-primary:hover { background: var(--ember-hover); }
+.btn[aria-disabled="true"] { background: var(--raised); color: var(--mist); pointer-events: none; }
+.btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--display); font-weight: 600; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; color: var(--mist); white-space: nowrap; }
+.chip.good { color: var(--good); border-color: color-mix(in srgb, var(--good) 50%, transparent); }
+.chip.ember { color: var(--ember); border-color: color-mix(in srgb, var(--ember) 55%, transparent); }
+.chip.danger { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 55%, transparent); }
+
+/* ---------- top bar ---------- */
+.top { position: sticky; top: 0; z-index: 20; background: rgba(11, 16, 20, 0.86); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top-in { display: flex; align-items: center; gap: 10px 22px; min-height: 62px; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; margin-right: auto; }
+.mark svg { width: 20px; height: 20px; fill: none; stroke: var(--ember); stroke-width: 2.6; stroke-linejoin: round; }
+.top nav { display: flex; gap: 20px; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; }
+.top nav a { text-decoration: none; color: var(--mist); padding: 4px 0; }
+.top nav a:hover { color: var(--frost); }
+.top .btn { min-height: 36px; padding: 4px 14px; font-size: 15px; white-space: nowrap; }
+.mark { white-space: nowrap; }
+@media (max-width: 700px) { .top nav { display: none; } }
+@media (max-width: 480px) { .top .btn .ver { display: none; } }
+.still * { transition: none !important; }   /* ?shot=1: the screenshot script wants the finished state */
+
+/* ---------- snow over the page ---------- */
+.snow { position: fixed; inset: 0; z-index: 1; pointer-events: none; width: 100%; height: 100%; display: none; }
+:root[data-snow="1"] .snow { display: block; }
+
+/* ---------- hero band with the sky ---------- */
+.hero { position: relative; padding: clamp(48px, 7vw, 96px) 0 clamp(28px, 4vw, 48px); background: linear-gradient(180deg, var(--sky-a), var(--sky-b)); border-bottom: 1px solid var(--line); transition: background .6s; overflow: hidden; }
+.hero .stars { position: absolute; inset: 0; opacity: 0; transition: opacity .6s; pointer-events: none; background-image: radial-gradient(1px 1px at 12% 30%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 32% 12%, #E4ECF0 50%, transparent 51%), radial-gradient(1.5px 1.5px at 54% 40%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 70% 22%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 86% 48%, #E4ECF0 50%, transparent 51%), radial-gradient(1.5px 1.5px at 42% 66%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 93% 14%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 22% 72%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 63% 80%, #E4ECF0 50%, transparent 51%); }
+:root[data-time="night"] .hero .stars { opacity: 0.7; }
+.hero-in { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 40px; align-items: end; }
+@media (max-width: 760px) { .hero-in { grid-template-columns: 1fr; align-items: start; } }
+.hero h1 { font-weight: 700; font-size: clamp(52px, 9vw, 104px); letter-spacing: 0.08em; text-transform: uppercase; }
+.hero h1::after { content: ""; display: block; width: 64px; height: 3px; background: var(--ember); margin-top: 10px; }
+.hero .lede { max-width: 56ch; color: var(--frost); font-size: 17px; margin-top: 16px; }
+.hero .lede b { font-family: var(--display); font-weight: 600; font-size: 1.1em; letter-spacing: 0.02em; }
+
+/* ---------- controls ---------- */
+.controls { display: grid; gap: 12px; justify-items: start; }
+.seg { display: inline-flex; background: var(--slate); border: 1px solid var(--line); border-radius: 6px; padding: 3px; }
+.seg button { font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); background: none; border: 0; border-radius: 4px; padding: 6px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.seg button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.seg button[aria-pressed="true"] { background: var(--raised); color: var(--frost); box-shadow: inset 0 0 0 1px var(--line); }
+.seg button:hover { color: var(--frost); }
+.switch { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); background: var(--slate); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px 6px 8px; cursor: pointer; }
+.switch .knob { width: 36px; height: 20px; border-radius: 999px; background: var(--raised); border: 1px solid var(--line); position: relative; transition: background .2s; }
+.switch .knob::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--mist); transition: transform .2s, background .2s; }
+.switch[aria-checked="true"] { color: var(--frost); }
+.switch[aria-checked="true"] .knob { background: color-mix(in srgb, var(--ice) 35%, var(--raised)); }
+.switch[aria-checked="true"] .knob::after { transform: translateX(16px); background: var(--frost); }
+.controls .hint { font-size: 13px; color: var(--mist); }
+
+/* ---------- map section ---------- */
+.page { display: grid; gap: clamp(48px, 7vw, 96px); padding: 36px 0 72px; }
+.sec-head { display: grid; gap: 6px; }
+.sec-head p { color: var(--mist); max-width: 68ch; }
+.maparea { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .maparea { grid-template-columns: 1fr; } }
+.mapbox { position: relative; background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+.atlas { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 4px;
+  --land: #253431; --land-open: #2E4236; --region-starter: rgba(124, 208, 142, 0.06); --region-mid: rgba(156, 196, 214, 0.05); --region-late: rgba(239, 90, 79, 0.05);
+  --sea: #0E1F2C; --lake: #123044; --islet: #2E3E3E; --river: #4F8CAA; --dam: #D9CDB2;
+  --road-main: #D9C9A6; --road-sec: #AC9E84; --road-minor: #7E7A6A; --road-risk: #C9654F;
+  --mtn-top: #8593A0; --mtn-mid: #4E5D66; --fog: rgba(11, 16, 20, 0.5); --open-edge: rgba(124, 208, 142, 0.6);
+  --grid: rgba(228, 236, 240, 0.08); --grid-text: rgba(141, 159, 170, 0.7);
+  --text: #E4ECF0; --text-dim: #A4B4BD; --halo: #0B1014; --water-text: #8DB6CA;
+  --mark: #E4ECF0; --mark-ink: #0B1014; --glow: 0; --peak: #C5D1D8; --frame: #3A4B57; --hit-ring: #9CC4D6; --spawn: #D9763A; --lm: #F0B04A; }
+:root[data-time="dusk"] .atlas { --land: #1E292A; --land-open: #263630; --sea: #0B1824; --lake: #0F2536; --river: #3F7290; --road-main: #B8A98C; --road-sec: #8F846F; --mtn-top: #6C7A86; --mtn-mid: #3E4B54; --glow: 0.55; --text: #D9E0E4; --fog: rgba(8, 11, 14, 0.56); }
+:root[data-time="night"] .atlas { --land: #111A1E; --land-open: #15221C; --sea: #060C12; --lake: #08131B; --islet: #18242A; --river: #284556; --road-main: #7B7363; --road-sec: #5E584A; --road-minor: #45463D; --road-risk: #7A4238; --mtn-top: #39464E; --mtn-mid: #1E2930; --glow: 1; --text: #C5D1D8; --text-dim: #7C8E98; --water-text: #557A8C; --grid: rgba(228, 236, 240, 0.045); --fog: rgba(3, 5, 7, 0.66); --peak: #7C8E98; --open-edge: rgba(124, 208, 142, 0.4); }
+:root[data-snow="1"] .atlas { --land: #3A4A50; --land-open: #475A5B; --mtn-top: #F2F6F8; --mtn-mid: #C3D0D7; --road-main: #E8DEC6; --road-sec: #C1B59F; --islet: #4B5B60; --grid: rgba(228, 236, 240, 0.11); --text-dim: #C3D0D7; }
+:root[data-snow="1"][data-time="dusk"] .atlas { --land: #2E3B40; --land-open: #384A49; --mtn-top: #D5DEE3; --mtn-mid: #8C9CA5; }
+:root[data-snow="1"][data-time="night"] .atlas { --land: #19242A; --land-open: #1F2C2E; --mtn-top: #9DADB6; --mtn-mid: #55646C; --road-main: #8A8373; }
+.atlas .land { fill: var(--land); transition: fill .5s; }
+.atlas .region { fill: none; stroke: var(--grid); stroke-width: 1; stroke-dasharray: 3 4; }
+.atlas .region-starter { fill: var(--region-starter); } .atlas .region-midgame { fill: var(--region-mid); } .atlas .region-late { fill: var(--region-late); }
+.atlas .mtn-stop-top { stop-color: var(--mtn-top); stop-opacity: 0.95; transition: stop-color .5s; }
+.atlas .mtn-stop-mid { stop-color: var(--mtn-mid); stop-opacity: 0.85; transition: stop-color .5s; }
+.atlas .mtn-stop-base { stop-color: var(--mtn-mid); stop-opacity: 0; }
+.atlas .sea { fill: var(--sea); transition: fill .5s; }
+.atlas .lake { fill: var(--lake); stroke: var(--river); stroke-width: 0.8; stroke-opacity: 0.6; transition: fill .5s; }
+.atlas .islet { fill: var(--islet); }
+.atlas .river { fill: none; stroke: var(--river); stroke-linecap: round; stroke-linejoin: round; transition: stroke .5s; }
+.atlas .dam { stroke: var(--dam); stroke-width: 6; stroke-linecap: butt; }
+.atlas .road { fill: none; stroke-linecap: round; stroke-linejoin: round; transition: stroke .5s; }
+.atlas .road-main { stroke: var(--road-main); }
+.atlas .road-secondary { stroke: var(--road-sec); }
+.atlas .road-minor { stroke: var(--road-minor); stroke-dasharray: 4 3; }
+.atlas .road-risk { stroke: var(--road-risk); stroke-dasharray: 6 3; }
+.atlas .blocked circle { fill: var(--night); stroke: var(--danger); stroke-width: 1.5; }
+.atlas .blocked path { stroke: var(--danger); stroke-width: 1.5; }
+.atlas .fog { fill: var(--fog); pointer-events: none; transition: fill .5s; }
+.atlas .open-edge { fill: none; stroke: var(--open-edge); stroke-width: 1.2; stroke-dasharray: 5 4; pointer-events: none; }
+.atlas .glow { opacity: var(--glow); transition: opacity .6s; pointer-events: none; }
+.atlas .grid line { stroke: var(--grid); stroke-width: 1; }
+.atlas .grid-label { font-family: var(--mono); font-size: 13px; fill: var(--grid-text); text-anchor: middle; }
+.atlas .peak { fill: var(--peak); opacity: 0.9; }
+.atlas .label { font-family: var(--display); font-weight: 600; fill: var(--text); paint-order: stroke; stroke: var(--halo); stroke-width: 4px; stroke-linejoin: round; text-anchor: middle; pointer-events: none; letter-spacing: 0.04em; }
+.atlas .label-mtn { font-size: 17px; fill: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; }
+.atlas .label-alt { font-family: var(--mono); font-weight: 400; font-size: 12px; fill: var(--text-dim); }
+.atlas .label-water { font-size: 16px; font-style: italic; fill: var(--water-text); font-weight: 500; letter-spacing: 0.1em; }
+.atlas .label-lm { font-size: 14px; fill: var(--text-dim); text-anchor: start; font-weight: 500; }
+.atlas .label-lm-left { text-anchor: end; }
+.atlas .landmark rect { fill: none; stroke: var(--lm); stroke-width: 1.6; }
+.atlas .spawn { fill: var(--spawn); stroke: var(--halo); stroke-width: 1.2; }
+.atlas .place { cursor: pointer; outline: none; }
+.atlas .place .hit { fill: transparent; }
+.atlas .place .mark { fill: var(--mark); stroke: var(--halo); stroke-width: 2; transition: transform .15s; }
+.atlas .place-high_risk .mark { fill: var(--danger); }
+.atlas .place-outpost .mark { fill: var(--ice); }
+.atlas .place .label-place { font-size: 20px; }
+.atlas .place-city .label-place { font-size: 25px; text-transform: uppercase; letter-spacing: 0.1em; }
+.atlas .place-town .label-place { font-size: 22px; text-transform: uppercase; letter-spacing: 0.08em; }
+.atlas .place-hamlet .label-place, .atlas .place-outpost .label-place { font-size: 17px; font-weight: 500; fill: var(--text-dim); }
+.atlas .place:hover .mark, .atlas .place:focus-visible .mark { stroke: var(--hit-ring); stroke-width: 2.5; }
+.atlas .place:focus-visible .hit { stroke: var(--hit-ring); stroke-width: 1.5; stroke-dasharray: 3 2; }
+.atlas .place.active .hit { fill: rgba(217, 118, 58, 0.18); stroke: var(--ember); stroke-width: 1.5; }
+.atlas .place.active .mark { fill: var(--ember); stroke: var(--halo); }
+.atlas .place.active .label-place { fill: var(--frost); }
+.atlas .frame { fill: none; stroke: var(--frame); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 10px 6px 2px; font-size: 13px; color: var(--mist); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { display: inline-block; width: 14px; height: 14px; flex: none; }
+.legend .l-city { background: var(--frost); width: 11px; height: 11px; }
+.legend .l-village { background: var(--frost); border-radius: 50%; width: 10px; height: 10px; }
+.legend .l-outpost { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 11px solid var(--ice); }
+.legend .l-risk { background: var(--danger); width: 9px; height: 9px; transform: rotate(45deg); }
+.legend .l-start { background: var(--ember); border-radius: 50%; width: 9px; height: 9px; }
+.legend .l-lm { width: 8px; height: 8px; border: 1.5px solid var(--warn); transform: rotate(45deg); }
+.legend .l-road { height: 3px; width: 18px; background: #C9B08A; border-radius: 2px; }
+.legend .l-track { height: 0; width: 18px; border-top: 2px dashed #9B8E78; }
+.legend .l-open { width: 14px; height: 14px; border: 1px dashed var(--good); }
+.legend .l-fog { width: 14px; height: 14px; background: rgba(11, 16, 20, 0.6); border: 1px solid var(--line); }
+
+/* ---------- place card ---------- */
+.side { display: grid; gap: 14px; }
+.jump { display: grid; gap: 6px; }
+.jump select { font: inherit; font-size: 15px; color: var(--frost); background: var(--slate); border: 1px solid var(--line); border-radius: 6px; padding: 9px 12px; width: 100%; }
+.pcard { background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; display: grid; gap: 10px; min-height: 280px; position: relative; }
+.pcard::before { content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 3px; background: var(--ember); border-radius: 0 2px 2px 0; }
+.pcard h3 { font-weight: 700; font-size: 32px; letter-spacing: 0.02em; }
+.pcard .row { display: flex; flex-wrap: wrap; gap: 6px; }
+.pcard .meta { font-family: var(--mono); font-size: 12.5px; color: var(--mist); }
+.pcard p { color: var(--frost); font-size: 15px; }
+.pcard ul { margin: 0; padding-left: 18px; color: var(--mist); font-size: 14px; display: grid; gap: 2px; }
+.pcard ul li::marker { color: var(--line); }
+.pcard .k { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mist); }
+.start-note { background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; display: grid; gap: 6px; font-size: 14.5px; color: var(--mist); }
+.start-note b { font-family: var(--display); font-weight: 600; font-size: 17px; color: var(--frost); letter-spacing: 0.02em; }
+
+/* ---------- progression ---------- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 860px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+.steps li { background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+.steps li.now { border-color: color-mix(in srgb, var(--ember) 60%, var(--line)); box-shadow: inset 0 3px 0 var(--ember); }
+.steps .n { font-family: var(--mono); font-size: 12px; color: var(--mist); }
+.steps b { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: 0.02em; }
+.steps span { font-size: 13.5px; color: var(--mist); }
+
+/* ---------- gallery ---------- */
+.gallery { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.gallery button { all: unset; display: block; cursor: pointer; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: var(--slate); position: relative; width: 100%; }
+.gallery button:focus-visible { outline: 2px solid var(--ice); outline-offset: 3px; }
+.gallery img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .4s ease; }
+.gallery button:hover img { transform: scale(1.04); }
+.gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 12px 10px; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.03em; background: linear-gradient(180deg, transparent, rgba(11, 16, 20, 0.85)); }
+@media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } }
+dialog.lb { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1400px); width: 100%; color: var(--frost); }
+dialog.lb::backdrop { background: rgba(5, 8, 10, 0.9); backdrop-filter: blur(4px); }
+.lb-in { display: grid; gap: 10px; justify-items: center; }
+.lb-in img { max-width: 100%; max-height: 80vh; border-radius: 6px; border: 1px solid var(--line); display: block; }
+.lb-bar { display: flex; align-items: center; gap: 12px; width: 100%; max-width: 1280px; color: var(--mist); font-size: 14px; }
+.lb-bar .cap { flex: 1; font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--frost); letter-spacing: 0.02em; }
+.lb-bar button { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--raised); color: var(--frost); border: 1px solid var(--line); border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+.lb-bar button:hover { background: var(--hover); }
+
+footer { border-top: 1px solid var(--line); padding: 20px 0 36px; color: var(--mist); font-size: 13.5px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 24px; }
+.dl-meta { font-family: var(--mono); font-size: 12.5px; color: var(--mist); }
+.dl-meta .sample { color: var(--warn); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas class="snow" id="snow" aria-hidden="true"></canvas>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="mark" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg>Zombie Dawn</a>
+    <nav aria-label="Sections">
+      <a href="#map">The island</a>
+      <a href="#opening">How it opens</a>
+      <a href="#gallery">Pictures</a>
+    </nav>
+    <a class="btn btn-primary" id="dl" href="#gallery" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl-text">Download</span></a>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="title">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div>
+      <span class="label ember">Zombie Dawn &middot; pre-alpha</span>
+      <h1 id="title">Vintermark</h1>
+      <p class="lede"><b>Twelve by twelve kilometres</b> of fjord, valley, lake and mountain, cut off from the city across the water. Every new world starts in the central valley, in autumn, with the lamps still burning and the snow line on its way down.</p>
+    </div>
+    <div class="controls" role="group" aria-label="Time of day and weather on the map">
+      <div class="seg" id="time-seg">
+        <button type="button" data-time="day" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>Day</button>
+        <button type="button" data-time="dusk" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16h16M7 12a5 5 0 0 1 10 0M12 4v2M3 20h18"/></svg>Dusk</button>
+        <button type="button" data-time="night" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>Night</button>
+      </div>
+      <button type="button" class="switch" id="snow-toggle" role="switch" aria-checked="false"><span class="knob" aria-hidden="true"></span>Snow</button>
+      <p class="hint" id="hint">The lamps burn at dusk and night until the power fails.</p>
+    </div>
+  </div>
+</section>
+
+<main class="wrap page" id="main">
+
+<section id="map" aria-labelledby="map-h">
+  <div class="sec-head">
+    <span class="label">The island</span>
+    <h2 id="map-h">The map</h2>
+    <p>Click a place for what it holds. The grid is the game&rsquo;s own: 1 km squares, columns A to L west to east, rows 1 to 12 north to south, the same squares the game names when you report a problem. Only the central valley is open in the pre-alpha; the rest is still fog.</p>
+  </div>
+  <div class="maparea">
+    <div>
+      <div class="mapbox">
+<!-- MAP:START -->
+<svg class="atlas" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="atlas-title atlas-desc">
+<title id="atlas-title">Map of Vintermark</title>
+<desc id="atlas-desc">A 12 by 12 kilometre island: the Vellsund coast and city in the west, the central valley with Haldersfield and Lundford in the middle, Storwater lake to the south-west, the Blackwater dam and reservoir in the east and the Skar mountains in the north-east.</desc>
+<defs>
+<clipPath id="map-clip"><rect x="0" y="0" width="1200" height="1200"/></clipPath>
+<radialGradient id="mg-skar_ridge"><stop offset="0" class="mtn-stop-top"/><stop offset="0.45" class="mtn-stop-mid"/><stop offset="1" class="mtn-stop-base"/></radialGradient>
+<radialGradient id="mg-summit_mountain"><stop offset="0" class="mtn-stop-top"/><stop offset="0.45" class="mtn-stop-mid"/><stop offset="1" class="mtn-stop-base"/></radialGradient>
+<radialGradient id="mg-vargtind"><stop offset="0" class="mtn-stop-top"/><stop offset="0.45" class="mtn-stop-mid"/><stop offset="1" class="mtn-stop-base"/></radialGradient>
+<radialGradient id="mg-blackwater_heights"><stop offset="0" class="mtn-stop-top"/><stop offset="0.45" class="mtn-stop-mid"/><stop offset="1" class="mtn-stop-base"/></radialGradient>
+<radialGradient id="mg-west_coast_cliffs"><stop offset="0" class="mtn-stop-top"/><stop offset="0.45" class="mtn-stop-mid"/><stop offset="1" class="mtn-stop-base"/></radialGradient>
+<radialGradient id="mg-sorfjell"><stop offset="0" class="mtn-stop-top"/><stop offset="0.45" class="mtn-stop-mid"/><stop offset="1" class="mtn-stop-base"/></radialGradient>
+<radialGradient id="lamp-glow"><stop offset="0" stop-color="#F0B04A" stop-opacity="0.55"/><stop offset="0.5" stop-color="#D9763A" stop-opacity="0.18"/><stop offset="1" stop-color="#D9763A" stop-opacity="0"/></radialGradient>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" class="hatch-line"/></pattern>
+<mask id="fog-mask"><rect x="0" y="0" width="1200" height="1200" fill="#fff"/>
+<path d="M445.0,550.0 C455.8,557.5 472.5,586.7 510.0,595.0 C547.5,603.3 620.0,610.8 670.0,600.0 C720.0,589.2 782.5,564.2 810.0,530.0 C837.5,495.8 846.7,433.3 835.0,395.0 C823.3,356.7 784.2,314.2 740.0,300.0 C695.8,285.8 617.5,295.0 570.0,310.0 C522.5,325.0 475.8,350.0 455.0,390.0 C434.2,430.0 435.8,515.8 445.0,550.0 C454.2,584.2 499.2,587.5 510.0,595.0 Z" fill="#000"/>
+</mask>
+</defs>
+<g clip-path="url(#map-clip)">
+<rect class="land" x="0" y="0" width="1200" height="1200"/>
+<g class="regions">
+<path class="region region-starter" d="M390.0,630.0 C466.7,630.0 765.0,685.0 850.0,630.0 C935.0,575.0 928.3,373.3 900.0,300.0 C871.7,226.7 760.0,190.0 680.0,190.0 C600.0,190.0 468.3,226.7 420.0,300.0 C371.7,373.3 318.3,575.0 390.0,630.0 C461.7,685.0 773.3,630.0 850.0,630.0 Z"/>
+<path class="region region-midgame" d="M250.0,850.0 C316.7,850.0 560.0,886.7 650.0,850.0 C740.0,813.3 795.0,685.0 790.0,630.0 C785.0,575.0 691.7,528.3 620.0,520.0 C548.3,511.7 421.7,525.0 360.0,580.0 C298.3,635.0 201.7,805.0 250.0,850.0 C298.3,895.0 583.3,850.0 650.0,850.0 Z"/>
+<path class="region region-late" d="M650.0,400.0 C671.7,400.0 755.8,387.5 780.0,400.0 C804.2,412.5 773.3,462.5 795.0,475.0 C816.7,487.5 886.7,487.5 910.0,475.0 C933.3,462.5 886.7,412.5 935.0,400.0 C983.3,387.5 1155.8,466.7 1200.0,400.0 C1244.2,333.3 1285.0,66.7 1200.0,0.0 C1115.0,-66.7 781.7,-66.7 690.0,0.0 C598.3,66.7 635.0,333.3 650.0,400.0 C665.0,466.7 758.3,400.0 780.0,400.0 Z"/>
+<path class="region region-midgame" d="M0.0,750.0 C65.0,750.0 318.3,816.7 390.0,750.0 C461.7,683.3 451.7,458.3 430.0,350.0 C408.3,241.7 331.7,125.0 260.0,100.0 C188.3,75.0 43.3,91.7 0.0,200.0 C-43.3,308.3 -65.0,658.3 0.0,750.0 C65.0,841.7 325.0,750.0 390.0,750.0 Z"/>
+<path class="region region-late" d="M750.0,900.0 C816.7,900.0 1075.0,958.3 1150.0,900.0 C1225.0,841.7 1241.7,630.0 1200.0,550.0 C1158.3,470.0 978.3,415.0 900.0,420.0 C821.7,425.0 755.0,500.0 730.0,580.0 C705.0,660.0 680.0,846.7 750.0,900.0 C820.0,953.3 1083.3,900.0 1150.0,900.0 Z"/>
+<path class="region region-midgame" d="M0.0,1200.0 C200.0,1200.0 1000.0,1250.0 1200.0,1200.0 C1400.0,1150.0 1275.0,950.0 1200.0,900.0 C1125.0,850.0 841.7,908.3 750.0,900.0 C658.3,891.7 733.3,858.3 650.0,850.0 C566.7,841.7 358.3,863.3 250.0,850.0 C141.7,836.7 41.7,711.7 0.0,770.0 C-41.7,828.3 -200.0,1128.3 0.0,1200.0 C200.0,1271.7 1000.0,1200.0 1200.0,1200.0 Z"/>
+</g>
+<g class="mountains">
+<circle class="mtn" cx="790.0" cy="270.0" r="155.0" fill="url(#mg-skar_ridge)"/>
+<circle class="mtn" cx="965.0" cy="195.0" r="105.0" fill="url(#mg-summit_mountain)"/>
+<circle class="mtn" cx="1100.0" cy="220.0" r="120.0" fill="url(#mg-vargtind)"/>
+<circle class="mtn" cx="1020.0" cy="600.0" r="115.0" fill="url(#mg-blackwater_heights)"/>
+<circle class="mtn" cx="250.0" cy="300.0" r="70.0" fill="url(#mg-west_coast_cliffs)"/>
+<circle class="mtn" cx="990.0" cy="1030.0" r="120.0" fill="url(#mg-sorfjell)"/>
+</g>
+<g class="water">
+<path class="sea" d="M0.0,770.0 C0.0,770.0 -8.3,776.7 0.0,770.0 C8.3,763.3 35.0,745.0 50.0,730.0 C65.0,715.0 79.2,697.5 90.0,680.0 C100.8,662.5 113.3,643.3 115.0,625.0 C116.7,606.7 107.5,588.3 100.0,570.0 C92.5,551.7 71.7,533.3 70.0,515.0 C68.3,496.7 90.8,479.2 90.0,460.0 C89.2,440.8 65.8,418.3 65.0,400.0 C64.2,381.7 87.5,368.3 85.0,350.0 C82.5,331.7 64.2,310.0 50.0,290.0 C35.8,270.0 8.3,240.0 0.0,230.0 C-8.3,220.0 0.8,230.0 0.0,230.0 C-0.8,230.0 -4.2,140.0 -5.0,230.0 C-5.8,320.0 -5.8,680.0 -5.0,770.0 C-4.2,860.0 -0.8,770.0 0.0,770.0 C0.8,770.0 0.0,770.0 0.0,770.0 Z"/>
+<path class="sea" d="M0.0,230.0 C30.0,211.7 120.0,146.7 180.0,120.0 C240.0,93.3 303.3,75.0 360.0,70.0 C416.7,65.0 465.0,95.0 520.0,90.0 C575.0,85.0 633.3,55.0 690.0,40.0 C746.7,25.0 775.0,6.7 860.0,0.0 C945.0,-6.7 1142.5,0.8 1200.0,0.0 C1257.5,-0.8 1405.8,-4.2 1205.0,-5.0 C1004.2,-5.8 196.7,-44.2 -5.0,-5.0 C-206.7,34.2 -5.8,190.8 -5.0,230.0 C-4.2,269.2 -30.8,248.3 0.0,230.0 C30.8,211.7 150.0,138.3 180.0,120.0 Z"/>
+<path class="sea fjord" d="M0.0,770.0 C10.8,766.7 44.2,763.3 65.0,750.0 C85.8,736.7 110.0,713.3 125.0,690.0 C140.0,666.7 152.5,636.7 155.0,610.0 C157.5,583.3 147.5,554.2 140.0,530.0 C132.5,505.8 119.2,486.7 110.0,465.0 C100.8,443.3 95.0,419.2 85.0,400.0 C75.0,380.8 64.2,355.0 50.0,350.0 C35.8,345.0 8.3,300.0 0.0,370.0 C-8.3,440.0 -10.8,706.7 0.0,770.0 C10.8,833.3 54.2,753.3 65.0,750.0 Z"><title>Vellsund Fjord</title></path>
+<path class="sea fjord" d="M0.0,270.0 C15.0,266.7 60.8,261.7 90.0,250.0 C119.2,238.3 146.7,218.3 175.0,200.0 C203.3,181.7 237.5,160.0 260.0,140.0 C282.5,120.0 310.0,103.3 310.0,80.0 C310.0,56.7 311.7,13.3 260.0,0.0 C208.3,-13.3 43.3,-45.0 0.0,0.0 C-43.3,45.0 -15.0,228.3 0.0,270.0 C15.0,311.7 75.0,253.3 90.0,250.0 Z"><title>Northreach Fjord</title></path>
+<path class="sea fjord" d="M530.0,1200.0 C533.3,1188.3 545.0,1150.0 550.0,1130.0 C555.0,1110.0 553.3,1094.2 560.0,1080.0 C566.7,1065.8 578.3,1051.7 590.0,1045.0 C601.7,1038.3 616.7,1036.7 630.0,1040.0 C643.3,1043.3 660.0,1053.3 670.0,1065.0 C680.0,1076.7 681.7,1094.2 690.0,1110.0 C698.3,1125.8 711.7,1145.0 720.0,1160.0 C728.3,1175.0 771.7,1193.3 740.0,1200.0 C708.3,1206.7 561.7,1211.7 530.0,1200.0 C498.3,1188.3 546.7,1141.7 550.0,1130.0 Z"><title>Sorfjord</title></path>
+<path class="lake" d="M365.0,760.0 C369.2,750.8 380.0,720.8 390.0,705.0 C400.0,689.2 410.0,674.2 425.0,665.0 C440.0,655.8 461.7,649.2 480.0,650.0 C498.3,650.8 520.8,659.2 535.0,670.0 C549.2,680.8 563.3,700.0 565.0,715.0 C566.7,730.0 556.7,746.7 545.0,760.0 C533.3,773.3 514.2,789.2 495.0,795.0 C475.8,800.8 451.7,800.8 430.0,795.0 C408.3,789.2 371.7,775.0 365.0,760.0 C358.3,745.0 385.8,714.2 390.0,705.0 Z"><title>Storwater, 190 m</title></path>
+<circle class="islet" cx="470.0" cy="725.0" r="11.5"/>
+<circle class="islet" cx="515.0" cy="705.0" r="7.0"/>
+<path class="lake" d="M770.0,810.0 C775.8,804.2 790.8,782.5 805.0,775.0 C819.2,767.5 840.0,762.5 855.0,765.0 C870.0,767.5 890.0,780.0 895.0,790.0 C900.0,800.0 895.0,816.7 885.0,825.0 C875.0,833.3 850.0,839.2 835.0,840.0 C820.0,840.8 805.8,835.0 795.0,830.0 C784.2,825.0 768.3,819.2 770.0,810.0 C771.7,800.8 799.2,780.8 805.0,775.0 Z"><title>Mirror Lake, 355 m</title></path>
+<circle class="islet" cx="840.0" cy="800.0" r="6.5"/>
+<path class="lake" d="M850.0,745.0 C857.5,740.8 879.2,723.3 895.0,720.0 C910.8,716.7 929.2,719.2 945.0,725.0 C960.8,730.8 975.0,752.5 990.0,755.0 C1005.0,757.5 1021.7,750.8 1035.0,740.0 C1048.3,729.2 1069.2,705.8 1070.0,690.0 C1070.8,674.2 1051.7,655.0 1040.0,645.0 C1028.3,635.0 1013.3,629.2 1000.0,630.0 C986.7,630.8 973.3,649.2 960.0,650.0 C946.7,650.8 933.3,631.7 920.0,635.0 C906.7,638.3 891.7,651.7 880.0,670.0 C868.3,688.3 847.5,736.7 850.0,745.0 C852.5,753.3 887.5,724.2 895.0,720.0 Z"><title>Blackwater Reservoir, 395 m</title></path>
+<circle class="islet" cx="990.0" cy="690.0" r="9.5"/>
+<path class="lake" d="M1040.0,325.0 C1044.2,321.7 1056.7,306.7 1065.0,305.0 C1073.3,303.3 1084.2,309.2 1090.0,315.0 C1095.8,320.8 1102.5,333.3 1100.0,340.0 C1097.5,346.7 1083.3,353.3 1075.0,355.0 C1066.7,356.7 1055.8,355.0 1050.0,350.0 C1044.2,345.0 1037.5,332.5 1040.0,325.0 C1042.5,317.5 1060.8,308.3 1065.0,305.0 Z"><title>High Tarn, 760 m</title></path>
+<circle class="islet" cx="35.0" cy="665.0" r="9.5"><title>North Skerry</title></circle>
+<circle class="islet" cx="52.0" cy="610.0" r="14.0"><title>Gull Island</title></circle>
+<circle class="islet" cx="30.0" cy="290.0" r="18.0"><title>Lighthouse Isle</title></circle>
+<circle class="islet" cx="75.0" cy="715.0" r="8.5"><title>Outer Vell</title></circle>
+</g>
+<g class="rivers">
+<path class="river" d="M930.0,510.0 C920.0,510.8 890.0,515.8 870.0,515.0 C850.0,514.2 828.3,512.5 810.0,505.0 C791.7,497.5 780.0,480.5 760.0,470.0 C740.0,459.5 705.8,446.2 690.0,442.0 C674.2,437.8 674.2,443.7 665.0,445.0 C655.8,446.3 645.8,448.3 635.0,450.0 C624.2,451.7 616.7,452.5 600.0,455.0 C583.3,457.5 557.5,460.8 535.0,465.0 C512.5,469.2 489.2,475.8 465.0,480.0 C440.8,484.2 415.8,487.5 390.0,490.0 C364.2,492.5 330.8,499.2 310.0,495.0 C289.2,490.8 280.8,475.8 265.0,465.0 C249.2,454.2 234.2,438.3 215.0,430.0 C195.8,421.7 172.5,417.5 150.0,415.0 C127.5,412.5 91.7,415.0 80.0,415.0" stroke-width="3.0"/>
+<path class="river" d="M1100.0,520.0 C1093.3,528.3 1075.0,554.2 1060.0,570.0 C1045.0,585.8 1026.7,600.8 1010.0,615.0 C993.3,629.2 975.0,642.5 960.0,655.0 C945.0,667.5 932.5,678.3 920.0,690.0 C907.5,701.7 894.2,714.7 885.0,725.0 C875.8,735.3 875.8,743.7 865.0,752.0 C854.2,760.3 834.2,767.0 820.0,775.0 C805.8,783.0 794.2,789.2 780.0,800.0 C765.8,810.8 750.0,825.0 735.0,840.0 C720.0,855.0 703.3,871.7 690.0,890.0 C676.7,908.3 664.2,930.8 655.0,950.0 C645.8,969.2 640.8,987.5 635.0,1005.0 C629.2,1022.5 622.5,1046.7 620.0,1055.0" stroke-width="4.5"/>
+<path class="river" d="M620.0,695.0 C616.7,697.5 607.5,704.2 600.0,710.0 C592.5,715.8 583.3,725.0 575.0,730.0 C566.7,735.0 554.2,738.3 550.0,740.0" stroke-width="2.0"/>
+<path class="river" d="M495.0,775.0 C490.0,779.3 473.3,794.3 465.0,801.0 C456.7,807.7 452.5,809.3 445.0,815.0 C437.5,820.7 428.3,829.2 420.0,835.0 C411.7,840.8 397.5,837.5 395.0,850.0 C392.5,862.5 395.8,890.0 405.0,910.0 C414.2,930.0 431.7,951.7 450.0,970.0 C468.3,988.3 495.8,1008.3 515.0,1020.0 C534.2,1031.7 551.7,1034.7 565.0,1040.0 C578.3,1045.3 590.0,1050.0 595.0,1052.0" stroke-width="2.0"/>
+<path class="river" d="M855.0,810.0 C858.3,813.3 869.2,823.3 875.0,830.0 C880.8,836.7 885.8,843.3 890.0,850.0 C894.2,856.7 901.7,855.0 900.0,870.0 C898.3,885.0 891.7,916.7 880.0,940.0 C868.3,963.3 848.3,988.3 830.0,1010.0 C811.7,1031.7 788.3,1054.2 770.0,1070.0 C751.7,1085.8 734.2,1097.5 720.0,1105.0 C705.8,1112.5 690.8,1113.3 685.0,1115.0" stroke-width="2.0"/>
+</g>
+<line class="dam" x1="850.0" y1="742.0" x2="880.0" y2="762.0"><title>Blackwater Dam</title></line>
+<g class="roads">
+<path class="road road-main" d="M505.0,480.0 C495.0,478.3 465.0,475.0 445.0,470.0 C425.0,465.0 405.8,454.7 385.0,450.0 C364.2,445.3 340.8,440.3 320.0,442.0 C299.2,443.7 281.7,453.7 260.0,460.0 C238.3,466.3 201.7,476.7 190.0,480.0" stroke-width="3.4"><title>fjord road</title></path>
+<g class="blocked" transform="translate(370.0,452.0)"><circle r="5.5"/><path d="M-3-3 3 3M-3 3 3-3"/><title>rockslide at the Skar coastal cliffs</title></g>
+<path class="road road-main" d="M505.0,480.0 C511.7,477.0 530.8,467.0 545.0,462.0 C559.2,457.0 576.7,452.8 590.0,450.0 C603.3,447.2 612.5,445.8 625.0,445.0 C637.5,444.2 658.3,445.0 665.0,445.0" stroke-width="3.4"><title>valley road</title></path>
+<g class="blocked" transform="translate(570.0,454.0)"><circle r="5.5"/><path d="M-3-3 3 3M-3 3 3-3"/><title>abandoned bus and roadblock</title></g>
+<path class="road road-secondary" d="M665.0,445.0 C672.5,447.2 696.2,450.5 710.0,458.0 C723.8,465.5 735.5,477.2 748.0,490.0 C760.5,502.8 778.8,527.5 785.0,535.0" stroke-width="2.4"><title>east valley road</title></path>
+<path class="road road-secondary" d="M190.0,480.0 C200.0,488.3 230.0,511.7 250.0,530.0 C270.0,548.3 295.0,570.8 310.0,590.0 C325.0,609.2 333.3,626.7 340.0,645.0 C346.7,663.3 348.3,690.8 350.0,700.0" stroke-width="2.4"><title>lake road</title></path>
+<path class="road road-minor" d="M350.0,700.0 C349.2,709.2 339.2,737.5 345.0,755.0 C350.8,772.5 369.2,794.2 385.0,805.0 C400.8,815.8 420.8,819.2 440.0,820.0 C459.2,820.8 480.0,815.8 500.0,810.0 C520.0,804.2 541.7,794.2 560.0,785.0 C578.3,775.8 601.7,760.0 610.0,755.0" stroke-width="1.8"><title>forest access</title></path>
+<path class="road road-main" d="M785.0,535.0 C789.2,539.2 802.5,550.8 810.0,560.0 C817.5,569.2 823.3,580.0 830.0,590.0 C836.7,600.0 843.3,610.0 850.0,620.0 C856.7,630.0 867.5,640.0 870.0,650.0 C872.5,660.0 869.2,670.0 865.0,680.0 C860.8,690.0 850.8,702.0 845.0,710.0 C839.2,718.0 832.5,725.0 830.0,728.0" stroke-width="3.4"><title>dam approach</title></path>
+<g class="blocked" transform="translate(856.0,629.0)"><circle r="5.5"/><path d="M-3-3 3 3M-3 3 3-3"/><title>collapsed maintenance bridge</title></g>
+<path class="road road-secondary" d="M830.0,728.0 C833.3,730.3 841.7,736.3 850.0,742.0 C858.3,747.7 864.2,759.8 880.0,762.0 C895.8,764.2 926.7,752.0 945.0,755.0 C963.3,758.0 975.0,776.7 990.0,780.0 C1005.0,783.3 1020.0,772.5 1035.0,775.0 C1050.0,777.5 1072.5,791.7 1080.0,795.0" stroke-width="2.4"><title>reservoir service road</title></path>
+<path class="road road-risk" d="M900.0,300.0 C895.0,295.8 877.5,285.0 870.0,275.0 C862.5,265.0 855.0,250.8 855.0,240.0 C855.0,229.2 862.5,219.2 870.0,210.0 C877.5,200.8 889.2,191.7 900.0,185.0 C910.8,178.3 923.3,171.7 935.0,170.0 C946.7,168.3 959.2,170.8 970.0,175.0 C980.8,179.2 992.5,185.8 1000.0,195.0 C1007.5,204.2 1015.0,219.2 1015.0,230.0 C1015.0,240.8 1007.5,251.7 1000.0,260.0 C992.5,268.3 980.8,275.0 970.0,280.0 C959.2,285.0 946.7,286.7 935.0,290.0 C923.3,293.3 905.8,298.3 900.0,300.0" stroke-width="2.4"><title>summit ring road</title></path>
+<g class="blocked" transform="translate(885.0,287.5)"><circle r="5.5"/><path d="M-3-3 3 3M-3 3 3-3"/><title>washed-out hairpin and abandoned snowplough</title></g>
+<path class="road road-minor" d="M900.0,300.0 C903.3,295.0 913.3,280.0 920.0,270.0 C926.7,260.0 932.5,252.5 940.0,240.0 C947.5,227.5 960.8,202.5 965.0,195.0" stroke-width="1.6"><title>summit final spur</title></path>
+<path class="road road-risk" d="M965.0,195.0 C971.7,190.0 991.7,172.5 1005.0,165.0 C1018.3,157.5 1030.8,152.5 1045.0,150.0 C1059.2,147.5 1082.5,150.0 1090.0,150.0" stroke-width="2.4"><title>military pass</title></path>
+<g class="blocked" transform="translate(1045.0,150.0)"><circle r="5.5"/><path d="M-3-3 3 3M-3 3 3-3"/><title>military gate and wrecked armoured vehicle</title></g>
+<path class="road road-minor" d="M190.0,480.0 C185.0,471.7 170.8,446.7 160.0,430.0 C149.2,413.3 135.0,395.0 125.0,380.0 C115.0,365.0 106.7,351.7 100.0,340.0 C93.3,328.3 87.5,315.0 85.0,310.0" stroke-width="1.8"><title>old quay coastal road</title></path>
+<path class="road road-secondary" d="M535.0,1075.0 C534.2,1063.3 540.0,1025.0 530.0,1005.0 C520.0,985.0 491.7,972.5 475.0,955.0 C458.3,937.5 438.3,916.7 430.0,900.0 C421.7,883.3 423.3,868.3 425.0,855.0 C426.7,841.7 437.5,825.8 440.0,820.0" stroke-width="2.4"><title>fjordbotn road</title></path>
+</g>
+<rect class="fog" x="0" y="0" width="1200" height="1200" mask="url(#fog-mask)"/>
+<path class="open-edge" d="M445.0,550.0 C455.8,557.5 472.5,586.7 510.0,595.0 C547.5,603.3 620.0,610.8 670.0,600.0 C720.0,589.2 782.5,564.2 810.0,530.0 C837.5,495.8 846.7,433.3 835.0,395.0 C823.3,356.7 784.2,314.2 740.0,300.0 C695.8,285.8 617.5,295.0 570.0,310.0 C522.5,325.0 475.8,350.0 455.0,390.0 C434.2,430.0 435.8,515.8 445.0,550.0 C454.2,584.2 499.2,587.5 510.0,595.0 Z"/>
+<g class="glows" aria-hidden="true">
+<circle class="glow" cx="665.0" cy="445.0" r="30" fill="url(#lamp-glow)"/>
+<circle class="glow" cx="505.0" cy="480.0" r="30" fill="url(#lamp-glow)"/>
+<circle class="glow" cx="350.0" cy="700.0" r="30" fill="url(#lamp-glow)"/>
+<circle class="glow" cx="190.0" cy="480.0" r="42" fill="url(#lamp-glow)"/>
+<circle class="glow" cx="235.0" cy="585.0" r="60" fill="url(#lamp-glow)"/>
+<circle class="glow" cx="850.0" cy="410.0" r="60" fill="url(#lamp-glow)"/>
+</g>
+<g class="grid" aria-hidden="true">
+<line x1="100" y1="0" x2="100" y2="1200"/><line x1="0" y1="100" x2="1200" y2="100"/>
+<line x1="200" y1="0" x2="200" y2="1200"/><line x1="0" y1="200" x2="1200" y2="200"/>
+<line x1="300" y1="0" x2="300" y2="1200"/><line x1="0" y1="300" x2="1200" y2="300"/>
+<line x1="400" y1="0" x2="400" y2="1200"/><line x1="0" y1="400" x2="1200" y2="400"/>
+<line x1="500" y1="0" x2="500" y2="1200"/><line x1="0" y1="500" x2="1200" y2="500"/>
+<line x1="600" y1="0" x2="600" y2="1200"/><line x1="0" y1="600" x2="1200" y2="600"/>
+<line x1="700" y1="0" x2="700" y2="1200"/><line x1="0" y1="700" x2="1200" y2="700"/>
+<line x1="800" y1="0" x2="800" y2="1200"/><line x1="0" y1="800" x2="1200" y2="800"/>
+<line x1="900" y1="0" x2="900" y2="1200"/><line x1="0" y1="900" x2="1200" y2="900"/>
+<line x1="1000" y1="0" x2="1000" y2="1200"/><line x1="0" y1="1000" x2="1200" y2="1000"/>
+<line x1="1100" y1="0" x2="1100" y2="1200"/><line x1="0" y1="1100" x2="1200" y2="1100"/>
+<text x="50" y="14" class="grid-label">A</text>
+<text x="8" y="54" class="grid-label">1</text>
+<text x="150" y="14" class="grid-label">B</text>
+<text x="8" y="154" class="grid-label">2</text>
+<text x="250" y="14" class="grid-label">C</text>
+<text x="8" y="254" class="grid-label">3</text>
+<text x="350" y="14" class="grid-label">D</text>
+<text x="8" y="354" class="grid-label">4</text>
+<text x="450" y="14" class="grid-label">E</text>
+<text x="8" y="454" class="grid-label">5</text>
+<text x="550" y="14" class="grid-label">F</text>
+<text x="8" y="554" class="grid-label">6</text>
+<text x="650" y="14" class="grid-label">G</text>
+<text x="8" y="654" class="grid-label">7</text>
+<text x="750" y="14" class="grid-label">H</text>
+<text x="8" y="754" class="grid-label">8</text>
+<text x="850" y="14" class="grid-label">I</text>
+<text x="8" y="854" class="grid-label">9</text>
+<text x="950" y="14" class="grid-label">J</text>
+<text x="8" y="954" class="grid-label">10</text>
+<text x="1050" y="14" class="grid-label">K</text>
+<text x="8" y="1054" class="grid-label">11</text>
+<text x="1150" y="14" class="grid-label">L</text>
+<text x="8" y="1154" class="grid-label">12</text>
+</g>
+<g class="peaks">
+<path class="peak" d="M781.0,276.0 L790.0,261.0 L799.0,276.0 Z"/>
+<text class="label label-mtn" x="790.0" y="296.0">Skar Ridge</text>
+<text class="label label-alt" x="790.0" y="311.0">1000 m</text>
+<path class="peak" d="M956.0,201.0 L965.0,186.0 L974.0,201.0 Z"/>
+<text class="label label-mtn" x="865.0" y="217.0">Skar Summit</text>
+<text class="label label-alt" x="865.0" y="232.0">980 m</text>
+<path class="peak" d="M1091.0,226.0 L1100.0,211.0 L1109.0,226.0 Z"/>
+<text class="label label-mtn" x="1100.0" y="246.0">Vargtind</text>
+<text class="label label-alt" x="1100.0" y="261.0">1020 m</text>
+<path class="peak" d="M1011.0,606.0 L1020.0,591.0 L1029.0,606.0 Z"/>
+<text class="label label-mtn" x="1020.0" y="626.0">Blackwater Heights</text>
+<text class="label label-alt" x="1020.0" y="641.0">920 m</text>
+<path class="peak" d="M241.0,306.0 L250.0,291.0 L259.0,306.0 Z"/>
+<text class="label label-mtn" x="250.0" y="326.0">Vellsund Cliffs</text>
+<text class="label label-alt" x="250.0" y="341.0">640 m</text>
+<path class="peak" d="M981.0,1036.0 L990.0,1021.0 L999.0,1036.0 Z"/>
+<text class="label label-mtn" x="990.0" y="1056.0">Sorfjell</text>
+<text class="label label-alt" x="990.0" y="1071.0">880 m</text>
+</g>
+<g class="water-labels">
+<text class="label label-water" x="470.0" y="727.9">Storwater</text>
+<text class="label label-water" x="834.3" y="809.0">Mirror Lake</text>
+<text class="label label-water" x="962.3" y="695.4">Blackwater Reservoir</text>
+<text class="label label-water" x="1070.0" y="335.7">High Tarn</text>
+<text class="label label-water" x="66.1" y="552.3">Vellsund Fjord</text>
+<text class="label label-water" x="156.4" y="138.3">Northreach Fjord</text>
+<text class="label label-water" x="631.1" y="1118.4">Sorfjord</text>
+<text class="label label-water" x="300" y="80">The sea</text>
+</g>
+<g class="landmarks">
+<g class="landmark" transform="translate(70.0,275.0)"><rect x="-5" y="-5" width="10" height="10" transform="rotate(45)"/><title>Northwatch Lighthouse</title></g>
+<text class="label label-lm" x="81.0" y="280.0">Northwatch Lighthouse</text>
+<g class="landmark" transform="translate(1110.0,135.0)"><rect x="-5" y="-5" width="10" height="10" transform="rotate(45)"/><title>Vargtind Bunker</title></g>
+<text class="label label-lm label-lm-left" x="1099.0" y="140.0">Vargtind Bunker</text>
+<g class="landmark" transform="translate(820.0,325.0)"><rect x="-5" y="-5" width="10" height="10" transform="rotate(45)"/><title>Skar Mine</title></g>
+<text class="label label-lm" x="831.0" y="330.0">Skar Mine</text>
+<g class="landmark" transform="translate(1005.0,275.0)"><rect x="-5" y="-5" width="10" height="10" transform="rotate(45)"/><title>Ridge Helicopter Wreck</title></g>
+<text class="label label-lm label-lm-left" x="994.0" y="280.0">Ridge Helicopter Wreck</text>
+</g>
+<g class="spawns">
+<circle class="spawn" cx="470.0" cy="435.0" r="5"><title>Start: Haldersfield north-west edge</title></circle>
+<circle class="spawn" cx="505.0" cy="497.0" r="5"><title>Start: Haldersfield, 170 m south of the village street (same side of the Lund river; the 120 m calm zone stops short of the houses); was town_halders_se at 5450,6750 until 2026-10-13</title></circle>
+<circle class="spawn" cx="625.0" cy="410.0" r="5"><title>Start: Lundford west fields</title></circle>
+</g>
+<g class="places">
+<g class="place place-village" tabindex="0" role="button" aria-label="Lundford, Village" data-place="lundford" transform="translate(665.0,445.0)">
+<circle class="hit" r="20"/>
+<circle class="mark" r="8"/>
+<text class="label label-place label-village" x="0" y="30">Lundford</text>
+</g>
+<g class="place place-village" tabindex="0" role="button" aria-label="Haldersfield, Village" data-place="haldersfield" transform="translate(505.0,480.0)">
+<circle class="hit" r="20"/>
+<circle class="mark" r="8"/>
+<text class="label label-place label-village" x="0" y="-17">Haldersfield</text>
+</g>
+<g class="place place-hamlet" tabindex="0" role="button" aria-label="Brennholt, Hamlet" data-place="brennholt" transform="translate(785.0,535.0)">
+<circle class="hit" r="20"/>
+<circle class="mark" r="5.5"/>
+<text class="label label-place label-hamlet" x="0" y="-16">Brennholt</text>
+</g>
+<g class="place place-village" tabindex="0" role="button" aria-label="Storvik, Village" data-place="storvik" transform="translate(350.0,700.0)">
+<circle class="hit" r="20"/>
+<circle class="mark" r="8"/>
+<text class="label label-place label-village" x="0" y="30">Storvik</text>
+</g>
+<g class="place place-outpost" tabindex="0" role="button" aria-label="Pinewatch, Outpost" data-place="pinewatch" transform="translate(610.0,755.0)">
+<circle class="hit" r="20"/>
+<path class="mark" d="M-8,6.5 L0,-8 L8,6.5 Z"/>
+<text class="label label-place label-outpost" x="0" y="-17">Pinewatch</text>
+</g>
+<g class="place place-town" tabindex="0" role="button" aria-label="Vellport, Town" data-place="vellport" transform="translate(190.0,480.0)">
+<circle class="hit" r="20"/>
+<rect class="mark" x="-7" y="-7" width="14" height="14"/>
+<text class="label label-place label-town" x="0" y="-17">Vellport</text>
+</g>
+<g class="place place-hamlet" tabindex="0" role="button" aria-label="Old Quay, Hamlet" data-place="old_quay" transform="translate(85.0,310.0)">
+<circle class="hit" r="20"/>
+<circle class="mark" r="5.5"/>
+<text class="label label-place label-hamlet" x="0" y="-16">Old Quay</text>
+</g>
+<g class="place place-high_risk" tabindex="0" role="button" aria-label="Skar Summit Station, Restricted site" data-place="skar_station" transform="translate(965.0,195.0)">
+<circle class="hit" r="20"/>
+<rect class="mark" x="-7" y="-7" width="14" height="14" transform="rotate(45)"/>
+<text class="label label-place label-high_risk" x="-10" y="-22">Skar Summit Station</text>
+</g>
+<g class="place place-high_risk" tabindex="0" role="button" aria-label="Vargtind Outpost, Restricted site" data-place="vargtind_outpost" transform="translate(1090.0,150.0)">
+<circle class="hit" r="20"/>
+<rect class="mark" x="-7" y="-7" width="14" height="14" transform="rotate(45)"/>
+<text class="label label-place label-high_risk" x="0" y="40">Vargtind Outpost</text>
+</g>
+<g class="place place-high_risk" tabindex="0" role="button" aria-label="Blackwater Dam, Restricted site" data-place="blackwater_dam" transform="translate(830.0,728.0)">
+<circle class="hit" r="20"/>
+<rect class="mark" x="-7" y="-7" width="14" height="14" transform="rotate(45)"/>
+<text class="label label-place label-high_risk" x="0" y="30">Blackwater Dam</text>
+</g>
+<g class="place place-outpost" tabindex="0" role="button" aria-label="North Camp, Outpost" data-place="north_camp" transform="translate(1080.0,795.0)">
+<circle class="hit" r="20"/>
+<path class="mark" d="M-8,6.5 L0,-8 L8,6.5 Z"/>
+<text class="label label-place label-outpost" x="0" y="-17">North Camp</text>
+</g>
+<g class="place place-city" tabindex="0" role="button" aria-label="Vellhavn, City" data-place="vellhavn" transform="translate(235.0,585.0)">
+<circle class="hit" r="20"/>
+<rect class="mark" x="-9" y="-9" width="18" height="18"/>
+<text class="label label-place label-city" x="0" y="34">Vellhavn</text>
+</g>
+<g class="place place-city" tabindex="0" role="button" aria-label="Nordvik, City" data-place="nordvik" transform="translate(850.0,410.0)">
+<circle class="hit" r="20"/>
+<rect class="mark" x="-9" y="-9" width="18" height="18"/>
+<text class="label label-place label-city" x="0" y="34">Nordvik</text>
+</g>
+<g class="place place-hamlet" tabindex="0" role="button" aria-label="Fjordbotn, Hamlet" data-place="fjordbotn" transform="translate(535.0,1075.0)">
+<circle class="hit" r="20"/>
+<circle class="mark" r="5.5"/>
+<text class="label label-place label-hamlet" x="0" y="-16">Fjordbotn</text>
+</g>
+</g>
+</g>
+<rect class="frame" x="0.5" y="0.5" width="1199" height="1199"/>
+</svg>
+<!-- MAP:END -->
+      </div>
+      <div class="legend" aria-label="Legend">
+        <span><i class="l-city"></i>City, town</span><span><i class="l-village"></i>Village, hamlet</span><span><i class="l-outpost"></i>Outpost</span><span><i class="l-risk"></i>Restricted site</span>
+        <span><i class="l-start"></i>Where you start</span><span><i class="l-lm"></i>Landmark</span><span><i class="l-road"></i>Main road</span><span><i class="l-track"></i>Gravel, track</span>
+        <span><i class="l-open"></i>Open now</span><span><i class="l-fog"></i>Not yet</span>
+      </div>
+    </div>
+    <aside class="side" aria-label="Place details">
+      <div class="jump">
+        <label class="label" for="place-select">Go to a place</label>
+        <select id="place-select"></select>
+      </div>
+      <div class="pcard" id="pcard" aria-live="polite">
+        <h3 id="pc-name">Haldersfield</h3>
+        <div class="row" id="pc-chips"></div>
+        <p class="meta" id="pc-meta"></p>
+        <p id="pc-blurb"></p>
+        <span class="k">What is there</span>
+        <ul id="pc-holds"></ul>
+      </div>
+      <div class="start-note">
+        <b>Where you start</b>
+        <p>At the edge of Haldersfield or Lundford, in the central valley, with a knife and whatever was in your pockets. The ember dots are the start pockets; the first hour&rsquo;s walk takes you to the village street.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="opening" aria-labelledby="open-h">
+  <div class="sec-head">
+    <span class="label">How the island opens</span>
+    <h2 id="open-h">One valley first, then the rest</h2>
+    <p>The island is built one area at a time, and each new area opens when it holds every part of the game. Names only; what is in them is for you to find.</p>
+  </div>
+  <ol class="steps">
+    <li class="now"><span class="n">Open now</span><b>Central valley</b><span>Haldersfield, Lundford and the river between them</span></li>
+    <li><span class="n">Next</span><b>Coastal expansion</b><span>Vellport, Vellhavn, the lake at Storwater and the southern fjord</span></li>
+    <li><span class="n">Then</span><b>Blackwater</b><span>The dam, the reservoir and the hydro camp</span></li>
+    <li><span class="n">Then</span><b>Skar Summit</b><span>The mountain and what sits on top of it</span></li>
+    <li><span class="n">Last</span><b>Vargtind</b><span>The high road and the checkpoint</span></li>
+  </ol>
+</section>
+
+<section id="gallery" aria-labelledby="gal-h">
+  <div class="sec-head">
+    <span class="label">Pictures</span>
+    <h2 id="gal-h">From the game</h2>
+    <p>Taken in the editor while building. Everything here is still being worked on.</p>
+  </div>
+  <ul class="gallery" id="gallery-list">
+    <li><figure><button type="button" data-i="0"><img src="screens/village-dusk.jpg" alt="The village street at dusk with the street lamps lit" loading="lazy" width="1280" height="720"><figcaption>Street lamps come on at dusk, until the power fails</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="1"><img src="screens/zombie.jpg" alt="A group of zombies on the village street at dusk" loading="lazy" width="1280" height="720"><figcaption>A group on the village street</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="2"><img src="screens/village-air.jpg" alt="The village seen from the air" loading="lazy" width="1280" height="720"><figcaption>Haldersfield from the air</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="3"><img src="screens/start.jpg" alt="The Zombie Dawn start screen over a snowy mountain scene" loading="lazy" width="1280" height="720"><figcaption>The start screen</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="4"><img src="screens/valley.jpg" alt="A green valley at noon" loading="lazy" width="1280" height="720"><figcaption>The valley at noon</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="5"><img src="screens/sea.jpg" alt="The sea seen from a beach" loading="lazy" width="1280" height="720"><figcaption>The sea from the beach</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="6"><img src="screens/river.jpg" alt="A river bank" loading="lazy" width="1280" height="720"><figcaption>The Lund river</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="7"><img src="screens/worlds.jpg" alt="The list of saved worlds" loading="lazy" width="1280" height="720"><figcaption>Solo play and saved worlds</figcaption></button></figure></li>
+  </ul>
+</section>
+
+</main>
+
+<dialog class="lb" id="lb" aria-label="Picture">
+  <div class="lb-in">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-bar">
+      <button type="button" id="lb-prev">Previous</button>
+      <span class="cap" id="lb-cap"></span>
+      <span id="lb-n"></span>
+      <button type="button" id="lb-next">Next</button>
+      <button type="button" id="lb-close">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <span>Zombie Dawn is a working title. A game in development for friends.</span>
+    <span class="dl-meta" id="dl-meta"></span>
+  </div>
+</footer>
+
+<script>
+/* PLACES:START */
+var ZD_PLACES = {"lundford":{"name":"Lundford","tier":"Village","region":"Central Valley","height":104,"holds":["ford and old stone bridge","farm co-op and grain mill","church","general store","farms"],"release":"Open now (pre-alpha)","open":true,"blurb":"The valley’s other village, upriver: a ford with an old stone bridge, a farm co-op and a grain mill, a church, farms. The second start area.","x":6650,"y":7550},"haldersfield":{"name":"Haldersfield","tier":"Village","region":"Central Valley","height":68,"holds":["small shop","bus shelter","village street of ten houses","sheriff's house"],"release":"Open now (pre-alpha)","open":true,"blurb":"Where every new world starts. Ten furnished houses along the main road, a bus shelter, a small shop and the sheriff’s house; the lamps still burn until the power fails.","x":5050,"y":7200},"brennholt":{"name":"Brennholt","tier":"Hamlet","region":"Central Valley","height":132,"holds":["logging camp","sawmill","forestry cabins","equipment shed"],"release":"Coastal expansion","open":false,"blurb":"A logging camp and sawmill at the foot of the pass.","x":7850,"y":6650},"storvik":{"name":"Storvik","tier":"Village","region":"Storwater District","height":194,"holds":["lakeside cabins","marina","bait shop","old campsite","boathouse"],"release":"Coastal expansion","open":false,"blurb":"Lakeside cabins and a marina on Storwater.","x":3500,"y":5000},"pinewatch":{"name":"Pinewatch","tier":"Outpost","region":"Storwater District","height":198,"holds":["forest ranger station","fire lookout","remote cabins","hunting lodge"],"release":"Coastal expansion","open":false,"blurb":"A ranger station and fire lookout above the lake.","x":6100,"y":4450},"vellport":{"name":"Vellport","tier":"Town","region":"Vellsund Coast","height":14,"holds":["fishing harbour","fish processing plant","ferry terminal","warehouses","coastal road depot"],"release":"Coastal expansion","open":false,"blurb":"The fishing harbour with the ferry terminal. The road there is blocked by a rockslide for now.","x":1900,"y":7200},"old_quay":{"name":"Old Quay","tier":"Hamlet","region":"Vellsund Coast","height":9,"holds":["abandoned fishing village","lighthouse","boatyard","sea caves"],"release":"Coastal expansion","open":false,"blurb":"An abandoned fishing village under the lighthouse.","x":850,"y":8900},"skar_station":{"name":"Skar Summit Station","tier":"Restricted site","region":"Skar Mountains","height":920,"holds":["research facility","communications mast","service garage","helipad","underground laboratory"],"release":"Skar Summit","open":false,"blurb":"A research facility on the summit shelf. Restricted.","x":9650,"y":10050},"vargtind_outpost":{"name":"Vargtind Outpost","tier":"Restricted site","region":"Skar Mountains","height":880,"holds":["military checkpoint","barracks","vehicle depot","sealed bunker entrance"],"release":"Vargtind Bunker","open":false,"blurb":"A military checkpoint on the high road. Restricted.","x":10900,"y":10500},"blackwater_dam":{"name":"Blackwater Dam","tier":"Restricted site","region":"Blackwater Reservoir","height":405,"holds":["hydroelectric dam","control room","spillway","maintenance tunnel","substation","downstream powerhouse"],"release":"Blackwater","open":false,"blurb":"The hydroelectric dam that fed the island’s grid.","x":8300,"y":4720},"north_camp":{"name":"North Camp","tier":"Outpost","region":"Blackwater Reservoir","height":590,"holds":["hydro workers camp","supply depot","weather station","service road garage"],"release":"Blackwater","open":false,"blurb":"The hydro workers’ camp and a weather station.","x":10800,"y":4050},"vellhavn":{"name":"Vellhavn","tier":"City","region":"Vellsund Coast","height":22,"holds":["city hospital","municipal hall","apartment blocks","shopping district","bus station","police headquarters","industrial waterfront"],"release":"Coastal expansion","open":false,"blurb":"The island’s city on the fjord: hospital, apartment blocks, a shopping district, the police headquarters.","x":2350,"y":6150},"nordvik":{"name":"Nordvik","tier":"City","region":"Skar Mountains","height":280,"holds":["regional hospital","rail yard","commercial centre","residential blocks","municipal depot","military logistics warehouse"],"release":"Coastal expansion","open":false,"blurb":"The mountain city: regional hospital, rail yard, a military logistics warehouse.","x":8500,"y":7900},"fjordbotn":{"name":"Fjordbotn","tier":"Hamlet","region":"Sorfjord Forest","height":12,"holds":["boathouses","fish smokehouse","small chapel","general store","salmon farm pens"],"release":"Coastal expansion","open":false,"blurb":"Boathouses and a smokehouse at the head of the southern fjord.","x":5350,"y":1250}};
+/* PLACES:END */
+/* FALLBACK:START */
+var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},"releases":[{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},{"build":202610131670,"version":"Pre-alpha 0.2.5.0","date":"2026-10-13 14:35","url":"https://dl.rode.live/ZombieDawn_2026-10-13_1435.zip","sha256":"d67cfa5c4c9cc652ea8af8d2569d0086b3f63bd69cab7fe2f0622a2ca27bbc95","size":1464000000,"notes":["Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump.","Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference.","Street lamps along the village road switch on at dusk and off at dawn while the power grid works.","The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark.","Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die.","Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk.","No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game.","Houses have no working lamps yet, and nothing brings the power back yet.","Every zombie wears the same clothes for now (one character model); more models will follow."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump."},{"t":"li","text":"Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference."},{"t":"li","text":"Street lamps along the village road switch on at dusk and off at dawn while the power grid works."},{"t":"li","text":"The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark."},{"t":"li","text":"Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die."},{"t":"li","text":"Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk."},{"t":"li","text":"No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game."},{"t":"h","text":"Known problems"},{"t":"li","text":"Houses have no working lamps yet, and nothing brings the power back yet."},{"t":"li","text":"Every zombie wears the same clothes for now (one character model); more models will follow."}]},{"build":202610131454,"version":"Pre-alpha 0.2.4.0","date":"2026-10-13 12:26","url":"","sha256":"addbbfd2d656c1d743a2a6de868c8afd5cc10f64e445202c496160e6cca54a57","size":1453000000,"notes":["Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark).","A torch held in hand now gives light (craft one, then right-click it to take it in hand).","One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river.","Trees no longer grow inside village houses, and furniture no longer pokes through house walls.","Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves.","Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot.","Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had.","Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise).","The sea has gentle moving waves and the lakes small ripples.","The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all.","Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet).","Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge.","There is no foam where the sea meets the beach yet."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark)."},{"t":"li","text":"A torch held in hand now gives light (craft one, then right-click it to take it in hand)."},{"t":"li","text":"One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river."},{"t":"li","text":"Trees no longer grow inside village houses, and furniture no longer pokes through house walls."},{"t":"li","text":"Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves."},{"t":"li","text":"Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot."},{"t":"li","text":"Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had."},{"t":"li","text":"Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise)."},{"t":"li","text":"The sea has gentle moving waves and the lakes small ripples."},{"t":"li","text":"The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all."},{"t":"h","text":"Known problems"},{"t":"li","text":"Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet)."},{"t":"li","text":"Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge."},{"t":"li","text":"There is no foam where the sea meets the beach yet."}]},{"build":202610131158,"version":"Pre-alpha 0.2.3.0","date":"2026-10-13 09:37","url":"","sha256":"cfea8e618e69355a08fdcf1f57ce39aa9c5355b3204472663f0f67c8aabd03d1","size":1442000000,"notes":["A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.","The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right.","The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge.","A small \"Talking\" mark shows bottom left while you hold V.","Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world.","Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version.","Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept.","Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.","The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).","The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.","The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."],"body":[{"t":"h","text":"New"},{"t":"li","text":"A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom."},{"t":"li","text":"The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right."},{"t":"li","text":"The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge."},{"t":"li","text":"A small \"Talking\" mark shows bottom left while you hold V."},{"t":"li","text":"Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world."},{"t":"li","text":"Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version."},{"t":"li","text":"Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept."},{"t":"li","text":"Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days."},{"t":"li","text":"The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels)."},{"t":"li","text":"The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor."},{"t":"li","text":"The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."}]}]};
+/* FALLBACK:END */
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  // ?shot=1 (the screenshot script) counts as reduced motion: still snow, no transitions, so a capture shows the final state.
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches || /[?&]shot=1/.test(location.search);
+  if (reduce) root.classList.add("still");
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  // ---- time of day and snow: from the address (?time=night&snow=1&place=lundford), else what this viewer chose last
+  var params = new URLSearchParams(location.search);
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem("zd-atlas") || "{}") || {}; } catch (e) { saved = {}; }
+  function setTime(t, keep) {
+    if (["day", "dusk", "night"].indexOf(t) < 0) t = "day";
+    root.setAttribute("data-time", t);
+    document.querySelectorAll("#time-seg button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.time === t)); });
+    document.getElementById("hint").textContent = t === "day" ? "The lamps burn at dusk and night until the power fails." : t === "dusk" ? "Dusk: the street lamps switch on while the grid still works." : "Night: a few windows glow where the people left a light on.";
+    if (keep) remember();
+  }
+  function setSnow(on, keep) {
+    root.setAttribute("data-snow", on ? "1" : "0");
+    document.getElementById("snow-toggle").setAttribute("aria-checked", String(!!on));
+    on ? startSnow() : stopSnow();
+    if (keep) remember();
+  }
+  function remember() { try { localStorage.setItem("zd-atlas", JSON.stringify({ time: root.getAttribute("data-time"), snow: root.getAttribute("data-snow") === "1" })); } catch (e) {} }
+  document.querySelectorAll("#time-seg button").forEach(function (b) { b.addEventListener("click", function () { setTime(b.dataset.time, true); }); });
+  document.getElementById("snow-toggle").addEventListener("click", function () { setSnow(root.getAttribute("data-snow") !== "1", true); });
+
+  // ---- snow canvas over the page
+  var canvas = document.getElementById("snow"), ctx = canvas.getContext("2d"), flakes = [], cw = 0, ch = 0, raf = 0, last = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+  function sizeSnow() {
+    cw = window.innerWidth; ch = window.innerHeight;
+    canvas.width = Math.floor(cw * dpr); canvas.height = Math.floor(ch * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.round(Math.min(260, (cw * ch) / 7000));
+    flakes = [];
+    for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * cw, y: Math.random() * ch, r: 0.6 + Math.random() * 1.9, s: 14 + Math.random() * 34, d: Math.random() * 6.28, o: 0.2 + Math.random() * 0.5 });
+  }
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000 || 0.016); last = t;
+    ctx.clearRect(0, 0, cw, ch); ctx.fillStyle = "#E4ECF0";
+    for (var i = 0; i < flakes.length; i++) {
+      var f = flakes[i]; f.d += dt * 0.6; f.y += f.s * dt; f.x += Math.sin(f.d) * 10 * dt;
+      if (f.y > ch + 4) { f.y = -4; f.x = Math.random() * cw; }
+      if (f.x < -4) f.x = cw + 4; else if (f.x > cw + 4) f.x = -4;
+      ctx.globalAlpha = f.o; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    raf = requestAnimationFrame(frame);
+  }
+  function drawStill() { sizeSnow(); ctx.clearRect(0, 0, cw, ch); ctx.fillStyle = "#E4ECF0"; flakes.forEach(function (f) { ctx.globalAlpha = f.o; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832); ctx.fill(); }); ctx.globalAlpha = 1; }
+  function startSnow() { if (reduce) { drawStill(); return; } if (!raf) { sizeSnow(); last = performance.now(); raf = requestAnimationFrame(frame); } }
+  function stopSnow() { if (raf) { cancelAnimationFrame(raf); raf = 0; } ctx.clearRect(0, 0, cw, ch); }
+  window.addEventListener("resize", function () { if (root.getAttribute("data-snow") === "1") reduce ? drawStill() : sizeSnow(); });
+  document.addEventListener("visibilitychange", function () { if (root.getAttribute("data-snow") !== "1") return; document.hidden ? stopSnow() : startSnow(); });
+
+  // ---- places: the markers in the map and the card beside it
+  var sel = document.getElementById("place-select"), order = Object.keys(ZD_PLACES);
+  var tierRank = { "City": 0, "Town": 1, "Village": 2, "Hamlet": 3, "Outpost": 4, "Restricted site": 5 };
+  order.sort(function (a, b) { var A = ZD_PLACES[a], B = ZD_PLACES[b]; return (A.open === B.open ? 0 : A.open ? -1 : 1) || (tierRank[A.tier] - tierRank[B.tier]) || A.name.localeCompare(B.name); });
+  order.forEach(function (id) { var o = el("option", "", ZD_PLACES[id].name + (ZD_PLACES[id].open ? "" : " · not yet")); o.value = id; sel.appendChild(o); });
+  function gridRef(x, y) { var col = String.fromCharCode(65 + Math.min(11, Math.floor(x / 1000))), row = Math.min(12, 1 + Math.floor((12000 - y) / 1000)); return col + row; }
+  function showPlace(id, focus) {
+    var p = ZD_PLACES[id]; if (!p) return;
+    document.querySelectorAll(".atlas .place").forEach(function (g) { g.classList.toggle("active", g.dataset.place === id); });
+    document.getElementById("pc-name").textContent = p.name;
+    var chips = document.getElementById("pc-chips"); chips.textContent = "";
+    chips.appendChild(el("span", "chip" + (p.tier === "Restricted site" ? " danger" : ""), p.tier));
+    chips.appendChild(el("span", "chip " + (p.open ? "good" : "ember"), p.open ? "Open now" : p.release));
+    document.getElementById("pc-meta").textContent = p.region + " · " + (p.height != null ? p.height + " m above the sea · " : "") + "grid " + gridRef(p.x, p.y);
+    document.getElementById("pc-blurb").textContent = p.blurb || "";
+    var ul = document.getElementById("pc-holds"); ul.textContent = "";
+    (p.holds || []).forEach(function (h) { ul.appendChild(el("li", "", h.charAt(0).toUpperCase() + h.slice(1))); });
+    sel.value = id;
+    if (focus) { var g = document.querySelector('.atlas .place[data-place="' + id + '"]'); if (g) g.focus({ preventScroll: true }); }
+  }
+  document.querySelectorAll(".atlas .place").forEach(function (g) {
+    g.addEventListener("click", function () { showPlace(g.dataset.place, false); });
+    g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); showPlace(g.dataset.place, false); } });
+  });
+  sel.addEventListener("change", function () { showPlace(sel.value, true); });
+
+  // ---- the lightbox
+  var shots = [].map.call(document.querySelectorAll("#gallery-list img"), function (img, i) { return { src: img.getAttribute("src"), alt: img.alt, cap: img.nextElementSibling ? img.nextElementSibling.textContent : "" }; });
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), cur = 0, opener = null;
+  function showShot(i) { cur = (i + shots.length) % shots.length; lbImg.src = shots[cur].src; lbImg.alt = shots[cur].alt; document.getElementById("lb-cap").textContent = shots[cur].cap; document.getElementById("lb-n").textContent = (cur + 1) + " / " + shots.length; }
+  document.querySelectorAll("#gallery-list button").forEach(function (b) {
+    b.addEventListener("click", function () { opener = b; showShot(+b.dataset.i); if (typeof lb.showModal === "function") { lb.showModal(); document.getElementById("lb-close").focus(); } else { window.open(shots[+b.dataset.i].src); } });
+  });
+  document.getElementById("lb-prev").addEventListener("click", function () { showShot(cur - 1); });
+  document.getElementById("lb-next").addEventListener("click", function () { showShot(cur + 1); });
+  document.getElementById("lb-close").addEventListener("click", function () { lb.close(); });
+  lb.addEventListener("click", function (e) { if (e.target === lb) lb.close(); });
+  lb.addEventListener("keydown", function (e) { if (e.key === "ArrowLeft") showShot(cur - 1); else if (e.key === "ArrowRight") showShot(cur + 1); });
+  lb.addEventListener("close", function () { if (opener) opener.focus(); });
+
+  // ---- the download button from latest.json (else the sample, marked)
+  function mb(bytes) { return Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB"; }
+  function showLatest(latest, sample) {
+    var btn = document.getElementById("dl");
+    if (latest.url) { btn.href = latest.url; btn.removeAttribute("aria-disabled"); }
+    var dt = document.getElementById("dl-text");
+    dt.textContent = "Download"; dt.appendChild(el("span", "ver", " · " + String(latest.version || "").replace(/^Pre-alpha\s+/, "")));
+    var m = document.getElementById("dl-meta");
+    m.textContent = "Newest version " + latest.version + " · " + mb(latest.size) + " · Windows 64-bit";
+    if (sample) { m.appendChild(document.createTextNode(" ")); m.appendChild(el("span", "sample", "(sample data)")); }
+  }
+  fetch("latest.json?t=" + Date.now()).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (l) { showLatest(l, false); })
+    .catch(function () { if (ZD_FALLBACK && ZD_FALLBACK.latest) showLatest(ZD_FALLBACK.latest, true); else document.getElementById("dl-meta").textContent = "No version is out yet. Soon."; });
+
+  // ---- start state
+  setTime(params.get("time") || saved.time || "day", false);
+  setSnow(params.get("snow") === "1" || (!params.has("snow") && saved.snow), false);
+  showPlace(ZD_PLACES[params.get("place")] ? params.get("place") : "haldersfield", false);
+})();
+</script>
+</body>
+</html>
