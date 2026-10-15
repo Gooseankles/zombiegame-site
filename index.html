@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zombie Dawn</title>
-<meta name="description" content="Zombie Dawn: an open-world zombie survival game for a group of friends, on a cold northern coast. Pre-alpha.">
+<meta name="description" content="Zombie Dawn: an open-world zombie survival game for a group of friends, on an island off a cold northern coast. Pre-alpha.">
 <!-- For friends while in development: kept out of search engines. Remove this line to be found. -->
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23172026'/%3E%3Cpath d='M7 24 L16 7 L25 24 Z' fill='none' stroke='%23f0794a' stroke-width='3'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0B1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B1014'/%3E%3Cpath d='M7 24 L16 7 L25 24 Z' fill='none' stroke='%23D9763A' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preload" href="screens/village-dusk.jpg" as="image" fetchpriority="high">
 <style>
 /* Self-hosted fonts (SIL Open Font License, see fonts/LICENSES.txt): no requests to other sites. */
 @font-face { font-family: "Barlow Condensed"; font-weight: 500; font-display: swap; src: url(fonts/barlow-condensed-latin-500-normal.woff2) format("woff2"); }
@@ -18,338 +20,454 @@
 @font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
 @font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); }
 
+/* The game's own palette (UI/ZGUIStyle): night, slate, frost, mist, ice and one ember accent. */
 :root {
-  --bg: #eef1f1;          /* snow paper */
-  --surface: #f8faf9;
-  --ink: #172026;         /* slate */
-  --muted: #5a666d;
-  --line: #cfd7d9;
-  --accent: #c2461b;      /* signal flare */
-  --accent-ink: #ffffff;
-  --done: #2f7651;        /* pine */
+  --night: #0B1014; --slate: #141C22; --raised: #1F2A32; --hover: #2B3A45; --line: #3A4B57;
+  --frost: #E4ECF0; --mist: #8D9FAA; --ice: #9CC4D6;
+  --ember: #D9763A; --ember-hover: #EE8A4B; --ember-pressed: #B35E2B; --ink-on-ember: #1A0E07;
+  --warn: #F0B04A; --danger: #EF5A4F; --good: #7CD08E;
   --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --gutter: clamp(16px, 4vw, 40px);
+  --wide: 1180px;
+  color-scheme: dark;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #11171a; --surface: #172025; --ink: #e3e8e9; --muted: #95a3a9; --line: #2b383e;
-    --accent: #f0794a; --accent-ink: #11171a; --done: #5fb98a; color-scheme: dark;
-  }
-}
-
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 64px; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--night); color: var(--frost); font-family: var(--body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; margin: 0; text-wrap: balance; }
-h1 { font-size: clamp(46px, 9vw, 92px); text-transform: uppercase; letter-spacing: 0.005em; }
-h2 { font-size: clamp(28px, 4vw, 36px); text-transform: uppercase; letter-spacing: 0.02em; }
-h3 { font-size: 15px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+h1, h2, h3 { font-family: var(--display); line-height: 1; margin: 0; text-wrap: balance; }
 p { margin: 0; }
-code { font-family: var(--mono); font-size: 0.86em; background: var(--surface); border: 1px solid var(--line); padding: 0 5px; border-radius: 2px; white-space: nowrap; }
-.label { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.stage-tag { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border: 1.5px solid var(--accent); padding: 1px 8px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--ice); outline-offset: 3px; border-radius: 2px; }
+.skip { position: absolute; left: 16px; top: -60px; background: var(--ember); color: var(--ink-on-ember); padding: 8px 14px; font-weight: 600; z-index: 100; border-radius: 3px; }
+.skip:focus { top: 12px; }
+.wrap { max-width: var(--wide); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.label { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
+.label.ember { color: var(--ember); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 10px 24px; border-radius: 4px; border: 1.5px solid transparent; font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .15s, border-color .15s, transform .15s; }
+.btn-primary { background: var(--ember); color: var(--ink-on-ember); }
+.btn-primary:hover { background: var(--ember-hover); }
+.btn-primary:active { background: var(--ember-pressed); }
+.btn-ghost { border-color: var(--line); color: var(--frost); background: rgba(20, 28, 34, 0.5); }
+.btn-ghost:hover { background: var(--raised); border-color: var(--mist); }
+.btn[aria-disabled="true"] { background: var(--raised); color: var(--mist); pointer-events: none; }
+.btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
-/* ---------- top bar ---------- */
-.bar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
-.bar-in { max-width: 920px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; gap: 12px 24px; flex-wrap: wrap; }
-.mark { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; margin-right: auto; }
-.bar nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 14px; }
-.bar nav a { text-decoration: none; color: var(--muted); }
-.bar nav a:hover { color: var(--ink); }
+/* ---------- top bar: transparent over the hero, solid once you scroll ---------- */
+.top { position: fixed; inset: 0 0 auto 0; z-index: 20; transition: background .25s, border-color .25s, backdrop-filter .25s; border-bottom: 1px solid transparent; }
+.top.solid { background: rgba(11, 16, 20, 0.86); backdrop-filter: blur(8px); border-color: var(--line); }
+.top-in { display: flex; align-items: center; gap: 12px 26px; min-height: 64px; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; margin-right: auto; }
+.mark svg { width: 22px; height: 22px; fill: none; stroke: var(--ember); stroke-width: 2.6; stroke-linejoin: round; }
+.top nav { display: flex; gap: 22px; font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase; }
+.top nav a { text-decoration: none; color: var(--mist); padding: 6px 0; }
+.top nav a:hover { color: var(--frost); }
+.top .btn { min-height: 38px; padding: 6px 16px; font-size: 16px; }
+@media (max-width: 760px) { .top nav { display: none; } }
 
-.page { max-width: 920px; margin: 0 auto; padding: 40px 20px 64px; display: grid; gap: 72px; }
-section { display: grid; gap: 20px; }
-.section-head { display: grid; gap: 6px; }
-.section-head p { color: var(--muted); max-width: 64ch; }
+/* ---------- hero ---------- */
+.hero { position: relative; min-height: min(100svh, 880px); display: grid; align-items: end; overflow: hidden; isolation: isolate; }
+.hero-img { position: absolute; inset: -10% 0 0 0; width: 100%; height: 110%; object-fit: cover; object-position: 50% 60%; z-index: -3; will-change: transform; filter: saturate(1.05) contrast(1.02); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background:
+  linear-gradient(180deg, rgba(11, 16, 20, 0.55) 0%, rgba(11, 16, 20, 0.05) 30%, rgba(11, 16, 20, 0.25) 60%, rgba(11, 16, 20, 0.96) 100%),
+  radial-gradient(120% 70% at 20% 100%, rgba(11, 16, 20, 0.6), transparent 60%); }
+.snow { position: absolute; inset: 0; z-index: -1; pointer-events: none; width: 100%; height: 100%; }
+.hero-in { position: relative; padding-top: 120px; padding-bottom: clamp(40px, 8vh, 96px); display: grid; gap: 22px; max-width: 760px; }
+.hero-in > * { max-width: 100%; min-width: 0; }
+.stage { justify-self: start; }
+.stage { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ice); }
+.stage::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ember); box-shadow: 0 0 10px var(--ember); }
+.hero h1 { font-size: clamp(60px, 11vw, 132px); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55); margin-left: -0.03em; }
+.hero h1::after { content: ""; display: block; width: 72px; height: 3px; background: var(--ember); margin-top: 14px; }
+.tagline { font-family: var(--display); font-weight: 500; font-size: clamp(22px, 3vw, 30px); color: var(--frost); letter-spacing: 0.02em; }
+.lede { font-size: clamp(16px, 1.6vw, 18px); color: var(--frost); max-width: 54ch; opacity: 0.92; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 6px; }
+.dl-meta { font-family: var(--mono); font-size: 13px; color: var(--mist); }
+.dl-meta .sample { color: var(--warn); }
+.cue { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); color: var(--mist); width: 26px; height: 26px; animation: bob 2.2s ease-in-out infinite; }
+.cue svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
+@media (prefers-reduced-motion: reduce) { .cue { animation: none; } }
 
-/* ---------- intro and download ---------- */
-.intro { display: grid; gap: 18px; justify-items: start; }
-.lede { font-size: 19px; max-width: 54ch; }
-.alpha { color: var(--muted); font-size: 14.5px; max-width: 60ch; }
-.download { display: grid; gap: 10px; justify-items: start; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; width: 100%; }
-.btn { display: inline-flex; align-items: center; background: var(--accent); color: var(--accent-ink); font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; padding: 12px 22px; border-radius: 3px; }
-.btn:hover { filter: brightness(1.08); }
-.btn[aria-disabled="true"] { background: var(--line); color: var(--muted); pointer-events: none; }
-.dl-meta { color: var(--muted); font-size: 14px; }
-.dl-help { font-size: 14.5px; max-width: 64ch; display: grid; gap: 4px; }
+/* ---------- three statements ---------- */
+.statements { padding: clamp(56px, 9vw, 120px) 0; border-bottom: 1px solid var(--line); }
+.statements ol { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(36px, 5vw, 64px); }
+.statements li { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 8px 24px; align-items: start; }
+.statements .n { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.1em; color: var(--ember); padding-top: 10px; }
+.statements h2 { font-size: clamp(34px, 5.4vw, 64px); font-weight: 600; letter-spacing: 0.01em; color: var(--frost); }
+.statements p { grid-column: 2; color: var(--mist); max-width: 60ch; font-size: 17px; }
+@media (max-width: 600px) { .statements li { grid-template-columns: 1fr; } .statements p { grid-column: 1; } .statements .n { padding-top: 0; } }
 
-/* ---------- updates ---------- */
-.updates { list-style: none; margin: 0; padding: 0; display: grid; }
-.updates > li { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px 22px; padding: 14px 0; border-top: 1px solid var(--line); }
-.updates .when { display: grid; gap: 2px; align-content: start; }
-.updates .ver { font-family: var(--display); font-weight: 700; font-size: 20px; }
-.updates .date { color: var(--muted); font-size: 13.5px; }
-.updates ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
-.updates .notes { display: grid; gap: 8px; }
-.updates h4 { margin: 8px 0 0; font-family: var(--display); font-weight: 600; font-size: 16px; }
-.updates .notes p { margin: 0; max-width: 70ch; }
-.updates > .latest .ver::after { content: "Newest"; margin-left: 8px; font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--done); border: 1px solid var(--done); padding: 0 6px; border-radius: 2px; vertical-align: 3px; }
-.empty { color: var(--muted); }
-
-/* ---------- roadmap ---------- */
-.stage { display: grid; gap: 10px; }
-.road { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.road li { background: var(--surface); padding: 12px 14px; display: grid; gap: 3px; align-content: start; }
-.road b { font-family: var(--display); font-weight: 600; font-size: 18px; }
-.road span { color: var(--muted); font-size: 13.5px; }
-.road .built b::after { content: " \2713"; color: var(--done); }
-.road .now { box-shadow: inset 3px 0 0 var(--accent); }
-.road .now b::after { content: "Next"; margin-left: 8px; font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0 6px; border-radius: 2px; vertical-align: 3px; }
-.goal { border-left: 3px solid var(--done); background: var(--surface); padding: 12px 16px; max-width: 72ch; }
-
-/* ---------- screenshots ---------- */
-.shots { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
-.shots figure { margin: 0; display: grid; gap: 6px; }
-.shots a { display: block; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; background: var(--surface); }
-.shots img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .25s ease; }
-.shots a:hover img { transform: scale(1.03); }
-.shots figcaption { color: var(--muted); font-size: 13.5px; }
-
-
-/* ---------- roadmap board ---------- */
-.rm { --c-surv:#4f9a3f; --c-world:#3f7fc0; --c-fight:#c24a3a; --c-craft:#d98a2b; --c-online:#8a5bc0; --c-look:#2fa3a0; display: grid; gap: 20px; }
-.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13.5px; color: var(--muted); }
-.legend span { display: inline-flex; align-items: center; gap: 8px; }
-.dia { --c: var(--c-surv); position: relative; width: 30px; height: 30px; flex: none; display: inline-grid; place-items: center; }
-.dia::before { content: ""; position: absolute; inset: 3px; transform: rotate(45deg); background: var(--c); border-radius: 3px; box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--c) 55%, #000) inset; }
-.dia svg { position: relative; width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.dia.surv { --c: var(--c-surv); } .dia.world { --c: var(--c-world); } .dia.fight { --c: var(--c-fight); }
-.dia.craft { --c: var(--c-craft); } .dia.online { --c: var(--c-online); } .dia.look { --c: var(--c-look); }
-.ongoing { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
-.ongoing li { display: grid; justify-items: center; gap: 6px; padding: 14px 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; text-align: center; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; }
-.board { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
-.board li { display: grid; grid-template-columns: 34px minmax(0, 1fr); align-items: center; gap: 4px 10px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; }
-.board li .dia { grid-row: 1 / span 2; }
-.board b { font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.1; }
-.board span.t { color: var(--muted); font-size: 13px; line-height: 1.3; }
-.board.done li { box-shadow: inset 3px 0 0 var(--done); }
-.board.done b::after { content: " \2713"; color: var(--done); }
-.board.now li { box-shadow: inset 3px 0 0 var(--accent); }
+/* ---------- features: alternating image and text ---------- */
+.features { padding: clamp(56px, 8vw, 110px) 0; display: grid; gap: clamp(48px, 7vw, 96px); }
+.feature { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); align-items: center; }
+.feature:nth-child(even) .shot { order: 2; }
+.feature .shot { position: relative; border-radius: 6px; overflow: hidden; background: var(--slate); border: 1px solid var(--line); aspect-ratio: 16 / 9; }
+.feature .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.feature:hover .shot img { transform: scale(1.03); }
+.feature .shot::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(228, 236, 240, 0.06), inset 0 -60px 60px -40px rgba(11, 16, 20, 0.7); pointer-events: none; }
+.feature .text { display: grid; gap: 14px; }
+.feature h2 { font-size: clamp(34px, 4vw, 52px); font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.feature p { color: var(--mist); font-size: 17px; max-width: 48ch; }
+.feature .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ice); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+@media (max-width: 760px) { .feature { grid-template-columns: 1fr; } .feature:nth-child(even) .shot { order: 0; } }
 
 /* ---------- story ---------- */
-.story-text { max-width: 62ch; display: grid; gap: 14px; font-size: 17px; line-height: 1.65; }
-.story-text p { margin: 0; }
-.story-text .line { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; border-left: 3px solid var(--accent); padding-left: 14px; }
-.story-text .note { color: var(--muted); font-size: 14.5px; font-style: italic; }
-.story-text hr { border: 0; border-top: 1px solid var(--line); width: 60px; margin: 6px 0; }
+.story { position: relative; padding: clamp(64px, 10vw, 140px) 0; isolation: isolate; overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.story-bg { position: absolute; inset: 0; z-index: -2; background: url(screens/zombie.jpg) center 40% / cover no-repeat; opacity: 0.22; filter: saturate(0.6) blur(1px); transform: scale(1.04); }
+.story::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(80% 80% at 50% 50%, rgba(11, 16, 20, 0.2), var(--night) 100%), linear-gradient(180deg, var(--night), transparent 20%, transparent 80%, var(--night)); }
+.story-in { max-width: 680px; margin: 0 auto; display: grid; gap: 22px; }
+.story h2 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.story .sub { color: var(--mist); font-size: 15px; margin-top: -8px; }
+.prose { display: grid; gap: 18px; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.7; color: var(--frost); }
+.prose p:first-of-type::first-letter { font-family: var(--display); font-weight: 700; font-size: 3.6em; line-height: 0.8; float: left; margin: 8px 10px 0 0; color: var(--ember); }
+.prose em { color: var(--ice); font-style: italic; }
+.prose .graffiti { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 3vw, 32px); letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.1; border-left: 3px solid var(--ember); padding: 4px 0 4px 18px; margin: 8px 0; }
+.prose hr { border: 0; border-top: 1px solid var(--line); width: 72px; margin: 10px 0; }
+.prose .note { color: var(--mist); font-size: 15px; font-style: italic; }
 
-footer { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); padding-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+/* ---------- newest build and roadmap ---------- */
+.latest { padding: clamp(56px, 8vw, 110px) 0; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+@media (max-width: 860px) { .latest { grid-template-columns: 1fr; } }
+.card { background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 14px; }
+.card h2 { font-size: clamp(30px, 3.6vw, 44px); font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.ver-line { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; font-family: var(--mono); font-size: 13px; color: var(--mist); }
+.ver-line b { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--frost); letter-spacing: 0.02em; }
+.newest-tag { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--good); border: 1px solid var(--good); border-radius: 3px; padding: 1px 7px; }
+.notes { margin: 0; padding-left: 20px; display: grid; gap: 10px; color: var(--frost); font-size: 15.5px; }
+.notes li::marker { color: var(--ember); }
+.notes h4 { margin: 6px 0 0; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mist); list-style: none; }
+.card details { border-top: 1px solid var(--line); padding-top: 12px; }
+.card summary { cursor: pointer; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ice); }
+.card summary:hover { color: var(--frost); }
+.older { display: grid; gap: 14px; margin-top: 12px; }
+.older > div { display: grid; gap: 4px; }
+.older .notes { font-size: 14.5px; color: var(--mist); }
+.road { display: grid; gap: 22px; }
+.road h2 { font-size: clamp(30px, 3.6vw, 44px); font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.road p.sub { color: var(--mist); font-size: 15.5px; max-width: 48ch; }
+.road ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.road li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; align-items: baseline; font-size: 15.5px; }
+.road li b { font-family: var(--display); font-weight: 600; font-size: 18px; letter-spacing: 0.03em; }
+.road li span { color: var(--mist); display: block; font-size: 14px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--line); align-self: center; }
+.dot.done { background: var(--good); border-color: var(--good); }
+.dot.now { background: var(--ember); border-color: var(--ember); box-shadow: 0 0 0 4px rgba(217, 118, 58, 0.18); }
+.road .group { display: grid; gap: 10px; }
+.road .group h3 { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
 
-@media (max-width: 700px) {
-  .updates > li { grid-template-columns: 1fr; }
-}
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--mist); font-size: 13.5px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; }
+footer .mark { font-size: 16px; margin-right: 0; }
+
+/* ---------- scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .feature .shot img { transition: none; } }
+.still .reveal { opacity: 1; transform: none; transition: none; }
+.still .cue { animation: none; }
+.still * { transition: none !important; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="bar">
-  <div class="bar-in">
-    <a class="mark" href="#top">Zombie Dawn</a>
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="mark" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg>Zombie Dawn</a>
     <nav aria-label="Sections">
-      <a href="#download">Download</a>
-      <a href="#screenshots">Screenshots</a>
+      <a href="#island">The island</a>
       <a href="#story">Story</a>
       <a href="#updates">Updates</a>
       <a href="#roadmap">Roadmap</a>
     </nav>
+    <a class="btn btn-primary" id="dl-top" href="#download">Download</a>
   </div>
-</div>
+</header>
 
-<main class="page" id="top">
+<main id="main">
 
-<section class="intro" id="download" aria-labelledby="title">
-  <span class="stage-tag">Pre-alpha</span>
-  <h1 id="title">Zombie Dawn</h1>
-  <p class="lede">An open-world survival game for a group of friends, on a cold northern coast. Get out of the town, find somewhere quiet to build, stay warm and dry, and in the end clear the zombies and bring the world back.</p>
-  <p class="alpha">Pre-alpha: placeholder art, missing pieces, and things that break between versions. Working title.</p>
-  <div class="download">
-    <a class="btn" id="dl" href="#updates" aria-disabled="true">Download for Windows</a>
-    <span class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</span>
-    <div class="dl-help">
-      <p>Unzip it anywhere and run <code>ZombieDawn.exe</code>. Start Steam first to play with friends.</p>
-      <p>When a new version is out, the game says so on its start screen and updates itself with one button.</p>
+<section class="hero" id="download" aria-labelledby="title">
+  <img class="hero-img" src="screens/village-dusk.jpg" alt="" width="1280" height="720" fetchpriority="high">
+  <canvas class="snow" id="snow" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <span class="stage">Pre-alpha &middot; in development</span>
+    <h1 id="title">Zombie Dawn</h1>
+    <p class="tagline">Survive the northern winter, together.</p>
+    <p class="lede">An open-world survival game on an island off a cold northern coast. Get out of the village, find somewhere quiet, stay warm and dry, and in the end clear the dead and bring the lights back.</p>
+    <div class="cta">
+      <a class="btn btn-primary" id="dl" href="#updates" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>Download for Windows</a>
+      <a class="btn btn-ghost" href="#story">Read the opening</a>
+    </div>
+    <p class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</p>
+  </div>
+  <a class="cue" href="#island" aria-label="Scroll down"><svg viewBox="0 0 24 24"><path d="m6 10 6 6 6-6"/></svg></a>
+</section>
+
+<section class="statements" id="island" aria-label="The island">
+  <div class="wrap">
+    <ol>
+      <li class="reveal"><span class="n">01</span><h2>An island, cut off.</h2><p>The bridge to the city is gone and the ferries have stopped. Twelve by twelve kilometres of coast, valley, lake and mountain, and nobody coming to help.</p></li>
+      <li class="reveal"><span class="n">02</span><h2>Winter walks down the mountain.</h2><p>Every world begins in autumn. The peaks turn white on the first evening; by the time the power fails, the snow has reached the village street.</p></li>
+      <li class="reveal"><span class="n">03</span><h2>The dead are drawn to noise, fire and warmth.</h2><p>They hear an axe on a tree at thirty metres and a campfire from further. Leave doors closed. Move at the edge of the street.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="wrap features" aria-label="What the game is">
+  <article class="feature reveal">
+    <div class="shot"><img src="screens/village-air.jpg" alt="The ten houses of Haldersfield from the air, along a road beside the river" loading="lazy" width="1280" height="720"></div>
+    <div class="text">
+      <span class="label ember">Haldersfield</span>
+      <h2>A village to search</h2>
+      <p>Ten houses along the main road, each left in a hurry: breakfast still on the table, a suitcase half packed, drawers pulled out. Cupboards on every floor hold what the people left behind, and no two worlds hold the same.</p>
+      <div class="tags"><span class="tag">Loot</span><span class="tag">Doors and lights</span><span class="tag">Every world different</span></div>
+    </div>
+  </article>
+  <article class="feature reveal">
+    <div class="shot"><img src="screens/zombie.jpg" alt="A group of zombies on the village street under a street lamp at dusk" loading="lazy" width="1280" height="720"></div>
+    <div class="text">
+      <span class="label ember">The dead</span>
+      <h2>They hear you</h2>
+      <p>Noise, fire and light draw them. Near you they are real bodies that chase, grab and bite; far off they are a crowd on the road. A latched door holds them, for a while. An ajar one does not.</p>
+      <div class="tags"><span class="tag">Hearing</span><span class="tag">Melee</span><span class="tag">Crowds</span></div>
+    </div>
+  </article>
+  <article class="feature reveal">
+    <div class="shot"><img src="screens/river.jpg" alt="A cold river between grassy banks with spruce trees" loading="lazy" width="1280" height="720"></div>
+    <div class="text">
+      <span class="label ember">The body</span>
+      <h2>Stay warm and dry</h2>
+      <p>No health bar. Hunger, thirst, cold, wet clothes and a wound left open are what kill you. A stove, a woodpile and a shut door are worth more than any weapon, and the river will make you sick unless you boil it.</p>
+      <div class="tags"><span class="tag">Hunger and thirst</span><span class="tag">Cold and wet</span><span class="tag">Fire and crafting</span></div>
+    </div>
+  </article>
+  <article class="feature reveal">
+    <div class="shot"><img src="screens/worlds.jpg" alt="The start screen with a list of saved worlds" loading="lazy" width="1280" height="720"></div>
+    <div class="text">
+      <span class="label ember">Together</span>
+      <h2>Alone or with friends</h2>
+      <p>Play solo, or host a world for friends over Steam or by IP address with proximity voice. Keep several saved worlds; each new one rolls its own loot, doors, zombies and the day the power fails.</p>
+      <div class="tags"><span class="tag">Steam co-op</span><span class="tag">Solo</span><span class="tag">Saved worlds</span></div>
+    </div>
+  </article>
+</section>
+
+<section class="story" id="story" aria-labelledby="story-h">
+  <div class="story-bg" aria-hidden="true"></div>
+  <div class="wrap story-in reveal">
+    <span class="label ember">The story</span>
+    <h2 id="story-h">The Walking Winter</h2>
+    <p class="sub">The opening of a story from the island. The game lets you find the rest yourself.</p>
+    <div class="prose">
+      <p>I woke up on a road with gravel in my cheek and a sound in my head like a kettle that would not stop.</p>
+      <p>The last thing I remembered was the harbour at Vellport. A man in a hi-vis vest shouting at a ferry that was already gone. A woman holding a child so tightly her knuckles were white, and the child looking over her shoulder at something behind me. Then the noise, and the sky turning sideways.</p>
+      <p>A sign said HALDERSFIELD 2. Someone had left a car across the lane with its door open. The radio inside was still talking in the flat voice they use for numbers. <em>All crossings to the mainland are closed until further notice. Do not approach the water. Do not try to leave the island.</em></p>
+      <p>It was full morning, and along the village street the lamps were still burning. Nobody had come to switch them off.</p>
+      <p>Someone had painted on the wall by the village sign, in a hurry:</p>
+      <p class="graffiti">To find a cure you need to search where it all began.</p>
+      <p>Under it, in another hand: <em>Don&rsquo;t trust the city. Don&rsquo;t trust the radio.</em> A few steps on, an official notice, stamped, promised that the city across the water was safe, and told everyone to report to a harbour there.</p>
+      <p>I looked up. Past the end of the island, over the water, was the city. A long grey line of towers, very clear, a few lights still in the windows. Between us and it a thin black thread went out over the sea and ended in nothing. Somebody had blown the bridge.</p>
+      <p>I took a knife from the car&rsquo;s glovebox, bound my head with a rag, and went down into the village.</p>
+      <hr>
+      <p class="note">The rest of the story is in the game.</p>
     </div>
   </div>
 </section>
 
-<section id="screenshots" aria-labelledby="shots-h">
-  <div class="section-head">
-    <span class="label">Screenshots</span>
-    <h2 id="shots-h">From the game</h2>
-    <p>Taken in the editor while building. Everything here is still being worked on. Click a picture to see it larger.</p>
+<section class="wrap latest" id="updates" aria-label="Newest build and roadmap">
+  <div class="card reveal">
+    <span class="label ember">Updates</span>
+    <h2>What changed</h2>
+    <div class="ver-line" id="latest-line"><b>Looking for the newest build&hellip;</b></div>
+    <div id="latest-notes"><p class="dl-meta">The first version is on its way.</p></div>
+    <details id="older-wrap" hidden>
+      <summary>Earlier builds</summary>
+      <div class="older" id="older"></div>
+    </details>
   </div>
-  <ul class="shots">
-    <li><figure><a href="screens/start.jpg"><img src="screens/start.jpg" alt="The Zombie Dawn start screen over a snowy mountain scene" loading="lazy"></a><figcaption>The new start screen</figcaption></figure></li>
-    <li><figure><a href="screens/village-air.jpg"><img src="screens/village-air.jpg" alt="The village seen from the air" loading="lazy"></a><figcaption>The village from the air</figcaption></figure></li>
-    <li><figure><a href="screens/village-dusk.jpg"><img src="screens/village-dusk.jpg" alt="The village street at dusk with the street lamps lit" loading="lazy"></a><figcaption>Street lamps come on at dusk, until the power fails</figcaption></figure></li>
-    <li><figure><a href="screens/zombie.jpg"><img src="screens/zombie.jpg" alt="A group of zombies on the village street at dusk" loading="lazy"></a><figcaption>A group on the village street at dusk</figcaption></figure></li>
-    <li><figure><a href="screens/valley.jpg"><img src="screens/valley.jpg" alt="A green valley at noon" loading="lazy"></a><figcaption>The valley at noon</figcaption></figure></li>
-    <li><figure><a href="screens/sea.jpg"><img src="screens/sea.jpg" alt="The sea seen from a beach" loading="lazy"></a><figcaption>The sea from the beach</figcaption></figure></li>
-    <li><figure><a href="screens/river.jpg"><img src="screens/river.jpg" alt="A river bank" loading="lazy"></a><figcaption>A river bank</figcaption></figure></li>
-    <li><figure><a href="screens/worlds.jpg"><img src="screens/worlds.jpg" alt="The list of saved worlds" loading="lazy"></a><figcaption>Solo play and saved worlds</figcaption></figure></li>
-  </ul>
-</section>
-
-<section id="updates" aria-labelledby="updates-h">
-  <div class="section-head">
-    <span class="label">Updates</span>
-    <h2 id="updates-h">What changed</h2>
-    <p>Newest first. Versions read major.minor.revision.package: major is a big milestone, minor a feature update, revision a small fix or change, package only an asset or library change. Every one can be downloaded here.</p>
-  </div>
-  <ul class="updates" id="updates-list">
-    <li><p class="empty">The first version is on its way.</p></li>
-  </ul>
-</section>
-
-<section id="story" aria-labelledby="story-h">
-  <div class="section-head">
-    <span class="label">Story</span>
-    <h2 id="story-h">The Walking Winter</h2>
-    <p>The opening of a story from the island. The game lets you find the rest yourself.</p>
-  </div>
-  <div class="story-text">
-    <p>I woke up on a road with gravel in my cheek and a sound in my head like a kettle that would not stop.</p>
-    <p>The last thing I remembered was the harbour at Vellport. A man in a hi-vis vest shouting at a ferry that was already gone. A woman holding a child so tightly her knuckles were white, and the child looking over her shoulder at something behind me. Then the noise, and the sky turning sideways.</p>
-    <p>A sign said HALDERSFIELD 2. Someone had left a car across the lane with its door open. The radio inside was still talking in the flat voice they use for numbers. <em>All crossings to the mainland are closed until further notice. Do not approach the water. Do not try to leave the island.</em></p>
-    <p>It was full morning, and along the village street the lamps were still burning. Nobody had come to switch them off.</p>
-    <p>Someone had painted on the wall by the village sign, in a hurry:</p>
-    <p class="line">To find a cure you need to search where it all began.</p>
-    <p>Under it, in another hand: <em>Don&rsquo;t trust the city. Don&rsquo;t trust the radio.</em> A few steps on, an official notice, stamped, promised that the city across the water was safe, and told everyone to report to a harbour there.</p>
-    <p>I looked up. Past the end of the island, over the water, was the city. A long grey line of towers, very clear, a few lights still in the windows. Between us and it a thin black thread went out over the sea and ended in nothing. Somebody had blown the bridge.</p>
-    <p>I took a knife from the car&rsquo;s glovebox, bound my head with a rag, and went down into the village.</p>
-    <hr>
-    <p>The first three days I did what anyone does. I found a house with a stove and a woodpile. I learned that the river water would make me sick, and that if I boiled it, it would not. I learned that the dead in Haldersfield did not stay dead, and that they were drawn to noise, to fire, and to the smell of a living thing. I learned to move at the edge of a street, to leave doors closed, to hold my breath when one passed.</p>
-    <p>I found a kitchen table set for breakfast, with nobody in the house. I found a delivery van with its rear doors open and a garden hose still running into the road.</p>
-    <p class="note">The rest of the story is in the game.</p>
+  <div class="road reveal" id="roadmap">
+    <span class="label ember">Roadmap</span>
+    <h2>Where it is going</h2>
+    <p class="sub">First one village gets every part of the game and is made fun for an evening with friends. Then the world grows.</p>
+    <div class="group"><h3>Built</h3><ul>
+      <li><span class="dot done"></span><div><b>The map, water and the village</b><span>12 &times; 12 km of coast, fjord, valley and mountain; ten houses, street lamps and a blackout</span></div></li>
+      <li><span class="dot done"></span><div><b>Staying alive</b><span>Hunger, thirst, cold, bleeding, wet clothes, stamina; campfires and crafting</span></div></li>
+      <li><span class="dot done"></span><div><b>Zombies and melee</b><span>They hear, chase and bite; knife, hammer and axe; a crowd in the distance</span></div></li>
+      <li><span class="dot done"></span><div><b>Online or alone</b><span>Steam, voice, solo play, saved worlds, one-button updates</span></div></li>
+    </ul></div>
+    <div class="group"><h3>Now</h3><ul>
+      <li><span class="dot now"></span><div><b>Finishing the village</b><span>Rarity and wear, animated hands and bodies, a base, first guns, weather you can see</span></div></li>
+    </ul></div>
+    <div class="group"><h3>After that</h3><ul>
+      <li><span class="dot"></span><div><b>The rest of the island</b><span>Roads, the coast, the city, farms, the dam; zombies in the hundreds</span></div></li>
+      <li><span class="dot"></span><div><b>Bases, power and the goal</b><span>Building in full, generators, the research lab, the way off the island</span></div></li>
+    </ul></div>
   </div>
 </section>
-
-<section id="roadmap" aria-labelledby="roadmap-h">
-  <div class="section-head">
-    <span class="label">Roadmap</span>
-    <h2 id="roadmap-h">Where the game is going</h2>
-    <p>First one small village gets every part of the game and is made fun for an evening with friends. Then the world grows.</p>
-  </div>
-
-  <div class="rm">
-  <div class="legend" aria-label="Icon legend"><span><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span>Survival</span><span><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span>World</span><span><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span>Combat and zombies</span><span><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span>Crafting and bases</span><span><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span>Online and saving</span><span><span class="dia look"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span>Look and sound</span></div>
-
-  <div class="stage">
-    <h3>Ongoing improvements</h3>
-    <ul class="ongoing"><li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span>Combat</li><li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span>World</li><li><span class="dia look"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span>Look</li><li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span>Survival</li><li><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span>Online</li><li><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span>Building</li></ul>
-  </div>
-
-  <div class="stage">
-    <h3>Built</h3>
-    <ul class="board done">
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>The map</b><span class="t">12 &times; 12 km of coast, fjord, valley and mountains; real sun, moon and seasons</span></li>
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Water</b><span class="t">A sea with waves, four lakes and seven rivers</span></li>
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>The village</b><span class="t">Ten houses to search, street lamps, a blackout after some days</span></li>
-      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Staying alive</b><span class="t">Hunger, thirst, cold, bleeding and wet clothes</span></li>
-      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Loot</b><span class="t">Pockets, backpacks, searchable furniture; different in every new world</span></li>
-      <li><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span><b>Fire and crafting</b><span class="t">Campfires, gathering wood and stone, tools and recipes</span></li>
-      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>Zombies</b><span class="t">They hear you, chase you and bite; a real model, a crowd in the distance</span></li>
-      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>Melee</b><span class="t">Knife, hammer, axe</span></li>
-      <li><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span><b>Online or alone</b><span class="t">Steam, voice, your own server, solo play, several saved worlds, updates</span></li>
-      <li><span class="dia look"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span><b>A new look</b><span class="t">Start screen, menus and a cleaner HUD; footsteps and sounds</span></li>
-    </ul>
-  </div>
-
-  <div class="stage">
-    <h3>In development: finishing the village that holds the whole game</h3>
-    <ul class="board now">
-      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Stamina and cold</b><span class="t">Cold and tiredness that change how you play</span></li>
-      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Rarity and wear</b><span class="t">Rare finds, tools and weapons that wear out</span></li>
-      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>Hands and bodies</b><span class="t">Animated arms and bodies</span></li>
-      <li><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span><b>A base</b><span class="t">Take over a cabin or build one</span></li>
-      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>First guns</b><span class="t">Rare and loud</span></li>
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Weather</b><span class="t">Rain and snow you can see</span></li>
-      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Death and spawns</b><span class="t">Your things stay where you fell</span></li>
-    </ul>
-  </div>
-
-  <div class="stage">
-    <h3>After that</h3>
-    <ul class="board later">
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Signs of the outbreak</b><span class="t">Population signs that change as the world falls apart</span></li>
-      <li><span class="dia fight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6"/><path d="M9 17v3h6v-3M9.5 11h.01M14.5 11h.01"/></svg></span><b>Zombies at scale</b><span class="t">Hundreds at once, and worse kinds</span></li>
-      <li><span class="dia craft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5-3 3-5-5zM13 11 5 19"/></svg></span><b>Bases and power</b><span class="t">Building in full, generators, getting the lights back</span></li>
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>The research lab</b><span class="t">Clear it, power it, work towards a cure</span></li>
-      <li><span class="dia surv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></svg></span><b>Skills and animals</b><span class="t">Hunting, butchering and getting better at crafts</span></li>
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>The rest of the map</b><span class="t">Roads, more towns, farms, the dam</span></li>
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Military and bunkers</b><span class="t">Hidden places with codes to find</span></li>
-      <li><span class="dia world"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 7 2-3 5 8z"/></svg></span><b>Vehicles and a second map</b><span class="t">Cars and boats, and another place to survive</span></li>
-      <li><span class="dia look"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span><b>Water and shore polish</b><span class="t">Foam, clear shallows, rain on the surface</span></li>
-      <li><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span><b>Dedicated servers</b><span class="t">Software to host your own always-on server for friends</span></li>
-      <li><span class="dia online"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3-1 6 1 6 4"/></svg></span><b>On Steam</b><span class="t">Our own Steam page and automatic small updates</span></li>
-    </ul>
-  </div>
-  </div>
-
-  <p class="alpha">The stage becomes Alpha when one village is fun for a whole evening with friends. There is no release date yet.</p>
-
-  <p class="goal"><b>The goal:</b> find and shut down the source of the outbreak, clear the zombies zone by zone, get power, water and the radio running again, and call in the ship that ends the game.</p>
-</section>
-
-<footer>
-  <span>Zombie Dawn is a working title. A game in development for friends.</span>
-  <span id="foot-version"></span>
-</footer>
 
 </main>
 
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg>Zombie Dawn</a>
+    <span>A working title. A game in development for friends.</span>
+    <span id="foot-version"></span>
+  </div>
+</footer>
+
 <script>
-// The download button and the update list come from latest.json and releases.json, which tools/publish.ps1 writes
-// with each new build. The page works without them and never needs a server of its own.
+// Newest build and the update list come from latest.json and releases.json, which tools/publish.ps1 writes with each
+// publish. When they cannot be fetched (opened from disk, or nothing published yet) a built-in sample is shown and
+// marked as such. The page never needs a server of its own.
+/* FALLBACK:START */
+var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},"releases":[{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},{"build":202610131670,"version":"Pre-alpha 0.2.5.0","date":"2026-10-13 14:35","url":"https://dl.rode.live/ZombieDawn_2026-10-13_1435.zip","sha256":"d67cfa5c4c9cc652ea8af8d2569d0086b3f63bd69cab7fe2f0622a2ca27bbc95","size":1464000000,"notes":["Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump.","Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference.","Street lamps along the village road switch on at dusk and off at dawn while the power grid works.","The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark.","Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die.","Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk.","No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game.","Houses have no working lamps yet, and nothing brings the power back yet.","Every zombie wears the same clothes for now (one character model); more models will follow."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump."},{"t":"li","text":"Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference."},{"t":"li","text":"Street lamps along the village road switch on at dusk and off at dawn while the power grid works."},{"t":"li","text":"The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark."},{"t":"li","text":"Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die."},{"t":"li","text":"Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk."},{"t":"li","text":"No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game."},{"t":"h","text":"Known problems"},{"t":"li","text":"Houses have no working lamps yet, and nothing brings the power back yet."},{"t":"li","text":"Every zombie wears the same clothes for now (one character model); more models will follow."}]},{"build":202610131454,"version":"Pre-alpha 0.2.4.0","date":"2026-10-13 12:26","url":"","sha256":"addbbfd2d656c1d743a2a6de868c8afd5cc10f64e445202c496160e6cca54a57","size":1453000000,"notes":["Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark).","A torch held in hand now gives light (craft one, then right-click it to take it in hand).","One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river.","Trees no longer grow inside village houses, and furniture no longer pokes through house walls.","Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves.","Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot.","Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had.","Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise).","The sea has gentle moving waves and the lakes small ripples.","The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all.","Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet).","Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge.","There is no foam where the sea meets the beach yet."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark)."},{"t":"li","text":"A torch held in hand now gives light (craft one, then right-click it to take it in hand)."},{"t":"li","text":"One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river."},{"t":"li","text":"Trees no longer grow inside village houses, and furniture no longer pokes through house walls."},{"t":"li","text":"Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves."},{"t":"li","text":"Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot."},{"t":"li","text":"Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had."},{"t":"li","text":"Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise)."},{"t":"li","text":"The sea has gentle moving waves and the lakes small ripples."},{"t":"li","text":"The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all."},{"t":"h","text":"Known problems"},{"t":"li","text":"Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet)."},{"t":"li","text":"Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge."},{"t":"li","text":"There is no foam where the sea meets the beach yet."}]},{"build":202610131158,"version":"Pre-alpha 0.2.3.0","date":"2026-10-13 09:37","url":"","sha256":"cfea8e618e69355a08fdcf1f57ce39aa9c5355b3204472663f0f67c8aabd03d1","size":1442000000,"notes":["A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.","The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right.","The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge.","A small \"Talking\" mark shows bottom left while you hold V.","Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world.","Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version.","Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept.","Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.","The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).","The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.","The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."],"body":[{"t":"h","text":"New"},{"t":"li","text":"A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom."},{"t":"li","text":"The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right."},{"t":"li","text":"The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge."},{"t":"li","text":"A small \"Talking\" mark shows bottom left while you hold V."},{"t":"li","text":"Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world."},{"t":"li","text":"Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version."},{"t":"li","text":"Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept."},{"t":"li","text":"Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days."},{"t":"li","text":"The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels)."},{"t":"li","text":"The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor."},{"t":"li","text":"The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."}]}]};
+/* FALLBACK:END */
 (function () {
-  function mb(bytes) { return Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB"; }
-  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
-  function fresh(url) { return url + "?t=" + Date.now(); }
+  "use strict";
+  // ?shot=1 (the screenshot script) counts as reduced motion: no fades, no snow, so a capture shows everything.
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches || /[?&]shot=1/.test(location.search);
+  if (reduce) document.documentElement.classList.add("still");
 
-  fetch(fresh("latest.json")).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (latest) {
-    var btn = document.getElementById("dl");
-    btn.href = latest.url;
-    btn.removeAttribute("aria-disabled");
-    document.getElementById("dl-meta").textContent = latest.version + " · " + mb(latest.size) + " · Windows 64-bit";
-    document.getElementById("foot-version").textContent = "Newest version " + latest.version;
-  }).catch(function () {
-    document.getElementById("dl-meta").textContent = "No version is out yet. Soon.";
-  });
+  // ---- top bar turns solid after the hero's first screen
+  var top = document.getElementById("top");
+  function onScroll() { top.classList.toggle("solid", window.scrollY > 40); }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 
-  fetch(fresh("releases.json")).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (releases) {
-    if (!Array.isArray(releases) || releases.length === 0) return;
-    var list = document.getElementById("updates-list");
-    list.textContent = "";
-    releases.forEach(function (rel, i) {
-      if (!rel || !rel.version) return;
-      var li = el("li", i === 0 ? "latest" : "");
-      var when = el("div", "when");
-      when.appendChild(el("span", "ver", rel.version));
-      var dl = el("a", "date", (rel.date || "") + " · " + mb(rel.size));
-      dl.href = rel.url;
-      when.appendChild(dl);
-      li.appendChild(when);
-      var box = el("div", "notes");
-      var hasHeads = Array.isArray(rel.body) && rel.body.some(function (b) { return b.t === "h"; });
-      if (hasHeads || (Array.isArray(rel.body) && rel.body.some(function (b) { return b.t === "p"; }))) {
-        // Full patch notes: headings, paragraphs and bullet lists in the order they were written.
-        var ul = null;
-        rel.body.forEach(function (b) {
-          if (b.t === "li") { if (!ul) { ul = el("ul"); box.appendChild(ul); } ul.appendChild(el("li", "", b.text)); return; }
-          ul = null;
-          box.appendChild(el(b.t === "h" ? "h4" : "p", "", b.text));
-        });
-      } else {
-        var notes = el("ul");
-        (rel.notes && rel.notes.length ? rel.notes : ["Fixes and small changes."]).forEach(function (n) { notes.appendChild(el("li", "", n)); });
-        box.appendChild(notes);
+  // ---- hero parallax (small, and only when motion is welcome)
+  var heroImg = document.querySelector(".hero-img");
+  if (!reduce && heroImg) {
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { heroImg.style.transform = "translateY(" + Math.min(window.scrollY * 0.25, 300) + "px)"; ticking = false; });
+    }, { passive: true });
+  }
+
+  // ---- reveal on scroll
+  var revealed = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    revealed.forEach(function (el) { io.observe(el); });
+  } else {
+    revealed.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // ---- snow over the hero: a few hundred flakes on a canvas, cheap, paused when hidden
+  var canvas = document.getElementById("snow");
+  if (canvas && !reduce) {
+    var ctx = canvas.getContext("2d"), flakes = [], w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.5), raf = 0, last = 0;
+    function size() {
+      var r = canvas.getBoundingClientRect();
+      w = Math.max(1, Math.floor(r.width)); h = Math.max(1, Math.floor(r.height));
+      canvas.width = Math.floor(w * dpr); canvas.height = Math.floor(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.min(220, (w * h) / 6500));
+      flakes = [];
+      for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * w, y: Math.random() * h, r: 0.6 + Math.random() * 1.8, s: 12 + Math.random() * 30, d: Math.random() * Math.PI * 2, o: 0.25 + Math.random() * 0.55 });
+    }
+    function frame(t) {
+      var dt = Math.min(0.05, (t - last) / 1000 || 0.016); last = t;
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "#E4ECF0";
+      for (var i = 0; i < flakes.length; i++) {
+        var f = flakes[i];
+        f.d += dt * 0.6; f.y += f.s * dt; f.x += Math.sin(f.d) * 10 * dt;
+        if (f.y > h + 4) { f.y = -4; f.x = Math.random() * w; }
+        if (f.x < -4) f.x = w + 4; else if (f.x > w + 4) f.x = -4;
+        ctx.globalAlpha = f.o;
+        ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill();
       }
-      li.appendChild(box);
-      list.appendChild(li);
-    });
-  }).catch(function () {});
+      ctx.globalAlpha = 1;
+      raf = requestAnimationFrame(frame);
+    }
+    function start() { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+    function stop() { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+    size(); start();
+    window.addEventListener("resize", size);
+    document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+    // Stop drawing once the hero has scrolled away.
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (e) { e[0].isIntersecting ? start() : stop(); }).observe(canvas);
+  }
+
+  // ---- data: latest.json and releases.json, else the sample
+  function mb(bytes) { return Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB"; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function fresh(url) { return url + "?t=" + Date.now(); }
+  function getJson(url) { return fetch(fresh(url)).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+
+  function showLatest(latest, sample) {
+    var btn = document.getElementById("dl"), topBtn = document.getElementById("dl-top");
+    if (latest.url) { btn.href = latest.url; topBtn.href = latest.url; btn.removeAttribute("aria-disabled"); }
+    var meta = document.getElementById("dl-meta");
+    meta.textContent = latest.version + " · " + mb(latest.size) + " · Windows 64-bit · unzip and run ZombieDawn.exe";
+    if (sample) { meta.appendChild(document.createTextNode("  ")); meta.appendChild(el("span", "sample", "(sample data: the live site reads latest.json)")); }
+    document.getElementById("foot-version").textContent = "Newest version " + latest.version;
+  }
+
+  // An empty "- " line in the notes reaches releases.json as a "-" paragraph; it and a heading with nothing under it
+  // (an empty "Known problems") are left out.
+  function trimBody(body) {
+    body = body.filter(function (b) { return !(b.t === "p" && /^[-\s]*$/.test(b.text || "")); });
+    return body.filter(function (b, i) { return b.t !== "h" || (body[i + 1] && body[i + 1].t !== "h"); });
+  }
+  function renderBody(rel, box, compact) {
+    var body = trimBody(Array.isArray(rel.body) ? rel.body : []);
+    var useBody = body.some(function (b) { return b.t === "h" || b.t === "p"; });
+    var ul = null;
+    if (useBody) {
+      body.forEach(function (b) {
+        if (b.t === "li") { if (!ul) { ul = el("ul", "notes"); box.appendChild(ul); } ul.appendChild(el("li", "", b.text)); return; }
+        ul = null;
+        if (b.t === "h" && compact) return;
+        box.appendChild(el(b.t === "h" ? "h4" : "p", b.t === "h" ? "" : "dl-meta", b.text));
+      });
+    } else {
+      ul = el("ul", "notes");
+      (rel.notes && rel.notes.length ? rel.notes : ["Fixes and small changes."]).forEach(function (n) { ul.appendChild(el("li", "", n)); });
+      box.appendChild(ul);
+    }
+  }
+
+  function showReleases(releases) {
+    if (!Array.isArray(releases) || !releases.length) return;
+    var newest = releases[0];
+    var line = document.getElementById("latest-line");
+    line.textContent = "";
+    line.appendChild(el("b", "", newest.version));
+    line.appendChild(el("span", "newest-tag", "Newest"));
+    line.appendChild(el("span", "", (newest.date || "") + (newest.size ? " · " + mb(newest.size) : "")));
+    var box = document.getElementById("latest-notes");
+    box.textContent = "";
+    renderBody(newest, box, false);
+    var older = releases.slice(1, 6);
+    if (older.length) {
+      var wrap = document.getElementById("older-wrap"), list = document.getElementById("older");
+      wrap.hidden = false;
+      older.forEach(function (rel) {
+        var d = el("div");
+        var vl = el("div", "ver-line"); vl.appendChild(el("b", "", rel.version)); vl.appendChild(el("span", "", rel.date || ""));
+        d.appendChild(vl);
+        renderBody(rel, d, true);
+        list.appendChild(d);
+      });
+    }
+  }
+
+  getJson("latest.json").then(function (latest) { showLatest(latest, false); }).catch(function () {
+    if (ZD_FALLBACK && ZD_FALLBACK.latest) showLatest(ZD_FALLBACK.latest, true);
+    else document.getElementById("dl-meta").textContent = "No version is out yet. Soon.";
+  });
+  getJson("releases.json").then(showReleases).catch(function () { if (ZD_FALLBACK) showReleases(ZD_FALLBACK.releases); });
 })();
 </script>
 </body>
