@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en" data-time="day" data-snow="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patch notes - Zombie Dawn</title>
+<meta name="description" content="Every published build of Zombie Dawn with its patch notes, newest first. Searchable.">
+<!-- For friends while in development: kept out of search engines. Remove this line to be found. -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B1014'/%3E%3Cpath d='M7 24 L16 7 L25 24 Z' fill='none' stroke='%23D9763A' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+/* Self-hosted fonts (SIL Open Font License, see fonts/LICENSES.txt): no requests to other sites. */
+@font-face { font-family: "Barlow Condensed"; font-weight: 500; font-display: swap; src: url(fonts/barlow-condensed-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap; src: url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap; src: url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap; src: url(fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); }
+
+/* The game's own palette (UI/ZGUIStyle): night, slate, frost, mist, ice and one ember accent. */
+:root {
+  --night: #0B1014; --slate: #141C22; --raised: #1F2A32; --hover: #2B3A45; --line: #3A4B57;
+  --frost: #E4ECF0; --mist: #8D9FAA; --ice: #9CC4D6;
+  --ember: #D9763A; --ember-hover: #EE8A4B; --ember-pressed: #B35E2B; --ink-on-ember: #1A0E07;
+  --warn: #F0B04A; --danger: #EF5A4F; --good: #7CD08E;
+  --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --gutter: clamp(16px, 4vw, 40px);
+  --wide: 1180px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--night); color: var(--frost); font-family: var(--body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4 { font-family: var(--display); line-height: 1.05; margin: 0; text-wrap: balance; }
+h2 { font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); letter-spacing: 0.03em; text-transform: uppercase; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--ice); outline-offset: 3px; border-radius: 3px; }
+.skip { position: absolute; left: 16px; top: -60px; background: var(--ember); color: var(--ink-on-ember); padding: 8px 14px; font-weight: 600; z-index: 100; border-radius: 3px; }
+.skip:focus { top: 12px; }
+.wrap { max-width: var(--wide); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.label { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
+.label.ember { color: var(--ember); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 10px 24px; border-radius: 4px; border: 1.5px solid transparent; font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .15s, border-color .15s; }
+.btn-primary { background: var(--ember); color: var(--ink-on-ember); }
+.btn-primary:hover { background: var(--ember-hover); }
+.btn-primary:active { background: var(--ember-pressed); }
+.btn-ghost { border-color: var(--line); color: var(--frost); background: rgba(20, 28, 34, 0.5); }
+.btn-ghost:hover { background: var(--raised); border-color: var(--mist); }
+.btn[aria-disabled="true"] { background: var(--raised); color: var(--mist); pointer-events: none; }
+.btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--display); font-weight: 600; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; color: var(--ice); }
+.chip.good { color: var(--good); border-color: color-mix(in srgb, var(--good) 50%, transparent); }
+.chip.ember { color: var(--ember); border-color: color-mix(in srgb, var(--ember) 55%, transparent); }
+.chip.danger { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 55%, transparent); }
+.chip.warn { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 55%, transparent); }
+
+/* ---------- top bar: transparent over the hero, solid once you scroll (always solid on inner pages) ---------- */
+.top { position: fixed; inset: 0 0 auto 0; z-index: 20; transition: background .25s, border-color .25s; border-bottom: 1px solid transparent; }
+.top.solid { background: rgba(11, 16, 20, 0.88); backdrop-filter: blur(8px); border-color: var(--line); }
+.top-in { display: flex; align-items: center; gap: 12px 24px; min-height: 64px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; margin-right: auto; white-space: nowrap; }
+.brand svg { width: 22px; height: 22px; fill: none; stroke: var(--ember); stroke-width: 2.6; stroke-linejoin: round; }
+.top nav { display: flex; gap: 22px; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; }
+.top nav a { text-decoration: none; color: var(--mist); padding: 6px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+.top nav a:hover { color: var(--frost); }
+.top nav a[aria-current] { color: var(--frost); border-bottom-color: var(--ember); }
+.top .btn { min-height: 38px; padding: 6px 16px; font-size: 16px; white-space: nowrap; }
+@media (max-width: 860px) { .top nav { display: none; } }
+@media (max-width: 480px) { .top .btn .ver { display: none; } }
+/* a plain link row for the phone, where the nav is hidden */
+.mnav { display: none; }
+@media (max-width: 860px) { .mnav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; } .mnav a { color: var(--mist); text-decoration: none; padding: 6px 0; } .mnav a:hover { color: var(--frost); } }
+
+.dl-meta { font-family: var(--mono); font-size: 12.5px; color: var(--mist); }
+.dl-meta .sample { color: var(--warn); }
+
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--mist); font-size: 13.5px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; }
+footer .brand { font-size: 16px; margin-right: 0; color: var(--frost); }
+footer nav { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-left: auto; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; }
+footer nav a { text-decoration: none; }
+footer nav a:hover { color: var(--frost); }
+.still * { transition: none !important; }   /* ?shot=1: the screenshot script wants the finished state */
+
+/* ---------- patch notes (shared by the newest-build card on the front page and the timeline page) ---------- */
+.ver-line { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-family: var(--mono); font-size: 13px; color: var(--mist); }
+.ver-line b { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--frost); letter-spacing: 0.02em; }
+.newest-tag { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--good); border: 1px solid var(--good); border-radius: 3px; padding: 1px 7px; }
+.notes { margin: 0; padding-left: 20px; display: grid; gap: 9px; color: var(--frost); font-size: 15.5px; }
+.notes li::marker { color: var(--ember); }
+.notes-h { margin: 14px 0 0; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); }
+.notes-h:first-child { margin-top: 0; }
+.notes-h.known { color: var(--warn); }
+.notes-p { color: var(--mist); font-size: 15px; }
+.sha { display: grid; gap: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--night); padding: 12px 14px; }
+.sha-row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.sha code { font-family: var(--mono); font-size: 12px; color: var(--frost); word-break: break-all; flex: 1 1 260px; min-width: 0; }
+.sha .copy { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--raised); color: var(--frost); border: 1px solid var(--line); border-radius: 4px; padding: 5px 12px; cursor: pointer; min-height: 34px; }
+.sha .copy:hover { background: var(--hover); }
+.sha .hint { font-size: 13px; color: var(--mist); }
+.sha .hint code { flex: none; color: var(--ice); font-size: 12px; word-break: break-word; }
+mark { background: color-mix(in srgb, var(--ember) 40%, transparent); color: var(--frost); border-radius: 2px; padding: 0 1px; }
+
+body { padding-top: 64px; }
+.pn-head { padding-top: clamp(36px, 6vw, 72px); padding-bottom: 24px; display: grid; gap: 12px; }
+.pn-head h1 { font-size: clamp(44px, 7vw, 84px); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.pn-head h1::after { content: ""; display: block; width: 64px; height: 3px; background: var(--ember); margin-top: 12px; }
+.pn-head p { color: var(--mist); max-width: 64ch; }
+.pn-head .cta { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-top: 6px; }
+.tools { position: sticky; top: 64px; z-index: 10; background: rgba(11, 16, 20, 0.92); backdrop-filter: blur(8px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tools-in { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; padding-top: 10px; padding-bottom: 10px; }
+.search { flex: 1 1 260px; display: flex; align-items: center; gap: 10px; background: var(--slate); border: 1px solid var(--line); border-radius: 6px; padding: 0 12px; min-height: 42px; }
+.search:focus-within { border-color: var(--ice); }
+.search svg { width: 18px; height: 18px; flex: none; fill: none; stroke: var(--mist); stroke-width: 2; stroke-linecap: round; }
+.search input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: var(--frost); font: inherit; font-size: 15.5px; padding: 8px 0; }
+.search input::placeholder { color: var(--mist); }
+.search button { background: none; border: 0; color: var(--mist); cursor: pointer; font-size: 20px; line-height: 1; padding: 4px; }
+.search button:hover { color: var(--frost); }
+.seg { display: inline-flex; background: var(--slate); border: 1px solid var(--line); border-radius: 6px; padding: 3px; }
+.seg button { font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); background: none; border: 0; border-radius: 4px; padding: 6px 14px; cursor: pointer; min-height: 34px; }
+.seg button[aria-pressed="true"] { background: var(--raised); color: var(--frost); box-shadow: inset 0 0 0 1px var(--line); }
+.seg button:hover { color: var(--frost); }
+.count { font-family: var(--mono); font-size: 12.5px; color: var(--mist); margin-left: auto; }
+.timeline { list-style: none; margin: 0; padding: 32px 0 72px; display: grid; gap: 14px; position: relative; }
+.rel { background: var(--slate); border: 1px solid var(--line); border-radius: 8px; scroll-margin-top: 150px; }
+.rel[open] { border-color: color-mix(in srgb, var(--line) 70%, var(--ice)); }
+.rel > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; align-items: center; padding: 16px clamp(16px, 2.4vw, 24px); }
+.rel > summary::-webkit-details-marker { display: none; }
+.rel > summary:hover { background: color-mix(in srgb, var(--raised) 50%, transparent); border-radius: 8px; }
+.rel .vline { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.rel .vline b { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 3vw, 32px); letter-spacing: 0.02em; }
+.rel .vline span { font-family: var(--mono); font-size: 12.5px; color: var(--mist); }
+.rel .tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.rel .chev { width: 18px; height: 18px; fill: none; stroke: var(--mist); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.rel[open] .chev { transform: rotate(180deg); }
+.rel-body { padding: 4px clamp(16px, 2.4vw, 24px) 20px; display: grid; gap: 10px; }
+.rel-foot { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; border-top: 1px solid var(--line); margin: 6px clamp(16px, 2.4vw, 24px) 14px; padding-top: 14px; font-size: 13.5px; color: var(--mist); }
+.rel-foot .btn { min-height: 38px; padding: 6px 16px; font-size: 16px; }
+.rel-foot .gone { font-family: var(--mono); font-size: 12.5px; }
+.rel-foot code { font-family: var(--mono); font-size: 12px; word-break: break-all; }
+.empty { padding: 32px 0 72px; color: var(--mist); }
+@media (max-width: 560px) { .rel > summary { grid-template-columns: 1fr; } .rel .chev { display: none; } .count { margin-left: 0; width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .rel .chev { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top solid" id="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg> Zombie Dawn</a>
+    <nav aria-label="Sections">
+      <a href="index.html">Overview</a>
+      <a href="index.html#map">The island</a>
+      <a href="index.html#opening">How it opens</a>
+      <a href="index.html#gallery">Pictures</a>
+      <a href="patchnotes.html" aria-current="page">Patch notes</a>
+    </nav>
+    <a class="btn btn-primary" id="dl-top" href="index.html#download" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span>Download<span class="ver" id="dl-top-ver"></span></span></a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap pn-head">
+    <span class="label ember">Patch notes</span>
+    <h1>Every change so far</h1>
+    <p>Each published build, newest first. Search across all of them, or look only at what is new or at the known problems. Something not listed that broke? Press F9 in the game to report it.</p>
+    <div class="cta">
+      <a class="btn btn-primary" id="dl" href="#" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>Download newest</a>
+      <span class="dl-meta" id="dl-meta"></span>
+    </div>
+    <p class="dl-meta" id="sample-note" hidden><span class="sample">Sample data: the live site reads releases.json.</span></p>
+  </div>
+  <div class="tools">
+    <div class="wrap tools-in">
+      <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span class="sr" style="position:absolute;left:-9999px">Search the patch notes</span><input id="q" type="search" placeholder="Search the patch notes" autocomplete="off"><button type="button" id="clear" hidden aria-label="Clear search">&times;</button></label>
+      <div class="seg" id="mode" role="group" aria-label="Show">
+        <button type="button" data-mode="all" aria-pressed="true">All</button>
+        <button type="button" data-mode="new" aria-pressed="false">New</button>
+        <button type="button" data-mode="known" aria-pressed="false">Known problems</button>
+      </div>
+      <button type="button" class="btn btn-ghost" id="expand" style="min-height:42px;padding:4px 14px;font-size:15px">Open all</button>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+  </div>
+  <div class="wrap">
+    <ol class="timeline" id="timeline"></ol>
+    <p class="empty" id="empty" hidden>No build matches that. Try a shorter word.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg> Zombie Dawn</a>
+    <span>A working title. A game in development for friends.</span>
+    <span id="foot-version"></span>
+    <nav aria-label="Footer">
+      <a href="index.html#top">Overview</a><a href="index.html#map">The island</a><a href="index.html#opening">How it opens</a><a href="index.html#gallery">Pictures</a><a href="patchnotes.html">Patch notes</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+/* FALLBACK:START */
+var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},"releases":[{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},{"build":202610131670,"version":"Pre-alpha 0.2.5.0","date":"2026-10-13 14:35","url":"https://dl.rode.live/ZombieDawn_2026-10-13_1435.zip","sha256":"d67cfa5c4c9cc652ea8af8d2569d0086b3f63bd69cab7fe2f0622a2ca27bbc95","size":1464000000,"notes":["Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump.","Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference.","Street lamps along the village road switch on at dusk and off at dawn while the power grid works.","The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark.","Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die.","Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk.","No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game.","Houses have no working lamps yet, and nothing brings the power back yet.","Every zombie wears the same clothes for now (one character model); more models will follow."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump."},{"t":"li","text":"Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference."},{"t":"li","text":"Street lamps along the village road switch on at dusk and off at dawn while the power grid works."},{"t":"li","text":"The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark."},{"t":"li","text":"Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die."},{"t":"li","text":"Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk."},{"t":"li","text":"No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game."},{"t":"h","text":"Known problems"},{"t":"li","text":"Houses have no working lamps yet, and nothing brings the power back yet."},{"t":"li","text":"Every zombie wears the same clothes for now (one character model); more models will follow."}]},{"build":202610131454,"version":"Pre-alpha 0.2.4.0","date":"2026-10-13 12:26","url":"","sha256":"addbbfd2d656c1d743a2a6de868c8afd5cc10f64e445202c496160e6cca54a57","size":1453000000,"notes":["Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark).","A torch held in hand now gives light (craft one, then right-click it to take it in hand).","One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river.","Trees no longer grow inside village houses, and furniture no longer pokes through house walls.","Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves.","Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot.","Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had.","Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise).","The sea has gentle moving waves and the lakes small ripples.","The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all.","Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet).","Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge.","There is no foam where the sea meets the beach yet."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark)."},{"t":"li","text":"A torch held in hand now gives light (craft one, then right-click it to take it in hand)."},{"t":"li","text":"One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river."},{"t":"li","text":"Trees no longer grow inside village houses, and furniture no longer pokes through house walls."},{"t":"li","text":"Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves."},{"t":"li","text":"Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot."},{"t":"li","text":"Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had."},{"t":"li","text":"Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise)."},{"t":"li","text":"The sea has gentle moving waves and the lakes small ripples."},{"t":"li","text":"The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all."},{"t":"h","text":"Known problems"},{"t":"li","text":"Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet)."},{"t":"li","text":"Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge."},{"t":"li","text":"There is no foam where the sea meets the beach yet."}]},{"build":202610131158,"version":"Pre-alpha 0.2.3.0","date":"2026-10-13 09:37","url":"","sha256":"cfea8e618e69355a08fdcf1f57ce39aa9c5355b3204472663f0f67c8aabd03d1","size":1442000000,"notes":["A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.","The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right.","The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge.","A small \"Talking\" mark shows bottom left while you hold V.","Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world.","Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version.","Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept.","Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.","The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).","The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.","The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."],"body":[{"t":"h","text":"New"},{"t":"li","text":"A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom."},{"t":"li","text":"The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right."},{"t":"li","text":"The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge."},{"t":"li","text":"A small \"Talking\" mark shows bottom left while you hold V."},{"t":"li","text":"Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world."},{"t":"li","text":"Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version."},{"t":"li","text":"Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept."},{"t":"li","text":"Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days."},{"t":"li","text":"The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels)."},{"t":"li","text":"The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor."},{"t":"li","text":"The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."}]}]};
+/* FALLBACK:END */
+(function () {
+  "use strict";
+  var reduce = /[?&]shot=1/.test(location.search);
+  if (reduce) document.documentElement.classList.add("still");
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function mb(bytes) { return bytes ? Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB" : ""; }
+  function getJson(url) { return fetch(url + "?t=" + Date.now()).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  function copyText(text, btn) {
+    function done() { var o = btn.textContent; btn.textContent = "Copied"; setTimeout(function () { btn.textContent = o; }, 1600); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, fallback); } else fallback();
+    function fallback() { var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0"; document.body.appendChild(t); t.select(); try { document.execCommand("copy"); done(); } catch (e) {} document.body.removeChild(t); }
+  }
+  function shaBox(hash, file) {
+    var b = document.createElement("div"); b.className = "sha";
+    var r = document.createElement("div"); r.className = "sha-row";
+    var l = document.createElement("span"); l.className = "label"; l.textContent = "SHA-256"; r.appendChild(l);
+    var c = document.createElement("code"); c.textContent = hash; r.appendChild(c);
+    var k = document.createElement("button"); k.type = "button"; k.className = "copy"; k.textContent = "Copy"; k.setAttribute("aria-label", "Copy the SHA-256 hash");
+    k.addEventListener("click", function () { copyText(hash, k); }); r.appendChild(k);
+    b.appendChild(r);
+    var h = document.createElement("p"); h.className = "hint"; h.appendChild(document.createTextNode("To check the download, run in PowerShell: "));
+    var cc = document.createElement("code"); cc.textContent = "Get-FileHash " + file + " -Algorithm SHA256"; h.appendChild(cc);
+    h.appendChild(document.createTextNode(" and compare."));
+    b.appendChild(h);
+    return b;
+  }
+  function zipName(url) { var m = /([^\/]+\.zip)(?:$|\?)/.exec(url || ""); return m ? m[1] : "ZombieDawn.zip"; }
+  function trimBody(body) {
+    body = body.filter(function (b) { return !(b.t === "p" && /^[-\s]*$/.test(b.text || "")); });
+    return body.filter(function (b, i) { return b.t !== "h" || (body[i + 1] && body[i + 1].t !== "h"); });
+  }
+  // a release as blocks: [{t:"h"|"li"|"p", text}], from body (headings and paragraphs as publish.ps1 writes them) else the bullet list
+  function blocksOf(rel) {
+    var body = trimBody(Array.isArray(rel.body) ? rel.body : []);
+    if (body.some(function (b) { return b.t === "li"; }) || body.some(function (b) { return b.t === "p"; })) return body;
+    return (rel.notes && rel.notes.length ? rel.notes : ["Fixes and small changes."]).map(function (n) { return { t: "li", text: n }; });
+  }
+
+  var list = document.getElementById("timeline"), qEl = document.getElementById("q"), clearBtn = document.getElementById("clear"), countEl = document.getElementById("count"), emptyEl = document.getElementById("empty");
+  var RELS = [], mode = "all", term = "";
+
+  function esc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  function highlight(node, text) {
+    node.textContent = "";
+    if (!term) { node.textContent = text; return; }
+    var re = new RegExp(esc(term), "ig"), last = 0, m;
+    while ((m = re.exec(text))) { if (m.index > last) node.appendChild(document.createTextNode(text.slice(last, m.index))); node.appendChild(el("mark", "", m[0])); last = m.index + m[0].length; if (m.index === re.lastIndex) re.lastIndex++; }
+    if (last < text.length) node.appendChild(document.createTextNode(text.slice(last)));
+  }
+  function isKnown(h) { return /^known/i.test(h || ""); }
+  function isNew(h) { return /^new/i.test(h || ""); }
+
+  function build() {
+    list.textContent = "";
+    RELS.forEach(function (rel, idx) {
+      var li = el("li"), d = el("details", "rel"), blocks = blocksOf(rel);
+      d.id = "v" + String(rel.version).replace(/[^0-9a-z.]+/gi, "-").replace(/^-+|-+$/g, "");
+      var sm = el("summary"), vl = el("div", "vline"), tags = el("div", "tags");
+      vl.appendChild(el("b", "", rel.version));
+      vl.appendChild(el("span", "", (rel.date || "") + (rel.size ? " · " + mb(rel.size) : "")));
+      if (idx === 0) tags.appendChild(el("span", "newest-tag", "Newest"));
+      var hasKnown = blocks.some(function (b) { return b.t === "h" && isKnown(b.text); }) && blocks.some(function (b, i) { return b.t === "li" && knownAt(blocks, i); });
+      if (hasKnown) tags.appendChild(el("span", "chip warn", "Known problems"));
+      var n = blocks.filter(function (b) { return b.t === "li"; }).length;
+      tags.appendChild(el("span", "chip", n + " change" + (n === 1 ? "" : "s")));
+      var chev = document.createElementNS("http://www.w3.org/2000/svg", "svg"); chev.setAttribute("viewBox", "0 0 24 24"); chev.setAttribute("class", "chev"); chev.setAttribute("aria-hidden", "true");
+      var pth = document.createElementNS("http://www.w3.org/2000/svg", "path"); pth.setAttribute("d", "m6 9 6 6 6-6"); chev.appendChild(pth);
+      tags.appendChild(chev);
+      sm.appendChild(vl); sm.appendChild(tags); d.appendChild(sm);
+      var bodyEl = el("div", "rel-body"); d.appendChild(bodyEl);
+      var foot = el("div", "rel-foot");
+      if (rel.url) {
+        var a = el("a", "btn btn-ghost", "Download this build"); a.href = rel.url; foot.appendChild(a);
+      } else {
+        foot.appendChild(el("span", "gone", "This build is no longer online."));
+      }
+      d.appendChild(foot);
+      if (rel.url && /^[0-9a-f]{64}$/i.test(rel.sha256 || "")) { var sb = shaBox(rel.sha256, zipName(rel.url)); sb.style.margin = "0 clamp(16px, 2.4vw, 24px) 20px"; d.appendChild(sb); }
+      li.appendChild(d); list.appendChild(li);
+      rel._d = d; rel._li = li; rel._body = bodyEl; rel._blocks = blocks;
+    });
+  }
+  // is the bullet at i under a "Known problems" heading?
+  function knownAt(blocks, i) { for (var k = i; k >= 0; k--) if (blocks[k].t === "h") return isKnown(blocks[k].text); return false; }
+  function headingAt(blocks, i) { for (var k = i; k >= 0; k--) if (blocks[k].t === "h") return blocks[k].text; return ""; }
+
+  function apply() {
+    var t = term.toLowerCase(), shownBuilds = 0, shownItems = 0;
+    RELS.forEach(function (rel, idx) {
+      var blocks = rel._blocks, keep = [], titleHit = t && String(rel.version).toLowerCase().indexOf(t) >= 0;
+      blocks.forEach(function (b, i) {
+        if (b.t === "h") return;
+        var h = headingAt(blocks, i);
+        if (mode === "known" && !isKnown(h)) return;
+        if (mode === "new" && h && !isNew(h)) return;
+        if (t && !titleHit && b.text.toLowerCase().indexOf(t) < 0 && h.toLowerCase().indexOf(t) < 0) return;
+        keep.push(i);
+      });
+      rel._li.hidden = !keep.length;
+      if (!keep.length) return;
+      shownBuilds++;
+      rel._body.textContent = "";
+      var ul = null, lastH = null, keepSet = {};
+      keep.forEach(function (i) { keepSet[i] = true; });
+      blocks.forEach(function (b, i) {
+        if (b.t === "h") {
+          // show a heading if something under it is kept
+          var any = false; for (var k = i + 1; k < blocks.length && blocks[k].t !== "h"; k++) if (keepSet[k]) any = true;
+          if (!any) { lastH = null; return; }
+          ul = null; var hh = el("h3", "notes-h" + (isKnown(b.text) ? " known" : "")); highlight(hh, b.text); rel._body.appendChild(hh); lastH = b; return;
+        }
+        if (!keepSet[i]) return;
+        shownItems++;
+        if (b.t === "li") { if (!ul) { ul = el("ul", "notes"); rel._body.appendChild(ul); } var li = el("li"); highlight(li, b.text); ul.appendChild(li); }
+        else { ul = null; var p = el("p", "notes-p"); highlight(p, b.text); rel._body.appendChild(p); }
+      });
+      // open the newest build by default; every match opens while searching or filtering
+      rel._d.open = (t || mode !== "all") ? true : rel._d.open;
+    });
+    countEl.textContent = (term || mode !== "all") ? shownBuilds + " of " + RELS.length + " builds · " + shownItems + " match" + (shownItems === 1 ? "" : "es") : RELS.length + " build" + (RELS.length === 1 ? "" : "s");
+    emptyEl.hidden = shownBuilds > 0;
+    clearBtn.hidden = !term;
+  }
+  function render(releases, sample) {
+    RELS = (Array.isArray(releases) ? releases : []).slice();
+    if (!RELS.length) { emptyEl.hidden = false; emptyEl.textContent = "No builds are published yet. The first one is on its way."; return; }
+    build();
+    RELS[0]._d.open = true;
+    apply();
+    document.getElementById("sample-note").hidden = !sample;
+    // deep link: patchnotes.html#v0.2.5.0
+    if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t && t.tagName === "DETAILS") { t.open = true; t.scrollIntoView(); } }
+  }
+
+  qEl.addEventListener("input", function () { term = qEl.value.trim(); if (!term) RELS.forEach(function (r, i) { r._d.open = i === 0; }); apply(); });
+  clearBtn.addEventListener("click", function () { qEl.value = ""; term = ""; RELS.forEach(function (r, i) { r._d.open = i === 0; }); apply(); qEl.focus(); });
+  document.querySelectorAll("#mode button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      mode = b.dataset.mode;
+      document.querySelectorAll("#mode button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      if (mode === "all" && !term) RELS.forEach(function (r, i) { r._d.open = i === 0; });
+      apply();
+    });
+  });
+  document.getElementById("expand").addEventListener("click", function () {
+    var allOpen = RELS.every(function (r) { return r._li.hidden || r._d.open; });
+    RELS.forEach(function (r) { r._d.open = !allOpen; });
+    this.textContent = allOpen ? "Open all" : "Close all";
+  });
+
+  // ---- the download buttons from latest.json (else the sample, marked)
+  function showLatest(latest, sample) {
+    var topBtn = document.getElementById("dl-top"), btn = document.getElementById("dl");
+    if (latest.url) { topBtn.href = latest.url; btn.href = latest.url; topBtn.removeAttribute("aria-disabled"); btn.removeAttribute("aria-disabled"); }
+    document.getElementById("dl-top-ver").textContent = " · " + String(latest.version || "").replace(/^Pre-alpha\s+/, "");
+    var m = document.getElementById("dl-meta");
+    m.textContent = latest.version + " · " + mb(latest.size) + " · Windows 64-bit";
+    document.getElementById("foot-version").textContent = "Newest version " + latest.version;
+  }
+  getJson("latest.json").then(function (l) { showLatest(l, false); }).catch(function () { if (ZD_FALLBACK && ZD_FALLBACK.latest) showLatest(ZD_FALLBACK.latest, true); });
+  getJson("releases.json").then(function (r) { render(r, false); }).catch(function () { if (ZD_FALLBACK) render(ZD_FALLBACK.releases, true); else render([], false); });
+})();
+</script>
+</body>
+</html>

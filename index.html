@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zombie Dawn</title>
-<meta name="description" content="Vintermark: the island of Zombie Dawn, an open-world zombie survival game for friends. The map, the places, and pictures from the game. Pre-alpha.">
+<meta name="description" content="Zombie Dawn: an open-world zombie survival game for a group of friends, on the island of Vintermark. The map, the opening of the story, pictures and the patch notes. Pre-alpha.">
 <!-- For friends while in development: kept out of search engines. Remove this line to be found. -->
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0B1014">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B1014'/%3E%3Cpath d='M7 24 L16 7 L25 24 Z' fill='none' stroke='%23D9763A' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preload" href="screens/village-dusk.jpg" as="image" fetchpriority="high">
 <style>
 /* Self-hosted fonts (SIL Open Font License, see fonts/LICENSES.txt): no requests to other sites. */
 @font-face { font-family: "Barlow Condensed"; font-weight: 500; font-display: swap; src: url(fonts/barlow-condensed-latin-500-normal.woff2) format("woff2"); }
@@ -19,7 +20,7 @@
 @font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
 @font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); }
 
-/* The game's own palette (UI/ZGUIStyle). */
+/* The game's own palette (UI/ZGUIStyle): night, slate, frost, mist, ice and one ember accent. */
 :root {
   --night: #0B1014; --slate: #141C22; --raised: #1F2A32; --hover: #2B3A45; --line: #3A4B57;
   --frost: #E4ECF0; --mist: #8D9FAA; --ice: #9CC4D6;
@@ -28,85 +29,144 @@
   --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
-  --gutter: clamp(16px, 3vw, 36px);
-  --sky-a: #121a21; --sky-b: #0B1014;
+  --gutter: clamp(16px, 4vw, 40px);
+  --wide: 1180px;
   color-scheme: dark;
 }
-:root[data-time="dusk"] { --sky-a: #2a1f22; --sky-b: #0B1014; }
-:root[data-time="night"] { --sky-a: #080c11; --sky-b: #05080a; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--night); color: var(--frost); font-family: var(--body); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body { margin: 0; background: var(--night); color: var(--frost); font-family: var(--body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
 a { color: inherit; }
-h1, h2, h3 { margin: 0; line-height: 1.05; text-wrap: balance; font-family: var(--display); }
+h1, h2, h3, h4 { font-family: var(--display); line-height: 1.05; margin: 0; text-wrap: balance; }
 h2 { font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); letter-spacing: 0.03em; text-transform: uppercase; }
 p { margin: 0; }
 :focus-visible { outline: 2px solid var(--ice); outline-offset: 3px; border-radius: 3px; }
 .skip { position: absolute; left: 16px; top: -60px; background: var(--ember); color: var(--ink-on-ember); padding: 8px 14px; font-weight: 600; z-index: 100; border-radius: 3px; }
 .skip:focus { top: 12px; }
-.wrap { max-width: 1180px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
-.label { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
+.wrap { max-width: var(--wide); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.label { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
 .label.ember { color: var(--ember); }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 6px 18px; border-radius: 4px; border: 1.5px solid transparent; font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; background: var(--raised); color: var(--frost); }
-.btn:hover { background: var(--hover); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 10px 24px; border-radius: 4px; border: 1.5px solid transparent; font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .15s, border-color .15s; }
 .btn-primary { background: var(--ember); color: var(--ink-on-ember); }
 .btn-primary:hover { background: var(--ember-hover); }
+.btn-primary:active { background: var(--ember-pressed); }
+.btn-ghost { border-color: var(--line); color: var(--frost); background: rgba(20, 28, 34, 0.5); }
+.btn-ghost:hover { background: var(--raised); border-color: var(--mist); }
 .btn[aria-disabled="true"] { background: var(--raised); color: var(--mist); pointer-events: none; }
 .btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--display); font-weight: 600; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; color: var(--mist); white-space: nowrap; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--display); font-weight: 600; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; color: var(--ice); }
 .chip.good { color: var(--good); border-color: color-mix(in srgb, var(--good) 50%, transparent); }
 .chip.ember { color: var(--ember); border-color: color-mix(in srgb, var(--ember) 55%, transparent); }
 .chip.danger { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 55%, transparent); }
+.chip.warn { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 55%, transparent); }
 
-/* ---------- top bar ---------- */
-.top { position: sticky; top: 0; z-index: 20; background: rgba(11, 16, 20, 0.86); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-.top-in { display: flex; align-items: center; gap: 10px 22px; min-height: 62px; }
-.mark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; margin-right: auto; }
-.mark svg { width: 20px; height: 20px; fill: none; stroke: var(--ember); stroke-width: 2.6; stroke-linejoin: round; }
-.top nav { display: flex; gap: 20px; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; }
-.top nav a { text-decoration: none; color: var(--mist); padding: 4px 0; }
+/* ---------- top bar: transparent over the hero, solid once you scroll (always solid on inner pages) ---------- */
+.top { position: fixed; inset: 0 0 auto 0; z-index: 20; transition: background .25s, border-color .25s; border-bottom: 1px solid transparent; }
+.top.solid { background: rgba(11, 16, 20, 0.88); backdrop-filter: blur(8px); border-color: var(--line); }
+.top-in { display: flex; align-items: center; gap: 12px 24px; min-height: 64px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; margin-right: auto; white-space: nowrap; }
+.brand svg { width: 22px; height: 22px; fill: none; stroke: var(--ember); stroke-width: 2.6; stroke-linejoin: round; }
+.top nav { display: flex; gap: 22px; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; }
+.top nav a { text-decoration: none; color: var(--mist); padding: 6px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
 .top nav a:hover { color: var(--frost); }
-.top .btn { min-height: 36px; padding: 4px 14px; font-size: 15px; white-space: nowrap; }
-.mark { white-space: nowrap; }
-@media (max-width: 700px) { .top nav { display: none; } }
+.top nav a[aria-current] { color: var(--frost); border-bottom-color: var(--ember); }
+.top .btn { min-height: 38px; padding: 6px 16px; font-size: 16px; white-space: nowrap; }
+@media (max-width: 860px) { .top nav { display: none; } }
 @media (max-width: 480px) { .top .btn .ver { display: none; } }
+/* a plain link row for the phone, where the nav is hidden */
+.mnav { display: none; }
+@media (max-width: 860px) { .mnav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; } .mnav a { color: var(--mist); text-decoration: none; padding: 6px 0; } .mnav a:hover { color: var(--frost); } }
+
+.dl-meta { font-family: var(--mono); font-size: 12.5px; color: var(--mist); }
+.dl-meta .sample { color: var(--warn); }
+
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--mist); font-size: 13.5px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; }
+footer .brand { font-size: 16px; margin-right: 0; color: var(--frost); }
+footer nav { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-left: auto; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; }
+footer nav a { text-decoration: none; }
+footer nav a:hover { color: var(--frost); }
 .still * { transition: none !important; }   /* ?shot=1: the screenshot script wants the finished state */
 
-/* ---------- snow over the page ---------- */
-.snow { position: fixed; inset: 0; z-index: 1; pointer-events: none; width: 100%; height: 100%; display: none; }
-:root[data-snow="1"] .snow { display: block; }
+/* ---------- patch notes (shared by the newest-build card on the front page and the timeline page) ---------- */
+.ver-line { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-family: var(--mono); font-size: 13px; color: var(--mist); }
+.ver-line b { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--frost); letter-spacing: 0.02em; }
+.newest-tag { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--good); border: 1px solid var(--good); border-radius: 3px; padding: 1px 7px; }
+.notes { margin: 0; padding-left: 20px; display: grid; gap: 9px; color: var(--frost); font-size: 15.5px; }
+.notes li::marker { color: var(--ember); }
+.notes-h { margin: 14px 0 0; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); }
+.notes-h:first-child { margin-top: 0; }
+.notes-h.known { color: var(--warn); }
+.notes-p { color: var(--mist); font-size: 15px; }
+.sha { display: grid; gap: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--night); padding: 12px 14px; }
+.sha-row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.sha code { font-family: var(--mono); font-size: 12px; color: var(--frost); word-break: break-all; flex: 1 1 260px; min-width: 0; }
+.sha .copy { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--raised); color: var(--frost); border: 1px solid var(--line); border-radius: 4px; padding: 5px 12px; cursor: pointer; min-height: 34px; }
+.sha .copy:hover { background: var(--hover); }
+.sha .hint { font-size: 13px; color: var(--mist); }
+.sha .hint code { flex: none; color: var(--ice); font-size: 12px; word-break: break-word; }
+mark { background: color-mix(in srgb, var(--ember) 40%, transparent); color: var(--frost); border-radius: 2px; padding: 0 1px; }
 
-/* ---------- hero band with the sky ---------- */
-.hero { position: relative; padding: clamp(48px, 7vw, 96px) 0 clamp(28px, 4vw, 48px); background: linear-gradient(180deg, var(--sky-a), var(--sky-b)); border-bottom: 1px solid var(--line); transition: background .6s; overflow: hidden; }
-.hero .stars { position: absolute; inset: 0; opacity: 0; transition: opacity .6s; pointer-events: none; background-image: radial-gradient(1px 1px at 12% 30%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 32% 12%, #E4ECF0 50%, transparent 51%), radial-gradient(1.5px 1.5px at 54% 40%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 70% 22%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 86% 48%, #E4ECF0 50%, transparent 51%), radial-gradient(1.5px 1.5px at 42% 66%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 93% 14%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 22% 72%, #E4ECF0 50%, transparent 51%), radial-gradient(1px 1px at 63% 80%, #E4ECF0 50%, transparent 51%); }
-:root[data-time="night"] .hero .stars { opacity: 0.7; }
-.hero-in { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 40px; align-items: end; }
-@media (max-width: 760px) { .hero-in { grid-template-columns: 1fr; align-items: start; } }
-.hero h1 { font-weight: 700; font-size: clamp(52px, 9vw, 104px); letter-spacing: 0.08em; text-transform: uppercase; }
-.hero h1::after { content: ""; display: block; width: 64px; height: 3px; background: var(--ember); margin-top: 10px; }
-.hero .lede { max-width: 56ch; color: var(--frost); font-size: 17px; margin-top: 16px; }
-.hero .lede b { font-family: var(--display); font-weight: 600; font-size: 1.1em; letter-spacing: 0.02em; }
+/* ---------- hero (the cinematic opening) ---------- */
+.hero { position: relative; min-height: min(100svh, 880px); display: grid; align-items: end; overflow: hidden; isolation: isolate; }
+.hero-img { position: absolute; inset: -10% 0 0 0; width: 100%; height: 110%; object-fit: cover; object-position: 50% 60%; z-index: -3; will-change: transform; filter: saturate(1.05) contrast(1.02); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background:
+  linear-gradient(180deg, rgba(11, 16, 20, 0.55) 0%, rgba(11, 16, 20, 0.05) 30%, rgba(11, 16, 20, 0.25) 60%, rgba(11, 16, 20, 0.96) 100%),
+  radial-gradient(120% 70% at 20% 100%, rgba(11, 16, 20, 0.6), transparent 60%); }
+.hero-in { position: relative; padding-top: 120px; padding-bottom: clamp(40px, 8vh, 96px); display: grid; gap: 22px; max-width: 760px; margin-left: max(0px, calc((100vw - var(--wide)) / 2)); }
+.hero-in > * { max-width: 100%; min-width: 0; }
+.stage { justify-self: start; display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ice); }
+.stage::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ember); box-shadow: 0 0 10px var(--ember); }
+.hero h1 { font-size: clamp(60px, 11vw, 132px); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55); margin-left: -0.03em; }
+.hero h1::after { content: ""; display: block; width: 72px; height: 3px; background: var(--ember); margin-top: 14px; }
+.tagline { font-family: var(--display); font-weight: 500; font-size: clamp(22px, 3vw, 30px); color: var(--frost); letter-spacing: 0.02em; }
+.lede { font-size: clamp(16px, 1.6vw, 18px); color: var(--frost); max-width: 54ch; opacity: 0.92; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 6px; }
+.hero .dl-meta { font-size: 13px; }
+.cue { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); color: var(--mist); width: 26px; height: 26px; animation: bob 2.2s ease-in-out infinite; }
+.cue svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
+@media (prefers-reduced-motion: reduce) { .cue { animation: none; } }
+.still .cue { animation: none; }
 
-/* ---------- controls ---------- */
+/* ---------- snow: one canvas. Over the hero always; over the whole page when the Snow switch is on ---------- */
+.snow { position: fixed; inset: 0; z-index: 15; pointer-events: none; width: 100%; height: 100%; }
+
+/* ---------- three statements ---------- */
+.statements { padding: clamp(56px, 9vw, 120px) 0; border-bottom: 1px solid var(--line); }
+.statements ol { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(36px, 5vw, 64px); }
+.statements li { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 8px 24px; align-items: start; }
+.statements .n { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.1em; color: var(--ember); padding-top: 10px; }
+.statements h2 { font-size: clamp(34px, 5.4vw, 64px); font-weight: 600; letter-spacing: 0.01em; text-transform: none; color: var(--frost); }
+.statements p { grid-column: 2; color: var(--mist); max-width: 60ch; font-size: 17px; }
+@media (max-width: 600px) { .statements li { grid-template-columns: 1fr; } .statements p { grid-column: 1; } .statements .n { padding-top: 0; } }
+
+/* ---------- the island: map, opening, gallery ---------- */
+.page { display: grid; gap: clamp(48px, 7vw, 96px); padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(48px, 7vw, 96px); }
+.page > section { display: grid; gap: 22px; align-content: start; }
+.gallery figure { margin: 0; }
+.sec-head { display: grid; gap: 6px; }
+.sec-head p { color: var(--mist); max-width: 68ch; }
+.head-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 40px; align-items: end; }
+@media (max-width: 760px) { .head-row { grid-template-columns: 1fr; align-items: start; } }
 .controls { display: grid; gap: 12px; justify-items: start; }
 .seg { display: inline-flex; background: var(--slate); border: 1px solid var(--line); border-radius: 6px; padding: 3px; }
-.seg button { font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); background: none; border: 0; border-radius: 4px; padding: 6px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.seg button { font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); background: none; border: 0; border-radius: 4px; padding: 6px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
 .seg button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .seg button[aria-pressed="true"] { background: var(--raised); color: var(--frost); box-shadow: inset 0 0 0 1px var(--line); }
 .seg button:hover { color: var(--frost); }
-.switch { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); background: var(--slate); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px 6px 8px; cursor: pointer; }
+.switch { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); background: var(--slate); border: 1px solid var(--line); border-radius: 6px; padding: 6px 14px; cursor: pointer; }
 .switch .knob { width: 36px; height: 20px; border-radius: 999px; background: var(--raised); border: 1px solid var(--line); position: relative; transition: background .2s; }
 .switch .knob::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--mist); transition: transform .2s, background .2s; }
 .switch[aria-checked="true"] { color: var(--frost); }
 .switch[aria-checked="true"] .knob { background: color-mix(in srgb, var(--ice) 35%, var(--raised)); }
 .switch[aria-checked="true"] .knob::after { transform: translateX(16px); background: var(--frost); }
-.controls .hint { font-size: 13px; color: var(--mist); }
-
+.controls .hint { font-size: 13px; color: var(--mist); max-width: 34ch; }
+.ctl-row { display: flex; flex-wrap: wrap; gap: 10px; }
 /* ---------- map section ---------- */
-.page { display: grid; gap: clamp(48px, 7vw, 96px); padding: 36px 0 72px; }
-.sec-head { display: grid; gap: 6px; }
-.sec-head p { color: var(--mist); max-width: 68ch; }
 .maparea { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr); gap: 20px; align-items: start; }
 @media (max-width: 860px) { .maparea { grid-template-columns: 1fr; } }
 .mapbox { position: relative; background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
@@ -227,56 +287,102 @@ dialog.lb::backdrop { background: rgba(5, 8, 10, 0.9); backdrop-filter: blur(4px
 .lb-bar button { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--raised); color: var(--frost); border: 1px solid var(--line); border-radius: 4px; padding: 6px 12px; cursor: pointer; }
 .lb-bar button:hover { background: var(--hover); }
 
-footer { border-top: 1px solid var(--line); padding: 20px 0 36px; color: var(--mist); font-size: 13.5px; }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 24px; }
-.dl-meta { font-family: var(--mono); font-size: 12.5px; color: var(--mist); }
-.dl-meta .sample { color: var(--warn); }
+/* ---------- newest build teaser ---------- */
+.latest { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+@media (max-width: 860px) { .latest { grid-template-columns: 1fr; } }
+.card { background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 14px; }
+.card h2 { font-size: clamp(30px, 3.6vw, 44px); }
+.card .more { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-top: 4px; }
+.how { display: grid; gap: 12px; align-content: start; }
+.how p { color: var(--mist); max-width: 52ch; }
+.how ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; color: var(--frost); font-size: 15.5px; }
+.how ol li::marker { color: var(--ember); font-family: var(--mono); }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+.still .reveal { opacity: 1; transform: none; transition: none; }
+
+/* ---------- story ---------- */
+.story { position: relative; padding: clamp(64px, 10vw, 140px) 0; isolation: isolate; overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.story-bg { position: absolute; inset: 0; z-index: -2; background: url(screens/zombie.jpg) center 40% / cover no-repeat; opacity: 0.22; filter: saturate(0.6) blur(1px); transform: scale(1.04); }
+.story::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(80% 80% at 50% 50%, rgba(11, 16, 20, 0.2), var(--night) 100%), linear-gradient(180deg, var(--night), transparent 20%, transparent 80%, var(--night)); }
+.story-in { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: 22px; }
+.story h2 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.story .sub { color: var(--mist); font-size: 15px; margin-top: -8px; }
+.prose { display: grid; gap: 18px; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.7; color: var(--frost); }
+.prose p:first-of-type::first-letter { font-family: var(--display); font-weight: 700; font-size: 3.6em; line-height: 0.8; float: left; margin: 8px 10px 0 0; color: var(--ember); }
+.prose em { color: var(--ice); font-style: italic; }
+.prose .graffiti { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 3vw, 32px); letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.1; border-left: 3px solid var(--ember); padding: 4px 0 4px 18px; margin: 8px 0; }
+.prose hr { border: 0; border-top: 1px solid var(--line); width: 72px; margin: 10px 0; }
+.prose .note { color: var(--mist); font-size: 15px; font-style: italic; }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <canvas class="snow" id="snow" aria-hidden="true"></canvas>
 
-<header class="top">
+<header class="top" id="top">
   <div class="wrap top-in">
-    <a class="mark" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg>Zombie Dawn</a>
+    <a class="brand" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg> Zombie Dawn</a>
     <nav aria-label="Sections">
+      <a href="#top">Overview</a>
       <a href="#map">The island</a>
       <a href="#opening">How it opens</a>
       <a href="#gallery">Pictures</a>
-      <a href="cinematic.html">Overview</a>
+      <a href="patchnotes.html">Patch notes</a>
     </nav>
-    <a class="btn btn-primary" id="dl" href="#gallery" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl-text">Download</span></a>
+    <a class="btn btn-primary" id="dl-top" href="#download" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span>Download<span class="ver" id="dl-top-ver"></span></span></a>
   </div>
 </header>
 
-<section class="hero" aria-labelledby="title">
-  <div class="stars" aria-hidden="true"></div>
+<main id="main">
+
+<section class="hero" id="download" aria-labelledby="title">
+  <img class="hero-img" src="screens/village-dusk.jpg" alt="" width="1280" height="720" fetchpriority="high">
   <div class="wrap hero-in">
-    <div>
-      <span class="label ember">Zombie Dawn &middot; pre-alpha</span>
-      <h1 id="title">Vintermark</h1>
-      <p class="lede"><b>Twelve by twelve kilometres</b> of fjord, valley, lake and mountain, cut off from the city across the water. Every new world starts in the central valley, in autumn, with the lamps still burning and the snow line on its way down.</p>
+    <span class="stage">Pre-alpha &middot; in development</span>
+    <h1 id="title">Zombie Dawn</h1>
+    <p class="tagline">Survive the northern winter, together.</p>
+    <p class="lede">An open-world survival game on an island off a cold northern coast. Get out of the village, find somewhere quiet, stay warm and dry, and in the end clear the dead and bring the lights back.</p>
+    <div class="cta">
+      <a class="btn btn-primary" id="dl" href="#updates" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>Download for Windows</a>
+      <a class="btn btn-ghost" href="#story">Read the opening</a>
     </div>
-    <div class="controls" role="group" aria-label="Time of day and weather on the map">
-      <div class="seg" id="time-seg">
-        <button type="button" data-time="day" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>Day</button>
-        <button type="button" data-time="dusk" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16h16M7 12a5 5 0 0 1 10 0M12 4v2M3 20h18"/></svg>Dusk</button>
-        <button type="button" data-time="night" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>Night</button>
-      </div>
-      <button type="button" class="switch" id="snow-toggle" role="switch" aria-checked="false"><span class="knob" aria-hidden="true"></span>Snow</button>
-      <p class="hint" id="hint">The lamps burn at dusk and night until the power fails.</p>
-    </div>
+    <p class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</p>
+    <nav class="mnav" aria-label="Sections"><a href="#map">The island</a><a href="#opening">How it opens</a><a href="#gallery">Pictures</a><a href="patchnotes.html">Patch notes</a></nav>
+  </div>
+  <a class="cue" href="#statements" aria-label="Scroll down"><svg viewBox="0 0 24 24"><path d="m6 10 6 6 6-6"/></svg></a>
+</section>
+
+<section class="statements" id="statements" aria-label="What the game is">
+  <div class="wrap">
+    <ol>
+      <li class="reveal"><span class="n">01</span><h2>An island, cut off.</h2><p>The bridge to the city is gone and the ferries have stopped. Twelve by twelve kilometres of coast, valley, lake and mountain, and nobody coming to help.</p></li>
+      <li class="reveal"><span class="n">02</span><h2>Winter walks down the mountain.</h2><p>Every world begins in autumn. The peaks turn white on the first evening; by the time the power fails, the snow has reached the village street.</p></li>
+      <li class="reveal"><span class="n">03</span><h2>The dead are drawn to noise, fire and warmth.</h2><p>They hear an axe on a tree at thirty metres and a campfire from further. Leave doors closed. Move at the edge of the street.</p></li>
+    </ol>
   </div>
 </section>
 
-<main class="wrap page" id="main">
-
+<div class="wrap page" id="island">
 <section id="map" aria-labelledby="map-h">
-  <div class="sec-head">
+  <div class="sec-head head-row">
+    <div class="sec-head">
     <span class="label">The island</span>
     <h2 id="map-h">The map</h2>
     <p>Click a place for what it holds. The grid is the game&rsquo;s own: 1 km squares, columns A to L west to east, rows 1 to 12 north to south, the same squares the game names when you report a problem. Only the central valley is open in the pre-alpha; the rest is still fog.</p>
+    </div>
+    <div class="controls" role="group" aria-label="Time of day and weather on the map">
+      <div class="ctl-row">
+        <div class="seg" id="time-seg">
+          <button type="button" data-time="day" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>Day</button>
+          <button type="button" data-time="dusk" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16h16M7 12a5 5 0 0 1 10 0M12 4v2M3 20h18"/></svg>Dusk</button>
+          <button type="button" data-time="night" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>Night</button>
+        </div>
+        <button type="button" class="switch" id="snow-toggle" role="switch" aria-checked="false"><span class="knob" aria-hidden="true"></span>Snow</button>
+      </div>
+      <p class="hint" id="hint">The lamps burn at dusk and night until the power fails.</p>
+    </div>
   </div>
   <div class="maparea">
     <div>
@@ -573,7 +679,31 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 24px; }
     <li><span class="n">Last</span><b>Vargtind</b><span>The high road and the checkpoint</span></li>
   </ol>
 </section>
+</div>
 
+<section class="story" id="story" aria-labelledby="story-h">
+  <div class="story-bg" aria-hidden="true"></div>
+  <div class="story-in reveal">
+    <span class="label ember">The story</span>
+    <h2 id="story-h">The Walking Winter</h2>
+    <p class="sub">The opening of a story from the island. The game lets you find the rest yourself.</p>
+    <div class="prose">
+      <p>I woke up on a road with gravel in my cheek and a sound in my head like a kettle that would not stop.</p>
+      <p>The last thing I remembered was the harbour at Vellport. A man in a hi-vis vest shouting at a ferry that was already gone. A woman holding a child so tightly her knuckles were white, and the child looking over her shoulder at something behind me. Then the noise, and the sky turning sideways.</p>
+      <p>A sign said HALDERSFIELD 2. Someone had left a car across the lane with its door open. The radio inside was still talking in the flat voice they use for numbers. <em>All crossings to the mainland are closed until further notice. Do not approach the water. Do not try to leave the island.</em></p>
+      <p>It was full morning, and along the village street the lamps were still burning. Nobody had come to switch them off.</p>
+      <p>Someone had painted on the wall by the village sign, in a hurry:</p>
+      <p class="graffiti">To find a cure you need to search where it all began.</p>
+      <p>Under it, in another hand: <em>Don&rsquo;t trust the city. Don&rsquo;t trust the radio.</em> A few steps on, an official notice, stamped, promised that the city across the water was safe, and told everyone to report to a harbour there.</p>
+      <p>I looked up. Past the end of the island, over the water, was the city. A long grey line of towers, very clear, a few lights still in the windows. Between us and it a thin black thread went out over the sea and ended in nothing. Somebody had blown the bridge.</p>
+      <p>I took a knife from the car&rsquo;s glovebox, bound my head with a rag, and went down into the village.</p>
+      <hr>
+      <p class="note">The rest of the story is in the game.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap page">
 <section id="gallery" aria-labelledby="gal-h">
   <div class="sec-head">
     <span class="label">Pictures</span>
@@ -590,6 +720,31 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 24px; }
     <li><figure><button type="button" data-i="6"><img src="screens/river.jpg" alt="A river bank" loading="lazy" width="1280" height="720"><figcaption>The Lund river</figcaption></button></figure></li>
     <li><figure><button type="button" data-i="7"><img src="screens/worlds.jpg" alt="The list of saved worlds" loading="lazy" width="1280" height="720"><figcaption>Solo play and saved worlds</figcaption></button></figure></li>
   </ul>
+</section>
+</div>
+
+<section class="wrap page" id="updates" aria-labelledby="up-h" style="padding-top:0">
+  <div class="latest">
+    <div class="card reveal">
+      <span class="label ember">Patch notes</span>
+      <h2 id="up-h">What changed</h2>
+      <div class="ver-line" id="latest-line"><b>Looking for the newest build&hellip;</b></div>
+      <div id="latest-notes"><p class="dl-meta">The first version is on its way.</p></div>
+      <div class="more"><a class="btn btn-ghost" href="patchnotes.html">All patch notes</a><span class="dl-meta" id="latest-more"></span></div>
+    </div>
+    <div class="how reveal">
+      <span class="label ember">Getting it</span>
+      <h2>Unzip and play</h2>
+      <p>The game is for a small group of friends while it is in development. Download the zip, unzip it anywhere and run <b>ZombieDawn.exe</b>. Later builds update from the start screen with one button.</p>
+      <div id="sha-slot"></div>
+      <ol>
+        <li>Download the zip with the button at the top.</li>
+        <li>Unzip it, then run ZombieDawn.exe.</li>
+        <li>Press Play for a solo world, or host one for friends.</li>
+        <li>Something broke? Press F9 in the game to report it.</li>
+      </ol>
+    </div>
+  </div>
 </section>
 
 </main>
@@ -609,8 +764,12 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 24px; }
 
 <footer>
   <div class="wrap">
-    <span>Zombie Dawn is a working title. A game in development for friends.</span>
-    <span class="dl-meta" id="dl-meta"></span>
+    <a class="brand" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg> Zombie Dawn</a>
+    <span>A working title. A game in development for friends.</span>
+    <span id="foot-version"></span>
+    <nav aria-label="Footer">
+      <a href="#top">Overview</a><a href="#map">The island</a><a href="#opening">How it opens</a><a href="#gallery">Pictures</a><a href="patchnotes.html">Patch notes</a>
+    </nav>
   </div>
 </footer>
 
@@ -621,15 +780,53 @@ var ZD_PLACES = {"lundford":{"name":"Lundford","tier":"Village","region":"Centra
 /* FALLBACK:START */
 var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},"releases":[{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},{"build":202610131670,"version":"Pre-alpha 0.2.5.0","date":"2026-10-13 14:35","url":"https://dl.rode.live/ZombieDawn_2026-10-13_1435.zip","sha256":"d67cfa5c4c9cc652ea8af8d2569d0086b3f63bd69cab7fe2f0622a2ca27bbc95","size":1464000000,"notes":["Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump.","Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference.","Street lamps along the village road switch on at dusk and off at dawn while the power grid works.","The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark.","Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die.","Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk.","No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game.","Houses have no working lamps yet, and nothing brings the power back yet.","Every zombie wears the same clothes for now (one character model); more models will follow."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump."},{"t":"li","text":"Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference."},{"t":"li","text":"Street lamps along the village road switch on at dusk and off at dawn while the power grid works."},{"t":"li","text":"The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark."},{"t":"li","text":"Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die."},{"t":"li","text":"Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk."},{"t":"li","text":"No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game."},{"t":"h","text":"Known problems"},{"t":"li","text":"Houses have no working lamps yet, and nothing brings the power back yet."},{"t":"li","text":"Every zombie wears the same clothes for now (one character model); more models will follow."}]},{"build":202610131454,"version":"Pre-alpha 0.2.4.0","date":"2026-10-13 12:26","url":"","sha256":"addbbfd2d656c1d743a2a6de868c8afd5cc10f64e445202c496160e6cca54a57","size":1453000000,"notes":["Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark).","A torch held in hand now gives light (craft one, then right-click it to take it in hand).","One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river.","Trees no longer grow inside village houses, and furniture no longer pokes through house walls.","Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves.","Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot.","Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had.","Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise).","The sea has gentle moving waves and the lakes small ripples.","The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all.","Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet).","Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge.","There is no foam where the sea meets the beach yet."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark)."},{"t":"li","text":"A torch held in hand now gives light (craft one, then right-click it to take it in hand)."},{"t":"li","text":"One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river."},{"t":"li","text":"Trees no longer grow inside village houses, and furniture no longer pokes through house walls."},{"t":"li","text":"Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves."},{"t":"li","text":"Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot."},{"t":"li","text":"Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had."},{"t":"li","text":"Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise)."},{"t":"li","text":"The sea has gentle moving waves and the lakes small ripples."},{"t":"li","text":"The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all."},{"t":"h","text":"Known problems"},{"t":"li","text":"Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet)."},{"t":"li","text":"Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge."},{"t":"li","text":"There is no foam where the sea meets the beach yet."}]},{"build":202610131158,"version":"Pre-alpha 0.2.3.0","date":"2026-10-13 09:37","url":"","sha256":"cfea8e618e69355a08fdcf1f57ce39aa9c5355b3204472663f0f67c8aabd03d1","size":1442000000,"notes":["A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.","The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right.","The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge.","A small \"Talking\" mark shows bottom left while you hold V.","Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world.","Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version.","Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept.","Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.","The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).","The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.","The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."],"body":[{"t":"h","text":"New"},{"t":"li","text":"A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom."},{"t":"li","text":"The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right."},{"t":"li","text":"The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge."},{"t":"li","text":"A small \"Talking\" mark shows bottom left while you hold V."},{"t":"li","text":"Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world."},{"t":"li","text":"Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version."},{"t":"li","text":"Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept."},{"t":"li","text":"Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days."},{"t":"li","text":"The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels)."},{"t":"li","text":"The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor."},{"t":"li","text":"The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."}]}]};
 /* FALLBACK:END */
+
 (function () {
   "use strict";
   var root = document.documentElement;
-  // ?shot=1 (the screenshot script) counts as reduced motion: still snow, no transitions, so a capture shows the final state.
+  // ?shot=1 (the screenshot script) counts as reduced motion: still snow, no fades, so a capture shows the final state.
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches || /[?&]shot=1/.test(location.search);
   if (reduce) root.classList.add("still");
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function mb(bytes) { return Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB"; }
 
-  // ---- time of day and snow: from the address (?time=night&snow=1&place=lundford), else what this viewer chose last
+  function copyText(text, btn) {
+    function done() { var o = btn.textContent; btn.textContent = "Copied"; setTimeout(function () { btn.textContent = o; }, 1600); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, fallback); } else fallback();
+    function fallback() { var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0"; document.body.appendChild(t); t.select(); try { document.execCommand("copy"); done(); } catch (e) {} document.body.removeChild(t); }
+  }
+  function shaBox(hash, file) {
+    var b = document.createElement("div"); b.className = "sha";
+    var r = document.createElement("div"); r.className = "sha-row";
+    var l = document.createElement("span"); l.className = "label"; l.textContent = "SHA-256"; r.appendChild(l);
+    var c = document.createElement("code"); c.textContent = hash; r.appendChild(c);
+    var k = document.createElement("button"); k.type = "button"; k.className = "copy"; k.textContent = "Copy"; k.setAttribute("aria-label", "Copy the SHA-256 hash");
+    k.addEventListener("click", function () { copyText(hash, k); }); r.appendChild(k);
+    b.appendChild(r);
+    var h = document.createElement("p"); h.className = "hint"; h.appendChild(document.createTextNode("To check the download, run in PowerShell: "));
+    var cc = document.createElement("code"); cc.textContent = "Get-FileHash " + file + " -Algorithm SHA256"; h.appendChild(cc);
+    h.appendChild(document.createTextNode(" and compare."));
+    b.appendChild(h);
+    return b;
+  }
+  function zipName(url) { var m = /([^\/]+\.zip)(?:$|\?)/.exec(url || ""); return m ? m[1] : "ZombieDawn.zip"; }
+
+  // ---- top bar: transparent over the hero, solid after the first scroll
+  var top = document.getElementById("top"), hero = document.querySelector(".hero"), heroImg = document.querySelector(".hero-img");
+  function onScroll() {
+    top.classList.toggle("solid", window.scrollY > 40);
+    clipSnow();
+    if (!reduce && heroImg && window.scrollY < 1400) heroImg.style.transform = "translateY(" + Math.min(window.scrollY * 0.25, 300) + "px)";
+  }
+
+  // ---- reveal on scroll
+  var revealed = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    revealed.forEach(function (n) { io.observe(n); });
+  } else { revealed.forEach(function (n) { n.classList.add("in"); }); }
+
+  // ---- time of day and snow for the map: from the address (?time=night&snow=1&place=lundford), else what this viewer chose last
   var params = new URLSearchParams(location.search);
   var saved = {};
   try { saved = JSON.parse(localStorage.getItem("zd-atlas") || "{}") || {}; } catch (e) { saved = {}; }
@@ -643,39 +840,49 @@ var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0",
   function setSnow(on, keep) {
     root.setAttribute("data-snow", on ? "1" : "0");
     document.getElementById("snow-toggle").setAttribute("aria-checked", String(!!on));
-    on ? startSnow() : stopSnow();
+    clipSnow();
+    if (reduce) drawStill();
     if (keep) remember();
   }
   function remember() { try { localStorage.setItem("zd-atlas", JSON.stringify({ time: root.getAttribute("data-time"), snow: root.getAttribute("data-snow") === "1" })); } catch (e) {} }
   document.querySelectorAll("#time-seg button").forEach(function (b) { b.addEventListener("click", function () { setTime(b.dataset.time, true); }); });
   document.getElementById("snow-toggle").addEventListener("click", function () { setSnow(root.getAttribute("data-snow") !== "1", true); });
 
-  // ---- snow canvas over the page
+  // ---- one snow canvas, fixed over the page: it falls over the hero always, and over everything when Snow is on
   var canvas = document.getElementById("snow"), ctx = canvas.getContext("2d"), flakes = [], cw = 0, ch = 0, raf = 0, last = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+  function snowOn() { return root.getAttribute("data-snow") === "1"; }
+  function clipSnow() {
+    var vh = window.innerHeight, b = hero ? hero.getBoundingClientRect().bottom : 0;
+    var cut = snowOn() ? 0 : Math.max(0, vh - b);   // below the hero's bottom edge nothing is drawn unless the switch is on
+    canvas.style.clipPath = cut > 0 ? "inset(0 0 " + cut + "px 0)" : "none";
+    canvas.style.visibility = (!snowOn() && b <= 0) ? "hidden" : "visible";
+    if (!reduce) { (snowOn() || b > 0) && !document.hidden ? startSnow() : stopSnow(); }
+  }
   function sizeSnow() {
     cw = window.innerWidth; ch = window.innerHeight;
     canvas.width = Math.floor(cw * dpr); canvas.height = Math.floor(ch * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     var n = Math.round(Math.min(260, (cw * ch) / 7000));
     flakes = [];
-    for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * cw, y: Math.random() * ch, r: 0.6 + Math.random() * 1.9, s: 14 + Math.random() * 34, d: Math.random() * 6.28, o: 0.2 + Math.random() * 0.5 });
+    for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * cw, y: Math.random() * ch, r: 0.6 + Math.random() * 1.9, s: 14 + Math.random() * 34, d: Math.random() * 6.28, o: 0.25 + Math.random() * 0.5 });
   }
+  function drawFlakes() { ctx.clearRect(0, 0, cw, ch); ctx.fillStyle = "#E4ECF0"; flakes.forEach(function (f) { ctx.globalAlpha = f.o; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832); ctx.fill(); }); ctx.globalAlpha = 1; }
   function frame(t) {
     var dt = Math.min(0.05, (t - last) / 1000 || 0.016); last = t;
-    ctx.clearRect(0, 0, cw, ch); ctx.fillStyle = "#E4ECF0";
     for (var i = 0; i < flakes.length; i++) {
       var f = flakes[i]; f.d += dt * 0.6; f.y += f.s * dt; f.x += Math.sin(f.d) * 10 * dt;
       if (f.y > ch + 4) { f.y = -4; f.x = Math.random() * cw; }
       if (f.x < -4) f.x = cw + 4; else if (f.x > cw + 4) f.x = -4;
-      ctx.globalAlpha = f.o; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832); ctx.fill();
     }
-    ctx.globalAlpha = 1;
+    drawFlakes();
     raf = requestAnimationFrame(frame);
   }
-  function drawStill() { sizeSnow(); ctx.clearRect(0, 0, cw, ch); ctx.fillStyle = "#E4ECF0"; flakes.forEach(function (f) { ctx.globalAlpha = f.o; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832); ctx.fill(); }); ctx.globalAlpha = 1; }
-  function startSnow() { if (reduce) { drawStill(); return; } if (!raf) { sizeSnow(); last = performance.now(); raf = requestAnimationFrame(frame); } }
-  function stopSnow() { if (raf) { cancelAnimationFrame(raf); raf = 0; } ctx.clearRect(0, 0, cw, ch); }
-  window.addEventListener("resize", function () { if (root.getAttribute("data-snow") === "1") reduce ? drawStill() : sizeSnow(); });
-  document.addEventListener("visibilitychange", function () { if (root.getAttribute("data-snow") !== "1") return; document.hidden ? stopSnow() : startSnow(); });
+  function drawStill() { sizeSnow(); drawFlakes(); }
+  function startSnow() { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+  function stopSnow() { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+  sizeSnow();
+  window.addEventListener("resize", function () { sizeSnow(); if (reduce) drawFlakes(); clipSnow(); });
+  document.addEventListener("visibilitychange", clipSnow);
+  window.addEventListener("scroll", onScroll, { passive: true });
 
   // ---- places: the markers in the map and the card beside it
   var sel = document.getElementById("place-select"), order = Object.keys(ZD_PLACES);
@@ -704,7 +911,7 @@ var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0",
   sel.addEventListener("change", function () { showPlace(sel.value, true); });
 
   // ---- the lightbox
-  var shots = [].map.call(document.querySelectorAll("#gallery-list img"), function (img, i) { return { src: img.getAttribute("src"), alt: img.alt, cap: img.nextElementSibling ? img.nextElementSibling.textContent : "" }; });
+  var shots = [].map.call(document.querySelectorAll("#gallery-list img"), function (img) { return { src: img.getAttribute("src"), alt: img.alt, cap: img.nextElementSibling ? img.nextElementSibling.textContent : "" }; });
   var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), cur = 0, opener = null;
   function showShot(i) { cur = (i + shots.length) % shots.length; lbImg.src = shots[cur].src; lbImg.alt = shots[cur].alt; document.getElementById("lb-cap").textContent = shots[cur].cap; document.getElementById("lb-n").textContent = (cur + 1) + " / " + shots.length; }
   document.querySelectorAll("#gallery-list button").forEach(function (b) {
@@ -717,24 +924,53 @@ var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0",
   lb.addEventListener("keydown", function (e) { if (e.key === "ArrowLeft") showShot(cur - 1); else if (e.key === "ArrowRight") showShot(cur + 1); });
   lb.addEventListener("close", function () { if (opener) opener.focus(); });
 
-  // ---- the download button from latest.json (else the sample, marked)
-  function mb(bytes) { return Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB"; }
+  // ---- the download buttons from latest.json (else the sample, marked)
   function showLatest(latest, sample) {
-    var btn = document.getElementById("dl");
-    if (latest.url) { btn.href = latest.url; btn.removeAttribute("aria-disabled"); }
-    var dt = document.getElementById("dl-text");
-    dt.textContent = "Download"; dt.appendChild(el("span", "ver", " · " + String(latest.version || "").replace(/^Pre-alpha\s+/, "")));
+    var btn = document.getElementById("dl"), topBtn = document.getElementById("dl-top");
+    if (latest.url) { btn.href = latest.url; topBtn.href = latest.url; btn.removeAttribute("aria-disabled"); topBtn.removeAttribute("aria-disabled"); }
+    document.getElementById("dl-top-ver").textContent = " · " + String(latest.version || "").replace(/^Pre-alpha\s+/, "");
     var m = document.getElementById("dl-meta");
-    m.textContent = "Newest version " + latest.version + " · " + mb(latest.size) + " · Windows 64-bit";
-    if (sample) { m.appendChild(document.createTextNode(" ")); m.appendChild(el("span", "sample", "(sample data)")); }
+    m.textContent = latest.version + " · " + mb(latest.size) + " · Windows 64-bit · unzip and run ZombieDawn.exe";
+    if (sample) { m.appendChild(document.createTextNode("  ")); m.appendChild(el("span", "sample", "(sample data: the live site reads latest.json)")); }
+    document.getElementById("foot-version").textContent = "Newest version " + latest.version;
+    var slot = document.getElementById("sha-slot"); slot.textContent = "";
+    if (/^[0-9a-f]{64}$/i.test(latest.sha256 || "")) slot.appendChild(shaBox(latest.sha256, zipName(latest.url)));
   }
-  fetch("latest.json?t=" + Date.now()).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (l) { showLatest(l, false); })
-    .catch(function () { if (ZD_FALLBACK && ZD_FALLBACK.latest) showLatest(ZD_FALLBACK.latest, true); else document.getElementById("dl-meta").textContent = "No version is out yet. Soon."; });
+  // An empty "- " line in the notes reaches releases.json as a "-" paragraph; it and a heading with nothing under it are left out.
+  function trimBody(body) {
+    body = body.filter(function (b) { return !(b.t === "p" && /^[-\s]*$/.test(b.text || "")); });
+    return body.filter(function (b, i) { return b.t !== "h" || (body[i + 1] && body[i + 1].t !== "h"); });
+  }
+  var MAX_BULLETS = 6;
+  function showReleases(releases) {
+    if (!Array.isArray(releases) || !releases.length) return;
+    var newest = releases[0], line = document.getElementById("latest-line");
+    line.textContent = "";
+    line.appendChild(el("b", "", newest.version)); line.appendChild(el("span", "newest-tag", "Newest"));
+    line.appendChild(el("span", "", (newest.date || "") + (newest.size ? " · " + mb(newest.size) : "")));
+    var box = document.getElementById("latest-notes"); box.textContent = "";
+    var body = trimBody(Array.isArray(newest.body) ? newest.body : []), shown = 0, total = 0, ul = null;
+    body.forEach(function (b) { if (b.t === "li") total++; });
+    if (!total) { (newest.notes || []).forEach(function (n) { body.push({ t: "li", text: n }); total++; }); }
+    body.forEach(function (b) {
+      if (b.t === "li") { if (shown >= MAX_BULLETS) return; if (!ul) { ul = el("ul", "notes"); box.appendChild(ul); } ul.appendChild(el("li", "", b.text)); shown++; return; }
+      ul = null;
+      if (shown >= MAX_BULLETS) return;
+      box.appendChild(el(b.t === "h" ? "h3" : "p", b.t === "h" ? "notes-h" + (/^known/i.test(b.text) ? " known" : "") : "notes-p", b.text));
+    });
+    if (total > shown) document.getElementById("latest-more").textContent = (total - shown) + " more change" + (total - shown === 1 ? "" : "s") + " in this build";
+  }
+  function getJson(url) { return fetch(url + "?t=" + Date.now()).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  getJson("latest.json").then(function (l) { showLatest(l, false); }).catch(function () {
+    if (ZD_FALLBACK && ZD_FALLBACK.latest) showLatest(ZD_FALLBACK.latest, true); else document.getElementById("dl-meta").textContent = "No version is out yet. Soon.";
+  });
+  getJson("releases.json").then(showReleases).catch(function () { if (ZD_FALLBACK) showReleases(ZD_FALLBACK.releases); });
 
   // ---- start state
   setTime(params.get("time") || saved.time || "day", false);
   setSnow(params.get("snow") === "1" || (!params.has("snow") && saved.snow), false);
   showPlace(ZD_PLACES[params.get("place")] ? params.get("place") : "haldersfield", false);
+  onScroll();
 })();
 </script>
 </body>
