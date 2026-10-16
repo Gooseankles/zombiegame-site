@@ -1,5 +1,85 @@
 [
     {
+        "build":  202610161747,
+        "version":  "Pre-alpha 0.2.8.1",
+        "date":  "2026-10-16 17:53",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161747/ZombieDawn_2026-10-16_1747.zip",
+        "sha256":  "31B7766BDB08D255B8D67DF69BB143C10C8EABCB88BB657AA1AF1AC41C3ABE92",
+        "size":  1225847207,
+        "notes":  [
+                      "Zombies move and attack in more varied ways: new idle, walk, run, attack, flinch and fall animations, with variants picked per zombie, so a crowd no longer moves in step.",
+                      "A zombie\u0027s attack is timed to its swing: the blow lands as its arms or teeth reach you, so stepping back at the right moment works.",
+                      "Crawlers: some infected have lost the use of their legs. They drag themselves along the ground and bite at your ankles. They are slow; aim low.",
+                      "The Brute: a rare, big and much tougher infected, found outdoors only. Slow, but its blows open deep wounds. You hear its heavy steps before you see it.",
+                      "The Brute looks pale.",
+                      "Crawlers never get up again.",
+                      "Voice does not work yet for players who join by typing an IP address.",
+                      "In the Haldersfield house P05, the far end of the attic is very dark at dusk.",
+                      "The upper floor of house P04 has not been checked yet.",
+                      "The difficulty presets are only partly connected to the game.",
+                      "The notice about sending statistics is only in Settings, not shown at first start.",
+                      "The speed check (against cheating) has not been tested under real lag."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies move and attack in more varied ways: new idle, walk, run, attack, flinch and fall animations, with variants picked per zombie, so a crowd no longer moves in step."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A zombie\u0027s attack is timed to its swing: the blow lands as its arms or teeth reach you, so stepping back at the right moment works."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Crawlers: some infected have lost the use of their legs. They drag themselves along the ground and bite at your ankles. They are slow; aim low."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The Brute: a rare, big and much tougher infected, found outdoors only. Slow, but its blows open deep wounds. You hear its heavy steps before you see it."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The Brute looks pale."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Crawlers never get up again."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Voice does not work yet for players who join by typing an IP address."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "In the Haldersfield house P05, the far end of the attic is very dark at dusk."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The upper floor of house P04 has not been checked yet."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The difficulty presets are only partly connected to the game."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The notice about sending statistics is only in Settings, not shown at first start."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The speed check (against cheating) has not been tested under real lag."
+                     }
+                 ]
+    },
+    {
         "build":  202610161514,
         "version":  "Pre-alpha 0.2.8.0",
         "date":  "2026-10-16 15:23",

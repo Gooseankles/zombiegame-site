@@ -1,29 +1,23 @@
 {
-    "build":  202610161514,
-    "version":  "Pre-alpha 0.2.8.0",
-    "date":  "2026-10-16 15:23",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161514/ZombieDawn_2026-10-16_1514.zip",
-    "sha256":  "6A42579B1279F77A8B7BC3B326BFB6C92756ED74A385A2503C6B0573FD32608B",
-    "size":  1217638270,
+    "build":  202610161747,
+    "version":  "Pre-alpha 0.2.8.1",
+    "date":  "2026-10-16 17:53",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161747/ZombieDawn_2026-10-16_1747.zip",
+    "sha256":  "31B7766BDB08D255B8D67DF69BB143C10C8EABCB88BB657AA1AF1AC41C3ABE92",
+    "size":  1225847207,
     "notes":  [
-                  "The thing you can use under the crosshair (a cupboard, a door, an item on the ground) now gets a warm outline. You can turn it off in Settings: \"Outline what you can use\".",
-                  "Taking items is quicker. In a container, double-click takes the whole stack and shift-click takes one (also \"Take one\" in the right-click menu). On the ground, F takes the whole stack and Shift+F takes one. If part of a stack does not fit, you are told.",
-                  "Sticks and stones on the ground are picked up at once, with no search time.",
-                  "Voice chat: if your microphone was not ready when the game started (a wireless headset that reconnected, a device plugged in later), pressing V now finds it again. If there is still no microphone, the screen says so.",
-                  "The low box hedges in Haldersfield can now be jumped or vaulted, and you can push through the leaves.",
-                  "Street lamps: the arm the lantern hangs from no longer disappears from across the street, so lanterns no longer seem to float beside the poles.",
-                  "Zombies that get stuck on a bush, a tree, furniture or a wall corner now step round it, and give a small hop when caught on an edge.",
-                  "Opening a door no longer swings your own arm through the camera, and standing up from a crouch no longer shows the inside of your own body.",
-                  "Smaller fixes: a harmless error report when a headset or sound device dropped out is no longer filed, and a warning about the falling-snow mesh on every start is gone.",
+                  "Zombies move and attack in more varied ways: new idle, walk, run, attack, flinch and fall animations, with variants picked per zombie, so a crowd no longer moves in step.",
+                  "A zombie\u0027s attack is timed to its swing: the blow lands as its arms or teeth reach you, so stepping back at the right moment works.",
+                  "Crawlers: some infected have lost the use of their legs. They drag themselves along the ground and bite at your ankles. They are slow; aim low.",
+                  "The Brute: a rare, big and much tougher infected, found outdoors only. Slow, but its blows open deep wounds. You hear its heavy steps before you see it.",
+                  "The Brute looks pale.",
+                  "Crawlers never get up again.",
+                  "Voice does not work yet for players who join by typing an IP address.",
                   "In the Haldersfield house P05, the far end of the attic is very dark at dusk.",
                   "The upper floor of house P04 has not been checked yet.",
                   "The difficulty presets are only partly connected to the game.",
-                  "The speed check (against cheating) has not been tested under real lag.",
                   "The notice about sending statistics is only in Settings, not shown at first start.",
-                  "Voice for players who join by typing an IP address does not work yet.",
-                  "On the first load the village is sometimes slow to appear.",
-                  "Voice still needs a microphone set as the default recording device in Windows.",
-                  "Zombies still walk straight at you and step round obstacles; they do not plan a path through a house yet."
+                  "The speed check (against cheating) has not been tested under real lag."
               ],
     "body":  [
                  {
@@ -32,43 +26,35 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "The thing you can use under the crosshair (a cupboard, a door, an item on the ground) now gets a warm outline. You can turn it off in Settings: \"Outline what you can use\"."
+                     "text":  "Zombies move and attack in more varied ways: new idle, walk, run, attack, flinch and fall animations, with variants picked per zombie, so a crowd no longer moves in step."
                  },
                  {
                      "t":  "li",
-                     "text":  "Taking items is quicker. In a container, double-click takes the whole stack and shift-click takes one (also \"Take one\" in the right-click menu). On the ground, F takes the whole stack and Shift+F takes one. If part of a stack does not fit, you are told."
+                     "text":  "A zombie\u0027s attack is timed to its swing: the blow lands as its arms or teeth reach you, so stepping back at the right moment works."
                  },
                  {
                      "t":  "li",
-                     "text":  "Sticks and stones on the ground are picked up at once, with no search time."
+                     "text":  "Crawlers: some infected have lost the use of their legs. They drag themselves along the ground and bite at your ankles. They are slow; aim low."
                  },
                  {
                      "t":  "li",
-                     "text":  "Voice chat: if your microphone was not ready when the game started (a wireless headset that reconnected, a device plugged in later), pressing V now finds it again. If there is still no microphone, the screen says so."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "The low box hedges in Haldersfield can now be jumped or vaulted, and you can push through the leaves."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Street lamps: the arm the lantern hangs from no longer disappears from across the street, so lanterns no longer seem to float beside the poles."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Zombies that get stuck on a bush, a tree, furniture or a wall corner now step round it, and give a small hop when caught on an edge."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Opening a door no longer swings your own arm through the camera, and standing up from a crouch no longer shows the inside of your own body."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Smaller fixes: a harmless error report when a headset or sound device dropped out is no longer filed, and a warning about the falling-snow mesh on every start is gone."
+                     "text":  "The Brute: a rare, big and much tougher infected, found outdoors only. Slow, but its blows open deep wounds. You hear its heavy steps before you see it."
                  },
                  {
                      "t":  "h",
                      "text":  "Known problems"
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "The Brute looks pale."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Crawlers never get up again."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Voice does not work yet for players who join by typing an IP address."
                  },
                  {
                      "t":  "li",
@@ -84,27 +70,11 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "The speed check (against cheating) has not been tested under real lag."
-                 },
-                 {
-                     "t":  "li",
                      "text":  "The notice about sending statistics is only in Settings, not shown at first start."
                  },
                  {
                      "t":  "li",
-                     "text":  "Voice for players who join by typing an IP address does not work yet."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "On the first load the village is sometimes slow to appear."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Voice still needs a microphone set as the default recording device in Windows."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Zombies still walk straight at you and step round obstacles; they do not plan a path through a house yet."
+                     "text":  "The speed check (against cheating) has not been tested under real lag."
                  }
              ]
 }
