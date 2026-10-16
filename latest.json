@@ -1,23 +1,26 @@
 {
-    "build":  202610161747,
-    "version":  "Pre-alpha 0.2.8.1",
-    "date":  "2026-10-16 17:53",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161747/ZombieDawn_2026-10-16_1747.zip",
-    "sha256":  "31B7766BDB08D255B8D67DF69BB143C10C8EABCB88BB657AA1AF1AC41C3ABE92",
-    "size":  1225847207,
+    "build":  202610170023,
+    "version":  "Pre-alpha 0.2.8.2",
+    "date":  "2026-10-17 00:33",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610170023/ZombieDawn_2026-10-17_0023.zip",
+    "sha256":  "4FF3B0A062F859F725BE4B640EA0FF7B8403631F9F2FBA98DE38702F3C754D2B",
+    "size":  1226389860,
     "notes":  [
-                  "Zombies move and attack in more varied ways: new idle, walk, run, attack, flinch and fall animations, with variants picked per zombie, so a crowd no longer moves in step.",
-                  "A zombie\u0027s attack is timed to its swing: the blow lands as its arms or teeth reach you, so stepping back at the right moment works.",
-                  "Crawlers: some infected have lost the use of their legs. They drag themselves along the ground and bite at your ankles. They are slow; aim low.",
-                  "The Brute: a rare, big and much tougher infected, found outdoors only. Slow, but its blows open deep wounds. You hear its heavy steps before you see it.",
-                  "The Brute looks pale.",
-                  "Crawlers never get up again.",
-                  "Voice does not work yet for players who join by typing an IP address.",
-                  "In the Haldersfield house P05, the far end of the attic is very dark at dusk.",
-                  "The upper floor of house P04 has not been checked yet.",
-                  "The difficulty presets are only partly connected to the game.",
-                  "The notice about sending statistics is only in Settings, not shown at first start.",
-                  "The speed check (against cheating) has not been tested under real lag."
+                  "Windows in the village houses open and close (F from inside); they swing outward. Boarded-up windows stay shut. Opening one makes a little noise.",
+                  "Lit rooms draw zombies at night: a lamp left on shows through the windows and nearby zombies come to look. Boarded windows hide the light, and the blackout ends it.",
+                  "Every item in the inventory now has a picture instead of only its name.",
+                  "A proper television in the living rooms; it stands in the middle of its bench instead of hanging off the end.",
+                  "Stepping out of a house no longer leaves the street looking dark for seconds: the eye adapts in about a second, and daylight outside is brighter.",
+                  "A locked front door can now be opened from inside the house: press F to unlock and open it. From outside it stays locked.",
+                  "Zombies can no longer bite through walls, closed doors or closed windows.",
+                  "A zombie bite now makes a sound, for you and for anyone nearby.",
+                  "Double-clicking clothing puts it on. If you already wear something there, the two swap.",
+                  "Your empty right hand no longer floats into view when you jump while holding something.",
+                  "Footsteps inside some houses (the red one on the main road among them) no longer sound like walking on metal.",
+                  "Plates, cutlery and food sit on the tables and counters instead of hanging in the air beside them, and no bread is left in the kitchen sink.",
+                  "A chest of drawers no longer faces the stairwell.",
+                  "Footsteps now land when the feet do: every step sound follows the animation\u0027s foot plants instead of a separate clock, the legs keep pace with the ground, and the rhythm no longer jumps when you speed up or slow down. Your own steps sit centred in the headphones instead of panning under you; crouching and crawling sound soft and muffled; no step sound repeats twice in a row. Wooden floors indoors have their own set of sounds, and wading in the sea\u0027s shallows splashes.",
+                  "Zombies cannot climb in through open windows yet, and a few small upper windows have no glass."
               ],
     "body":  [
                  {
@@ -26,19 +29,59 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies move and attack in more varied ways: new idle, walk, run, attack, flinch and fall animations, with variants picked per zombie, so a crowd no longer moves in step."
+                     "text":  "Windows in the village houses open and close (F from inside); they swing outward. Boarded-up windows stay shut. Opening one makes a little noise."
                  },
                  {
                      "t":  "li",
-                     "text":  "A zombie\u0027s attack is timed to its swing: the blow lands as its arms or teeth reach you, so stepping back at the right moment works."
+                     "text":  "Lit rooms draw zombies at night: a lamp left on shows through the windows and nearby zombies come to look. Boarded windows hide the light, and the blackout ends it."
                  },
                  {
                      "t":  "li",
-                     "text":  "Crawlers: some infected have lost the use of their legs. They drag themselves along the ground and bite at your ankles. They are slow; aim low."
+                     "text":  "Every item in the inventory now has a picture instead of only its name."
                  },
                  {
                      "t":  "li",
-                     "text":  "The Brute: a rare, big and much tougher infected, found outdoors only. Slow, but its blows open deep wounds. You hear its heavy steps before you see it."
+                     "text":  "A proper television in the living rooms; it stands in the middle of its bench instead of hanging off the end."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Stepping out of a house no longer leaves the street looking dark for seconds: the eye adapts in about a second, and daylight outside is brighter."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "A locked front door can now be opened from inside the house: press F to unlock and open it. From outside it stays locked."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Zombies can no longer bite through walls, closed doors or closed windows."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "A zombie bite now makes a sound, for you and for anyone nearby."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Double-clicking clothing puts it on. If you already wear something there, the two swap."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Your empty right hand no longer floats into view when you jump while holding something."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Footsteps inside some houses (the red one on the main road among them) no longer sound like walking on metal."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Plates, cutlery and food sit on the tables and counters instead of hanging in the air beside them, and no bread is left in the kitchen sink."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "A chest of drawers no longer faces the stairwell."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Footsteps now land when the feet do: every step sound follows the animation\u0027s foot plants instead of a separate clock, the legs keep pace with the ground, and the rhythm no longer jumps when you speed up or slow down. Your own steps sit centred in the headphones instead of panning under you; crouching and crawling sound soft and muffled; no step sound repeats twice in a row. Wooden floors indoors have their own set of sounds, and wading in the sea\u0027s shallows splashes."
                  },
                  {
                      "t":  "h",
@@ -46,35 +89,7 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "The Brute looks pale."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Crawlers never get up again."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Voice does not work yet for players who join by typing an IP address."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "In the Haldersfield house P05, the far end of the attic is very dark at dusk."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "The upper floor of house P04 has not been checked yet."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "The difficulty presets are only partly connected to the game."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "The notice about sending statistics is only in Settings, not shown at first start."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "The speed check (against cheating) has not been tested under real lag."
+                     "text":  "Zombies cannot climb in through open windows yet, and a few small upper windows have no glass."
                  }
              ]
 }
