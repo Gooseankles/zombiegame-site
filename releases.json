@@ -1,5 +1,180 @@
 [
     {
+        "build":  202610161000,
+        "version":  "Pre-alpha 0.2.7.0",
+        "date":  "2026-10-16 10:07",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161000/ZombieDawn_2026-10-16_1000.zip",
+        "sha256":  "85282172B197BB3EDC3A9B01F4ADB0F0EC2DC299ADC3C550FBEE7F251A886F7E",
+        "size":  1217697550,
+        "notes":  [
+                      "Haldersfield looks Nordic and lived in: houses in Falu red, white, ochre and grey-green, chimneys, green post boxes, picket fences, woodsheds with firewood, a wooden power line with hanging lanterns, cars left in a hurry, a bus shelter, speed signs and a painted village sign. A fence line and power poles lead from the village start to the houses.",
+                      "Haldersfield\u0027s houses are furnished: fitted kitchens with a sink, stove and fridge, living rooms, bedrooms, bathrooms, upstairs rooms and attics, with searchable cupboards on every floor. Inside doors open and close like the front doors. Cupboards, chests and cabinets have their doors and drawers, and dining tables stand in the open part of the room.",
+                      "Every house tells how its people left: a breakfast on the table, a half-packed suitcase, toys on the floor, drawers pulled out, chairs knocked over, and in a few houses boarded windows and blood.",
+                      "Working lights: every room has a ceiling lamp and a switch by the door (F). A few rooms were left lit, so some windows glow at dusk. Lights flicker before the blackout and go dark for good after it; then only a torch helps. Street lamps burn day and night while the power lasts.",
+                      "Some Haldersfield houses have zombies inside. How many differs from world to world and many houses are empty. They stand quietly until a noise, a light or an opening door wakes them, and a shut door keeps them in.",
+                      "House doors are no longer all shut: some stand open or ajar, some are locked, and one house may be barricaded from inside. Every house keeps at least one way in. A zombie can push through an ajar door; a latched door holds, but you will hear it banging. A barricade can be forced from outside with a few loud shoves (about a second apart) or cleared from inside.",
+                      "Outdoor loot bags: out in the forest, on the mountains, by the sea and along the roads you will find dropped rucksacks, hunters\u0027 bags, duffels, tarp bundles and dry bags. F searches them like a cupboard. They hold travel and weather gear more than food, some are already empty, and an emptied bag is gone for good. A few small stone cairns hide better supplies.",
+                      "Notes: the people of Vintermark left letters, diaries and notices behind. 40 story notes lie in Haldersfield and eight other places (a forestry cabin and sawmill, a church, a mine office, a dam control room and field station, a harbour office, a water works, a school and a crashed helicopter), and notes from other survivors turn up in kitchens, wardrobes and car boots. Double-click a note (or right-click, Read) to read it on a paper sheet. You can walk slowly while reading, but not run, jump or fight. New searchable places: office desks, filing cabinets, a vestry cupboard, a lab bench and freezer, school shelves and the helicopter cockpit.",
+                      "Snow: it now lies on roofs, cars, fences, hedges, bins, sheds and rocks as well as the ground, but never under a roof. Falling snow drifts around you outdoors and stops when you step inside. The high slopes turn white first, and the snow line comes down as autumn moves on.",
+                      "New worlds begin in autumn: brown grass, shorter days, 6-8 degrees in the valley. The peaks turn white about five hours into a world, and the snow reaches Haldersfield\u0027s street around the time the power fails. Worlds you already play keep their own season and clock.",
+                      "Stamina: a sprint lasts about 25 seconds, then you are out of breath and can only jog until you recover. Cold, wet or hungry survivors recover more slowly.",
+                      "Zombies: running zombies are faster (a jog no longer outruns a running walker; sprint to get away). Zombies look different from each other: skin, eyes, blood, mud, frost, wounds, build, height and clothes. Killed zombies lie where they fell for about ten minutes. Zombies follow hills and slopes properly, far zombies wear their clothes, and zombies appear near you however late in a long session. A torch in your hands gives you away at night from up to 100 m; put it away (X) to stay hidden.",
+                      "Houses keep you warmer: inside a building you are out of the wind and feel a few degrees warmer.",
+                      "Difficulty now changes the game, not just the zombie count. Casual: hunger and thirst grow more slowly, containers hold more, zombies see and hear less far. Hardcore: you get hungry and thirsty faster, loot is scarcer, zombies see and hear farther and run closer to sprint speed, and the HUD no longer lists how you feel. Standard plays as before.",
+                      "Co-op: the host now checks each player\u0027s movement against real time, so a modified game cannot run faster than everyone else.",
+                      "Settings has a new switch, \"Send anonymous game statistics and problem reports\". It tells the developers how many people play, the build, frame rate, crashes and the problem reports you file with F9. It never sends your name, Steam id, IP address, chat or voice, and turning it off sends nothing at all.",
+                      "Item descriptions: hovering an item in the inventory says what it is and what it is good for. Canned mackerel is now \"Mackerel in tomato\".",
+                      "Smoother frame rate and a cleaner look indoors: no more blue haze or glowing patches in rooms, sunlit rooms are no longer washed out orange, the sun moves in small steps, far zombies cast no shadows, and autosave no longer pauses the game.",
+                      "Smaller download: about 1.1 GB instead of 1.5 GB. Textures are stored at most 2048 pixels wide; close up they look the same.",
+                      "Fixed: loading a saved world reset the clock to 08:00 on the first day. Your day and hour now come back, and with them the blackout, the snow and felled trees growing back.",
+                      "Fixed: a searched cupboard could refill when you walked far away and came back. Containers now keep what you left in them.",
+                      "Fixed: house doors reset when you walked away and came back. A barricade you forced or a door you shut now stays that way for the session.",
+                      "Fixed: a zombie that pushes a door open now walks on to the noise that drew it. An indoor zombie no longer walks off after a noise it heard while frozen.",
+                      "Fixed: two players pressing F on the same item at the same moment could both get it. A dead survivor can no longer open doors, flip switches or move items.",
+                      "Fixed: your survivor no longer snaps back at the end of a sprint in co-op. Footsteps no longer crunch snow on green grass. Trees no longer grow on roads or inside houses. Black furniture shows its wood again.",
+                      "Fixed: loading a world with many dropped items or campfires no longer stalls at the start, and zombies no longer all react at once to old noises.",
+                      "Some very long attic rooms are dark at their far end at dusk (house P05).",
+                      "The upper floor of one house (P04) may have gaps in its collision.",
+                      "The Casual and Hardcore settings are only partly in place: infection, special zombies, decay and weapon malfunction do not follow them yet.",
+                      "The new check against modified movement is untested with real lag; on a bad connection you may be pulled back a little. Tell us if it happens.",
+                      "The statistics notice is only in Settings, not shown at first start."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Haldersfield looks Nordic and lived in: houses in Falu red, white, ochre and grey-green, chimneys, green post boxes, picket fences, woodsheds with firewood, a wooden power line with hanging lanterns, cars left in a hurry, a bus shelter, speed signs and a painted village sign. A fence line and power poles lead from the village start to the houses."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Haldersfield\u0027s houses are furnished: fitted kitchens with a sink, stove and fridge, living rooms, bedrooms, bathrooms, upstairs rooms and attics, with searchable cupboards on every floor. Inside doors open and close like the front doors. Cupboards, chests and cabinets have their doors and drawers, and dining tables stand in the open part of the room."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Every house tells how its people left: a breakfast on the table, a half-packed suitcase, toys on the floor, drawers pulled out, chairs knocked over, and in a few houses boarded windows and blood."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Working lights: every room has a ceiling lamp and a switch by the door (F). A few rooms were left lit, so some windows glow at dusk. Lights flicker before the blackout and go dark for good after it; then only a torch helps. Street lamps burn day and night while the power lasts."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Some Haldersfield houses have zombies inside. How many differs from world to world and many houses are empty. They stand quietly until a noise, a light or an opening door wakes them, and a shut door keeps them in."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "House doors are no longer all shut: some stand open or ajar, some are locked, and one house may be barricaded from inside. Every house keeps at least one way in. A zombie can push through an ajar door; a latched door holds, but you will hear it banging. A barricade can be forced from outside with a few loud shoves (about a second apart) or cleared from inside."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Outdoor loot bags: out in the forest, on the mountains, by the sea and along the roads you will find dropped rucksacks, hunters\u0027 bags, duffels, tarp bundles and dry bags. F searches them like a cupboard. They hold travel and weather gear more than food, some are already empty, and an emptied bag is gone for good. A few small stone cairns hide better supplies."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Notes: the people of Vintermark left letters, diaries and notices behind. 40 story notes lie in Haldersfield and eight other places (a forestry cabin and sawmill, a church, a mine office, a dam control room and field station, a harbour office, a water works, a school and a crashed helicopter), and notes from other survivors turn up in kitchens, wardrobes and car boots. Double-click a note (or right-click, Read) to read it on a paper sheet. You can walk slowly while reading, but not run, jump or fight. New searchable places: office desks, filing cabinets, a vestry cupboard, a lab bench and freezer, school shelves and the helicopter cockpit."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Snow: it now lies on roofs, cars, fences, hedges, bins, sheds and rocks as well as the ground, but never under a roof. Falling snow drifts around you outdoors and stops when you step inside. The high slopes turn white first, and the snow line comes down as autumn moves on."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "New worlds begin in autumn: brown grass, shorter days, 6-8 degrees in the valley. The peaks turn white about five hours into a world, and the snow reaches Haldersfield\u0027s street around the time the power fails. Worlds you already play keep their own season and clock."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Stamina: a sprint lasts about 25 seconds, then you are out of breath and can only jog until you recover. Cold, wet or hungry survivors recover more slowly."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies: running zombies are faster (a jog no longer outruns a running walker; sprint to get away). Zombies look different from each other: skin, eyes, blood, mud, frost, wounds, build, height and clothes. Killed zombies lie where they fell for about ten minutes. Zombies follow hills and slopes properly, far zombies wear their clothes, and zombies appear near you however late in a long session. A torch in your hands gives you away at night from up to 100 m; put it away (X) to stay hidden."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Houses keep you warmer: inside a building you are out of the wind and feel a few degrees warmer."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Difficulty now changes the game, not just the zombie count. Casual: hunger and thirst grow more slowly, containers hold more, zombies see and hear less far. Hardcore: you get hungry and thirsty faster, loot is scarcer, zombies see and hear farther and run closer to sprint speed, and the HUD no longer lists how you feel. Standard plays as before."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Co-op: the host now checks each player\u0027s movement against real time, so a modified game cannot run faster than everyone else."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Settings has a new switch, \"Send anonymous game statistics and problem reports\". It tells the developers how many people play, the build, frame rate, crashes and the problem reports you file with F9. It never sends your name, Steam id, IP address, chat or voice, and turning it off sends nothing at all."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Item descriptions: hovering an item in the inventory says what it is and what it is good for. Canned mackerel is now \"Mackerel in tomato\"."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Smoother frame rate and a cleaner look indoors: no more blue haze or glowing patches in rooms, sunlit rooms are no longer washed out orange, the sun moves in small steps, far zombies cast no shadows, and autosave no longer pauses the game."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Smaller download: about 1.1 GB instead of 1.5 GB. Textures are stored at most 2048 pixels wide; close up they look the same."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed: loading a saved world reset the clock to 08:00 on the first day. Your day and hour now come back, and with them the blackout, the snow and felled trees growing back."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed: a searched cupboard could refill when you walked far away and came back. Containers now keep what you left in them."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed: house doors reset when you walked away and came back. A barricade you forced or a door you shut now stays that way for the session."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed: a zombie that pushes a door open now walks on to the noise that drew it. An indoor zombie no longer walks off after a noise it heard while frozen."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed: two players pressing F on the same item at the same moment could both get it. A dead survivor can no longer open doors, flip switches or move items."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed: your survivor no longer snaps back at the end of a sprint in co-op. Footsteps no longer crunch snow on green grass. Trees no longer grow on roads or inside houses. Black furniture shows its wood again."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Fixed: loading a world with many dropped items or campfires no longer stalls at the start, and zombies no longer all react at once to old noises."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Some very long attic rooms are dark at their far end at dusk (house P05)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The upper floor of one house (P04) may have gaps in its collision."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The Casual and Hardcore settings are only partly in place: infection, special zombies, decay and weapon malfunction do not follow them yet."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The new check against modified movement is untested with real lag; on a bad connection you may be pulled back a little. Tell us if it happens."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The statistics notice is only in Settings, not shown at first start."
+                     }
+                 ]
+    },
+    {
         "build":  202610131745,
         "version":  "Pre-alpha 0.2.6.0",
         "date":  "2026-10-13 17:54",
