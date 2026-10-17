@@ -316,7 +316,7 @@ footer nav a { text-decoration: none; }
       <a href="#gallery">Pictures</a>
       <a href="patchnotes.html">Patch notes</a>
     </nav>
-    <a class="btn btn-primary" id="dl" href="#download" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl-text">Download</span></a>
+    <a class="btn btn-primary" id="dl" href="https://github.com/Gooseankles/zombiegame-site/releases/latest" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl-text">Download</span></a>
   </div>
 </header>
 
@@ -536,8 +536,8 @@ footer nav a { text-decoration: none; }
 <text class="label label-lm label-lm-left" x="994.0" y="280.0">Ridge Helicopter Wreck</text>
 </g>
 <g class="spawns">
-<circle class="spawn" cx="470.0" cy="435.0" r="5"><title>Start: Haldersfield north-west edge</title></circle>
-<circle class="spawn" cx="505.0" cy="497.0" r="5"><title>Start: Haldersfield, 170 m south of the village street (same side of the Lund river; the 120 m calm zone stops short of the houses); was town_halders_se at 5450,6750 until 2026-10-13</title></circle>
+<circle class="spawn" cx="470.0" cy="435.0" r="5"><title>Start: Haldersfield, north-west of the village</title></circle>
+<circle class="spawn" cx="505.0" cy="497.0" r="5"><title>Start: Haldersfield, south of the village street</title></circle>
 <circle class="spawn" cx="625.0" cy="410.0" r="5"><title>Start: Lundford west fields</title></circle>
 </g>
 <g class="places">
@@ -707,7 +707,7 @@ footer nav a { text-decoration: none; }
       <h2 id="dl-h">Unzip and play</h2>
       <p>Download the zip, unzip it anywhere and run <b>ZombieDawn.exe</b>. Later builds update from the start screen with one button.</p>
       <p class="sub"><b>Windows warns you?</b> The game is new and not code-signed yet, so Windows SmartScreen may say &ldquo;Windows protected your PC&rdquo;. Click <b>More info</b>, then <b>Run anyway</b>. To avoid it, right-click the zip, open <b>Properties</b> and tick <b>Unblock</b> before unzipping. If Defender blocks a file, restore it under Protection history and tell me which one.</p>
-      <div class="cta"><a class="btn btn-primary" id="dl2" href="#download" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>Download for Windows</a><a class="btn btn-ghost" href="patchnotes.html">Patch notes</a></div>
+      <div class="cta"><a class="btn btn-primary" id="dl2" href="https://github.com/Gooseankles/zombiegame-site/releases/latest" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>Download for Windows</a><a class="btn btn-ghost" href="patchnotes.html">Patch notes</a></div>
       <p class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</p>
     </div>
     <div class="dl-side">
@@ -726,7 +726,7 @@ footer nav a { text-decoration: none; }
 
 <dialog class="lb" id="lb" aria-label="Picture">
   <div class="lb-in">
-    <img id="lb-img" src="" alt="">
+    <img id="lb-img" alt="">
     <div class="lb-bar">
       <button type="button" id="lb-prev">Previous</button>
       <span class="cap" id="lb-cap"></span>
@@ -868,7 +868,7 @@ var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0",
   function zipName(url) { var m = /([^\/]+\.zip)(?:$|\?)/.exec(url || ""); return m ? m[1] : "ZombieDawn.zip"; }
   function mb(bytes) { return Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB"; }
   function showLatest(latest, sample) {
-    ["dl", "dl2"].forEach(function (id) { var b = document.getElementById(id); if (latest.url) { b.href = latest.url; b.removeAttribute("aria-disabled"); } });
+    ["dl", "dl2"].forEach(function (id) { var b = document.getElementById(id); if (latest.url && !sample) { b.href = latest.url; b.removeAttribute("aria-disabled"); } });
     var dt = document.getElementById("dl-text");
     dt.textContent = "Download"; dt.appendChild(el("span", "ver", " \u00b7 " + String(latest.version || "").replace(/^Pre-alpha\s+/, "")));
     var m = document.getElementById("dl-meta");
