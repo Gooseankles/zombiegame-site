@@ -1,5 +1,131 @@
 [
     {
+        "build":  202610171940,
+        "version":  "Pre-alpha 0.2.10.0",
+        "date":  "2026-10-17 19:51",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610171940/ZombieDawn_2026-10-17_1940.zip",
+        "sha256":  "1020177918E8F4B90CF798DBCEB998DC7CFE25A8E9238497A97B4869C472194A",
+        "size":  1365841543,
+        "notes":  [
+                      "Food spoils. Meat and fish go off within hours, an apple in a couple of weeks; cans, bottled water, chocolate and crispbread keep. Warm air hurries it, cold slows it, and a working fridge keeps food about four times longer (it stays cold for six game hours after the blackout). Food in a house you open on day six is as old as the world is.",
+                      "Hover a piece of food to see Fresh, Going off or Spoiled and about how long it will keep, in words. Going off food is safe enough; spoiled food gives a third of its goodness and will probably make you ill. Spoiled raw food cannot be cooked.",
+                      "Loot zones follow the map. The starter valley is the easy zone: every spawn pocket, Haldersfield, Lundford and Brennholt. Storvik, Vellport, the coast and the fjord are better; the dam and the two cities are better still; the Skar mountains, the old mine and anything above 700 m are the hardest. Bathrooms in the valley hold few medicines; outside it they hold twice the antibiotics.",
+                      "Hikers, hunters, camps and dead travellers now also lie in the starter valley, and travellers no longer wait only in the far east.",
+                      "Three tiny places hold a small chance of very rare loot: the sealed Vargtind bunker, the helicopter wreck on the ridge and the Skar mine adit. Containers there are as hard as the mountains, but about one in twelve also holds something special.",
+                      "Zombies no longer pop up in front of you: a zombie whose place lies in your view, within 150 m, waits until you look away before it appears.",
+                      "Walls and closed doors now muffle noise for zombies: a sprint behind a wall or a slammed door in the next room carries about half as far, two walls leave only a sliver. A noise in the same room still carries in full.",
+                      "Zombies you kill stay dead. A cleared hamlet or roadside does not fill up again when the host restarts; a killed zombie\u0027s place is taken again only after many game days, sooner close to the outbreak source in the Skar mountains, much later far from it.",
+                      "Zombies that fell under the ground, into the void or got stuck chasing you for half a minute without moving are put back on the ground or handed to the crowd step instead of standing there for ever.",
+                      "Zombies have voices: a groan every few seconds when they are near, a snarl as they swing, a grunt when hit and a death rattle. A zombie that attacks cries out, and others within about 25 m turn toward the fight. (The sounds are generated placeholders for now.)",
+                      "The spruce forest grows in clumps with thin ground between, open glades and thicker edges instead of an even plantation; fallen sticks follow the clumps. Ferns cover the forest floor around you.",
+                      "Houses, lamps, fences and the story places now stay in view from kilometres away (HLOD) instead of vanishing once their part of the map streams out. Furniture indoors is never drawn from far.",
+                      "The barrels at the sawmill, the mine, the dam and the water works were scaled to nothing and warned on every load; they are back at full size.",
+                      "Your world keeps five older copies besides the newest save, about half an hour apart, so a damaged save no longer costs the whole world.",
+                      "Sounds behind walls are muffled and a little quieter, and houses have a short echo inside.",
+                      "The forest now has a voice: wind in the pines and across the open valley, birds and leaves by day, owls, twigs and a far wolf by night, rain that grows from a patter to a roar, and thunder in a downpour. It follows the hour, the trees round you, your height, the rain and the snow, and goes quiet and distant indoors. New setting: Ambience volume.",
+                      "You can hear yourself: after a sprint your breathing comes fast and loud, and a racing heartbeat sets in when you are badly hurt, bleeding, feverish or close to the end. It stays silent when you are well. New setting: Heartbeat and breathing sounds (on or off).",
+                      "Axes and pickaxes sound like what they hit: a bark chop on trees, a different crack as one falls, stone on stone for rocks, a dull thud with the wrong tool.",
+                      "The zombie voices are generated placeholders; ambience, breathing and heartbeat levels have not been tuned by ear.",
+                      "Trees are drawn only to 350 m, so far hills look bare; ferns on the forest floor are still thin.",
+                      "A few TestHouse furnishings near the Lundford start float above the floor, and one street car sits in the road."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Food spoils. Meat and fish go off within hours, an apple in a couple of weeks; cans, bottled water, chocolate and crispbread keep. Warm air hurries it, cold slows it, and a working fridge keeps food about four times longer (it stays cold for six game hours after the blackout). Food in a house you open on day six is as old as the world is."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Hover a piece of food to see Fresh, Going off or Spoiled and about how long it will keep, in words. Going off food is safe enough; spoiled food gives a third of its goodness and will probably make you ill. Spoiled raw food cannot be cooked."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Loot zones follow the map. The starter valley is the easy zone: every spawn pocket, Haldersfield, Lundford and Brennholt. Storvik, Vellport, the coast and the fjord are better; the dam and the two cities are better still; the Skar mountains, the old mine and anything above 700 m are the hardest. Bathrooms in the valley hold few medicines; outside it they hold twice the antibiotics."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Hikers, hunters, camps and dead travellers now also lie in the starter valley, and travellers no longer wait only in the far east."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Three tiny places hold a small chance of very rare loot: the sealed Vargtind bunker, the helicopter wreck on the ridge and the Skar mine adit. Containers there are as hard as the mountains, but about one in twelve also holds something special."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies no longer pop up in front of you: a zombie whose place lies in your view, within 150 m, waits until you look away before it appears."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Walls and closed doors now muffle noise for zombies: a sprint behind a wall or a slammed door in the next room carries about half as far, two walls leave only a sliver. A noise in the same room still carries in full."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies you kill stay dead. A cleared hamlet or roadside does not fill up again when the host restarts; a killed zombie\u0027s place is taken again only after many game days, sooner close to the outbreak source in the Skar mountains, much later far from it."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies that fell under the ground, into the void or got stuck chasing you for half a minute without moving are put back on the ground or handed to the crowd step instead of standing there for ever."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies have voices: a groan every few seconds when they are near, a snarl as they swing, a grunt when hit and a death rattle. A zombie that attacks cries out, and others within about 25 m turn toward the fight. (The sounds are generated placeholders for now.)"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The spruce forest grows in clumps with thin ground between, open glades and thicker edges instead of an even plantation; fallen sticks follow the clumps. Ferns cover the forest floor around you."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Houses, lamps, fences and the story places now stay in view from kilometres away (HLOD) instead of vanishing once their part of the map streams out. Furniture indoors is never drawn from far."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The barrels at the sawmill, the mine, the dam and the water works were scaled to nothing and warned on every load; they are back at full size."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Your world keeps five older copies besides the newest save, about half an hour apart, so a damaged save no longer costs the whole world."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Sounds behind walls are muffled and a little quieter, and houses have a short echo inside."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The forest now has a voice: wind in the pines and across the open valley, birds and leaves by day, owls, twigs and a far wolf by night, rain that grows from a patter to a roar, and thunder in a downpour. It follows the hour, the trees round you, your height, the rain and the snow, and goes quiet and distant indoors. New setting: Ambience volume."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "You can hear yourself: after a sprint your breathing comes fast and loud, and a racing heartbeat sets in when you are badly hurt, bleeding, feverish or close to the end. It stays silent when you are well. New setting: Heartbeat and breathing sounds (on or off)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Axes and pickaxes sound like what they hit: a bark chop on trees, a different crack as one falls, stone on stone for rocks, a dull thud with the wrong tool."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The zombie voices are generated placeholders; ambience, breathing and heartbeat levels have not been tuned by ear."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Trees are drawn only to 350 m, so far hills look bare; ferns on the forest floor are still thin."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A few TestHouse furnishings near the Lundford start float above the floor, and one street car sits in the road."
+                     }
+                 ],
+        "sig":  "FGTtiqtoNfpMttZOJk53MkghhMBp/qZZtdiu0epqvRlzPc9r7YoWGDv6RLwowZJlRaYfkzl3ZM98nOur/p7RTD7mI9QlU716Z+3w4w8+PmAOipzhZdYUGR7QTY3eqf/IWO/M+rSV9UrIhf/E0MrVwHP+f2YCtqa4DhDJEII2vVZN+f2kl9LJfCnFlIkJZ7eEYvqI3isw8zMJLJZ99GN/FcKb0pwF5r4iU5GRFRSZzh+RohJ6/PpCSEStyegOTkPaNIyARkds2MGB14xnClhvdFuG1tZ65MSurFndH3g6RqZPcQD+yBPOZiLCBOETGfepm+fwwNwfRGRqDYtlHn7oKw=="
+    },
+    {
         "build":  202610170844,
         "version":  "Pre-alpha 0.2.9.0",
         "date":  "2026-10-17 08:54",
@@ -162,7 +288,8 @@
                          "t":  "li",
                          "text":  "The water and illness numbers are first guesses and will be tuned."
                      }
-                 ]
+                 ],
+        "sig":  "rmEGCYYEoHIssr2T3WtKSVwWG2CevJZ9XjMLAVyZoBooZYQoZ6tzI5j4awvIHIdH/moQmEx6lyON60V2QuJEGIW9kF9vsgqFfvEi2HbAoWWb3zGkEzam00IU57s3INmoC3L5YF5NDrnZPajn4ciyAePWUVmc+nME+VwznFS/6+E6gDi3jmEK+7ydfX+LktLmQiMHpg6xK9x9jTpeGfbr/4323/WlMddbnUPxP0jpvqm00sI/JYmiP2Y7OiXp6lv1cRbXQfEQx3KB/2uKddzHelPPyfk4V/J5wNAN0w3wtH26SpelLuXb46jpx9c4dolsb+WYmmNqWLU0ETXi2kcJfw=="
     },
     {
         "build":  202610170023,
@@ -257,7 +384,8 @@
                          "t":  "li",
                          "text":  "Zombies cannot climb in through open windows yet, and a few small upper windows have no glass."
                      }
-                 ]
+                 ],
+        "sig":  "plxasCEnVFYnpUZKc+1TabkNwjRXBkWvUIsVMYVr21KutOXDlNX8V5IBDIjCNK7G0Vg0OXcoQQkW/2NhNnb9Zp48Eop2AbVKrGT60FOc2n0roRmuOc0jS64tW3Qp4padVdxHtvt7jcd6CAiCpxz/RwxtoWLj/y1AgHyRlyosdTvVaH0xgvwjOXLLIlNjj892wEqDtKbcL0VuzHtWIXP3da7ZtbNt9PaKC34VkZjo7Njyvr1mqbYi54eB2iuBj51EtaqyMsV/ilJpE6rgzQ6e85ZELfigi6PrmW5hpk6ATmrA+Sfh565Qm3M0dS37JRa5xURS+1rUAYFgD2r4OQJUhg=="
     },
     {
         "build":  202610161747,
@@ -337,7 +465,8 @@
                          "t":  "li",
                          "text":  "The speed check (against cheating) has not been tested under real lag."
                      }
-                 ]
+                 ],
+        "sig":  "aGE8HAMwEstOEl3vYeExG84nm/gogJAscxvWmLhBKEVm6GwK0MZwh8YX0g7W7kTFNny+gCjHxOriP4F/AvYyHTQy7FpNkcemyS4Iz+OLRH0rFiQerzXGLuX20eB98kmahzrjAPicCQK8WhNuMRYxYVylo8JTi8Zy3oPNed2HU2+Jnh2NfyhqdcZNr8G2tQuEwoA3n93xUQSgbdbQifJqAN9tBCyM4/eMZV35ohb2ozBA222U/Ex9XtIwQnS6Vji6UHPLgOqzHATSMOpuwub0ONFlljaEi2uSeEKKP6yJMKOLyy6KiP0nTzJ4Y+LF4z8ePaSn2RpsbVc1AvUB1yiPGA=="
     },
     {
         "build":  202610161514,
@@ -447,7 +576,8 @@
                          "t":  "li",
                          "text":  "Zombies still walk straight at you and step round obstacles; they do not plan a path through a house yet."
                      }
-                 ]
+                 ],
+        "sig":  "RJKiqJjqkc7lm3Wjk2t9ia15ks564R2n5S7m4JSamKqjrUP68/h5cjS4cfLBh7A3y+0+nMdNffCs+/jy8bHLVSrN/eJCKCivUy0mnwVCmEKfZkBn/kRbm9pdxUpN0D7ah1kFBWRwSlYtwaOOfiCVZ9Hb7JBlMvze3aKGRre5WUGwo9AzHX0t7T+/CH7/ADK7w9DP8W1gqkHhypGDC4z51D7fiLoW5155jwzdgoPvvI1rx5wuIsQrs64ifLAqlOiZnUepjIbiPVTpfZlKmFuhOrCq8AM+wr3K0zwbjJOVXA3uAgPndMLEN3LvfROJoOdNfGS7XHloZ2u6PYDbmOVWdw=="
     },
     {
         "build":  202610161000,
@@ -622,7 +752,8 @@
                          "t":  "li",
                          "text":  "The statistics notice is only in Settings, not shown at first start."
                      }
-                 ]
+                 ],
+        "sig":  "V6Rtj0szyjN1QA2lMBau+q4RTbn5F11zuJCM902lfxLB0uNrH3q0ByfGV2FXqItrOHy7lNiKIzNb3dt4+9WVQS962vnRF9npcfsfa/PczWvQtlVKyv5OxjU65xokbmlkMkLqX6Ul/QYQWnoPsFuWw270M7C7v6L/YOuwwMeYG41WeO2XXMW/DCHQj08DCsYTeoJu4foYsjdDwZsbiH5MdWyJfUHhvIJGDUu2zsjzykdZvlG4siN3DGcTf0ZW8reuHUHg1aU0XZkcQ+JBJNqJBsoUlVwYnz8qblwpcve/cT+ciGIFD6HGH6b1Q9AH1enzQyvNkUioI3F0mL5bC8+f8g=="
     },
     {
         "build":  202610131745,
@@ -661,7 +792,8 @@
                          "t":  "p",
                          "text":  "-"
                      }
-                 ]
+                 ],
+        "sig":  "OyAKPYd5lRuNRVaWdjbcnxMzhEA1dTyNFsROLjkGc5xnoltuoaterR0YzLhbmktmXXdZ/KSSIuOAfVHTDh8bvilQQzAPvnG2g7dnI3p+7es7/SIV4YGCp+6C01g0xSvU3DAuyO6OmBVix2dWh9PdV28gfI1BdzZ1GUMkeK0v3I9RrPgc8NzJmlIsyaBFU5DKybYWPFHcDxTbIg5QFOPUHJ+eQdnUljPAD5Epf93HwcNehQ0iBHqNFb+2Y138rVPUeLjJ7NLuOQmZGpyjlTva+/Rvc25mIn73s9lWtQ8FloKy3Sqsso6NrtFXSMD45FNk2oGIVyUkXFRIdF6ZghLm/A=="
     },
     {
         "build":  202610131639,
@@ -678,7 +810,8 @@
                          "t":  "li",
                          "text":  "The game file is now called ZombieDawn.exe."
                      }
-                 ]
+                 ],
+        "sig":  "BTFc8FTlOVHuZA8Ktqo0a+IJ/u2l4/AfPhj6dTcbKpaI9Abuqasm+w/ILQmGe/jPsEiWBtB9nVO5Dlt9E2cHWnQytIuAQq48FnZSB8oaYS3sE7xqUJ+0ckZ0ZKuhRQo/zM2MMabpYCoamOSfTWlpToWwfBTXQWI69/7poD8FsgymCFX0fcddK7C8wUMzpwDmHJalu2AJNb6UiuYjJrbHijtVu+fjPIiM6QE7S+JRhgXKzNLusGppY+2Z9iWySYcQedTYnrExHMgkVgKFCdM2kcMZ9wA1aBGxNGvFm/cZgM2Z6m1ZV4v678ZC8z/NP3LoI3lYKd1Xkr6k7x4FlOn3Sw=="
     },
     {
         "build":  202610131410,
@@ -743,7 +876,8 @@
                          "t":  "li",
                          "text":  "Every zombie wears the same clothes for now (one character model); more models will follow."
                      }
-                 ]
+                 ],
+        "sig":  "XjhgDIis5ICI4rID+cPiQkNLpfOBP1IkzzRXFBnZla1GDMWmy3rOJKiiLMd71711+hPpITEBSDMQ9G9iOU5f9fKnmexuW0vxqfy5hxmyYCd4ZPfiuuLJzZHzgP9nMzDmjBkNQyGUK/0qbT1jyak7Ywg62IekH0fPlnZDR+fBDEyQUjSd19H+L2EDY/V+tjN9s++lASNslvVqUNIJbZ/RsNajFLLTQtZdBQ+yAecgI0xeS9wcuEH/LAizKEDY5ZfaQh3xQZKPXskUxDVMeHlNQIyR9qiX0hifNaNnvCjcm51CVn4fsk5k7Cw1lPp+688LHeEosnJRW63obeKH25mpvg=="
     },
     {
         "build":  202610131216,
@@ -828,7 +962,8 @@
                          "t":  "li",
                          "text":  "There is no foam where the sea meets the beach yet."
                      }
-                 ]
+                 ],
+        "sig":  "clZlyFTrCKc9SWtxbPqucbW3oF20R7xj9XTR7q1Wc04qLPz5g5RG1Qi59FVprOkAjVMI/dJh4sD3jk8Pw37IQSeruQDCRblJq961lllLCR13qL0HQ61CU7Xqtym+OptL+f5nMEJei+WjMklQLt4g3IteWvHsJbd9fwYWHGqJaLA4c6MMMHLCnCnWrU5kb2+Yb6QWyFUzVmIBM+dea8h93h+oxgrOTEqy/4P79kp1T9M8k+hkhpnIVah6pNAqEnyRPMwO3OD5ZWrJu8194fl1bLr7sdqc6ph0PeqthcL5JGAkJIHx1Wgm/0D1F5/KL9rFKIMfKIgXJylCYP4w8IrR3g=="
     },
     {
         "build":  202610130912,
@@ -899,7 +1034,8 @@
                          "t":  "li",
                          "text":  "The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."
                      }
-                 ]
+                 ],
+        "sig":  "sYU9WQHwL14LRHi9txhoDPMzRSqOD24uSX4eqbmFpoRCh6CC3ylA8p9oL/jWhZb3pd5GNxz+jtkgAzLSPNJ0Le/MUl654P/2lS/6YrJri7LNBtbiT+3Be5fFJsqpXc07uGw9DRJmlS2lT6BDHv5W5ucrCJ+04+ghnCaD6gxAn6m03jaJz0BBke1VSFkZ8FQlOYU3MQACOAUh4FlJb7TYTLbz/Wa8KS9LYWD3MK1UzFSmb+MZGY3yBxGtxqa9sXe7GQykPf7Mq2e+hbGT+EgJ3C9Lp9pe0cFSOYFZYdBTCDoOGMLxc+1jUpEjgZqINW1Ndk5J7/qT1T/4jiV2i+C6zg=="
     },
     {
         "build":  202610122335,
@@ -944,7 +1080,8 @@
                          "t":  "li",
                          "text":  "Rivers are placed as water bodies but do not draw yet, so river beds still show bare mud and stones. Lake water is a muddy brown for now."
                      }
-                 ]
+                 ],
+        "sig":  "Jgj7ZiBSJH8nty5ZlavmAWgG9WLAhDlogqz198fEnXuEAgbAT0zYxjSqPn10Nzt3y93vr/keqAU/AGimtgwZaV/lTjt1AiKl/m8TJcUAT5teQ02evalp9cNBLYM15w5Gpcdxl+dMDoKY2FMAuPMkrqa/GfEtfBoXDeIc7vC21uWfcDkuTZ2hrTJxtjyW33WPqv+fWHT/sRtFI0JU/VhzZ/uaouSOkfrznRaqY0Uo16apll31hE38RN5hnZRqg7NQcY5wFJoj5K3Oj+95QsS2Se3pa6ve2oCbk6mphnXwr5rWPd/RoqPiWmTNgI5FYzzbWq3U8E4mLk+vqqcAF2FVbQ=="
     },
     {
         "build":  202610121931,
@@ -1009,7 +1146,8 @@
                          "t":  "li",
                          "text":  "Trees and rocks still use pack models without their own sounds or a chopping animation; zombies may bump into trees on their way."
                      }
-                 ]
+                 ],
+        "sig":  "do1lIVljZDD6Q53dZnNePrcYDkB2d+akTYJaEmMN3wAErfzBt4yNIcanexblU0mS1k7/6ctUNb5o9kccOe/xfaUV/rTnPoJMZLW3orSnS1k4HddCbXC9sPQwopMv7bIDuF3NOdGQM+sMLkecmi7hgHDWT9VZctRo51QOEU6DVRRA/VXaZZv1qwMu5HXL25YDLV7N1MrggHFSgq+ij99sjBgBe5/38HlR5CAJV5QCVgRhDv5qqQXwpzBvW1RDe8mMxsmzId2/OjT1VF4DhxGmkdWXg+Wpl0Kp+zIh5M3g5OnOctPrdiYCiou4a4y16DBMdgQPeOtCbY36Ku7jxxTqDw=="
     },
     {
         "build":  202610121333,
@@ -1054,7 +1192,8 @@
                          "t":  "li",
                          "text":  "At the other two start points the test furniture still stands on bare ground; the old lake and sea are placeholder planes."
                      }
-                 ]
+                 ],
+        "sig":  "oe61GHdazR256tpT/WbGNlkpfJlHReyTmo9/WW3H/mbyIRY1JvMeUylPephVwYmD9Wpq7xmbXKntjZW0Mb+AHbAPpqxeNTD6YEvGp8rFbJKFci4dy8pDNnma4kbbU5bv1Ym0mDlfwUdLr+4F/5h8NSgqzwYLG1fZYE0/g2cZHlCMaBDR9RdHov1j7AvjSdgkGRd7FHgrsdBtRT5mOZS+yWH9EsUPJZuCdP/McY6DbPjbkeBquke/FhfSMRAGceBL8tbf0Dbs8LfkxUuYZ2wnugViqeioGEaYxG1J9kNgWPKu8YeHIbRlRyxfQABoidCn+HzykFmVwT+uAQ4NNtsr0Q=="
     },
     {
         "build":  202610121138,
@@ -1088,7 +1227,8 @@
                          "t":  "p",
                          "text":  "-"
                      }
-                 ]
+                 ],
+        "sig":  "PqioPqM3ByZuI+Oww7bHD5abRWl6Tne7Fav7M0IjIHZYRw1Xl/gMDDtInn5fa6Hl0V+Ui+w7HVGu4LDaaF0FW0NdydHEt+G1DUR0z5uAvCiYm/8Lz4AYwb2k4Le0Jk2LIIGTy9j/Me+JI2XPdxcn5u8rMChAFFrxpiKDFqGO3l8Z6xdeuusyhCz1X3HSy4A4fEEGEy79wqaHwsktkSF2I7NB26Y17ybW8bnMT4xe+Z1hYn2s3a+7L6T8LsvkOE3yKEsWK10Uz7sPP7/4KG/hChPnxDktArFGLV5PxlRzj2JO7zY8/3N1rIn6CdAQwukIsGFcTRjqoYTjDsk/adcBeQ=="
     },
     {
         "build":  202610111749,
@@ -1143,7 +1283,8 @@
                          "t":  "li",
                          "text":  "Doors, items lying on the ground and zombies are not saved yet."
                      }
-                 ]
+                 ],
+        "sig":  "VJil46gopJsd+LYJbhA6jeCYS+OwqxN+dl3dFHtbLFWwRReTCsCfbaFSMtXI6x6/pR2rv7QSo1c1K2lguq++TMHDnhFmlkk+ot6lYR5eeYG8PUg6tl1ArSq8pM78Hbudy8IdKNfWAZd2zMY5NW36CnxAjyOBvEjWujWHEIAmNzdLqorKQgVEgh5b4MBKhg8N+SJThZkbo+4vgCdxf6KFsfS9TMyLGpI7x4HM0qm5E7syi+nuwL5WMIf8OAiqfvGf4pI3VIM47n6vYhZf9dnXXk/uS57Tp5hwuheHdicSSO95LIY0niR1A45n/yWJzpIJo7XXw+aNfwKccS4S/vQjkQ=="
     },
     {
         "build":  202610111215,
@@ -1223,7 +1364,8 @@
                          "t":  "li",
                          "text":  "Nothing has been balanced; expect odd numbers."
                      }
-                 ]
+                 ],
+        "sig":  "TbQXbzF6WstFPN87jiF4AyrKUvl7cRwKkP3EtmaPEDJhP9cf+yzyJkqd4YJ/OZ31V3z2sk12TFqGKp0GiNS1KUSYsAY1Hp8EWTiv66+xZtRdtm6iqjisJhFqIlJ+RywLm+K+dRc9y4MoVeWsYzDZamIaxhuArLELH9DFU71ZIvwg/g1ET7+jUjzGmMe9XDtaP0049gT+PmfwQx9I3BPLC6sHpbt4s7R0k1Kt2RsM+QzdD1pWb9ceRFP85dsnlBHrxS6R51Oha8Sd0mt3fKTZRsk1TxJ+EFxXioaZ1tNShsefvnomNaq+iF3HJSBp7q02rNDBiSCY/ksIesU23XWgzQ=="
     },
     {
         "build":  202610082141,
@@ -1240,7 +1382,8 @@
                          "t":  "li",
                          "text":  "Versions are numbered: this is Pre-alpha 0.1.5, shown on the start screen"
                      }
-                 ]
+                 ],
+        "sig":  "KUp89s1MFYHIYfmXvKxKQegw287bWr9i+/5LJHoGSeUU90j4+E8heUAhZUuQskVNlP9LO6jR4S41EzCMQv6dDbOkxQ49LPTpnMSBo/0/ApQMCzoFNvrxvdUS8L3r1ser3wwdBf6WVPS2AAk1SMXoMxPt9BMxcfklInzI+HG/OUOkilS8F3QcKr5EmvwDevBA4h8ClAABNn88XYQ8Lb2SNtnJXU2gsMpJnv8ayvYb+aHE5j9+V84kYvFD1PlRtZa+h6QfGuHvFFogOLzmAwLe0G3U6gy5y+5aO+kmTjpO1WPq2QLoATF0UTDAV0kmQqNCZBpeRcl0P/DMgvN2NWEVjw=="
     },
     {
         "build":  202610082124,
@@ -1257,7 +1400,8 @@
                          "t":  "li",
                          "text":  "The update check reads the website address correctly (builds before this one cannot update themselves: download this one from the website)"
                      }
-                 ]
+                 ],
+        "sig":  "KU1N7vgsSKgDr+FKt9ACP37KdgWx4464bnPBNTOz6kxylB6o4KdHqY5mxHY6g3eUBVyXkiWXoq9sczNt6CMdSOVsHa1tevQTRlJrX+/2SnTKqeE24xrxlyu8zK1D5rbhXVQ2eiIJrF2XQ5MJcr64q6KBbZRvlYx9iXxUb+n/F2IDah+1Hi9mKtf/j3yqAtCSWyKjtMmmWZtnhobshqB1JmRmNFBNHsuuhZoIRNyTZjb4d7Z3UWI5kLmIZVYnc4vdGmaNYvIyjYTrW4aPNjwGogtbOQQ2dxk+eJby2gbnZnlZUSOx74mGvLDSqOEL0gdbNbSaZkvPZoEgFy5HzZ9QFQ=="
     },
     {
         "build":  202610082108,
@@ -1279,7 +1423,8 @@
                          "t":  "li",
                          "text":  "The update keeps a log in the temp folder if something goes wrong"
                      }
-                 ]
+                 ],
+        "sig":  "vs+3XXgvtuGEM0WSmV5V1anGICBv22zJPb5gh0Z5tp0eSSYU5McI8zz91/lr8dI6yhQsHD6RssCql/LjGU6sL3autIQHAFFCtHLT9Q8QKPwhx2OaxIuV6bXa6Ra87Y/N7jduisTEWOx7Xolva4nwbg4nkpHGf7iWcdCU9O1fL5sHsyw7gKih/HrPGu3YJ+tpgDbcfsJrmCqafN9fGna2BUU9rndUN4ep5pEnOmiesLgou0uvIJqytzPdWbbgHNUO6dvA7EjZ3LisfnuIXP6ocYNzEwpIc4iXTlfCAQgP8t0J5ehp9pjs03anjCjoGHyhmFSZ3Fbpwi+GNpUYsUa5CA=="
     },
     {
         "build":  202610082052,
@@ -1301,7 +1446,8 @@
                          "t":  "li",
                          "text":  "Updates can run unattended (for servers and tests)"
                      }
-                 ]
+                 ],
+        "sig":  "AUeBbSxZvy+mqz62zdP88JfYpEfRybDaVztfBJGuzy5M/jfofgxsgTXKWyMnUtIv44Vv/DJx1Zrp/lW9H6svAL76QO9X0W/XWKsI+2xlLrxy7r+l+X/w6s/KU+WgyAVZJCU4I4AeZjgrZJSehSSQC1BROjlfORgVbXykUHCwWGRUWn49kxj3b4QzpyVaUnjRurQV4TGYXgOrvv7iY1V9uVA12QTHzgPmtBQZ8zAnkl33G3vBe99dAEEeDp3Lnp4MuViNzTOwSHdr+bhptY3Vmm7kkGWxJA/GV3q4uUePnXrxHQ7Jet7wMy49n4IDUIMr8fzzeosqQWHtK7xkXX88PA=="
     },
     {
         "build":  202610082040,
@@ -1333,6 +1479,7 @@
                          "t":  "li",
                          "text":  "The start screen tells you when a new version is out and updates the game"
                      }
-                 ]
+                 ],
+        "sig":  "cUtg1l4zXzT6/3ygfEj/R6ke/kGMWXv2vfvia7vFYR6HdmMfPkWJlvlsHmJPuVzRQBFIzXdP+E7gPjHKgFDQytuEUpToKxgnspm34TMgj4qsYatR/sXfvV2zQ++hFJDZq6ICBlG9Rkefx8hyITqlHNzUs9PcZk8VXVrJ8daAoEuMHYL2yUAQIjgrC/J/jNF3U5y3e6mSTEOZCGWavxCTR9O9M1obDJWs94yR/yENhDjK4k0ywLI1lalDcbkOSmHL9WdmKDos8gls4i0WY5gHsrdXMVgHZYERV8bROHgLz+QQTNSD/lNXV1wQ/TmJ3aspU+rSUusZyuA97WbKfhK04w=="
     }
 ]
