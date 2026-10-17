@@ -318,6 +318,7 @@ footer nav a { text-decoration: none; }
 .hero-cta .btn { min-height: 48px; padding: 8px 22px; font-size: 20px; text-align: center; }
 .hero-cta .line { font-size: 14px; color: #B4C2CA; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6); max-width: 56ch; }
 .hero-cta .line b { color: var(--frost); font-weight: 600; }
+@media (max-width: 480px) { .hero-cta { margin-top: 14px; } .hero-cta .btn { min-height: 42px; padding: 6px 16px; font-size: 16px; } .hero-cta .btn .hide-sm { display: none; } .hero-cta .line { font-size: 13px; } }
 .what { display: grid; gap: 18px; padding-top: 40px; }
 .what .genre { font-weight: 600; font-size: clamp(22px, 3vw, 30px); line-height: 1.2; letter-spacing: 0.02em; text-transform: none; max-width: 34em; }
 .what-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 40px); align-items: start; }
@@ -377,7 +378,7 @@ footer nav a { text-decoration: none; }
       <h1 id="title">Vintermark</h1>
       <p class="lede"><b>Twelve by twelve kilometres</b> of fjord, valley, lake and mountain, cut off from the city across the water. Every new world starts in the central valley, in autumn, with the lamps still burning and the snow line on its way down.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" id="dl3" href="https://github.com/Gooseankles/zombiegame-site/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl3-text">Download for Windows</span></a>
+        <a class="btn btn-primary" id="dl3" href="https://github.com/Gooseankles/zombiegame-site/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl3-text">Download<span class="hide-sm"> for Windows</span></span></a>
         <p class="line" id="dl3-meta">Pre-alpha. Windows 10/11 64-bit. Unzip and run ZombieDawn.exe.</p>
         <p class="line"><b>Windows warns you?</b> Click More info, then Run anyway. The game is not code-signed yet.</p>
       </div>
@@ -933,7 +934,7 @@ var ZD_PLACES = {"lundford":{"name":"Lundford","tier":"Village","region":"Centra
   function showLatest(latest, sample) {
     ["dl", "dl2", "dl3"].forEach(function (id) { var b = document.getElementById(id); if (latest.url && !sample) b.href = latest.url; });
     var ver = String(latest.version || "").replace(/^Pre-alpha\s+/, "");
-    document.getElementById("dl3-text").textContent = "Download for Windows \u00b7 " + ver + (latest.size ? " \u00b7 " + mb(latest.size) : "");
+    var d3 = document.getElementById("dl3-text"); d3.textContent = "Download"; d3.appendChild(el("span", "hide-sm", " for Windows")); d3.appendChild(document.createTextNode(" 00b7 " + ver + (latest.size ? " 00b7 " + mb(latest.size) : "")));
     var dt = document.getElementById("dl-text");
     dt.textContent = "Download"; dt.appendChild(el("span", "ver", " \u00b7 " + String(latest.version || "").replace(/^Pre-alpha\s+/, "")));
     var m = document.getElementById("dl-meta");
