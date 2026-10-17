@@ -6,26 +6,22 @@
     "sha256":  "",
     "size":  1365841543,
     "notes":  [
-                  "Food now spoils. Meat and fish go off within hours, apples last a couple of weeks, and cans, bottled water and chocolate keep. Warm weather makes food spoil faster, cold slows it, and a working fridge keeps it much longer. Hover food to see whether it is fresh, going off or spoiled. Spoiled food gives little and will probably make you ill.",
-                  "The map is now divided into loot areas. The starting valley has the least and weakest loot. Storvik, Vellport and the coast are better, the dam and the cities better still, and the mountains and the old mine are the best and most dangerous. Medicine in bathrooms is rarer in the valley.",
-                  "Hikers, hunters, camps and dead travellers now turn up in the starting valley too.",
-                  "Three hidden places have a small chance of very rare loot: the bunker in the far south-east, the helicopter wreck on the ridge and the old mine entrance.",
-                  "Zombies no longer appear right in front of you.",
-                  "Walls and closed doors now muffle noise, so zombies on the other side of a wall hear you less.",
-                  "Zombies you kill stay dead for a long time. Cleared areas do not fill up again at once.",
-                  "Stuck zombies, and zombies that fell through the ground, no longer stay stuck.",
-                  "Zombies now have voices: they groan, snarl as they attack, grunt when hit and make a death rattle. Others nearby turn toward a fight. These sounds are rough placeholders.",
-                  "Forests grow in clumps with open clearings instead of evenly spaced trees. Ferns now grow on the forest floor.",
-                  "Houses, street lamps and other buildings stay visible from far away. The mountains now reach the horizon.",
-                  "The barrels at the sawmill, the mine, the dam and the water works are visible again.",
-                  "The game keeps five older copies of your world besides the newest save, so a damaged save no longer loses everything.",
-                  "Sounds behind walls are muffled, and rooms have a short echo.",
-                  "New forest sounds: wind, birds by day, owls and a distant wolf at night, rain and thunder. They fade indoors. New setting: Ambience volume.",
-                  "You can now hear yourself: fast breathing after a sprint, and a heartbeat when you are badly hurt, bleeding or feverish. New setting: Heartbeat and breathing sounds.",
-                  "Axes and pickaxes now sound different on trees and rocks.",
-                  "The zombie voices are placeholders, and the new sounds have not been fully balanced yet.",
-                  "Trees are not drawn beyond about 350 m, so far hills look bare. Ferns are still thin.",
-                  "A few pieces of furniture near the Lundford start float above the floor, and one car in the village street sits too low in the road."
+                  "Food can spoil.",
+                  "Loot is better the further you get from the starting valley.",
+                  "Three hidden places with very rare loot.",
+                  "Zombies no longer appear in front of you.",
+                  "Walls and doors muffle noise for zombies.",
+                  "Killed zombies stay dead for a long time.",
+                  "Zombies have voices (placeholders for now).",
+                  "Forests grow in clumps with clearings, and ferns grow on the forest floor.",
+                  "Buildings and mountains stay visible from far away.",
+                  "Five backup copies of your world save.",
+                  "Forest sounds, and echo and muffling indoors. New setting: Ambience volume.",
+                  "You hear your breathing and heartbeat. New setting: Heartbeat and breathing sounds.",
+                  "Axes and pickaxes sound different on trees and rocks.",
+                  "Zombie voices are placeholders, and the new sounds are not balanced yet.",
+                  "Far hills look bare, and ferns are thin.",
+                  "Some furniture near the Lundford start floats, and one village car sits too low."
               ],
     "body":  [
                  {
@@ -34,71 +30,55 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "Food now spoils. Meat and fish go off within hours, apples last a couple of weeks, and cans, bottled water and chocolate keep. Warm weather makes food spoil faster, cold slows it, and a working fridge keeps it much longer. Hover food to see whether it is fresh, going off or spoiled. Spoiled food gives little and will probably make you ill."
+                     "text":  "Food can spoil."
                  },
                  {
                      "t":  "li",
-                     "text":  "The map is now divided into loot areas. The starting valley has the least and weakest loot. Storvik, Vellport and the coast are better, the dam and the cities better still, and the mountains and the old mine are the best and most dangerous. Medicine in bathrooms is rarer in the valley."
+                     "text":  "Loot is better the further you get from the starting valley."
                  },
                  {
                      "t":  "li",
-                     "text":  "Hikers, hunters, camps and dead travellers now turn up in the starting valley too."
+                     "text":  "Three hidden places with very rare loot."
                  },
                  {
                      "t":  "li",
-                     "text":  "Three hidden places have a small chance of very rare loot: the bunker in the far south-east, the helicopter wreck on the ridge and the old mine entrance."
+                     "text":  "Zombies no longer appear in front of you."
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies no longer appear right in front of you."
+                     "text":  "Walls and doors muffle noise for zombies."
                  },
                  {
                      "t":  "li",
-                     "text":  "Walls and closed doors now muffle noise, so zombies on the other side of a wall hear you less."
+                     "text":  "Killed zombies stay dead for a long time."
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies you kill stay dead for a long time. Cleared areas do not fill up again at once."
+                     "text":  "Zombies have voices (placeholders for now)."
                  },
                  {
                      "t":  "li",
-                     "text":  "Stuck zombies, and zombies that fell through the ground, no longer stay stuck."
+                     "text":  "Forests grow in clumps with clearings, and ferns grow on the forest floor."
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies now have voices: they groan, snarl as they attack, grunt when hit and make a death rattle. Others nearby turn toward a fight. These sounds are rough placeholders."
+                     "text":  "Buildings and mountains stay visible from far away."
                  },
                  {
                      "t":  "li",
-                     "text":  "Forests grow in clumps with open clearings instead of evenly spaced trees. Ferns now grow on the forest floor."
+                     "text":  "Five backup copies of your world save."
                  },
                  {
                      "t":  "li",
-                     "text":  "Houses, street lamps and other buildings stay visible from far away. The mountains now reach the horizon."
+                     "text":  "Forest sounds, and echo and muffling indoors. New setting: Ambience volume."
                  },
                  {
                      "t":  "li",
-                     "text":  "The barrels at the sawmill, the mine, the dam and the water works are visible again."
+                     "text":  "You hear your breathing and heartbeat. New setting: Heartbeat and breathing sounds."
                  },
                  {
                      "t":  "li",
-                     "text":  "The game keeps five older copies of your world besides the newest save, so a damaged save no longer loses everything."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Sounds behind walls are muffled, and rooms have a short echo."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "New forest sounds: wind, birds by day, owls and a distant wolf at night, rain and thunder. They fade indoors. New setting: Ambience volume."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "You can now hear yourself: fast breathing after a sprint, and a heartbeat when you are badly hurt, bleeding or feverish. New setting: Heartbeat and breathing sounds."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Axes and pickaxes now sound different on trees and rocks."
+                     "text":  "Axes and pickaxes sound different on trees and rocks."
                  },
                  {
                      "t":  "h",
@@ -106,15 +86,15 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "The zombie voices are placeholders, and the new sounds have not been fully balanced yet."
+                     "text":  "Zombie voices are placeholders, and the new sounds are not balanced yet."
                  },
                  {
                      "t":  "li",
-                     "text":  "Trees are not drawn beyond about 350 m, so far hills look bare. Ferns are still thin."
+                     "text":  "Far hills look bare, and ferns are thin."
                  },
                  {
                      "t":  "li",
-                     "text":  "A few pieces of furniture near the Lundford start float above the floor, and one car in the village street sits too low in the road."
+                     "text":  "Some furniture near the Lundford start floats, and one village car sits too low."
                  }
              ],
     "sig":  "S0u0aWBmNTXeCPfJYJ96NJ334CTtbNuBJZFR3Qu6LOOccqZayzONER5qSPsLGUxlBZQ6MxpZrCtY1kVQ25kUHuugpu+UPOdQPuVZgk9I3uHv58S+T8ABk56L05Zb88czPUFnQw9tCU7u/i9wyI0YQC5yutOhAEogBERGIAWPf1v/9koNk/pZ0Hv10+ONa0XEx2obVm3dQIoEuPmazQsfxtzNxak73kX7OuCqkPoHQLwAax58ONbS1O45ddtyjtWtWIQDmgt/64Pw2KMCwcuI8pCsmh92moulX8ubDMvqYrB6e//US+HQDR7dgqI5VVZWzHQu4w7Z3/EAGAPO5iXwog=="
