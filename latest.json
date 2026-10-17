@@ -3,7 +3,7 @@
     "version":  "Pre-alpha 0.2.10.0",
     "date":  "2026-10-17 19:51",
     "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610171940/ZombieDawn_2026-10-17_1940.zip",
-    "sha256":  "",
+    "sha256":  "1020177918E8F4B90CF798DBCEB998DC7CFE25A8E9238497A97B4869C472194A",
     "size":  1365841543,
     "notes":  [
                   "Food can spoil.",
@@ -97,5 +97,5 @@
                      "text":  "Some furniture near the Lundford start floats, and one village car sits too low."
                  }
              ],
-    "sig":  "S0u0aWBmNTXeCPfJYJ96NJ334CTtbNuBJZFR3Qu6LOOccqZayzONER5qSPsLGUxlBZQ6MxpZrCtY1kVQ25kUHuugpu+UPOdQPuVZgk9I3uHv58S+T8ABk56L05Zb88czPUFnQw9tCU7u/i9wyI0YQC5yutOhAEogBERGIAWPf1v/9koNk/pZ0Hv10+ONa0XEx2obVm3dQIoEuPmazQsfxtzNxak73kX7OuCqkPoHQLwAax58ONbS1O45ddtyjtWtWIQDmgt/64Pw2KMCwcuI8pCsmh92moulX8ubDMvqYrB6e//US+HQDR7dgqI5VVZWzHQu4w7Z3/EAGAPO5iXwog=="
+    "sig":  "FGTtiqtoNfpMttZOJk53MkghhMBp/qZZtdiu0epqvRlzPc9r7YoWGDv6RLwowZJlRaYfkzl3ZM98nOur/p7RTD7mI9QlU716Z+3w4w8+PmAOipzhZdYUGR7QTY3eqf/IWO/M+rSV9UrIhf/E0MrVwHP+f2YCtqa4DhDJEII2vVZN+f2kl9LJfCnFlIkJZ7eEYvqI3isw8zMJLJZ99GN/FcKb0pwF5r4iU5GRFRSZzh+RohJ6/PpCSEStyegOTkPaNIyARkds2MGB14xnClhvdFuG1tZ65MSurFndH3g6RqZPcQD+yBPOZiLCBOETGfepm+fwwNwfRGRqDYtlHn7oKw=="
 }

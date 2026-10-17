@@ -4,7 +4,7 @@
         "version":  "Pre-alpha 0.2.10.0",
         "date":  "2026-10-17 19:51",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610171940/ZombieDawn_2026-10-17_1940.zip",
-        "sha256":  "",
+        "sha256":  "1020177918E8F4B90CF798DBCEB998DC7CFE25A8E9238497A97B4869C472194A",
         "size":  1365841543,
         "notes":  [
                       "Food can spoil.",
@@ -98,14 +98,14 @@
                          "text":  "Some furniture near the Lundford start floats, and one village car sits too low."
                      }
                  ],
-        "sig":  "S0u0aWBmNTXeCPfJYJ96NJ334CTtbNuBJZFR3Qu6LOOccqZayzONER5qSPsLGUxlBZQ6MxpZrCtY1kVQ25kUHuugpu+UPOdQPuVZgk9I3uHv58S+T8ABk56L05Zb88czPUFnQw9tCU7u/i9wyI0YQC5yutOhAEogBERGIAWPf1v/9koNk/pZ0Hv10+ONa0XEx2obVm3dQIoEuPmazQsfxtzNxak73kX7OuCqkPoHQLwAax58ONbS1O45ddtyjtWtWIQDmgt/64Pw2KMCwcuI8pCsmh92moulX8ubDMvqYrB6e//US+HQDR7dgqI5VVZWzHQu4w7Z3/EAGAPO5iXwog=="
+        "sig":  "FGTtiqtoNfpMttZOJk53MkghhMBp/qZZtdiu0epqvRlzPc9r7YoWGDv6RLwowZJlRaYfkzl3ZM98nOur/p7RTD7mI9QlU716Z+3w4w8+PmAOipzhZdYUGR7QTY3eqf/IWO/M+rSV9UrIhf/E0MrVwHP+f2YCtqa4DhDJEII2vVZN+f2kl9LJfCnFlIkJZ7eEYvqI3isw8zMJLJZ99GN/FcKb0pwF5r4iU5GRFRSZzh+RohJ6/PpCSEStyegOTkPaNIyARkds2MGB14xnClhvdFuG1tZ65MSurFndH3g6RqZPcQD+yBPOZiLCBOETGfepm+fwwNwfRGRqDYtlHn7oKw=="
     },
     {
         "build":  202610170844,
         "version":  "Pre-alpha 0.2.9.0",
         "date":  "2026-10-17 08:54",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610170844/ZombieDawn_2026-10-17_0844.zip",
-        "sha256":  "",
+        "sha256":  "AA39EE2BEBD8EB9EEC62299DFDE30EF7BBF5AF31036924036D185FEDFEF04514",
         "size":  1290284367,
         "notes":  [
                       "Drink from lakes and rivers, and fill bottles.",
@@ -209,14 +209,14 @@
                          "text":  "Water and illness are not tuned yet."
                      }
                  ],
-        "sig":  "JPSdaaG7xzP9PLCxzB0SG+TAqcdBc/5ZkaEbyPdfXiHcQFxfHz1OSIf2myouVHpWhxLW3G+e4taWmbnsp3jwdjANPIYXsrdhUvLAHtBp9DO86WRH+EgNDWHxMY+GFZRjUMy0PM/9SzELLankg2oAbS8Xp3HRbI6Jqvw7+t0LRJlMzAdYM02SiBl4f0uyqlXZx+dT5jhQOZUlLaY30DiofrZxxjJOHoXtH1BCcyppuqv8WV9zbPuFBa2abKO4ZK8WE4Xplveu4TFP8HmXfKiDP/6Y7Pls457YmLIciOotQ8/pDSbF4rJdZvY968pVm1tMudIoCMxlA4xCx3A+71rjJw=="
+        "sig":  "rmEGCYYEoHIssr2T3WtKSVwWG2CevJZ9XjMLAVyZoBooZYQoZ6tzI5j4awvIHIdH/moQmEx6lyON60V2QuJEGIW9kF9vsgqFfvEi2HbAoWWb3zGkEzam00IU57s3INmoC3L5YF5NDrnZPajn4ciyAePWUVmc+nME+VwznFS/6+E6gDi3jmEK+7ydfX+LktLmQiMHpg6xK9x9jTpeGfbr/4323/WlMddbnUPxP0jpvqm00sI/JYmiP2Y7OiXp6lv1cRbXQfEQx3KB/2uKddzHelPPyfk4V/J5wNAN0w3wtH26SpelLuXb46jpx9c4dolsb+WYmmNqWLU0ETXi2kcJfw=="
     },
     {
         "build":  202610170023,
         "version":  "Pre-alpha 0.2.8.2",
         "date":  "2026-10-17 00:33",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610170023/ZombieDawn_2026-10-17_0023.zip",
-        "sha256":  "",
+        "sha256":  "4FF3B0A062F859F725BE4B640EA0FF7B8403631F9F2FBA98DE38702F3C754D2B",
         "size":  1226389860,
         "notes":  [
                       "Windows in the village houses open and close.",
@@ -295,14 +295,14 @@
                          "text":  "A few small windows have no glass."
                      }
                  ],
-        "sig":  "RujhSPWKLAuUHUCrofz3mlBnyZ7ki6WlqutKofbYiLUvzlnUNuxbGukAzBFT9Kzzi0RC5SMIHmhlVRpd1WCm1NsKHPvLaNyVQqorJd4xoSuKw0IEew4c990JC1tdwxCL/9/w+9E33OX8VD08fbTrIWPxeFOg3cmLWranZ0n1pdA/zTSLAdOE1r9o1L/JULpEGohQaqqPB6tdTmQRF1VlgGeLJJ5oHRkw+h4VsVwSjlKNoNVfQI5b+Wz7/nejXAg7Ru0bHkmHRpn7XFg2JKZpN7hkGeAyGNLUwgeb5JUaaIbhdQ/qLTb6NIUYmrp5C8xGobrzuiQXYKH6QQwRFQAbdg=="
+        "sig":  "plxasCEnVFYnpUZKc+1TabkNwjRXBkWvUIsVMYVr21KutOXDlNX8V5IBDIjCNK7G0Vg0OXcoQQkW/2NhNnb9Zp48Eop2AbVKrGT60FOc2n0roRmuOc0jS64tW3Qp4padVdxHtvt7jcd6CAiCpxz/RwxtoWLj/y1AgHyRlyosdTvVaH0xgvwjOXLLIlNjj892wEqDtKbcL0VuzHtWIXP3da7ZtbNt9PaKC34VkZjo7Njyvr1mqbYi54eB2iuBj51EtaqyMsV/ilJpE6rgzQ6e85ZELfigi6PrmW5hpk6ATmrA+Sfh565Qm3M0dS37JRa5xURS+1rUAYFgD2r4OQJUhg=="
     },
     {
         "build":  202610161747,
         "version":  "Pre-alpha 0.2.8.1",
         "date":  "2026-10-16 17:53",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161747/ZombieDawn_2026-10-16_1747.zip",
-        "sha256":  "",
+        "sha256":  "31B7766BDB08D255B8D67DF69BB143C10C8EABCB88BB657AA1AF1AC41C3ABE92",
         "size":  1225847207,
         "notes":  [
                       "Zombies move and attack in more varied ways.",
@@ -351,14 +351,14 @@
                          "text":  "Voice does not work for players who join by IP."
                      }
                  ],
-        "sig":  "QnX5BGBRY/nV6mmc2yRy9sphh46j2PmyBvk3yRju/Spp5fhX1Oavsko5Wjn6ovHD61q4PlfoFu7XbL15+S4YuKB1GYA9uvfrw5rgscDDeuvALWY4XKAwiE/f6tuMkyvkWlKOMWxfdEeac/loPfkIzciXRW/c+sxXtLx8jj/lXp+HU2AvJGpWnAV+ONfZrjo1q4ihG3ygt44ff95ZqPVF1ibEpntC9aGVmdtpsfxRDtKLKHC6O1oAIT4DaLIzBYtk03g2PuC5mo/Fv4ubvXa3Q4WvmFVTsA/Ggn+oWILHkHHB53YZ2jB2KkFg0MdNvOZCUUK0SmSfTPQ4zhxE/4Ob7w=="
+        "sig":  "aGE8HAMwEstOEl3vYeExG84nm/gogJAscxvWmLhBKEVm6GwK0MZwh8YX0g7W7kTFNny+gCjHxOriP4F/AvYyHTQy7FpNkcemyS4Iz+OLRH0rFiQerzXGLuX20eB98kmahzrjAPicCQK8WhNuMRYxYVylo8JTi8Zy3oPNed2HU2+Jnh2NfyhqdcZNr8G2tQuEwoA3n93xUQSgbdbQifJqAN9tBCyM4/eMZV35ohb2ozBA222U/Ex9XtIwQnS6Vji6UHPLgOqzHATSMOpuwub0ONFlljaEi2uSeEKKP6yJMKOLyy6KiP0nTzJ4Y+LF4z8ePaSn2RpsbVc1AvUB1yiPGA=="
     },
     {
         "build":  202610161514,
         "version":  "Pre-alpha 0.2.8.0",
         "date":  "2026-10-16 15:23",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161514/ZombieDawn_2026-10-16_1514.zip",
-        "sha256":  "",
+        "sha256":  "6A42579B1279F77A8B7BC3B326BFB6C92756ED74A385A2503C6B0573FD32608B",
         "size":  1217638270,
         "notes":  [
                       "What you can use gets an outline. It can be turned off in Settings.",
@@ -432,14 +432,14 @@
                          "text":  "The village is sometimes slow to appear on first load."
                      }
                  ],
-        "sig":  "p09ed2UAYfguoICSBiZBEEg4/D3wdFI8+6xV7Sb4WNvZ3tNEd2UhfSWeHSHV8lx8kQ6yj5EqX6iQ+nPSlqpHH/BjGrJ8McFRUYNDk2wY+K8m9+89wIjNaFFnMeOuPmgaSSJ0Jq36PICEovBY/C9jRNohc30Uxp7Ig0FuqDdvvbONK3V6/4lvSPecvGBZy9jMUZCSyHGM3wmGlQU/LDUe2k+K1+o+po8wVuerK2M4yjnFM711J9XCMbjYnXz8D6DbZm7u0kVX4qsCgOgKaUGRQQ/xpAziDDhK694Dn0aJodwCqVrK5Gm9Pvi27RZxbgVMSRaoN2r2mKpUONVJDA9atg=="
+        "sig":  "RJKiqJjqkc7lm3Wjk2t9ia15ks564R2n5S7m4JSamKqjrUP68/h5cjS4cfLBh7A3y+0+nMdNffCs+/jy8bHLVSrN/eJCKCivUy0mnwVCmEKfZkBn/kRbm9pdxUpN0D7ah1kFBWRwSlYtwaOOfiCVZ9Hb7JBlMvze3aKGRre5WUGwo9AzHX0t7T+/CH7/ADK7w9DP8W1gqkHhypGDC4z51D7fiLoW5155jwzdgoPvvI1rx5wuIsQrs64ifLAqlOiZnUepjIbiPVTpfZlKmFuhOrCq8AM+wr3K0zwbjJOVXA3uAgPndMLEN3LvfROJoOdNfGS7XHloZ2u6PYDbmOVWdw=="
     },
     {
         "build":  202610161000,
         "version":  "Pre-alpha 0.2.7.0",
         "date":  "2026-10-16 10:07",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161000/ZombieDawn_2026-10-16_1000.zip",
-        "sha256":  "",
+        "sha256":  "85282172B197BB3EDC3A9B01F4ADB0F0EC2DC299ADC3C550FBEE7F251A886F7E",
         "size":  1217697550,
         "notes":  [
                       "Haldersfield looks Nordic and lived in.",
@@ -598,14 +598,14 @@
                          "text":  "The statistics notice is only in Settings."
                      }
                  ],
-        "sig":  "GLpqtKQMS4/B8hTncdacdVtdC0g8wagve4DvQuN+Nb6KOxmAwYEtUzOJNS/KRUbRei2o5AGGG9F+15FiKmUCeLJPhvbLcdfTXW7VKG8IKqElhMQW4U+WIg16WKpWxWAYEQ7HT4yJTiIOzqEEzosHzJp5mPvNF1DS56tnJlzBqW8i4cYWmaVZUwBNu69vIe97t/TN09jDMUEQelDDygAZksIG6uSi9Vlpz6jGTrj9snLJcEB5cW2zTR/8cZFoYSFrpZssvjuG8iyik3I5iDjDPFwcwpUw8avXAnecLo4fZhXrJL4Br13xBGG9aK49hvrkSJ/ebmEaGoTfPzZDzdSdrg=="
+        "sig":  "V6Rtj0szyjN1QA2lMBau+q4RTbn5F11zuJCM902lfxLB0uNrH3q0ByfGV2FXqItrOHy7lNiKIzNb3dt4+9WVQS962vnRF9npcfsfa/PczWvQtlVKyv5OxjU65xokbmlkMkLqX6Ul/QYQWnoPsFuWw270M7C7v6L/YOuwwMeYG41WeO2XXMW/DCHQj08DCsYTeoJu4foYsjdDwZsbiH5MdWyJfUHhvIJGDUu2zsjzykdZvlG4siN3DGcTf0ZW8reuHUHg1aU0XZkcQ+JBJNqJBsoUlVwYnz8qblwpcve/cT+ciGIFD6HGH6b1Q9AH1enzQyvNkUioI3F0mL5bC8+f8g=="
     },
     {
         "build":  202610131745,
         "version":  "Pre-alpha 0.2.6.0",
         "date":  "2026-10-13 17:54",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131745/ZombieDawn_2026-10-13_1745.zip",
-        "sha256":  "",
+        "sha256":  "0813D690B75336179F5CC8CBE8B9F1C805F7427617D678FA46780FA6A1ACE665",
         "size":  1619162812,
         "notes":  [
                       "The game is now called Zombie Dawn.",
@@ -630,7 +630,7 @@
                          "text":  "A cleaner inventory screen."
                      }
                  ],
-        "sig":  "vpMdluAo1z63+rG3s0MeNrBGywF6QQiFagOWJqce7+bzPJ6Q4rw1MqaotYicOkrDLY9X6MATIbwJSvtEg9TW55GCvX/Y6UNlN7rlXQEXYsflpTivwjbouoY7FxQi5TfSIfOXLGOhTW4iCyKKMXrPVxCUcVP1aCcBWVr3aS451rPMMH8y6LDruxMsy3uz3qwmVKD7D83rP9awkna7AJj4o7Q1yrGRDl6YFrBZj1zqpqzqdL3zDcxgtve9tcSn+kB/KtrmwYe2eyu/Ba3xou6DoLv/7Fzz4WWjwWP6G7gDXy618qfWL6AZiiuvETcdhZ/wVZS5hVBlp5QLhiAKlZZ+4w=="
+        "sig":  "OyAKPYd5lRuNRVaWdjbcnxMzhEA1dTyNFsROLjkGc5xnoltuoaterR0YzLhbmktmXXdZ/KSSIuOAfVHTDh8bvilQQzAPvnG2g7dnI3p+7es7/SIV4YGCp+6C01g0xSvU3DAuyO6OmBVix2dWh9PdV28gfI1BdzZ1GUMkeK0v3I9RrPgc8NzJmlIsyaBFU5DKybYWPFHcDxTbIg5QFOPUHJ+eQdnUljPAD5Epf93HwcNehQ0iBHqNFb+2Y138rVPUeLjJ7NLuOQmZGpyjlTva+/Rvc25mIn73s9lWtQ8FloKy3Sqsso6NrtFXSMD45FNk2oGIVyUkXFRIdF6ZghLm/A=="
     },
     {
         "build":  202610131639,
@@ -655,7 +655,7 @@
         "version":  "Pre-alpha 0.2.5.0",
         "date":  "2026-10-13 14:20",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131410/zombiegame_2026-10-13_1410.zip",
-        "sha256":  "",
+        "sha256":  "1DB1E324CF6A4863D4C38293429F78D2ADD0DD94AFF877F8AF1099E400582417",
         "size":  1619023950,
         "notes":  [
                       "Big rooms now count as indoors, so they are readable at noon.",
@@ -714,14 +714,14 @@
                          "text":  "Every zombie wears the same clothes for now."
                      }
                  ],
-        "sig":  "UOWt2bV8miZdDR90apIERa11ckxFLMvjab0rojOMX/NDSjIQom3zb56qlBD3tM8YuBcmYvkyni56dg6df1folkcl5yZnPtwRj8D+p4rgMrMyZfqy58FA0bHtCt7WxApz5P0uygCBibFnw2wkXJOyfrCbN/oWZtXG1/8sz36q6jfTN2CwR/7tbQmc05jsJTKYIuigeLsSOtKOYXWII5Efl7WUDzbvO1e/FBAFswkkFif9OpLK3BobhJCHDuwYyk2M5ULNDyCQupye+IThGntStN2ZFgEu4JykkmYMLd5znF0ACbNijaoI7qFOxhCVNI+Aas5UCpmcXDZxGgNMtrMxxA=="
+        "sig":  "XjhgDIis5ICI4rID+cPiQkNLpfOBP1IkzzRXFBnZla1GDMWmy3rOJKiiLMd71711+hPpITEBSDMQ9G9iOU5f9fKnmexuW0vxqfy5hxmyYCd4ZPfiuuLJzZHzgP9nMzDmjBkNQyGUK/0qbT1jyak7Ywg62IekH0fPlnZDR+fBDEyQUjSd19H+L2EDY/V+tjN9s++lASNslvVqUNIJbZ/RsNajFLLTQtZdBQ+yAecgI0xeS9wcuEH/LAizKEDY5ZfaQh3xQZKPXskUxDVMeHlNQIyR9qiX0hifNaNnvCjcm51CVn4fsk5k7Cw1lPp+688LHeEosnJRW63obeKH25mpvg=="
     },
     {
         "build":  202610131216,
         "version":  "Pre-alpha 0.2.4.0",
         "date":  "2026-10-13 12:25",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131216/zombiegame_2026-10-13_1216.zip",
-        "sha256":  "",
+        "sha256":  "DAD2212C6DFBA1429CD963695B0EBD71728553014E0B6F40E7E379F9840563FC",
         "size":  1579267481,
         "notes":  [
                       "Houses are no longer pitch black by day.",
@@ -790,7 +790,7 @@
                          "text":  "There is no foam on the beach yet."
                      }
                  ],
-        "sig":  "qzyg3/orUKORJwfMpAD8e0xZLc9rjeh5ctbEp50m1rAQH31kfZP9Q82fxKpuLHV9usQzNGVTP4h9UmECNA2bWd6//cF4nwinda8EB+lb7QnP43/+TWqQUA/s9j38qqADmyR/x0nZnjYn6w+1u88w51bu+OdTDHtq4jEwaoXBMm7sHI4Df8whRX09LiUMuSWGUQwZucN74fGHDMvjs8Ynzc50YFfkyV8C4p+p/FVQ+XpUPZsg4c1lwhjxzpbOGgcczv7VWHgg4MBIeOcGV+9oz1Rq5Bcq/TpN85CAe+ttwA9aVGBNnc9m78u+dc336iffFjx+OFay56s/kwDemSie8Q=="
+        "sig":  "clZlyFTrCKc9SWtxbPqucbW3oF20R7xj9XTR7q1Wc04qLPz5g5RG1Qi59FVprOkAjVMI/dJh4sD3jk8Pw37IQSeruQDCRblJq961lllLCR13qL0HQ61CU7Xqtym+OptL+f5nMEJei+WjMklQLt4g3IteWvHsJbd9fwYWHGqJaLA4c6MMMHLCnCnWrU5kb2+Yb6QWyFUzVmIBM+dea8h93h+oxgrOTEqy/4P79kp1T9M8k+hkhpnIVah6pNAqEnyRPMwO3OD5ZWrJu8194fl1bLr7sdqc6ph0PeqthcL5JGAkJIHx1Wgm/0D1F5/KL9rFKIMfKIgXJylCYP4w8IrR3g=="
     },
     {
         "build":  202610130912,
@@ -854,7 +854,7 @@
         "version":  "Pre-alpha 0.2.2.0",
         "date":  "2026-10-12 23:49",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610122335/zombiegame_2026-10-12_2335.zip",
-        "sha256":  "",
+        "sha256":  "B7942385F916A4253C4C000B1D7F302674AC5F297C5944B39089CFBA8311661E",
         "size":  1609430904,
         "notes":  [
                       "The land has colour: meadows, forest floor, rock, sand, mud and roads.",
@@ -893,14 +893,14 @@
                          "text":  "Lake water is a muddy brown for now."
                      }
                  ],
-        "sig":  "F3ngI0ZgGmBHCpnnbJDj18PKUULdeTQ+JjXLNVzmmaZWRlzQ4ZHbjXGO6QMCzr473ufApVWvWDgNNLjWnRzvGXJhxyFH4s1mUPZ5tVRNxCK7i3oS6FszM4zWa460o/3oB4VPI33ie+LpiiJUt+7WrhXJ6ngQWrDPASTikzeQ7KLfyWpaZ88IXkZSkcfb5jxd0xMSx1nnk9cnVHrnRj130/X8U9oqvW6hulAuLmHx/uBPraP52VroXZKXX8cTwpIFa+A9xKDMxgSXytHSYALmmDrQfvMyrubIHi0Av7/r9wgNNvBakhVIZl5jOFOpMdW4EKW51/rH/WhnBDCXVcHQ+g=="
+        "sig":  "Jgj7ZiBSJH8nty5ZlavmAWgG9WLAhDlogqz198fEnXuEAgbAT0zYxjSqPn10Nzt3y93vr/keqAU/AGimtgwZaV/lTjt1AiKl/m8TJcUAT5teQ02evalp9cNBLYM15w5Gpcdxl+dMDoKY2FMAuPMkrqa/GfEtfBoXDeIc7vC21uWfcDkuTZ2hrTJxtjyW33WPqv+fWHT/sRtFI0JU/VhzZ/uaouSOkfrznRaqY0Uo16apll31hE38RN5hnZRqg7NQcY5wFJoj5K3Oj+95QsS2Se3pa6ve2oCbk6mphnXwr5rWPd/RoqPiWmTNgI5FYzzbWq3U8E4mLk+vqqcAF2FVbQ=="
     },
     {
         "build":  202610121931,
         "version":  "Pre-alpha 0.2.1.0",
         "date":  "2026-10-12 19:38",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121931/zombiegame_2026-10-12_1931.zip",
-        "sha256":  "",
+        "sha256":  "349F2C4AD0D6BA981B928A68B4F856C8D27CB9630C52292441D9C82C076E6282",
         "size":  1235685236,
         "notes":  [
                       "A settings screen: graphics, sound, field of view and mouse.",
@@ -959,14 +959,14 @@
                          "text":  "Zombies may bump into trees."
                      }
                  ],
-        "sig":  "Bc8vcEoa3YxzRjdk70356jOfO4BeOSUKUCyERkMJetL4ETmEw9Hh2Wid0kKKuThHD9BF19vKwLY/3UpKL8D0Plk2vRai//Yx0Y5gzeKyJ3L23JhHDC1jIFj2mzju8y42uFpoda2OZgvyRDla9H6qf+/gSOLIuAEOAkVZ9ogF+Nj1Lwhvt750lMLABUQdZPcH1Tq60/kmOqvJxfaCDtCk68yMKeuTwsBRGi/MYgflg5hpW11x1j2nuu7rEMVMwGqZFkcPZQZQd36GmErEyefog1o+2315tftOs7dGjuV4COoglaVmLg3n8eU72zPTLXH5oRDK9NdKoRZHj1rFyRFIQA=="
+        "sig":  "do1lIVljZDD6Q53dZnNePrcYDkB2d+akTYJaEmMN3wAErfzBt4yNIcanexblU0mS1k7/6ctUNb5o9kccOe/xfaUV/rTnPoJMZLW3orSnS1k4HddCbXC9sPQwopMv7bIDuF3NOdGQM+sMLkecmi7hgHDWT9VZctRo51QOEU6DVRRA/VXaZZv1qwMu5HXL25YDLV7N1MrggHFSgq+ij99sjBgBe5/38HlR5CAJV5QCVgRhDv5qqQXwpzBvW1RDe8mMxsmzId2/OjT1VF4DhxGmkdWXg+Wpl0Kp+zIh5M3g5OnOctPrdiYCiou4a4y16DBMdgQPeOtCbY36Ku7jxxTqDw=="
     },
     {
         "build":  202610121333,
         "version":  "Pre-alpha 0.2.0.0",
         "date":  "2026-10-12 13:40",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121333/zombiegame_2026-10-12_1333.zip",
-        "sha256":  "",
+        "sha256":  "7AD1B7B1BB5B8F5C956824A8C330C6F62E173809157D47830C92F645D9566453",
         "size":  915620520,
         "notes":  [
                       "A new, much bigger world: Vintermark.",
@@ -1010,14 +1010,14 @@
                          "text":  "The other two start points have no house yet."
                      }
                  ],
-        "sig":  "c0E9mBgcdcirWbzs+nhg3Sk9LRSvYCPVC3OgCU/yvkJB5EI6xamh8FzVJRk2LV7whclGUCaOTWSxGAMjH7Cv6iWI0xqhB/8qGiNrHwDmpc3LOBLBR1UtBtHVJWHWocYMxRCDjTUiKDkT+AXkEqexXsqeyXVXz0PB/Beu/N5Da88ddIDa2XCPXgxhXSPlMaVvgEEyIec9BAGaUQy8pZ4sY1TtsQmUjtFXddU59ztg1bMZ/xYW4dj7+93M7rEVHcbp9eF2iyzrp9C+ULFrlPcxzSZVApAAmSEkzaHkL9qTEYVxR623QivsSVu5EFraBqW0V2kytmDVdTRQf+z8wUjFhQ=="
+        "sig":  "oe61GHdazR256tpT/WbGNlkpfJlHReyTmo9/WW3H/mbyIRY1JvMeUylPephVwYmD9Wpq7xmbXKntjZW0Mb+AHbAPpqxeNTD6YEvGp8rFbJKFci4dy8pDNnma4kbbU5bv1Ym0mDlfwUdLr+4F/5h8NSgqzwYLG1fZYE0/g2cZHlCMaBDR9RdHov1j7AvjSdgkGRd7FHgrsdBtRT5mOZS+yWH9EsUPJZuCdP/McY6DbPjbkeBquke/FhfSMRAGceBL8tbf0Dbs8LfkxUuYZ2wnugViqeioGEaYxG1J9kNgWPKu8YeHIbRlRyxfQABoidCn+HzykFmVwT+uAQ4NNtsr0Q=="
     },
     {
         "build":  202610121138,
         "version":  "Pre-alpha 0.1.8.0",
         "date":  "2026-10-12 11:44",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121138/zombiegame_2026-10-12_1138.zip",
-        "sha256":  "",
+        "sha256":  "63CB06762803CFE8A1C9C60ACDDB5AC936A48E51B2158EA6601CC905BA2DF8C4",
         "size":  668157774,
         "notes":  [
                       "Crafting: a Make list in the inventory.",
@@ -1037,14 +1037,14 @@
                          "text":  "Fixed: you could not move or look after pressing Host on the start screen."
                      }
                  ],
-        "sig":  "0PUk6bcaMq+aXp5pT3Wam2+seVso3CeumluVRR/d448kxiKLNl2fA42TrUkfZcks9Jup0Ad89blqyGmWz+Wus1NT84mjQ9mvnWZt1xwZwwpM8TKNc0S5Lc/Yw2tqXVGq7Tp6ZqhXG4omL/9jXMBtjwx1saq3vbgN4LHkVpC9JwSKC63ZCQfBPC+JhDDK948m48F5tpb8WHvO+yGXjZLMjOGDCdf+sRkzN3Bc0H4YI49jxGdVQF4rRAn8pDVdxWWIVT+LGpZXISJ5JQJ6uxhRSl6WeqYDnrTiZ0/mIF5e30l/plhTCIvwJtJdaPE9BrqQY9LG5K3yUqzkJPCLlhTu1A=="
+        "sig":  "PqioPqM3ByZuI+Oww7bHD5abRWl6Tne7Fav7M0IjIHZYRw1Xl/gMDDtInn5fa6Hl0V+Ui+w7HVGu4LDaaF0FW0NdydHEt+G1DUR0z5uAvCiYm/8Lz4AYwb2k4Le0Jk2LIIGTy9j/Me+JI2XPdxcn5u8rMChAFFrxpiKDFqGO3l8Z6xdeuusyhCz1X3HSy4A4fEEGEy79wqaHwsktkSF2I7NB26Y17ybW8bnMT4xe+Z1hYn2s3a+7L6T8LsvkOE3yKEsWK10Uz7sPP7/4KG/hChPnxDktArFGLV5PxlRzj2JO7zY8/3N1rIn6CdAQwukIsGFcTRjqoYTjDsk/adcBeQ=="
     },
     {
         "build":  202610111749,
         "version":  "Pre-alpha 0.1.7.0",
         "date":  "2026-10-11 17:55",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111749/zombiegame_2026-10-11_1749.zip",
-        "sha256":  "",
+        "sha256":  "60AF898C079B8B534C1F5DE55440B3BE595F8271C6AD03E80EB6C8667A3D2A96",
         "size":  667686834,
         "notes":  [
                       "Problem reports now say where you were on the map.",
@@ -1093,14 +1093,14 @@
                          "text":  "Doors, dropped items and zombies are not saved yet."
                      }
                  ],
-        "sig":  "TJQ2rCOdBlsuYE6LaPwNGDIabIcDaGF+PWjnamlLa5ltg4mbAsEVgLnZXGvTjHY5H692Hvyr597vRsmYesz5TsyGXlh5nuddj1jlqHwwAZ5/uxkYay8FHAxoAo1pu5nenput+ab05AaqfIgwreRj5m2ktREO0DaFsj2MR0zbFIUnbHZYcEBFeIilcOY8B+MXGvN/RCD3fwiXa2yk5PPZIyuNopPxh7N9UJUAcsSwkpo3ZeThUVXTrIH7eBXscAWD0Gavhr25qJXo2iVkRFjR71gp0j6Pbe9IZJ3Y2ei508dX6rKL/i73ibWAqWyXAmf1pnTxA+PP7rexU5BOjoR0Nw=="
+        "sig":  "VJil46gopJsd+LYJbhA6jeCYS+OwqxN+dl3dFHtbLFWwRReTCsCfbaFSMtXI6x6/pR2rv7QSo1c1K2lguq++TMHDnhFmlkk+ot6lYR5eeYG8PUg6tl1ArSq8pM78Hbudy8IdKNfWAZd2zMY5NW36CnxAjyOBvEjWujWHEIAmNzdLqorKQgVEgh5b4MBKhg8N+SJThZkbo+4vgCdxf6KFsfS9TMyLGpI7x4HM0qm5E7syi+nuwL5WMIf8OAiqfvGf4pI3VIM47n6vYhZf9dnXXk/uS57Tp5hwuheHdicSSO95LIY0niR1A45n/yWJzpIJo7XXw+aNfwKccS4S/vQjkQ=="
     },
     {
         "build":  202610111215,
         "version":  "Pre-alpha 0.1.6",
         "date":  "2026-10-11 12:30",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111215/zombiegame_2026-10-11_1215.zip",
-        "sha256":  "",
+        "sha256":  "3760CFC20541D3A52667C8B0ED01F9D0BA0F798DB40FE642121B9C18EB31A297",
         "size":  667620322,
         "notes":  [
                       "Zombies hear, see and chase you, lose track, search and wander.",
@@ -1169,7 +1169,7 @@
                          "text":  "Nothing is balanced yet."
                      }
                  ],
-        "sig":  "BJ60ih2Njw3XLL73qOrPoi3vCeXzSdV6JLUgHKkCi/1AKQMM/VU4+7zj9VjSe397GjqHCU1BmESAFVT29zT17v7kHN1wviFNoib5larGXupXZOkS+Xz0QuNmMUmfTe0Sbi4NAKanTOtZ0e/VdlOIXFyxIiIBsgoKZuOjThZu6jgwaspF4nLTlaRXoK4GOigypftFStz/7HNwNGd5HdXR5hkiI71Gcv9ul83N/JMY1hcEk4oehncVvfR00db2xrOsJ1zaLmxyI7sEXNIzhoPu8m8aCld/trlnV5RumZNrcM6ouzZfM2d3cOevkCZ0OGuhWjeKyrs2wizNJrajI3zlEA=="
+        "sig":  "TbQXbzF6WstFPN87jiF4AyrKUvl7cRwKkP3EtmaPEDJhP9cf+yzyJkqd4YJ/OZ31V3z2sk12TFqGKp0GiNS1KUSYsAY1Hp8EWTiv66+xZtRdtm6iqjisJhFqIlJ+RywLm+K+dRc9y4MoVeWsYzDZamIaxhuArLELH9DFU71ZIvwg/g1ET7+jUjzGmMe9XDtaP0049gT+PmfwQx9I3BPLC6sHpbt4s7R0k1Kt2RsM+QzdD1pWb9ceRFP85dsnlBHrxS6R51Oha8Sd0mt3fKTZRsk1TxJ+EFxXioaZ1tNShsefvnomNaq+iF3HJSBp7q02rNDBiSCY/ksIesU23XWgzQ=="
     },
     {
         "build":  202610082141,
