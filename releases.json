@@ -105,34 +105,27 @@
         "version":  "Pre-alpha 0.2.9.0",
         "date":  "2026-10-17 08:54",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610170844/ZombieDawn_2026-10-17_0844.zip",
-        "sha256":  "AA39EE2BEBD8EB9EEC62299DFDE30EF7BBF5AF31036924036D185FEDFEF04514",
+        "sha256":  "",
         "size":  1290284367,
         "notes":  [
-                      "Water from lakes and rivers: look at the water and press F to drink, or hold an empty bottle and press F to fill it. The prompt says what kind of water it is (not on Hardcore). The sea is salt: you spit it out.",
-                      "Dirty water can make you ill (a bottle from a lake is about a coin flip). A few hours later your stomach cramps; one bottle passes by itself, more turns into a fever with vomiting, thirst and short breath, and a severe illness can kill. Boil water at a campfire with a pot first to stay safe. Throwing up is loud.",
-                      "Antibiotic tablets (rare: bathroom cabinets, car boots, hikers\u0027 bags, caches, the helicopter wreck and the dam station lab). Take one, wait a few hours, take the next and finish the strip; too soon and it comes back up. They do nothing against the bite.",
-                      "Water bottles leave an empty bottle when you drink them.",
-                      "When you die, everything you carried lies in a bag where you fell. Anyone can open it, and it stays for two game days (four on Casual). On Hardcore your things are lost.",
-                      "Zombies near you now find their way: round hedges, fences and house corners, through gates and garden paths, instead of pushing against them. A chasing pack reaches the house you ran into. Lakes, rivers and the sea are not walkable for them (a bridge is).",
-                      "Lit rooms draw zombies at night: a lamp left on shows through the windows and nearby zombies come to look. Boarded windows hide the light, and the blackout ends it.",
-                      "Zombies can no longer bite through walls, closed doors or closed windows.",
-                      "A zombie bite now makes a sound, for you and for anyone nearby.",
-                      "Windows in the village houses open and close (F from inside); they swing outward. Boarded-up windows stay shut. Opening one makes a little noise.",
-                      "A locked front door can now be opened from inside the house: press F to unlock and open it. From outside it stays locked.",
-                      "Stepping out of a house no longer leaves the street looking dark for seconds: the eye adapts in about a second, and daylight outside is brighter.",
-                      "A proper television in the living rooms; it stands in the middle of its bench instead of hanging off the end.",
-                      "Plates, cutlery and food sit on the tables and counters instead of hanging in the air beside them, and no bread is left in the kitchen sink.",
-                      "A chest of drawers no longer faces the stairwell.",
-                      "Footsteps inside some houses (the red one on the main road among them) no longer sound like walking on metal.",
-                      "Every item in the inventory now has a picture instead of only its name.",
-                      "Double-clicking clothing puts it on. If you already wear something there, the two swap.",
-                      "A weapon no longer wears down on blows that do nothing: a swing at another player with PvP off, or the wrong tool on a tree or rock.",
-                      "Your empty right hand no longer floats into view when you jump while holding something.",
-                      "The world is saved within a couple of seconds when a player leaves, and shortly after a death (before, a leaving player\u0027s state stayed in memory until the next autosave).",
-                      "Playing without Steam: you now keep the same survivor on a friend\u0027s server from one launch to the next (before, a second copy of the game on the same PC got a new survivor every time).",
-                      "The game statistics sent to the dashboard now include the graphics card, processor, memory and the 95th percentile frame time, so slow machines can be told apart from a slow build. Nothing personal is added; the settings switch still turns everything off.",
-                      "Zombies cannot yet vault hedges or cross rivers by fords; they walk round or wait for a bridge.",
-                      "The water and illness numbers are first guesses and will be tuned."
+                      "Drink from lakes and rivers, and fill bottles.",
+                      "Dirty water can make you ill.",
+                      "Antibiotics.",
+                      "When you die, your things lie in a bag where you fell.",
+                      "Zombies find their way round fences, hedges and houses.",
+                      "Lit rooms draw zombies at night.",
+                      "Zombies can no longer bite through walls, doors or windows.",
+                      "Zombie bites make a sound.",
+                      "Windows in the village houses open and close.",
+                      "A locked front door can be opened from inside.",
+                      "Stepping outside no longer leaves the street dark.",
+                      "Every item has a picture, and clothing goes on with a double-click.",
+                      "Weapons no longer wear down on blows that do nothing.",
+                      "The world saves when a player leaves or dies.",
+                      "Without Steam you keep the same survivor from one launch to the next.",
+                      "Fixed floating plates and food, and a few smaller house and sound problems.",
+                      "Zombies cannot vault hedges or cross rivers yet.",
+                      "Water and illness are not tuned yet."
                   ],
         "body":  [
                      {
@@ -140,116 +133,68 @@
                          "text":  "New"
                      },
                      {
-                         "t":  "p",
-                         "text":  "\u003e Water, illness and medicine"
+                         "t":  "li",
+                         "text":  "Drink from lakes and rivers, and fill bottles."
                      },
                      {
                          "t":  "li",
-                         "text":  "Water from lakes and rivers: look at the water and press F to drink, or hold an empty bottle and press F to fill it. The prompt says what kind of water it is (not on Hardcore). The sea is salt: you spit it out."
+                         "text":  "Dirty water can make you ill."
                      },
                      {
                          "t":  "li",
-                         "text":  "Dirty water can make you ill (a bottle from a lake is about a coin flip). A few hours later your stomach cramps; one bottle passes by itself, more turns into a fever with vomiting, thirst and short breath, and a severe illness can kill. Boil water at a campfire with a pot first to stay safe. Throwing up is loud."
+                         "text":  "Antibiotics."
                      },
                      {
                          "t":  "li",
-                         "text":  "Antibiotic tablets (rare: bathroom cabinets, car boots, hikers\u0027 bags, caches, the helicopter wreck and the dam station lab). Take one, wait a few hours, take the next and finish the strip; too soon and it comes back up. They do nothing against the bite."
+                         "text":  "When you die, your things lie in a bag where you fell."
                      },
                      {
                          "t":  "li",
-                         "text":  "Water bottles leave an empty bottle when you drink them."
+                         "text":  "Zombies find their way round fences, hedges and houses."
                      },
                      {
                          "t":  "li",
-                         "text":  "When you die, everything you carried lies in a bag where you fell. Anyone can open it, and it stays for two game days (four on Casual). On Hardcore your things are lost."
-                     },
-                     {
-                         "t":  "p",
-                         "text":  "\u003e Zombies"
+                         "text":  "Lit rooms draw zombies at night."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies near you now find their way: round hedges, fences and house corners, through gates and garden paths, instead of pushing against them. A chasing pack reaches the house you ran into. Lakes, rivers and the sea are not walkable for them (a bridge is)."
+                         "text":  "Zombies can no longer bite through walls, doors or windows."
                      },
                      {
                          "t":  "li",
-                         "text":  "Lit rooms draw zombies at night: a lamp left on shows through the windows and nearby zombies come to look. Boarded windows hide the light, and the blackout ends it."
+                         "text":  "Zombie bites make a sound."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies can no longer bite through walls, closed doors or closed windows."
+                         "text":  "Windows in the village houses open and close."
                      },
                      {
                          "t":  "li",
-                         "text":  "A zombie bite now makes a sound, for you and for anyone nearby."
-                     },
-                     {
-                         "t":  "p",
-                         "text":  "\u003e Houses and look"
+                         "text":  "A locked front door can be opened from inside."
                      },
                      {
                          "t":  "li",
-                         "text":  "Windows in the village houses open and close (F from inside); they swing outward. Boarded-up windows stay shut. Opening one makes a little noise."
+                         "text":  "Stepping outside no longer leaves the street dark."
                      },
                      {
                          "t":  "li",
-                         "text":  "A locked front door can now be opened from inside the house: press F to unlock and open it. From outside it stays locked."
+                         "text":  "Every item has a picture, and clothing goes on with a double-click."
                      },
                      {
                          "t":  "li",
-                         "text":  "Stepping out of a house no longer leaves the street looking dark for seconds: the eye adapts in about a second, and daylight outside is brighter."
+                         "text":  "Weapons no longer wear down on blows that do nothing."
                      },
                      {
                          "t":  "li",
-                         "text":  "A proper television in the living rooms; it stands in the middle of its bench instead of hanging off the end."
+                         "text":  "The world saves when a player leaves or dies."
                      },
                      {
                          "t":  "li",
-                         "text":  "Plates, cutlery and food sit on the tables and counters instead of hanging in the air beside them, and no bread is left in the kitchen sink."
+                         "text":  "Without Steam you keep the same survivor from one launch to the next."
                      },
                      {
                          "t":  "li",
-                         "text":  "A chest of drawers no longer faces the stairwell."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Footsteps inside some houses (the red one on the main road among them) no longer sound like walking on metal."
-                     },
-                     {
-                         "t":  "p",
-                         "text":  "\u003e Inventory and items"
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Every item in the inventory now has a picture instead of only its name."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Double-clicking clothing puts it on. If you already wear something there, the two swap."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "A weapon no longer wears down on blows that do nothing: a swing at another player with PvP off, or the wrong tool on a tree or rock."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Your empty right hand no longer floats into view when you jump while holding something."
-                     },
-                     {
-                         "t":  "p",
-                         "text":  "\u003e Saving and online"
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The world is saved within a couple of seconds when a player leaves, and shortly after a death (before, a leaving player\u0027s state stayed in memory until the next autosave)."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Playing without Steam: you now keep the same survivor on a friend\u0027s server from one launch to the next (before, a second copy of the game on the same PC got a new survivor every time)."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The game statistics sent to the dashboard now include the graphics card, processor, memory and the 95th percentile frame time, so slow machines can be told apart from a slow build. Nothing personal is added; the settings switch still turns everything off."
+                         "text":  "Fixed floating plates and food, and a few smaller house and sound problems."
                      },
                      {
                          "t":  "h",
@@ -257,38 +202,36 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies cannot yet vault hedges or cross rivers by fords; they walk round or wait for a bridge."
+                         "text":  "Zombies cannot vault hedges or cross rivers yet."
                      },
                      {
                          "t":  "li",
-                         "text":  "The water and illness numbers are first guesses and will be tuned."
+                         "text":  "Water and illness are not tuned yet."
                      }
                  ],
-        "sig":  "rmEGCYYEoHIssr2T3WtKSVwWG2CevJZ9XjMLAVyZoBooZYQoZ6tzI5j4awvIHIdH/moQmEx6lyON60V2QuJEGIW9kF9vsgqFfvEi2HbAoWWb3zGkEzam00IU57s3INmoC3L5YF5NDrnZPajn4ciyAePWUVmc+nME+VwznFS/6+E6gDi3jmEK+7ydfX+LktLmQiMHpg6xK9x9jTpeGfbr/4323/WlMddbnUPxP0jpvqm00sI/JYmiP2Y7OiXp6lv1cRbXQfEQx3KB/2uKddzHelPPyfk4V/J5wNAN0w3wtH26SpelLuXb46jpx9c4dolsb+WYmmNqWLU0ETXi2kcJfw=="
+        "sig":  "JPSdaaG7xzP9PLCxzB0SG+TAqcdBc/5ZkaEbyPdfXiHcQFxfHz1OSIf2myouVHpWhxLW3G+e4taWmbnsp3jwdjANPIYXsrdhUvLAHtBp9DO86WRH+EgNDWHxMY+GFZRjUMy0PM/9SzELLankg2oAbS8Xp3HRbI6Jqvw7+t0LRJlMzAdYM02SiBl4f0uyqlXZx+dT5jhQOZUlLaY30DiofrZxxjJOHoXtH1BCcyppuqv8WV9zbPuFBa2abKO4ZK8WE4Xplveu4TFP8HmXfKiDP/6Y7Pls457YmLIciOotQ8/pDSbF4rJdZvY968pVm1tMudIoCMxlA4xCx3A+71rjJw=="
     },
     {
         "build":  202610170023,
         "version":  "Pre-alpha 0.2.8.2",
         "date":  "2026-10-17 00:33",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610170023/ZombieDawn_2026-10-17_0023.zip",
-        "sha256":  "4FF3B0A062F859F725BE4B640EA0FF7B8403631F9F2FBA98DE38702F3C754D2B",
+        "sha256":  "",
         "size":  1226389860,
         "notes":  [
-                      "Windows in the village houses open and close (F from inside); they swing outward. Boarded-up windows stay shut. Opening one makes a little noise.",
-                      "Lit rooms draw zombies at night: a lamp left on shows through the windows and nearby zombies come to look. Boarded windows hide the light, and the blackout ends it.",
-                      "Every item in the inventory now has a picture instead of only its name.",
-                      "A proper television in the living rooms; it stands in the middle of its bench instead of hanging off the end.",
-                      "Stepping out of a house no longer leaves the street looking dark for seconds: the eye adapts in about a second, and daylight outside is brighter.",
-                      "A locked front door can now be opened from inside the house: press F to unlock and open it. From outside it stays locked.",
-                      "Zombies can no longer bite through walls, closed doors or closed windows.",
-                      "A zombie bite now makes a sound, for you and for anyone nearby.",
-                      "Double-clicking clothing puts it on. If you already wear something there, the two swap.",
-                      "Your empty right hand no longer floats into view when you jump while holding something.",
-                      "Footsteps inside some houses (the red one on the main road among them) no longer sound like walking on metal.",
-                      "Plates, cutlery and food sit on the tables and counters instead of hanging in the air beside them, and no bread is left in the kitchen sink.",
-                      "A chest of drawers no longer faces the stairwell.",
-                      "Footsteps now land when the feet do: every step sound follows the animation\u0027s foot plants instead of a separate clock, the legs keep pace with the ground, and the rhythm no longer jumps when you speed up or slow down. Your own steps sit centred in the headphones instead of panning under you; crouching and crawling sound soft and muffled; no step sound repeats twice in a row. Wooden floors indoors have their own set of sounds, and wading in the sea\u0027s shallows splashes.",
-                      "Zombies cannot climb in through open windows yet, and a few small upper windows have no glass."
+                      "Windows in the village houses open and close.",
+                      "Lit rooms draw zombies at night.",
+                      "Every item has a picture.",
+                      "A proper television.",
+                      "Stepping outside no longer leaves the street dark.",
+                      "A locked front door can be opened from inside.",
+                      "Zombies can no longer bite through walls, doors or windows.",
+                      "Zombie bites make a sound.",
+                      "Double-click clothing to put it on.",
+                      "Footsteps now match your feet.",
+                      "Fixed floating plates and food, and a chest of drawers facing the stairs.",
+                      "Zombies cannot climb in through windows.",
+                      "A few small windows have no glass."
                   ],
         "body":  [
                      {
@@ -297,59 +240,47 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Windows in the village houses open and close (F from inside); they swing outward. Boarded-up windows stay shut. Opening one makes a little noise."
+                         "text":  "Windows in the village houses open and close."
                      },
                      {
                          "t":  "li",
-                         "text":  "Lit rooms draw zombies at night: a lamp left on shows through the windows and nearby zombies come to look. Boarded windows hide the light, and the blackout ends it."
+                         "text":  "Lit rooms draw zombies at night."
                      },
                      {
                          "t":  "li",
-                         "text":  "Every item in the inventory now has a picture instead of only its name."
+                         "text":  "Every item has a picture."
                      },
                      {
                          "t":  "li",
-                         "text":  "A proper television in the living rooms; it stands in the middle of its bench instead of hanging off the end."
+                         "text":  "A proper television."
                      },
                      {
                          "t":  "li",
-                         "text":  "Stepping out of a house no longer leaves the street looking dark for seconds: the eye adapts in about a second, and daylight outside is brighter."
+                         "text":  "Stepping outside no longer leaves the street dark."
                      },
                      {
                          "t":  "li",
-                         "text":  "A locked front door can now be opened from inside the house: press F to unlock and open it. From outside it stays locked."
+                         "text":  "A locked front door can be opened from inside."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies can no longer bite through walls, closed doors or closed windows."
+                         "text":  "Zombies can no longer bite through walls, doors or windows."
                      },
                      {
                          "t":  "li",
-                         "text":  "A zombie bite now makes a sound, for you and for anyone nearby."
+                         "text":  "Zombie bites make a sound."
                      },
                      {
                          "t":  "li",
-                         "text":  "Double-clicking clothing puts it on. If you already wear something there, the two swap."
+                         "text":  "Double-click clothing to put it on."
                      },
                      {
                          "t":  "li",
-                         "text":  "Your empty right hand no longer floats into view when you jump while holding something."
+                         "text":  "Footsteps now match your feet."
                      },
                      {
                          "t":  "li",
-                         "text":  "Footsteps inside some houses (the red one on the main road among them) no longer sound like walking on metal."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Plates, cutlery and food sit on the tables and counters instead of hanging in the air beside them, and no bread is left in the kitchen sink."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "A chest of drawers no longer faces the stairwell."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Footsteps now land when the feet do: every step sound follows the animation\u0027s foot plants instead of a separate clock, the legs keep pace with the ground, and the rhythm no longer jumps when you speed up or slow down. Your own steps sit centred in the headphones instead of panning under you; crouching and crawling sound soft and muffled; no step sound repeats twice in a row. Wooden floors indoors have their own set of sounds, and wading in the sea\u0027s shallows splashes."
+                         "text":  "Fixed floating plates and food, and a chest of drawers facing the stairs."
                      },
                      {
                          "t":  "h",
@@ -357,31 +288,30 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies cannot climb in through open windows yet, and a few small upper windows have no glass."
+                         "text":  "Zombies cannot climb in through windows."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A few small windows have no glass."
                      }
                  ],
-        "sig":  "plxasCEnVFYnpUZKc+1TabkNwjRXBkWvUIsVMYVr21KutOXDlNX8V5IBDIjCNK7G0Vg0OXcoQQkW/2NhNnb9Zp48Eop2AbVKrGT60FOc2n0roRmuOc0jS64tW3Qp4padVdxHtvt7jcd6CAiCpxz/RwxtoWLj/y1AgHyRlyosdTvVaH0xgvwjOXLLIlNjj892wEqDtKbcL0VuzHtWIXP3da7ZtbNt9PaKC34VkZjo7Njyvr1mqbYi54eB2iuBj51EtaqyMsV/ilJpE6rgzQ6e85ZELfigi6PrmW5hpk6ATmrA+Sfh565Qm3M0dS37JRa5xURS+1rUAYFgD2r4OQJUhg=="
+        "sig":  "RujhSPWKLAuUHUCrofz3mlBnyZ7ki6WlqutKofbYiLUvzlnUNuxbGukAzBFT9Kzzi0RC5SMIHmhlVRpd1WCm1NsKHPvLaNyVQqorJd4xoSuKw0IEew4c990JC1tdwxCL/9/w+9E33OX8VD08fbTrIWPxeFOg3cmLWranZ0n1pdA/zTSLAdOE1r9o1L/JULpEGohQaqqPB6tdTmQRF1VlgGeLJJ5oHRkw+h4VsVwSjlKNoNVfQI5b+Wz7/nejXAg7Ru0bHkmHRpn7XFg2JKZpN7hkGeAyGNLUwgeb5JUaaIbhdQ/qLTb6NIUYmrp5C8xGobrzuiQXYKH6QQwRFQAbdg=="
     },
     {
         "build":  202610161747,
         "version":  "Pre-alpha 0.2.8.1",
         "date":  "2026-10-16 17:53",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161747/ZombieDawn_2026-10-16_1747.zip",
-        "sha256":  "31B7766BDB08D255B8D67DF69BB143C10C8EABCB88BB657AA1AF1AC41C3ABE92",
+        "sha256":  "",
         "size":  1225847207,
         "notes":  [
-                      "Zombies move and attack in more varied ways: new idle, walk, run, attack, flinch and fall animations, with variants picked per zombie, so a crowd no longer moves in step.",
-                      "A zombie\u0027s attack is timed to its swing: the blow lands as its arms or teeth reach you, so stepping back at the right moment works.",
-                      "Crawlers: some infected have lost the use of their legs. They drag themselves along the ground and bite at your ankles. They are slow; aim low.",
-                      "The Brute: a rare, big and much tougher infected, found outdoors only. Slow, but its blows open deep wounds. You hear its heavy steps before you see it.",
+                      "Zombies move and attack in more varied ways.",
+                      "A zombie\u0027s blow lands when its swing does.",
+                      "Crawlers: slow infected that bite at your ankles.",
+                      "The Brute: a rare, big and tough infected.",
                       "The Brute looks pale.",
                       "Crawlers never get up again.",
-                      "Voice does not work yet for players who join by typing an IP address.",
-                      "In the Haldersfield house P05, the far end of the attic is very dark at dusk.",
-                      "The upper floor of house P04 has not been checked yet.",
-                      "The difficulty presets are only partly connected to the game.",
-                      "The notice about sending statistics is only in Settings, not shown at first start.",
-                      "The speed check (against cheating) has not been tested under real lag."
+                      "Voice does not work for players who join by IP."
                   ],
         "body":  [
                      {
@@ -390,19 +320,19 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies move and attack in more varied ways: new idle, walk, run, attack, flinch and fall animations, with variants picked per zombie, so a crowd no longer moves in step."
+                         "text":  "Zombies move and attack in more varied ways."
                      },
                      {
                          "t":  "li",
-                         "text":  "A zombie\u0027s attack is timed to its swing: the blow lands as its arms or teeth reach you, so stepping back at the right moment works."
+                         "text":  "A zombie\u0027s blow lands when its swing does."
                      },
                      {
                          "t":  "li",
-                         "text":  "Crawlers: some infected have lost the use of their legs. They drag themselves along the ground and bite at your ankles. They are slow; aim low."
+                         "text":  "Crawlers: slow infected that bite at your ankles."
                      },
                      {
                          "t":  "li",
-                         "text":  "The Brute: a rare, big and much tougher infected, found outdoors only. Slow, but its blows open deep wounds. You hear its heavy steps before you see it."
+                         "text":  "The Brute: a rare, big and tough infected."
                      },
                      {
                          "t":  "h",
@@ -418,57 +348,31 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Voice does not work yet for players who join by typing an IP address."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "In the Haldersfield house P05, the far end of the attic is very dark at dusk."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The upper floor of house P04 has not been checked yet."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The difficulty presets are only partly connected to the game."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The notice about sending statistics is only in Settings, not shown at first start."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The speed check (against cheating) has not been tested under real lag."
+                         "text":  "Voice does not work for players who join by IP."
                      }
                  ],
-        "sig":  "aGE8HAMwEstOEl3vYeExG84nm/gogJAscxvWmLhBKEVm6GwK0MZwh8YX0g7W7kTFNny+gCjHxOriP4F/AvYyHTQy7FpNkcemyS4Iz+OLRH0rFiQerzXGLuX20eB98kmahzrjAPicCQK8WhNuMRYxYVylo8JTi8Zy3oPNed2HU2+Jnh2NfyhqdcZNr8G2tQuEwoA3n93xUQSgbdbQifJqAN9tBCyM4/eMZV35ohb2ozBA222U/Ex9XtIwQnS6Vji6UHPLgOqzHATSMOpuwub0ONFlljaEi2uSeEKKP6yJMKOLyy6KiP0nTzJ4Y+LF4z8ePaSn2RpsbVc1AvUB1yiPGA=="
+        "sig":  "QnX5BGBRY/nV6mmc2yRy9sphh46j2PmyBvk3yRju/Spp5fhX1Oavsko5Wjn6ovHD61q4PlfoFu7XbL15+S4YuKB1GYA9uvfrw5rgscDDeuvALWY4XKAwiE/f6tuMkyvkWlKOMWxfdEeac/loPfkIzciXRW/c+sxXtLx8jj/lXp+HU2AvJGpWnAV+ONfZrjo1q4ihG3ygt44ff95ZqPVF1ibEpntC9aGVmdtpsfxRDtKLKHC6O1oAIT4DaLIzBYtk03g2PuC5mo/Fv4ubvXa3Q4WvmFVTsA/Ggn+oWILHkHHB53YZ2jB2KkFg0MdNvOZCUUK0SmSfTPQ4zhxE/4Ob7w=="
     },
     {
         "build":  202610161514,
         "version":  "Pre-alpha 0.2.8.0",
         "date":  "2026-10-16 15:23",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161514/ZombieDawn_2026-10-16_1514.zip",
-        "sha256":  "6A42579B1279F77A8B7BC3B326BFB6C92756ED74A385A2503C6B0573FD32608B",
+        "sha256":  "",
         "size":  1217638270,
         "notes":  [
-                      "The thing you can use under the crosshair (a cupboard, a door, an item on the ground) now gets a warm outline. You can turn it off in Settings: \"Outline what you can use\".",
-                      "Taking items is quicker. In a container, double-click takes the whole stack and shift-click takes one (also \"Take one\" in the right-click menu). On the ground, F takes the whole stack and Shift+F takes one. If part of a stack does not fit, you are told.",
-                      "Sticks and stones on the ground are picked up at once, with no search time.",
-                      "Voice chat: if your microphone was not ready when the game started (a wireless headset that reconnected, a device plugged in later), pressing V now finds it again. If there is still no microphone, the screen says so.",
-                      "The low box hedges in Haldersfield can now be jumped or vaulted, and you can push through the leaves.",
-                      "Street lamps: the arm the lantern hangs from no longer disappears from across the street, so lanterns no longer seem to float beside the poles.",
-                      "Zombies that get stuck on a bush, a tree, furniture or a wall corner now step round it, and give a small hop when caught on an edge.",
-                      "Opening a door no longer swings your own arm through the camera, and standing up from a crouch no longer shows the inside of your own body.",
-                      "Smaller fixes: a harmless error report when a headset or sound device dropped out is no longer filed, and a warning about the falling-snow mesh on every start is gone.",
-                      "In the Haldersfield house P05, the far end of the attic is very dark at dusk.",
-                      "The upper floor of house P04 has not been checked yet.",
-                      "The difficulty presets are only partly connected to the game.",
-                      "The speed check (against cheating) has not been tested under real lag.",
-                      "The notice about sending statistics is only in Settings, not shown at first start.",
-                      "Voice for players who join by typing an IP address does not work yet.",
-                      "On the first load the village is sometimes slow to appear.",
-                      "Voice still needs a microphone set as the default recording device in Windows.",
-                      "Zombies still walk straight at you and step round obstacles; they do not plan a path through a house yet."
+                      "What you can use gets an outline. It can be turned off in Settings.",
+                      "Taking items is quicker.",
+                      "Sticks and stones are picked up at once.",
+                      "Voice chat finds your microphone again when you press V.",
+                      "Low hedges can be jumped over.",
+                      "Street lamp lanterns no longer seem to float.",
+                      "Zombies step round things they get stuck on.",
+                      "Fixed your arm and body showing in the camera.",
+                      "One attic is very dark at dusk.",
+                      "Voice does not work for players who join by IP.",
+                      "Zombies do not plan a path through a house yet.",
+                      "The village is sometimes slow to appear on first load."
                   ],
         "body":  [
                      {
@@ -477,39 +381,35 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "The thing you can use under the crosshair (a cupboard, a door, an item on the ground) now gets a warm outline. You can turn it off in Settings: \"Outline what you can use\"."
+                         "text":  "What you can use gets an outline. It can be turned off in Settings."
                      },
                      {
                          "t":  "li",
-                         "text":  "Taking items is quicker. In a container, double-click takes the whole stack and shift-click takes one (also \"Take one\" in the right-click menu). On the ground, F takes the whole stack and Shift+F takes one. If part of a stack does not fit, you are told."
+                         "text":  "Taking items is quicker."
                      },
                      {
                          "t":  "li",
-                         "text":  "Sticks and stones on the ground are picked up at once, with no search time."
+                         "text":  "Sticks and stones are picked up at once."
                      },
                      {
                          "t":  "li",
-                         "text":  "Voice chat: if your microphone was not ready when the game started (a wireless headset that reconnected, a device plugged in later), pressing V now finds it again. If there is still no microphone, the screen says so."
+                         "text":  "Voice chat finds your microphone again when you press V."
                      },
                      {
                          "t":  "li",
-                         "text":  "The low box hedges in Haldersfield can now be jumped or vaulted, and you can push through the leaves."
+                         "text":  "Low hedges can be jumped over."
                      },
                      {
                          "t":  "li",
-                         "text":  "Street lamps: the arm the lantern hangs from no longer disappears from across the street, so lanterns no longer seem to float beside the poles."
+                         "text":  "Street lamp lanterns no longer seem to float."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies that get stuck on a bush, a tree, furniture or a wall corner now step round it, and give a small hop when caught on an edge."
+                         "text":  "Zombies step round things they get stuck on."
                      },
                      {
                          "t":  "li",
-                         "text":  "Opening a door no longer swings your own arm through the camera, and standing up from a crouch no longer shows the inside of your own body."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Smaller fixes: a harmless error report when a headset or sound device dropped out is no longer filed, and a warning about the falling-snow mesh on every start is gone."
+                         "text":  "Fixed your arm and body showing in the camera."
                      },
                      {
                          "t":  "h",
@@ -517,82 +417,60 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "In the Haldersfield house P05, the far end of the attic is very dark at dusk."
+                         "text":  "One attic is very dark at dusk."
                      },
                      {
                          "t":  "li",
-                         "text":  "The upper floor of house P04 has not been checked yet."
+                         "text":  "Voice does not work for players who join by IP."
                      },
                      {
                          "t":  "li",
-                         "text":  "The difficulty presets are only partly connected to the game."
+                         "text":  "Zombies do not plan a path through a house yet."
                      },
                      {
                          "t":  "li",
-                         "text":  "The speed check (against cheating) has not been tested under real lag."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The notice about sending statistics is only in Settings, not shown at first start."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Voice for players who join by typing an IP address does not work yet."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "On the first load the village is sometimes slow to appear."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Voice still needs a microphone set as the default recording device in Windows."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Zombies still walk straight at you and step round obstacles; they do not plan a path through a house yet."
+                         "text":  "The village is sometimes slow to appear on first load."
                      }
                  ],
-        "sig":  "RJKiqJjqkc7lm3Wjk2t9ia15ks564R2n5S7m4JSamKqjrUP68/h5cjS4cfLBh7A3y+0+nMdNffCs+/jy8bHLVSrN/eJCKCivUy0mnwVCmEKfZkBn/kRbm9pdxUpN0D7ah1kFBWRwSlYtwaOOfiCVZ9Hb7JBlMvze3aKGRre5WUGwo9AzHX0t7T+/CH7/ADK7w9DP8W1gqkHhypGDC4z51D7fiLoW5155jwzdgoPvvI1rx5wuIsQrs64ifLAqlOiZnUepjIbiPVTpfZlKmFuhOrCq8AM+wr3K0zwbjJOVXA3uAgPndMLEN3LvfROJoOdNfGS7XHloZ2u6PYDbmOVWdw=="
+        "sig":  "p09ed2UAYfguoICSBiZBEEg4/D3wdFI8+6xV7Sb4WNvZ3tNEd2UhfSWeHSHV8lx8kQ6yj5EqX6iQ+nPSlqpHH/BjGrJ8McFRUYNDk2wY+K8m9+89wIjNaFFnMeOuPmgaSSJ0Jq36PICEovBY/C9jRNohc30Uxp7Ig0FuqDdvvbONK3V6/4lvSPecvGBZy9jMUZCSyHGM3wmGlQU/LDUe2k+K1+o+po8wVuerK2M4yjnFM711J9XCMbjYnXz8D6DbZm7u0kVX4qsCgOgKaUGRQQ/xpAziDDhK694Dn0aJodwCqVrK5Gm9Pvi27RZxbgVMSRaoN2r2mKpUONVJDA9atg=="
     },
     {
         "build":  202610161000,
         "version":  "Pre-alpha 0.2.7.0",
         "date":  "2026-10-16 10:07",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610161000/ZombieDawn_2026-10-16_1000.zip",
-        "sha256":  "85282172B197BB3EDC3A9B01F4ADB0F0EC2DC299ADC3C550FBEE7F251A886F7E",
+        "sha256":  "",
         "size":  1217697550,
         "notes":  [
-                      "Haldersfield looks Nordic and lived in: houses in Falu red, white, ochre and grey-green, chimneys, green post boxes, picket fences, woodsheds with firewood, a wooden power line with hanging lanterns, cars left in a hurry, a bus shelter, speed signs and a painted village sign. A fence line and power poles lead from the village start to the houses.",
-                      "Haldersfield\u0027s houses are furnished: fitted kitchens with a sink, stove and fridge, living rooms, bedrooms, bathrooms, upstairs rooms and attics, with searchable cupboards on every floor. Inside doors open and close like the front doors. Cupboards, chests and cabinets have their doors and drawers, and dining tables stand in the open part of the room.",
-                      "Every house tells how its people left: a breakfast on the table, a half-packed suitcase, toys on the floor, drawers pulled out, chairs knocked over, and in a few houses boarded windows and blood.",
-                      "Working lights: every room has a ceiling lamp and a switch by the door (F). A few rooms were left lit, so some windows glow at dusk. Lights flicker before the blackout and go dark for good after it; then only a torch helps. Street lamps burn day and night while the power lasts.",
-                      "Some Haldersfield houses have zombies inside. How many differs from world to world and many houses are empty. They stand quietly until a noise, a light or an opening door wakes them, and a shut door keeps them in.",
-                      "House doors are no longer all shut: some stand open or ajar, some are locked, and one house may be barricaded from inside. Every house keeps at least one way in. A zombie can push through an ajar door; a latched door holds, but you will hear it banging. A barricade can be forced from outside with a few loud shoves (about a second apart) or cleared from inside.",
-                      "Outdoor loot bags: out in the forest, on the mountains, by the sea and along the roads you will find dropped rucksacks, hunters\u0027 bags, duffels, tarp bundles and dry bags. F searches them like a cupboard. They hold travel and weather gear more than food, some are already empty, and an emptied bag is gone for good. A few small stone cairns hide better supplies.",
-                      "Notes: the people of Vintermark left letters, diaries and notices behind. 40 story notes lie in Haldersfield and eight other places (a forestry cabin and sawmill, a church, a mine office, a dam control room and field station, a harbour office, a water works, a school and a crashed helicopter), and notes from other survivors turn up in kitchens, wardrobes and car boots. Double-click a note (or right-click, Read) to read it on a paper sheet. You can walk slowly while reading, but not run, jump or fight. New searchable places: office desks, filing cabinets, a vestry cupboard, a lab bench and freezer, school shelves and the helicopter cockpit.",
-                      "Snow: it now lies on roofs, cars, fences, hedges, bins, sheds and rocks as well as the ground, but never under a roof. Falling snow drifts around you outdoors and stops when you step inside. The high slopes turn white first, and the snow line comes down as autumn moves on.",
-                      "New worlds begin in autumn: brown grass, shorter days, 6-8 degrees in the valley. The peaks turn white about five hours into a world, and the snow reaches Haldersfield\u0027s street around the time the power fails. Worlds you already play keep their own season and clock.",
-                      "Stamina: a sprint lasts about 25 seconds, then you are out of breath and can only jog until you recover. Cold, wet or hungry survivors recover more slowly.",
-                      "Zombies: running zombies are faster (a jog no longer outruns a running walker; sprint to get away). Zombies look different from each other: skin, eyes, blood, mud, frost, wounds, build, height and clothes. Killed zombies lie where they fell for about ten minutes. Zombies follow hills and slopes properly, far zombies wear their clothes, and zombies appear near you however late in a long session. A torch in your hands gives you away at night from up to 100 m; put it away (X) to stay hidden.",
-                      "Houses keep you warmer: inside a building you are out of the wind and feel a few degrees warmer.",
-                      "Difficulty now changes the game, not just the zombie count. Casual: hunger and thirst grow more slowly, containers hold more, zombies see and hear less far. Hardcore: you get hungry and thirsty faster, loot is scarcer, zombies see and hear farther and run closer to sprint speed, and the HUD no longer lists how you feel. Standard plays as before.",
-                      "Co-op: the host now checks each player\u0027s movement against real time, so a modified game cannot run faster than everyone else.",
-                      "Settings has a new switch, \"Send anonymous game statistics and problem reports\". It tells the developers how many people play, the build, frame rate, crashes and the problem reports you file with F9. It never sends your name, Steam id, IP address, chat or voice, and turning it off sends nothing at all.",
-                      "Item descriptions: hovering an item in the inventory says what it is and what it is good for. Canned mackerel is now \"Mackerel in tomato\".",
-                      "Smoother frame rate and a cleaner look indoors: no more blue haze or glowing patches in rooms, sunlit rooms are no longer washed out orange, the sun moves in small steps, far zombies cast no shadows, and autosave no longer pauses the game.",
-                      "Smaller download: about 1.1 GB instead of 1.5 GB. Textures are stored at most 2048 pixels wide; close up they look the same.",
-                      "Fixed: loading a saved world reset the clock to 08:00 on the first day. Your day and hour now come back, and with them the blackout, the snow and felled trees growing back.",
-                      "Fixed: a searched cupboard could refill when you walked far away and came back. Containers now keep what you left in them.",
-                      "Fixed: house doors reset when you walked away and came back. A barricade you forced or a door you shut now stays that way for the session.",
-                      "Fixed: a zombie that pushes a door open now walks on to the noise that drew it. An indoor zombie no longer walks off after a noise it heard while frozen.",
-                      "Fixed: two players pressing F on the same item at the same moment could both get it. A dead survivor can no longer open doors, flip switches or move items.",
-                      "Fixed: your survivor no longer snaps back at the end of a sprint in co-op. Footsteps no longer crunch snow on green grass. Trees no longer grow on roads or inside houses. Black furniture shows its wood again.",
-                      "Fixed: loading a world with many dropped items or campfires no longer stalls at the start, and zombies no longer all react at once to old noises.",
-                      "Some very long attic rooms are dark at their far end at dusk (house P05).",
-                      "The upper floor of one house (P04) may have gaps in its collision.",
-                      "The Casual and Hardcore settings are only partly in place: infection, special zombies, decay and weapon malfunction do not follow them yet.",
-                      "The new check against modified movement is untested with real lag; on a bad connection you may be pulled back a little. Tell us if it happens.",
-                      "The statistics notice is only in Settings, not shown at first start."
+                      "Haldersfield looks Nordic and lived in.",
+                      "The houses are furnished, and each one shows how its people left.",
+                      "Working lights, and switches by the doors.",
+                      "Some houses have zombies inside.",
+                      "Doors can be open, locked or barricaded.",
+                      "Bags lie out in the world to search.",
+                      "Notes and letters tell the story of Vintermark.",
+                      "Snow on roofs, cars and the ground, and falling snow.",
+                      "New worlds begin in autumn.",
+                      "Stamina: a sprint runs out.",
+                      "Zombies run faster, look different from each other and stay dead.",
+                      "A torch gives you away to zombies at night.",
+                      "Houses keep you warmer.",
+                      "Difficulty changes more than the zombie count.",
+                      "Co-op checks for cheating players.",
+                      "A setting to send anonymous statistics.",
+                      "Items have descriptions.",
+                      "Smoother frame rate and a cleaner look indoors.",
+                      "A smaller download.",
+                      "Fixed: the clock reset when you loaded a world.",
+                      "Fixed: searched cupboards could refill.",
+                      "Fixed: house doors reset when you walked away.",
+                      "Fixed: two players could take the same item.",
+                      "Fixed: stalls when loading a world, and the snap-back after a sprint in co-op.",
+                      "Some attic rooms are very dark at dusk.",
+                      "One house may have gaps in its upper floor.",
+                      "Difficulty is only partly in place.",
+                      "The cheat check is untested with lag.",
+                      "The statistics notice is only in Settings."
                   ],
         "body":  [
                      {
@@ -601,107 +479,99 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Haldersfield looks Nordic and lived in: houses in Falu red, white, ochre and grey-green, chimneys, green post boxes, picket fences, woodsheds with firewood, a wooden power line with hanging lanterns, cars left in a hurry, a bus shelter, speed signs and a painted village sign. A fence line and power poles lead from the village start to the houses."
+                         "text":  "Haldersfield looks Nordic and lived in."
                      },
                      {
                          "t":  "li",
-                         "text":  "Haldersfield\u0027s houses are furnished: fitted kitchens with a sink, stove and fridge, living rooms, bedrooms, bathrooms, upstairs rooms and attics, with searchable cupboards on every floor. Inside doors open and close like the front doors. Cupboards, chests and cabinets have their doors and drawers, and dining tables stand in the open part of the room."
+                         "text":  "The houses are furnished, and each one shows how its people left."
                      },
                      {
                          "t":  "li",
-                         "text":  "Every house tells how its people left: a breakfast on the table, a half-packed suitcase, toys on the floor, drawers pulled out, chairs knocked over, and in a few houses boarded windows and blood."
+                         "text":  "Working lights, and switches by the doors."
                      },
                      {
                          "t":  "li",
-                         "text":  "Working lights: every room has a ceiling lamp and a switch by the door (F). A few rooms were left lit, so some windows glow at dusk. Lights flicker before the blackout and go dark for good after it; then only a torch helps. Street lamps burn day and night while the power lasts."
+                         "text":  "Some houses have zombies inside."
                      },
                      {
                          "t":  "li",
-                         "text":  "Some Haldersfield houses have zombies inside. How many differs from world to world and many houses are empty. They stand quietly until a noise, a light or an opening door wakes them, and a shut door keeps them in."
+                         "text":  "Doors can be open, locked or barricaded."
                      },
                      {
                          "t":  "li",
-                         "text":  "House doors are no longer all shut: some stand open or ajar, some are locked, and one house may be barricaded from inside. Every house keeps at least one way in. A zombie can push through an ajar door; a latched door holds, but you will hear it banging. A barricade can be forced from outside with a few loud shoves (about a second apart) or cleared from inside."
+                         "text":  "Bags lie out in the world to search."
                      },
                      {
                          "t":  "li",
-                         "text":  "Outdoor loot bags: out in the forest, on the mountains, by the sea and along the roads you will find dropped rucksacks, hunters\u0027 bags, duffels, tarp bundles and dry bags. F searches them like a cupboard. They hold travel and weather gear more than food, some are already empty, and an emptied bag is gone for good. A few small stone cairns hide better supplies."
+                         "text":  "Notes and letters tell the story of Vintermark."
                      },
                      {
                          "t":  "li",
-                         "text":  "Notes: the people of Vintermark left letters, diaries and notices behind. 40 story notes lie in Haldersfield and eight other places (a forestry cabin and sawmill, a church, a mine office, a dam control room and field station, a harbour office, a water works, a school and a crashed helicopter), and notes from other survivors turn up in kitchens, wardrobes and car boots. Double-click a note (or right-click, Read) to read it on a paper sheet. You can walk slowly while reading, but not run, jump or fight. New searchable places: office desks, filing cabinets, a vestry cupboard, a lab bench and freezer, school shelves and the helicopter cockpit."
+                         "text":  "Snow on roofs, cars and the ground, and falling snow."
                      },
                      {
                          "t":  "li",
-                         "text":  "Snow: it now lies on roofs, cars, fences, hedges, bins, sheds and rocks as well as the ground, but never under a roof. Falling snow drifts around you outdoors and stops when you step inside. The high slopes turn white first, and the snow line comes down as autumn moves on."
+                         "text":  "New worlds begin in autumn."
                      },
                      {
                          "t":  "li",
-                         "text":  "New worlds begin in autumn: brown grass, shorter days, 6-8 degrees in the valley. The peaks turn white about five hours into a world, and the snow reaches Haldersfield\u0027s street around the time the power fails. Worlds you already play keep their own season and clock."
+                         "text":  "Stamina: a sprint runs out."
                      },
                      {
                          "t":  "li",
-                         "text":  "Stamina: a sprint lasts about 25 seconds, then you are out of breath and can only jog until you recover. Cold, wet or hungry survivors recover more slowly."
+                         "text":  "Zombies run faster, look different from each other and stay dead."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies: running zombies are faster (a jog no longer outruns a running walker; sprint to get away). Zombies look different from each other: skin, eyes, blood, mud, frost, wounds, build, height and clothes. Killed zombies lie where they fell for about ten minutes. Zombies follow hills and slopes properly, far zombies wear their clothes, and zombies appear near you however late in a long session. A torch in your hands gives you away at night from up to 100 m; put it away (X) to stay hidden."
+                         "text":  "A torch gives you away to zombies at night."
                      },
                      {
                          "t":  "li",
-                         "text":  "Houses keep you warmer: inside a building you are out of the wind and feel a few degrees warmer."
+                         "text":  "Houses keep you warmer."
                      },
                      {
                          "t":  "li",
-                         "text":  "Difficulty now changes the game, not just the zombie count. Casual: hunger and thirst grow more slowly, containers hold more, zombies see and hear less far. Hardcore: you get hungry and thirsty faster, loot is scarcer, zombies see and hear farther and run closer to sprint speed, and the HUD no longer lists how you feel. Standard plays as before."
+                         "text":  "Difficulty changes more than the zombie count."
                      },
                      {
                          "t":  "li",
-                         "text":  "Co-op: the host now checks each player\u0027s movement against real time, so a modified game cannot run faster than everyone else."
+                         "text":  "Co-op checks for cheating players."
                      },
                      {
                          "t":  "li",
-                         "text":  "Settings has a new switch, \"Send anonymous game statistics and problem reports\". It tells the developers how many people play, the build, frame rate, crashes and the problem reports you file with F9. It never sends your name, Steam id, IP address, chat or voice, and turning it off sends nothing at all."
+                         "text":  "A setting to send anonymous statistics."
                      },
                      {
                          "t":  "li",
-                         "text":  "Item descriptions: hovering an item in the inventory says what it is and what it is good for. Canned mackerel is now \"Mackerel in tomato\"."
+                         "text":  "Items have descriptions."
                      },
                      {
                          "t":  "li",
-                         "text":  "Smoother frame rate and a cleaner look indoors: no more blue haze or glowing patches in rooms, sunlit rooms are no longer washed out orange, the sun moves in small steps, far zombies cast no shadows, and autosave no longer pauses the game."
+                         "text":  "Smoother frame rate and a cleaner look indoors."
                      },
                      {
                          "t":  "li",
-                         "text":  "Smaller download: about 1.1 GB instead of 1.5 GB. Textures are stored at most 2048 pixels wide; close up they look the same."
+                         "text":  "A smaller download."
                      },
                      {
                          "t":  "li",
-                         "text":  "Fixed: loading a saved world reset the clock to 08:00 on the first day. Your day and hour now come back, and with them the blackout, the snow and felled trees growing back."
+                         "text":  "Fixed: the clock reset when you loaded a world."
                      },
                      {
                          "t":  "li",
-                         "text":  "Fixed: a searched cupboard could refill when you walked far away and came back. Containers now keep what you left in them."
+                         "text":  "Fixed: searched cupboards could refill."
                      },
                      {
                          "t":  "li",
-                         "text":  "Fixed: house doors reset when you walked away and came back. A barricade you forced or a door you shut now stays that way for the session."
+                         "text":  "Fixed: house doors reset when you walked away."
                      },
                      {
                          "t":  "li",
-                         "text":  "Fixed: a zombie that pushes a door open now walks on to the noise that drew it. An indoor zombie no longer walks off after a noise it heard while frozen."
+                         "text":  "Fixed: two players could take the same item."
                      },
                      {
                          "t":  "li",
-                         "text":  "Fixed: two players pressing F on the same item at the same moment could both get it. A dead survivor can no longer open doors, flip switches or move items."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Fixed: your survivor no longer snaps back at the end of a sprint in co-op. Footsteps no longer crunch snow on green grass. Trees no longer grow on roads or inside houses. Black furniture shows its wood again."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Fixed: loading a world with many dropped items or campfires no longer stalls at the start, and zombies no longer all react at once to old noises."
+                         "text":  "Fixed: stalls when loading a world, and the snap-back after a sprint in co-op."
                      },
                      {
                          "t":  "h",
@@ -709,38 +579,38 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Some very long attic rooms are dark at their far end at dusk (house P05)."
+                         "text":  "Some attic rooms are very dark at dusk."
                      },
                      {
                          "t":  "li",
-                         "text":  "The upper floor of one house (P04) may have gaps in its collision."
+                         "text":  "One house may have gaps in its upper floor."
                      },
                      {
                          "t":  "li",
-                         "text":  "The Casual and Hardcore settings are only partly in place: infection, special zombies, decay and weapon malfunction do not follow them yet."
+                         "text":  "Difficulty is only partly in place."
                      },
                      {
                          "t":  "li",
-                         "text":  "The new check against modified movement is untested with real lag; on a bad connection you may be pulled back a little. Tell us if it happens."
+                         "text":  "The cheat check is untested with lag."
                      },
                      {
                          "t":  "li",
-                         "text":  "The statistics notice is only in Settings, not shown at first start."
+                         "text":  "The statistics notice is only in Settings."
                      }
                  ],
-        "sig":  "V6Rtj0szyjN1QA2lMBau+q4RTbn5F11zuJCM902lfxLB0uNrH3q0ByfGV2FXqItrOHy7lNiKIzNb3dt4+9WVQS962vnRF9npcfsfa/PczWvQtlVKyv5OxjU65xokbmlkMkLqX6Ul/QYQWnoPsFuWw270M7C7v6L/YOuwwMeYG41WeO2XXMW/DCHQj08DCsYTeoJu4foYsjdDwZsbiH5MdWyJfUHhvIJGDUu2zsjzykdZvlG4siN3DGcTf0ZW8reuHUHg1aU0XZkcQ+JBJNqJBsoUlVwYnz8qblwpcve/cT+ciGIFD6HGH6b1Q9AH1enzQyvNkUioI3F0mL5bC8+f8g=="
+        "sig":  "GLpqtKQMS4/B8hTncdacdVtdC0g8wagve4DvQuN+Nb6KOxmAwYEtUzOJNS/KRUbRei2o5AGGG9F+15FiKmUCeLJPhvbLcdfTXW7VKG8IKqElhMQW4U+WIg16WKpWxWAYEQ7HT4yJTiIOzqEEzosHzJp5mPvNF1DS56tnJlzBqW8i4cYWmaVZUwBNu69vIe97t/TN09jDMUEQelDDygAZksIG6uSi9Vlpz6jGTrj9snLJcEB5cW2zTR/8cZFoYSFrpZssvjuG8iyik3I5iDjDPFwcwpUw8avXAnecLo4fZhXrJL4Br13xBGG9aK49hvrkSJ/ebmEaGoTfPzZDzdSdrg=="
     },
     {
         "build":  202610131745,
         "version":  "Pre-alpha 0.2.6.0",
         "date":  "2026-10-13 17:54",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131745/ZombieDawn_2026-10-13_1745.zip",
-        "sha256":  "0813D690B75336179F5CC8CBE8B9F1C805F7427617D678FA46780FA6A1ACE665",
+        "sha256":  "",
         "size":  1619162812,
         "notes":  [
-                      "The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.",
-                      "Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.",
-                      "A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."
+                      "The game is now called Zombie Dawn.",
+                      "Quick slots: keys 1 to 9 take an item in hand.",
+                      "A cleaner inventory screen."
                   ],
         "body":  [
                      {
@@ -749,26 +619,18 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."
+                         "text":  "The game is now called Zombie Dawn."
                      },
                      {
                          "t":  "li",
-                         "text":  "Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."
+                         "text":  "Quick slots: keys 1 to 9 take an item in hand."
                      },
                      {
                          "t":  "li",
-                         "text":  "A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."
-                     },
-                     {
-                         "t":  "h",
-                         "text":  "Known problems"
-                     },
-                     {
-                         "t":  "p",
-                         "text":  "-"
+                         "text":  "A cleaner inventory screen."
                      }
                  ],
-        "sig":  "OyAKPYd5lRuNRVaWdjbcnxMzhEA1dTyNFsROLjkGc5xnoltuoaterR0YzLhbmktmXXdZ/KSSIuOAfVHTDh8bvilQQzAPvnG2g7dnI3p+7es7/SIV4YGCp+6C01g0xSvU3DAuyO6OmBVix2dWh9PdV28gfI1BdzZ1GUMkeK0v3I9RrPgc8NzJmlIsyaBFU5DKybYWPFHcDxTbIg5QFOPUHJ+eQdnUljPAD5Epf93HwcNehQ0iBHqNFb+2Y138rVPUeLjJ7NLuOQmZGpyjlTva+/Rvc25mIn73s9lWtQ8FloKy3Sqsso6NrtFXSMD45FNk2oGIVyUkXFRIdF6ZghLm/A=="
+        "sig":  "vpMdluAo1z63+rG3s0MeNrBGywF6QQiFagOWJqce7+bzPJ6Q4rw1MqaotYicOkrDLY9X6MATIbwJSvtEg9TW55GCvX/Y6UNlN7rlXQEXYsflpTivwjbouoY7FxQi5TfSIfOXLGOhTW4iCyKKMXrPVxCUcVP1aCcBWVr3aS451rPMMH8y6LDruxMsy3uz3qwmVKD7D83rP9awkna7AJj4o7Q1yrGRDl6YFrBZj1zqpqzqdL3zDcxgtve9tcSn+kB/KtrmwYe2eyu/Ba3xou6DoLv/7Fzz4WWjwWP6G7gDXy618qfWL6AZiiuvETcdhZ/wVZS5hVBlp5QLhiAKlZZ+4w=="
     },
     {
         "build":  202610131639,
@@ -793,18 +655,18 @@
         "version":  "Pre-alpha 0.2.5.0",
         "date":  "2026-10-13 14:20",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131410/zombiegame_2026-10-13_1410.zip",
-        "sha256":  "1DB1E324CF6A4863D4C38293429F78D2ADD0DD94AFF877F8AF1099E400582417",
+        "sha256":  "",
         "size":  1619023950,
         "notes":  [
-                      "Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump.",
-                      "Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference.",
-                      "Street lamps along the village road switch on at dusk and off at dawn while the power grid works.",
-                      "The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark.",
-                      "Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die.",
-                      "Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk.",
-                      "No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game.",
-                      "Houses have no working lamps yet, and nothing brings the power back yet.",
-                      "Every zombie wears the same clothes for now (one character model); more models will follow."
+                      "Big rooms now count as indoors, so they are readable at noon.",
+                      "Nights are dark but playable, with moonlight.",
+                      "Street lamps switch on at dusk.",
+                      "The power fails a few days into each world.",
+                      "Zombies have a real body, with animations.",
+                      "Faraway zombies look like the close ones.",
+                      "No two zombies look the same.",
+                      "Houses have no working lamps yet.",
+                      "Every zombie wears the same clothes for now."
                   ],
         "body":  [
                      {
@@ -813,31 +675,31 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump."
+                         "text":  "Big rooms now count as indoors, so they are readable at noon."
                      },
                      {
                          "t":  "li",
-                         "text":  "Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference."
+                         "text":  "Nights are dark but playable, with moonlight."
                      },
                      {
                          "t":  "li",
-                         "text":  "Street lamps along the village road switch on at dusk and off at dawn while the power grid works."
+                         "text":  "Street lamps switch on at dusk."
                      },
                      {
                          "t":  "li",
-                         "text":  "The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark."
+                         "text":  "The power fails a few days into each world."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die."
+                         "text":  "Zombies have a real body, with animations."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk."
+                         "text":  "Faraway zombies look like the close ones."
                      },
                      {
                          "t":  "li",
-                         "text":  "No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game."
+                         "text":  "No two zombies look the same."
                      },
                      {
                          "t":  "h",
@@ -845,36 +707,34 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Houses have no working lamps yet, and nothing brings the power back yet."
+                         "text":  "Houses have no working lamps yet."
                      },
                      {
                          "t":  "li",
-                         "text":  "Every zombie wears the same clothes for now (one character model); more models will follow."
+                         "text":  "Every zombie wears the same clothes for now."
                      }
                  ],
-        "sig":  "XjhgDIis5ICI4rID+cPiQkNLpfOBP1IkzzRXFBnZla1GDMWmy3rOJKiiLMd71711+hPpITEBSDMQ9G9iOU5f9fKnmexuW0vxqfy5hxmyYCd4ZPfiuuLJzZHzgP9nMzDmjBkNQyGUK/0qbT1jyak7Ywg62IekH0fPlnZDR+fBDEyQUjSd19H+L2EDY/V+tjN9s++lASNslvVqUNIJbZ/RsNajFLLTQtZdBQ+yAecgI0xeS9wcuEH/LAizKEDY5ZfaQh3xQZKPXskUxDVMeHlNQIyR9qiX0hifNaNnvCjcm51CVn4fsk5k7Cw1lPp+688LHeEosnJRW63obeKH25mpvg=="
+        "sig":  "UOWt2bV8miZdDR90apIERa11ckxFLMvjab0rojOMX/NDSjIQom3zb56qlBD3tM8YuBcmYvkyni56dg6df1folkcl5yZnPtwRj8D+p4rgMrMyZfqy58FA0bHtCt7WxApz5P0uygCBibFnw2wkXJOyfrCbN/oWZtXG1/8sz36q6jfTN2CwR/7tbQmc05jsJTKYIuigeLsSOtKOYXWII5Efl7WUDzbvO1e/FBAFswkkFif9OpLK3BobhJCHDuwYyk2M5ULNDyCQupye+IThGntStN2ZFgEu4JykkmYMLd5znF0ACbNijaoI7qFOxhCVNI+Aas5UCpmcXDZxGgNMtrMxxA=="
     },
     {
         "build":  202610131216,
         "version":  "Pre-alpha 0.2.4.0",
         "date":  "2026-10-13 12:25",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610131216/zombiegame_2026-10-13_1216.zip",
-        "sha256":  "DAD2212C6DFBA1429CD963695B0EBD71728553014E0B6F40E7E379F9840563FC",
+        "sha256":  "",
         "size":  1579267481,
         "notes":  [
-                      "Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark).",
-                      "A torch held in hand now gives light (craft one, then right-click it to take it in hand).",
-                      "One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river.",
-                      "Trees no longer grow inside village houses, and furniture no longer pokes through house walls.",
-                      "Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner\u0027s house, a handyman\u0027s place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves.",
-                      "Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot.",
-                      "Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had.",
-                      "Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise).",
-                      "The sea has gentle moving waves and the lakes small ripples.",
-                      "The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all.",
-                      "Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet).",
-                      "Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge.",
-                      "There is no foam where the sea meets the beach yet."
+                      "Houses are no longer pitch black by day.",
+                      "A torch gives light when held.",
+                      "Haldersfield has a village: ten furnished houses with loot that fits each home.",
+                      "Sheds behind some houses, and cars along the road with something in the boot.",
+                      "Trees no longer grow inside houses.",
+                      "Every new world has different loot, trees, rocks and zombies.",
+                      "Water has a colder look, and the sea has waves.",
+                      "The lakes hold water again.",
+                      "Village houses have doors on the outside only.",
+                      "Shallow river water still looks too bright.",
+                      "There is no foam on the beach yet."
                   ],
         "body":  [
                      {
@@ -883,43 +743,35 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark)."
+                         "text":  "Houses are no longer pitch black by day."
                      },
                      {
                          "t":  "li",
-                         "text":  "A torch held in hand now gives light (craft one, then right-click it to take it in hand)."
+                         "text":  "A torch gives light when held."
                      },
                      {
                          "t":  "li",
-                         "text":  "One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river."
+                         "text":  "Haldersfield has a village: ten furnished houses with loot that fits each home."
                      },
                      {
                          "t":  "li",
-                         "text":  "Trees no longer grow inside village houses, and furniture no longer pokes through house walls."
+                         "text":  "Sheds behind some houses, and cars along the road with something in the boot."
                      },
                      {
                          "t":  "li",
-                         "text":  "Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner\u0027s house, a handyman\u0027s place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves."
+                         "text":  "Trees no longer grow inside houses."
                      },
                      {
                          "t":  "li",
-                         "text":  "Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot."
+                         "text":  "Every new world has different loot, trees, rocks and zombies."
                      },
                      {
                          "t":  "li",
-                         "text":  "Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had."
+                         "text":  "Water has a colder look, and the sea has waves."
                      },
                      {
                          "t":  "li",
-                         "text":  "Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise)."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The sea has gentle moving waves and the lakes small ripples."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all."
+                         "text":  "The lakes hold water again."
                      },
                      {
                          "t":  "h",
@@ -927,18 +779,18 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet)."
+                         "text":  "Village houses have doors on the outside only."
                      },
                      {
                          "t":  "li",
-                         "text":  "Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge."
+                         "text":  "Shallow river water still looks too bright."
                      },
                      {
                          "t":  "li",
-                         "text":  "There is no foam where the sea meets the beach yet."
+                         "text":  "There is no foam on the beach yet."
                      }
                  ],
-        "sig":  "clZlyFTrCKc9SWtxbPqucbW3oF20R7xj9XTR7q1Wc04qLPz5g5RG1Qi59FVprOkAjVMI/dJh4sD3jk8Pw37IQSeruQDCRblJq961lllLCR13qL0HQ61CU7Xqtym+OptL+f5nMEJei+WjMklQLt4g3IteWvHsJbd9fwYWHGqJaLA4c6MMMHLCnCnWrU5kb2+Yb6QWyFUzVmIBM+dea8h93h+oxgrOTEqy/4P79kp1T9M8k+hkhpnIVah6pNAqEnyRPMwO3OD5ZWrJu8194fl1bLr7sdqc6ph0PeqthcL5JGAkJIHx1Wgm/0D1F5/KL9rFKIMfKIgXJylCYP4w8IrR3g=="
+        "sig":  "qzyg3/orUKORJwfMpAD8e0xZLc9rjeh5ctbEp50m1rAQH31kfZP9Q82fxKpuLHV9usQzNGVTP4h9UmECNA2bWd6//cF4nwinda8EB+lb7QnP43/+TWqQUA/s9j38qqADmyR/x0nZnjYn6w+1u88w51bu+OdTDHtq4jEwaoXBMm7sHI4Df8whRX09LiUMuSWGUQwZucN74fGHDMvjs8Ynzc50YFfkyV8C4p+p/FVQ+XpUPZsg4c1lwhjxzpbOGgcczv7VWHgg4MBIeOcGV+9oz1Rq5Bcq/TpN85CAe+ttwA9aVGBNnc9m78u+dc336iffFjx+OFay56s/kwDemSie8Q=="
     },
     {
         "build":  202610130912,
@@ -948,17 +800,14 @@
         "sha256":  "",
         "size":  1381927336,
         "notes":  [
-                      "A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.",
-                      "The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right.",
-                      "The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge.",
-                      "A small \"Talking\" mark shows bottom left while you hold V.",
-                      "Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world.",
-                      "Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version.",
-                      "Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept.",
-                      "Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.",
-                      "The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).",
-                      "The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.",
-                      "The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."
+                      "A new look for the start screen, the Esc menu and settings.",
+                      "The HUD reads better on snow and at night.",
+                      "A small mark shows while you talk.",
+                      "Several saved worlds: pick a world, play solo or host co-op, or make a new one with a difficulty.",
+                      "Saves are much smaller.",
+                      "Dropped items are saved.",
+                      "The rivers have water, and the sea reaches every coast.",
+                      "A smaller download."
                   ],
         "body":  [
                      {
@@ -967,47 +816,35 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom."
+                         "text":  "A new look for the start screen, the Esc menu and settings."
                      },
                      {
                          "t":  "li",
-                         "text":  "The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right."
+                         "text":  "The HUD reads better on snow and at night."
                      },
                      {
                          "t":  "li",
-                         "text":  "The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge."
+                         "text":  "A small mark shows while you talk."
                      },
                      {
                          "t":  "li",
-                         "text":  "A small \"Talking\" mark shows bottom left while you hold V."
+                         "text":  "Several saved worlds: pick a world, play solo or host co-op, or make a new one with a difficulty."
                      },
                      {
                          "t":  "li",
-                         "text":  "Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world."
+                         "text":  "Saves are much smaller."
                      },
                      {
                          "t":  "li",
-                         "text":  "Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version."
+                         "text":  "Dropped items are saved."
                      },
                      {
                          "t":  "li",
-                         "text":  "Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept."
+                         "text":  "The rivers have water, and the sea reaches every coast."
                      },
                      {
                          "t":  "li",
-                         "text":  "Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels)."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."
+                         "text":  "A smaller download."
                      }
                  ],
         "sig":  "sYU9WQHwL14LRHi9txhoDPMzRSqOD24uSX4eqbmFpoRCh6CC3ylA8p9oL/jWhZb3pd5GNxz+jtkgAzLSPNJ0Le/MUl654P/2lS/6YrJri7LNBtbiT+3Be5fFJsqpXc07uGw9DRJmlS2lT6BDHv5W5ucrCJ+04+ghnCaD6gxAn6m03jaJz0BBke1VSFkZ8FQlOYU3MQACOAUh4FlJb7TYTLbz/Wa8KS9LYWD3MK1UzFSmb+MZGY3yBxGtxqa9sXe7GQykPf7Mq2e+hbGT+EgJ3C9Lp9pe0cFSOYFZYdBTCDoOGMLxc+1jUpEjgZqINW1Ndk5J7/qT1T/4jiV2i+C6zg=="
@@ -1017,14 +854,14 @@
         "version":  "Pre-alpha 0.2.2.0",
         "date":  "2026-10-12 23:49",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610122335/zombiegame_2026-10-12_2335.zip",
-        "sha256":  "B7942385F916A4253C4C000B1D7F302674AC5F297C5944B39089CFBA8311661E",
+        "sha256":  "",
         "size":  1609430904,
         "notes":  [
-                      "The land has colour: green meadows, mossy forest floor where the spruce forest grows, grey rock on cliffs and steep mountain sides, stony fell above the trees, snow patches on the high peaks, sand and shingle at the sea, gravel river beds, wet mud by rivers and bogs, and asphalt and gravel roads.",
-                      "The sea is now the engine\u0027s ocean water (flat blue for now, waves and a proper shoreline come later), at sea level around the whole coast.",
-                      "The four lakes (Storwater, Mirror Lake, Blackwater Reservoir, High Tarn) now hold water at their own heights, with their islands showing.",
-                      "River water bodies are placed along all rivers (not visible in game yet).",
-                      "Rivers are placed as water bodies but do not draw yet, so river beds still show bare mud and stones. Lake water is a muddy brown for now."
+                      "The land has colour: meadows, forest floor, rock, sand, mud and roads.",
+                      "The sea is real water now.",
+                      "The four lakes hold water.",
+                      "Rivers do not show yet.",
+                      "Lake water is a muddy brown for now."
                   ],
         "body":  [
                      {
@@ -1033,19 +870,15 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "The land has colour: green meadows, mossy forest floor where the spruce forest grows, grey rock on cliffs and steep mountain sides, stony fell above the trees, snow patches on the high peaks, sand and shingle at the sea, gravel river beds, wet mud by rivers and bogs, and asphalt and gravel roads."
+                         "text":  "The land has colour: meadows, forest floor, rock, sand, mud and roads."
                      },
                      {
                          "t":  "li",
-                         "text":  "The sea is now the engine\u0027s ocean water (flat blue for now, waves and a proper shoreline come later), at sea level around the whole coast."
+                         "text":  "The sea is real water now."
                      },
                      {
                          "t":  "li",
-                         "text":  "The four lakes (Storwater, Mirror Lake, Blackwater Reservoir, High Tarn) now hold water at their own heights, with their islands showing."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "River water bodies are placed along all rivers (not visible in game yet)."
+                         "text":  "The four lakes hold water."
                      },
                      {
                          "t":  "h",
@@ -1053,28 +886,32 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Rivers are placed as water bodies but do not draw yet, so river beds still show bare mud and stones. Lake water is a muddy brown for now."
+                         "text":  "Rivers do not show yet."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Lake water is a muddy brown for now."
                      }
                  ],
-        "sig":  "Jgj7ZiBSJH8nty5ZlavmAWgG9WLAhDlogqz198fEnXuEAgbAT0zYxjSqPn10Nzt3y93vr/keqAU/AGimtgwZaV/lTjt1AiKl/m8TJcUAT5teQ02evalp9cNBLYM15w5Gpcdxl+dMDoKY2FMAuPMkrqa/GfEtfBoXDeIc7vC21uWfcDkuTZ2hrTJxtjyW33WPqv+fWHT/sRtFI0JU/VhzZ/uaouSOkfrznRaqY0Uo16apll31hE38RN5hnZRqg7NQcY5wFJoj5K3Oj+95QsS2Se3pa6ve2oCbk6mphnXwr5rWPd/RoqPiWmTNgI5FYzzbWq3U8E4mLk+vqqcAF2FVbQ=="
+        "sig":  "F3ngI0ZgGmBHCpnnbJDj18PKUULdeTQ+JjXLNVzmmaZWRlzQ4ZHbjXGO6QMCzr473ufApVWvWDgNNLjWnRzvGXJhxyFH4s1mUPZ5tVRNxCK7i3oS6FszM4zWa460o/3oB4VPI33ie+LpiiJUt+7WrhXJ6ngQWrDPASTikzeQ7KLfyWpaZ88IXkZSkcfb5jxd0xMSx1nnk9cnVHrnRj130/X8U9oqvW6hulAuLmHx/uBPraP52VroXZKXX8cTwpIFa+A9xKDMxgSXytHSYALmmDrQfvMyrubIHi0Av7/r9wgNNvBakhVIZl5jOFOpMdW4EKW51/rH/WhnBDCXVcHQ+g=="
     },
     {
         "build":  202610121931,
         "version":  "Pre-alpha 0.2.1.0",
         "date":  "2026-10-12 19:38",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121931/zombiegame_2026-10-12_1931.zip",
-        "sha256":  "349F2C4AD0D6BA981B928A68B4F856C8D27CB9630C52292441D9C82C076E6282",
+        "sha256":  "",
         "size":  1235685236,
         "notes":  [
-                      "Settings screen (Settings on the start screen and in the Esc menu): quality preset (Low, Medium, High, Epic) and each graphics group, resolution scale, screen mode, resolution, vertical sync, frame rate limit, a frame rate counter, master and voice chat volume, field of view and mouse sensitivity. Settings are kept between updates.",
-                      "The first start measures your PC once and picks graphics to suit it (never above High). Hardware ray tracing is off for everyone (it cost a lot on older graphics cards), and the Effects setting now makes the clouds and the sky lighting cheaper on Low, Medium and High.",
-                      "Zombies now live in the world from the start: every settlement has a group of them by its size (a few in a hamlet, dozens in the cities and the dangerous mountain sites), and small groups stand along the roads. Spawn points stay calm: none within 120 m, and none within 250 m during the first minute. The host\u0027s zombie density setting scales the numbers.",
-                      "Campfires: make a campfire kit, then use it (right-click it, or hold it and left click) to put the fire down in front of you. Press F with a lighter or fire steel to light it and F with firewood or kindling to feed it (firewood burns about 1.5 game hours). A burning fire lights up the night, warms you and dries wet clothes within a few metres, and lets you cook (steak, fish, small game, boiling water) within 3 m. Its crackle can draw zombies. When it is out, F (or crouch and F) takes the stones back; crouch and F picks up an unlit fire as its kit. Placed fires are saved.",
-                      "Gathering: the land now has spruce forests, rocks, fallen sticks and loose stones. Press F on a stick or a stone to pick it up. Hold an axe (6 blows) or a stone axe (12) and left click a tree to fell it: it topples and leaves 2-3 logs and 3-5 sticks. Rocks need a pickaxe (8 blows) or a stone pickaxe (14) and give 3-5 stones and sometimes flint; an axe just bounces off. Chopping and breaking rock is loud (about 30 m) and wears the tool. What you take grows back after a while (sticks in a day, trees in a week) and stays gone through a save.",
-                      "New items: pickaxe (found in garages and sheds), stone pickaxe (craft from 2 stones, a stick and cord) and flint. Axes now turn up in sheds too. The stone axe can now be swung.",
-                      "First sounds: footsteps for every survivor and for zombies close by. They follow how you move (walking, jogging, sprinting, a quiet crouch, an almost silent crawl, a jump and a landing, a scuff when you stop) and what you walk on (wood floors in houses, concrete and roads, grass and dirt, forest leaves, beach sand, rocky slopes, snow above the snow line, mud in heavy rain). Doors knock when they open, close and lock, and rattle when locked; an axe thuds into a tree.",
-                      "The sounds are a first pass: doors and chopping share one wood knock, and footsteps are heard through walls.",
-                      "Trees and rocks still use pack models without their own sounds or a chopping animation; zombies may bump into trees on their way."
+                      "A settings screen: graphics, sound, field of view and mouse.",
+                      "The game picks graphics to suit your PC on first start.",
+                      "Zombies now live in the world from the start, in every settlement and along the roads.",
+                      "Campfires: place one, light it, feed it, cook on it and warm up by it.",
+                      "Trees, rocks, sticks and stones to gather. Fell trees with an axe and break rock with a pickaxe.",
+                      "New items: pickaxe, stone pickaxe and flint.",
+                      "First sounds: footsteps on different ground, doors and chopping.",
+                      "The sounds are a first pass.",
+                      "Zombies may bump into trees."
                   ],
         "body":  [
                      {
@@ -1083,31 +920,31 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Settings screen (Settings on the start screen and in the Esc menu): quality preset (Low, Medium, High, Epic) and each graphics group, resolution scale, screen mode, resolution, vertical sync, frame rate limit, a frame rate counter, master and voice chat volume, field of view and mouse sensitivity. Settings are kept between updates."
+                         "text":  "A settings screen: graphics, sound, field of view and mouse."
                      },
                      {
                          "t":  "li",
-                         "text":  "The first start measures your PC once and picks graphics to suit it (never above High). Hardware ray tracing is off for everyone (it cost a lot on older graphics cards), and the Effects setting now makes the clouds and the sky lighting cheaper on Low, Medium and High."
+                         "text":  "The game picks graphics to suit your PC on first start."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies now live in the world from the start: every settlement has a group of them by its size (a few in a hamlet, dozens in the cities and the dangerous mountain sites), and small groups stand along the roads. Spawn points stay calm: none within 120 m, and none within 250 m during the first minute. The host\u0027s zombie density setting scales the numbers."
+                         "text":  "Zombies now live in the world from the start, in every settlement and along the roads."
                      },
                      {
                          "t":  "li",
-                         "text":  "Campfires: make a campfire kit, then use it (right-click it, or hold it and left click) to put the fire down in front of you. Press F with a lighter or fire steel to light it and F with firewood or kindling to feed it (firewood burns about 1.5 game hours). A burning fire lights up the night, warms you and dries wet clothes within a few metres, and lets you cook (steak, fish, small game, boiling water) within 3 m. Its crackle can draw zombies. When it is out, F (or crouch and F) takes the stones back; crouch and F picks up an unlit fire as its kit. Placed fires are saved."
+                         "text":  "Campfires: place one, light it, feed it, cook on it and warm up by it."
                      },
                      {
                          "t":  "li",
-                         "text":  "Gathering: the land now has spruce forests, rocks, fallen sticks and loose stones. Press F on a stick or a stone to pick it up. Hold an axe (6 blows) or a stone axe (12) and left click a tree to fell it: it topples and leaves 2-3 logs and 3-5 sticks. Rocks need a pickaxe (8 blows) or a stone pickaxe (14) and give 3-5 stones and sometimes flint; an axe just bounces off. Chopping and breaking rock is loud (about 30 m) and wears the tool. What you take grows back after a while (sticks in a day, trees in a week) and stays gone through a save."
+                         "text":  "Trees, rocks, sticks and stones to gather. Fell trees with an axe and break rock with a pickaxe."
                      },
                      {
                          "t":  "li",
-                         "text":  "New items: pickaxe (found in garages and sheds), stone pickaxe (craft from 2 stones, a stick and cord) and flint. Axes now turn up in sheds too. The stone axe can now be swung."
+                         "text":  "New items: pickaxe, stone pickaxe and flint."
                      },
                      {
                          "t":  "li",
-                         "text":  "First sounds: footsteps for every survivor and for zombies close by. They follow how you move (walking, jogging, sprinting, a quiet crouch, an almost silent crawl, a jump and a landing, a scuff when you stop) and what you walk on (wood floors in houses, concrete and roads, grass and dirt, forest leaves, beach sand, rocky slopes, snow above the snow line, mud in heavy rain). Doors knock when they open, close and lock, and rattle when locked; an axe thuds into a tree."
+                         "text":  "First sounds: footsteps on different ground, doors and chopping."
                      },
                      {
                          "t":  "h",
@@ -1115,28 +952,29 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "The sounds are a first pass: doors and chopping share one wood knock, and footsteps are heard through walls."
+                         "text":  "The sounds are a first pass."
                      },
                      {
                          "t":  "li",
-                         "text":  "Trees and rocks still use pack models without their own sounds or a chopping animation; zombies may bump into trees on their way."
+                         "text":  "Zombies may bump into trees."
                      }
                  ],
-        "sig":  "do1lIVljZDD6Q53dZnNePrcYDkB2d+akTYJaEmMN3wAErfzBt4yNIcanexblU0mS1k7/6ctUNb5o9kccOe/xfaUV/rTnPoJMZLW3orSnS1k4HddCbXC9sPQwopMv7bIDuF3NOdGQM+sMLkecmi7hgHDWT9VZctRo51QOEU6DVRRA/VXaZZv1qwMu5HXL25YDLV7N1MrggHFSgq+ij99sjBgBe5/38HlR5CAJV5QCVgRhDv5qqQXwpzBvW1RDe8mMxsmzId2/OjT1VF4DhxGmkdWXg+Wpl0Kp+zIh5M3g5OnOctPrdiYCiou4a4y16DBMdgQPeOtCbY36Ku7jxxTqDw=="
+        "sig":  "Bc8vcEoa3YxzRjdk70356jOfO4BeOSUKUCyERkMJetL4ETmEw9Hh2Wid0kKKuThHD9BF19vKwLY/3UpKL8D0Plk2vRai//Yx0Y5gzeKyJ3L23JhHDC1jIFj2mzju8y42uFpoda2OZgvyRDla9H6qf+/gSOLIuAEOAkVZ9ogF+Nj1Lwhvt750lMLABUQdZPcH1Tq60/kmOqvJxfaCDtCk68yMKeuTwsBRGi/MYgflg5hpW11x1j2nuu7rEMVMwGqZFkcPZQZQd36GmErEyefog1o+2315tftOs7dGjuV4COoglaVmLg3n8eU72zPTLXH5oRDK9NdKoRZHj1rFyRFIQA=="
     },
     {
         "build":  202610121333,
         "version":  "Pre-alpha 0.2.0.0",
         "date":  "2026-10-12 13:40",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121333/zombiegame_2026-10-12_1333.zip",
-        "sha256":  "7AD1B7B1BB5B8F5C956824A8C330C6F62E173809157D47830C92F645D9566453",
+        "sha256":  "",
         "size":  915620520,
         "notes":  [
-                      "A new world: Vintermark, 12 x 12 km (was 4 x 4 km), with the central valley, Storwater, the Blackwater dam, the Skar mountains, the Vellsund coast and a southern fjord. Bare terrain for now: no roads, rivers, towns or trees yet.",
-                      "You start at the edge of Haldersfield or Lundford in the central valley.",
-                      "A furnished house stands on the hillside in front of one of the start points: walk in through the porch, open the doors with F, and search the kitchen, bedroom, hall and bathroom furniture.",
-                      "Fixed: the vault, mantle, door and prone animations were missing from the packaged game.",
-                      "At the other two start points the test furniture still stands on bare ground; the old lake and sea are placeholder planes."
+                      "A new, much bigger world: Vintermark.",
+                      "You start at the edge of Haldersfield or Lundford.",
+                      "A furnished house to search in front of one start point.",
+                      "Fixed: some animations were missing from the packaged game.",
+                      "The world is bare terrain for now.",
+                      "The other two start points have no house yet."
                   ],
         "body":  [
                      {
@@ -1145,19 +983,19 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "A new world: Vintermark, 12 x 12 km (was 4 x 4 km), with the central valley, Storwater, the Blackwater dam, the Skar mountains, the Vellsund coast and a southern fjord. Bare terrain for now: no roads, rivers, towns or trees yet."
+                         "text":  "A new, much bigger world: Vintermark."
                      },
                      {
                          "t":  "li",
-                         "text":  "You start at the edge of Haldersfield or Lundford in the central valley."
+                         "text":  "You start at the edge of Haldersfield or Lundford."
                      },
                      {
                          "t":  "li",
-                         "text":  "A furnished house stands on the hillside in front of one of the start points: walk in through the porch, open the doors with F, and search the kitchen, bedroom, hall and bathroom furniture."
+                         "text":  "A furnished house to search in front of one start point."
                      },
                      {
                          "t":  "li",
-                         "text":  "Fixed: the vault, mantle, door and prone animations were missing from the packaged game."
+                         "text":  "Fixed: some animations were missing from the packaged game."
                      },
                      {
                          "t":  "h",
@@ -1165,21 +1003,25 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "At the other two start points the test furniture still stands on bare ground; the old lake and sea are placeholder planes."
+                         "text":  "The world is bare terrain for now."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The other two start points have no house yet."
                      }
                  ],
-        "sig":  "oe61GHdazR256tpT/WbGNlkpfJlHReyTmo9/WW3H/mbyIRY1JvMeUylPephVwYmD9Wpq7xmbXKntjZW0Mb+AHbAPpqxeNTD6YEvGp8rFbJKFci4dy8pDNnma4kbbU5bv1Ym0mDlfwUdLr+4F/5h8NSgqzwYLG1fZYE0/g2cZHlCMaBDR9RdHov1j7AvjSdgkGRd7FHgrsdBtRT5mOZS+yWH9EsUPJZuCdP/McY6DbPjbkeBquke/FhfSMRAGceBL8tbf0Dbs8LfkxUuYZ2wnugViqeioGEaYxG1J9kNgWPKu8YeHIbRlRyxfQABoidCn+HzykFmVwT+uAQ4NNtsr0Q=="
+        "sig":  "c0E9mBgcdcirWbzs+nhg3Sk9LRSvYCPVC3OgCU/yvkJB5EI6xamh8FzVJRk2LV7whclGUCaOTWSxGAMjH7Cv6iWI0xqhB/8qGiNrHwDmpc3LOBLBR1UtBtHVJWHWocYMxRCDjTUiKDkT+AXkEqexXsqeyXVXz0PB/Beu/N5Da88ddIDa2XCPXgxhXSPlMaVvgEEyIec9BAGaUQy8pZ4sY1TtsQmUjtFXddU59ztg1bMZ/xYW4dj7+93M7rEVHcbp9eF2iyzrp9C+ULFrlPcxzSZVApAAmSEkzaHkL9qTEYVxR623QivsSVu5EFraBqW0V2kytmDVdTRQf+z8wUjFhQ=="
     },
     {
         "build":  202610121138,
         "version":  "Pre-alpha 0.1.8.0",
         "date":  "2026-10-12 11:44",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610121138/zombiegame_2026-10-12_1138.zip",
-        "sha256":  "63CB06762803CFE8A1C9C60ACDDB5AC936A48E51B2158EA6601CC905BA2DF8C4",
+        "sha256":  "",
         "size":  668157774,
         "notes":  [
-                      "Crafting: the inventory screen (Tab) has a \"Make\" list. Recipes you can make now come first; the rest show what is missing. Click one to make it, with a progress bar and a Cancel button while you work.",
-                      "Fixed: in the packaged game you could not move or look after pressing Host on the start screen (the start screen kept the mouse cursor and ignored the keys)."
+                      "Crafting: a Make list in the inventory.",
+                      "Fixed: you could not move or look after pressing Host on the start screen."
                   ],
         "body":  [
                      {
@@ -1188,38 +1030,30 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Crafting: the inventory screen (Tab) has a \"Make\" list. Recipes you can make now come first; the rest show what is missing. Click one to make it, with a progress bar and a Cancel button while you work."
+                         "text":  "Crafting: a Make list in the inventory."
                      },
                      {
                          "t":  "li",
-                         "text":  "Fixed: in the packaged game you could not move or look after pressing Host on the start screen (the start screen kept the mouse cursor and ignored the keys)."
-                     },
-                     {
-                         "t":  "h",
-                         "text":  "Known problems"
-                     },
-                     {
-                         "t":  "p",
-                         "text":  "-"
+                         "text":  "Fixed: you could not move or look after pressing Host on the start screen."
                      }
                  ],
-        "sig":  "PqioPqM3ByZuI+Oww7bHD5abRWl6Tne7Fav7M0IjIHZYRw1Xl/gMDDtInn5fa6Hl0V+Ui+w7HVGu4LDaaF0FW0NdydHEt+G1DUR0z5uAvCiYm/8Lz4AYwb2k4Le0Jk2LIIGTy9j/Me+JI2XPdxcn5u8rMChAFFrxpiKDFqGO3l8Z6xdeuusyhCz1X3HSy4A4fEEGEy79wqaHwsktkSF2I7NB26Y17ybW8bnMT4xe+Z1hYn2s3a+7L6T8LsvkOE3yKEsWK10Uz7sPP7/4KG/hChPnxDktArFGLV5PxlRzj2JO7zY8/3N1rIn6CdAQwukIsGFcTRjqoYTjDsk/adcBeQ=="
+        "sig":  "0PUk6bcaMq+aXp5pT3Wam2+seVso3CeumluVRR/d448kxiKLNl2fA42TrUkfZcks9Jup0Ad89blqyGmWz+Wus1NT84mjQ9mvnWZt1xwZwwpM8TKNc0S5Lc/Yw2tqXVGq7Tp6ZqhXG4omL/9jXMBtjwx1saq3vbgN4LHkVpC9JwSKC63ZCQfBPC+JhDDK948m48F5tpb8WHvO+yGXjZLMjOGDCdf+sRkzN3Bc0H4YI49jxGdVQF4rRAn8pDVdxWWIVT+LGpZXISJ5JQJ6uxhRSl6WeqYDnrTiZ0/mIF5e30l/plhTCIvwJtJdaPE9BrqQY9LG5K3yUqzkJPCLlhTu1A=="
     },
     {
         "build":  202610111749,
         "version":  "Pre-alpha 0.1.7.0",
         "date":  "2026-10-11 17:55",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111749/zombiegame_2026-10-11_1749.zip",
-        "sha256":  "60AF898C079B8B534C1F5DE55440B3BE595F8271C6AD03E80EB6C8667A3D2A96",
+        "sha256":  "",
         "size":  667686834,
         "notes":  [
-                      "Bug reports now say where you were on the map as a grid square such as G7-5 (columns A to L, rows 1 to 12, and a keypad 1 to 9 inside each square). The console command zg.Where shows it.",
-                      "Doors swing with your hand: the door starts to move when your hand reaches it and opens over the rest of the push, instead of flying open before you touch it.",
-                      "Zombies chase like a mob: each comes in from its own side, at its own pace, and they spread around you instead of running after each other in a line.",
-                      "Fixed an animation error (running) that could freeze the game for a few seconds.",
-                      "The map is still the small test map; the big map is not in yet.",
+                      "Problem reports now say where you were on the map.",
+                      "Doors swing with your hand.",
+                      "Zombies spread out around you instead of running in a line.",
+                      "Fixed a freeze while running.",
+                      "The map is still the small test map.",
                       "Zombies are capsules and make no sounds yet.",
-                      "Doors, items lying on the ground and zombies are not saved yet."
+                      "Doors, dropped items and zombies are not saved yet."
                   ],
         "body":  [
                      {
@@ -1228,19 +1062,19 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Bug reports now say where you were on the map as a grid square such as G7-5 (columns A to L, rows 1 to 12, and a keypad 1 to 9 inside each square). The console command zg.Where shows it."
+                         "text":  "Problem reports now say where you were on the map."
                      },
                      {
                          "t":  "li",
-                         "text":  "Doors swing with your hand: the door starts to move when your hand reaches it and opens over the rest of the push, instead of flying open before you touch it."
+                         "text":  "Doors swing with your hand."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies chase like a mob: each comes in from its own side, at its own pace, and they spread around you instead of running after each other in a line."
+                         "text":  "Zombies spread out around you instead of running in a line."
                      },
                      {
                          "t":  "li",
-                         "text":  "Fixed an animation error (running) that could freeze the game for a few seconds."
+                         "text":  "Fixed a freeze while running."
                      },
                      {
                          "t":  "h",
@@ -1248,7 +1082,7 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "The map is still the small test map; the big map is not in yet."
+                         "text":  "The map is still the small test map."
                      },
                      {
                          "t":  "li",
@@ -1256,31 +1090,30 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Doors, items lying on the ground and zombies are not saved yet."
+                         "text":  "Doors, dropped items and zombies are not saved yet."
                      }
                  ],
-        "sig":  "VJil46gopJsd+LYJbhA6jeCYS+OwqxN+dl3dFHtbLFWwRReTCsCfbaFSMtXI6x6/pR2rv7QSo1c1K2lguq++TMHDnhFmlkk+ot6lYR5eeYG8PUg6tl1ArSq8pM78Hbudy8IdKNfWAZd2zMY5NW36CnxAjyOBvEjWujWHEIAmNzdLqorKQgVEgh5b4MBKhg8N+SJThZkbo+4vgCdxf6KFsfS9TMyLGpI7x4HM0qm5E7syi+nuwL5WMIf8OAiqfvGf4pI3VIM47n6vYhZf9dnXXk/uS57Tp5hwuheHdicSSO95LIY0niR1A45n/yWJzpIJo7XXw+aNfwKccS4S/vQjkQ=="
+        "sig":  "TJQ2rCOdBlsuYE6LaPwNGDIabIcDaGF+PWjnamlLa5ltg4mbAsEVgLnZXGvTjHY5H692Hvyr597vRsmYesz5TsyGXlh5nuddj1jlqHwwAZ5/uxkYay8FHAxoAo1pu5nenput+ab05AaqfIgwreRj5m2ktREO0DaFsj2MR0zbFIUnbHZYcEBFeIilcOY8B+MXGvN/RCD3fwiXa2yk5PPZIyuNopPxh7N9UJUAcsSwkpo3ZeThUVXTrIH7eBXscAWD0Gavhr25qJXo2iVkRFjR71gp0j6Pbe9IZJ3Y2ei508dX6rKL/i73ibWAqWyXAmf1pnTxA+PP7rexU5BOjoR0Nw=="
     },
     {
         "build":  202610111215,
         "version":  "Pre-alpha 0.1.6",
         "date":  "2026-10-11 12:30",
         "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610111215/zombiegame_2026-10-11_1215.zip",
-        "sha256":  "3760CFC20541D3A52667C8B0ED01F9D0BA0F798DB40FE642121B9C18EB31A297",
+        "sha256":  "",
         "size":  667620322,
         "notes":  [
-                      "Zombies (placeholder capsules for now): they hear noise, see you, chase, lose track, search and wander. Near you they are real bodies; farther away they are a crowd drawn cheaply.",
-                      "Zombies bite. A bite is a bleeding wound; stop it with a bandage. They attack from arm\u0027s length with a short wind-up, so you can step out of reach.",
-                      "Your game now saves: the world clock, where you stand, your body, everything you carry and every container you have searched. It saves every 5 minutes, when someone leaves and when you quit, and you pick up where you left off.",
-                      "Zombies in a mob: only a few can bite you at once (6 to start), the others crowd in close and grab, which slows you down and stops you sprinting if several hold on. When one is killed another steps in.",
-                      "Doors you can open and close (F), with a hand animation.",
-                      "Vaulting over low obstacles and climbing onto ledges when you jump at them.",
-                      "A full set of character animations: walking, strafing, crouching, crawling in prone, jumping, with smooth transitions.",
-                      "The start screen and the website now say Pre-alpha, which is what this is.",
+                      "Zombies hear, see and chase you, lose track, search and wander.",
+                      "Zombies bite. A bite makes a bleeding wound; stop it with a bandage.",
+                      "Only a few zombies can bite you at once, the rest grab and slow you down.",
+                      "Your game now saves and you pick up where you left off.",
+                      "Doors can be opened and closed.",
+                      "You can vault low obstacles and climb onto ledges.",
+                      "A full set of character animations.",
+                      "The start screen and the website now say Pre-alpha.",
                       "Zombies are capsules and make no sounds yet.",
-                      "Doors, items lying on the ground and zombies are not saved yet.",
-                      "Crowd zombies running at you can look a few metres off their real position on a client.",
-                      "Nothing has been balanced; expect odd numbers."
+                      "Doors, dropped items and zombies are not saved yet.",
+                      "Nothing is balanced yet."
                   ],
         "body":  [
                      {
@@ -1289,35 +1122,35 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies (placeholder capsules for now): they hear noise, see you, chase, lose track, search and wander. Near you they are real bodies; farther away they are a crowd drawn cheaply."
+                         "text":  "Zombies hear, see and chase you, lose track, search and wander."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies bite. A bite is a bleeding wound; stop it with a bandage. They attack from arm\u0027s length with a short wind-up, so you can step out of reach."
+                         "text":  "Zombies bite. A bite makes a bleeding wound; stop it with a bandage."
                      },
                      {
                          "t":  "li",
-                         "text":  "Your game now saves: the world clock, where you stand, your body, everything you carry and every container you have searched. It saves every 5 minutes, when someone leaves and when you quit, and you pick up where you left off."
+                         "text":  "Only a few zombies can bite you at once, the rest grab and slow you down."
                      },
                      {
                          "t":  "li",
-                         "text":  "Zombies in a mob: only a few can bite you at once (6 to start), the others crowd in close and grab, which slows you down and stops you sprinting if several hold on. When one is killed another steps in."
+                         "text":  "Your game now saves and you pick up where you left off."
                      },
                      {
                          "t":  "li",
-                         "text":  "Doors you can open and close (F), with a hand animation."
+                         "text":  "Doors can be opened and closed."
                      },
                      {
                          "t":  "li",
-                         "text":  "Vaulting over low obstacles and climbing onto ledges when you jump at them."
+                         "text":  "You can vault low obstacles and climb onto ledges."
                      },
                      {
                          "t":  "li",
-                         "text":  "A full set of character animations: walking, strafing, crouching, crawling in prone, jumping, with smooth transitions."
+                         "text":  "A full set of character animations."
                      },
                      {
                          "t":  "li",
-                         "text":  "The start screen and the website now say Pre-alpha, which is what this is."
+                         "text":  "The start screen and the website now say Pre-alpha."
                      },
                      {
                          "t":  "h",
@@ -1329,18 +1162,14 @@
                      },
                      {
                          "t":  "li",
-                         "text":  "Doors, items lying on the ground and zombies are not saved yet."
+                         "text":  "Doors, dropped items and zombies are not saved yet."
                      },
                      {
                          "t":  "li",
-                         "text":  "Crowd zombies running at you can look a few metres off their real position on a client."
-                     },
-                     {
-                         "t":  "li",
-                         "text":  "Nothing has been balanced; expect odd numbers."
+                         "text":  "Nothing is balanced yet."
                      }
                  ],
-        "sig":  "TbQXbzF6WstFPN87jiF4AyrKUvl7cRwKkP3EtmaPEDJhP9cf+yzyJkqd4YJ/OZ31V3z2sk12TFqGKp0GiNS1KUSYsAY1Hp8EWTiv66+xZtRdtm6iqjisJhFqIlJ+RywLm+K+dRc9y4MoVeWsYzDZamIaxhuArLELH9DFU71ZIvwg/g1ET7+jUjzGmMe9XDtaP0049gT+PmfwQx9I3BPLC6sHpbt4s7R0k1Kt2RsM+QzdD1pWb9ceRFP85dsnlBHrxS6R51Oha8Sd0mt3fKTZRsk1TxJ+EFxXioaZ1tNShsefvnomNaq+iF3HJSBp7q02rNDBiSCY/ksIesU23XWgzQ=="
+        "sig":  "BJ60ih2Njw3XLL73qOrPoi3vCeXzSdV6JLUgHKkCi/1AKQMM/VU4+7zj9VjSe397GjqHCU1BmESAFVT29zT17v7kHN1wviFNoib5larGXupXZOkS+Xz0QuNmMUmfTe0Sbi4NAKanTOtZ0e/VdlOIXFyxIiIBsgoKZuOjThZu6jgwaspF4nLTlaRXoK4GOigypftFStz/7HNwNGd5HdXR5hkiI71Gcv9ul83N/JMY1hcEk4oehncVvfR00db2xrOsJ1zaLmxyI7sEXNIzhoPu8m8aCld/trlnV5RumZNrcM6ouzZfM2d3cOevkCZ0OGuhWjeKyrs2wizNJrajI3zlEA=="
     },
     {
         "build":  202610082141,
