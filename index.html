@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zombie Dawn</title>
-<meta name="description" content="Zombie Dawn: an open-world survival game on the island of Vintermark. The map, the opening of the story, pictures and the patch notes. Pre-alpha.">
+<title>Zombie Dawn: open-world zombie survival</title>
+<meta name="description" content="Zombie Dawn is an open-world zombie survival game on the island of Vintermark. Play solo or host a world for friends. Pre-alpha for Windows.">
+<meta property="og:title" content="Zombie Dawn: open-world zombie survival">
+<meta property="og:description" content="Survive the winter on the island of Vintermark. Scavenge, craft and stay warm, solo or with friends. Pre-alpha for Windows.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zombie.rode.live/">
+<meta property="og:image" content="https://zombie.rode.live/screens/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zombie Dawn: open-world zombie survival">
+<meta name="twitter:description" content="Survive the winter on the island of Vintermark. Scavenge, craft and stay warm, solo or with friends. Pre-alpha for Windows.">
+<meta name="twitter:image" content="https://zombie.rode.live/screens/og.jpg">
 <!-- For friends while in development: kept out of search engines. Remove this line to be found. -->
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0B1014">
@@ -301,6 +312,30 @@ img { max-width: 100%; }
 .card { min-width: 0; }
 footer nav { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-left: auto; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; }
 footer nav a { text-decoration: none; }
+
+/* ---------- hero download, what is it, PC box ---------- */
+.hero-cta { display: grid; gap: 8px; justify-items: start; margin-top: 20px; }
+.hero-cta .btn { min-height: 48px; padding: 8px 22px; font-size: 20px; text-align: center; }
+.hero-cta .line { font-size: 14px; color: #B4C2CA; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6); max-width: 56ch; }
+.hero-cta .line b { color: var(--frost); font-weight: 600; }
+.what { display: grid; gap: 18px; padding-top: 40px; }
+.what .genre { font-weight: 600; font-size: clamp(22px, 3vw, 30px); line-height: 1.2; letter-spacing: 0.02em; text-transform: none; max-width: 34em; }
+.what-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 40px); align-items: start; }
+@media (max-width: 860px) { .what-grid { grid-template-columns: 1fr; } }
+.feat { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 480px) { .feat { grid-template-columns: 1fr; } }
+.feat li { background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 15px; display: flex; gap: 10px; align-items: baseline; }
+.feat li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--ember); transform: translateY(-2px); }
+.expect { background: var(--slate); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; display: grid; gap: 8px; }
+.expect ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; color: var(--mist); font-size: 14.5px; }
+.expect ul li::marker { color: var(--line); }
+.expect .k { font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: 0.02em; }
+.pcbox { background: var(--night); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 6px; font-size: 14px; color: var(--mist); }
+.pcbox .k { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mist); }
+.pcbox ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+.pcbox ul li::marker { color: var(--line); }
+.pcbox b { color: var(--frost); font-weight: 600; }
+.dl-note { font-size: 14px; color: var(--mist); }
 </style>
 </head>
 <body>
@@ -311,12 +346,13 @@ footer nav a { text-decoration: none; }
   <div class="wrap top-in">
     <a class="mark" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19 12 4l8 15Z"/></svg>Zombie Dawn</a>
     <nav aria-label="Sections">
-      <a href="#map">The island</a>
-      <a href="#opening">How it opens</a>
+      <a href="#what">What it is</a>
       <a href="#gallery">Pictures</a>
+      <a href="#download">Download</a>
+      <a href="#map">Explore</a>
       <a href="patchnotes.html">Patch notes</a>
     </nav>
-    <a class="btn btn-primary" id="dl" href="https://github.com/Gooseankles/zombiegame-site/releases/latest" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl-text">Download</span></a>
+    <a class="btn btn-primary" id="dl" href="https://github.com/Gooseankles/zombiegame-site/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl-text">Download</span></a>
   </div>
 </header>
 
@@ -340,6 +376,11 @@ footer nav a { text-decoration: none; }
       <span class="label ember">Zombie Dawn &middot; pre-alpha</span>
       <h1 id="title">Vintermark</h1>
       <p class="lede"><b>Twelve by twelve kilometres</b> of fjord, valley, lake and mountain, cut off from the city across the water. Every new world starts in the central valley, in autumn, with the lamps still burning and the snow line on its way down.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" id="dl3" href="https://github.com/Gooseankles/zombiegame-site/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><span id="dl3-text">Download for Windows</span></a>
+        <p class="line" id="dl3-meta">Pre-alpha. Windows 10/11 64-bit. Unzip and run ZombieDawn.exe.</p>
+        <p class="line"><b>Windows warns you?</b> Click More info, then Run anyway. The game is not code-signed yet.</p>
+      </div>
     </div>
     <div class="controls" role="group" aria-label="Time of day and weather on the map">
       <div class="seg" id="time-seg">
@@ -350,16 +391,92 @@ footer nav a { text-decoration: none; }
       <button type="button" class="switch" id="snow-toggle" role="switch" aria-checked="false"><span class="knob" aria-hidden="true"></span>Snow</button>
       <p class="hint" id="hint">The lamps burn at dusk and night until the power fails.</p>
     </div>
-    <nav class="mnav" aria-label="Sections"><a href="#map">The island</a><a href="#opening">How it opens</a><a href="#gallery">Pictures</a><a href="patchnotes.html">Patch notes</a></nav>
+    <nav class="mnav" aria-label="Sections"><a href="#what">What it is</a><a href="#gallery">Pictures</a><a href="#map">Explore</a><a href="patchnotes.html">Patch notes</a></nav>
+  </div>
+</section>
+
+<section class="wrap what" id="what" aria-labelledby="what-h">
+  <span class="label ember">What is it</span>
+  <h2 id="what-h" class="genre">An open-world zombie survival game on the island of Vintermark. Play solo, or host a world for friends.</h2>
+  <div class="what-grid">
+    <ul class="feat" aria-label="What you do">
+      <li>Scavenge houses and loot</li>
+      <li>Survive hunger, cold and illness</li>
+      <li>Gather wood and stone, and craft</li>
+      <li>Fight zombies or sneak past them</li>
+      <li>Host a world for friends</li>
+      <li>Find the story in the notes</li>
+    </ul>
+    <div class="expect">
+      <span class="k">Pre-alpha: what to expect</span>
+      <ul>
+        <li>Bugs, and changes between builds.</li>
+        <li>One valley is open. The rest of the island is still fog.</li>
+        <li>No base building yet.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <main id="main">
 <div class="wrap page">
+<section id="gallery" aria-labelledby="gal-h">
+  <div class="sec-head">
+    <span class="label">Pictures</span>
+    <h2 id="gal-h">From the game</h2>
+    <p>Taken in the editor while building. Everything here is still being worked on.</p>
+  </div>
+  <ul class="gallery" id="gallery-list">
+    <li><figure><button type="button" data-i="0"><img src="screens/village-dusk.jpg" alt="The village street at dusk with the street lamps lit" loading="lazy" width="1280" height="720"><figcaption>Street lamps come on at dusk, until the power fails</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="1"><img src="screens/village-air.jpg" alt="The village seen from the air" loading="lazy" width="1280" height="720"><figcaption>Haldersfield from the air</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="2"><img src="screens/start.jpg" alt="The Zombie Dawn start screen over a snowy mountain scene" loading="lazy" width="1280" height="720"><figcaption>The start screen</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="3"><img src="screens/valley.jpg" alt="A green valley at noon" loading="lazy" width="1280" height="720"><figcaption>The valley at noon</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="4"><img src="screens/sea.jpg" alt="The sea seen from a beach" loading="lazy" width="1280" height="720"><figcaption>The sea from the beach</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="5"><img src="screens/river.jpg" alt="A river bank" loading="lazy" width="1280" height="720"><figcaption>The Lund river</figcaption></button></figure></li>
+    <li><figure><button type="button" data-i="6"><img src="screens/worlds.jpg" alt="The list of saved worlds" loading="lazy" width="1280" height="720"><figcaption>Solo play and saved worlds</figcaption></button></figure></li>
+  </ul>
+</section>
+
+
+<section id="download" aria-labelledby="dl-h">
+  <div class="card dl-strip">
+    <div class="dl-main">
+      <span class="label ember">Getting it</span>
+      <h2 id="dl-h">Unzip and play</h2>
+      <p>Download the zip, unzip it anywhere and run <b>ZombieDawn.exe</b>. Later builds update from the start screen with one button.</p>
+      <p class="dl-note"><b>Players:</b> solo, or host a world for friends (up to 12 players; 12 is the default setting).</p>
+      <p class="sub"><b>Windows warns you?</b> The game is new and not code-signed yet, so Windows SmartScreen may say &ldquo;Windows protected your PC&rdquo;. Click <b>More info</b>, then <b>Run anyway</b>. To avoid it, right-click the zip, open <b>Properties</b> and tick <b>Unblock</b> before unzipping. If Defender blocks a file, restore it under Protection history.</p>
+      <div class="cta"><a class="btn btn-primary" id="dl2" href="https://github.com/Gooseankles/zombiegame-site/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>Download for Windows</a><a class="btn btn-ghost" href="patchnotes.html">Patch notes</a></div>
+      <p class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</p>
+      <noscript><p class="dl-meta">The buttons open the releases page, where the newest version is.</p></noscript>
+    </div>
+    <div class="dl-side">
+      <div id="sha-slot"></div>
+      <ol>
+        <li>Download the zip with the button.</li>
+        <li>Unzip it, then run ZombieDawn.exe.</li>
+        <li>Press Play for a solo world, or host one for others.</li>
+        <li>Something broke? In the game press F9 to report a problem.</li>
+      </ol>
+      <div class="pcbox">
+        <span class="k">PC and tested on</span>
+        <p><b>Tested on:</b> AMD Ryzen 7 3700X, GeForce RTX 2070 (8 GB), 32 GB RAM.</p>
+        <ul>
+          <li>About <b>70 to 90 fps</b> in the village street (11 to 14 ms a frame on the GPU), at 1600x900 with render scale 83 %.</li>
+          <li>About <b>2.5 GB RAM</b> (2.9 GB when hosting), measured without graphics. A real session uses more.</li>
+          <li>VRAM use has not been measured yet.</li>
+          <li><b>1.5 GB</b> on disk once unzipped.</li>
+        </ul>
+        <p>Windows 10/11 64-bit with a DirectX 12 graphics card. These numbers come from one PC. No minimum spec has been tested yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section id="map" aria-labelledby="map-h">
   <div class="sec-head">
-    <span class="label">The island</span>
+    <span class="label">Explore</span>
     <h2 id="map-h">The map</h2>
     <p>Click a place to read about it. The grid is the game&rsquo;s own: 1 km squares, columns A to L west to east, rows 1 to 12 north to south, the same squares the game names when you report a problem. Only the central valley is open in the pre-alpha; the rest is still fog.</p>
   </div>
@@ -681,47 +798,6 @@ footer nav a { text-decoration: none; }
   </div>
 </section>
 
-<div class="wrap page" style="padding-top:0">
-<section id="gallery" aria-labelledby="gal-h">
-  <div class="sec-head">
-    <span class="label">Pictures</span>
-    <h2 id="gal-h">From the game</h2>
-    <p>Taken in the editor while building. Everything here is still being worked on.</p>
-  </div>
-  <ul class="gallery" id="gallery-list">
-    <li><figure><button type="button" data-i="0"><img src="screens/village-dusk.jpg" alt="The village street at dusk with the street lamps lit" loading="lazy" width="1280" height="720"><figcaption>Street lamps come on at dusk, until the power fails</figcaption></button></figure></li>
-    <li><figure><button type="button" data-i="1"><img src="screens/village-air.jpg" alt="The village seen from the air" loading="lazy" width="1280" height="720"><figcaption>Haldersfield from the air</figcaption></button></figure></li>
-    <li><figure><button type="button" data-i="2"><img src="screens/start.jpg" alt="The Zombie Dawn start screen over a snowy mountain scene" loading="lazy" width="1280" height="720"><figcaption>The start screen</figcaption></button></figure></li>
-    <li><figure><button type="button" data-i="3"><img src="screens/valley.jpg" alt="A green valley at noon" loading="lazy" width="1280" height="720"><figcaption>The valley at noon</figcaption></button></figure></li>
-    <li><figure><button type="button" data-i="4"><img src="screens/sea.jpg" alt="The sea seen from a beach" loading="lazy" width="1280" height="720"><figcaption>The sea from the beach</figcaption></button></figure></li>
-    <li><figure><button type="button" data-i="5"><img src="screens/river.jpg" alt="A river bank" loading="lazy" width="1280" height="720"><figcaption>The Lund river</figcaption></button></figure></li>
-    <li><figure><button type="button" data-i="6"><img src="screens/worlds.jpg" alt="The list of saved worlds" loading="lazy" width="1280" height="720"><figcaption>Solo play and saved worlds</figcaption></button></figure></li>
-  </ul>
-</section>
-
-
-<section id="download" aria-labelledby="dl-h">
-  <div class="card dl-strip">
-    <div class="dl-main">
-      <span class="label ember">Getting it</span>
-      <h2 id="dl-h">Unzip and play</h2>
-      <p>Download the zip, unzip it anywhere and run <b>ZombieDawn.exe</b>. Later builds update from the start screen with one button.</p>
-      <p class="sub"><b>Windows warns you?</b> The game is new and not code-signed yet, so Windows SmartScreen may say &ldquo;Windows protected your PC&rdquo;. Click <b>More info</b>, then <b>Run anyway</b>. To avoid it, right-click the zip, open <b>Properties</b> and tick <b>Unblock</b> before unzipping. If Defender blocks a file, restore it under Protection history and tell me which one.</p>
-      <div class="cta"><a class="btn btn-primary" id="dl2" href="https://github.com/Gooseankles/zombiegame-site/releases/latest" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>Download for Windows</a><a class="btn btn-ghost" href="patchnotes.html">Patch notes</a></div>
-      <p class="dl-meta" id="dl-meta">Looking for the newest version&hellip;</p>
-    </div>
-    <div class="dl-side">
-      <div id="sha-slot"></div>
-      <ol>
-        <li>Download the zip with the button.</li>
-        <li>Unzip it, then run ZombieDawn.exe.</li>
-        <li>Press Play for a solo world, or host one for others.</li>
-        <li>Something broke? Press F9 in the game to report it.</li>
-      </ol>
-    </div>
-  </div>
-</section>
-</div>
 </main>
 
 <dialog class="lb" id="lb" aria-label="Picture">
@@ -741,7 +817,7 @@ footer nav a { text-decoration: none; }
   <div class="wrap">
     <span>Zombie Dawn is a working title. A game in development.</span>
     <span class="dl-meta" id="foot-version"></span>
-    <nav aria-label="Footer"><a href="#map">The island</a><a href="#opening">How it opens</a><a href="#gallery">Pictures</a><a href="patchnotes.html">Patch notes</a></nav>
+    <nav aria-label="Footer"><a href="#what">What it is</a><a href="#gallery">Pictures</a><a href="#download">Download</a><a href="#map">Explore</a><a href="#opening">How it opens</a><a href="patchnotes.html">Patch notes</a></nav>
   </div>
 </footer>
 
@@ -749,9 +825,6 @@ footer nav a { text-decoration: none; }
 /* PLACES:START */
 var ZD_PLACES = {"lundford":{"name":"Lundford","tier":"Village","region":"Central Valley","height":104,"release":"Open now (pre-alpha)","open":true,"blurb":"The valley’s other village, upriver: a ford with an old stone bridge, a farm co-op and a grain mill, a church, farms. The second start area.","x":6650,"y":7550},"haldersfield":{"name":"Haldersfield","tier":"Village","region":"Central Valley","height":68,"release":"Open now (pre-alpha)","open":true,"blurb":"Where every new world starts. Ten furnished houses along the main road, a bus shelter, a small shop and the sheriff’s house; the lamps still burn until the power fails.","x":5050,"y":7200},"brennholt":{"name":"Brennholt","tier":"Hamlet","region":"Central Valley","height":132,"release":"Coastal expansion","open":false,"blurb":"A logging camp and sawmill at the foot of the pass.","x":7850,"y":6650},"storvik":{"name":"Storvik","tier":"Village","region":"Storwater District","height":194,"release":"Coastal expansion","open":false,"blurb":"Lakeside cabins and a marina on Storwater.","x":3500,"y":5000},"pinewatch":{"name":"Pinewatch","tier":"Outpost","region":"Storwater District","height":198,"release":"Coastal expansion","open":false,"blurb":"A ranger station and fire lookout above the lake.","x":6100,"y":4450},"vellport":{"name":"Vellport","tier":"Town","region":"Vellsund Coast","height":14,"release":"Coastal expansion","open":false,"blurb":"The fishing harbour with the ferry terminal. The road there is blocked by a rockslide for now.","x":1900,"y":7200},"old_quay":{"name":"Old Quay","tier":"Hamlet","region":"Vellsund Coast","height":9,"release":"Coastal expansion","open":false,"blurb":"An abandoned fishing village under the lighthouse.","x":850,"y":8900},"skar_station":{"name":"Skar Summit Station","tier":"Restricted site","region":"Skar Mountains","height":920,"release":"Skar Summit","open":false,"blurb":"A research facility on the summit shelf. Restricted.","x":9650,"y":10050},"vargtind_outpost":{"name":"Vargtind Outpost","tier":"Restricted site","region":"Skar Mountains","height":880,"release":"Vargtind Bunker","open":false,"blurb":"A military checkpoint on the high road. Restricted.","x":10900,"y":10500},"blackwater_dam":{"name":"Blackwater Dam","tier":"Restricted site","region":"Blackwater Reservoir","height":405,"release":"Blackwater","open":false,"blurb":"The hydroelectric dam that fed the island’s grid.","x":8300,"y":4720},"north_camp":{"name":"North Camp","tier":"Outpost","region":"Blackwater Reservoir","height":590,"release":"Blackwater","open":false,"blurb":"The hydro workers’ camp and a weather station.","x":10800,"y":4050},"vellhavn":{"name":"Vellhavn","tier":"City","region":"Vellsund Coast","height":22,"release":"Coastal expansion","open":false,"blurb":"The island’s city on the fjord: hospital, apartment blocks, a shopping district, the police headquarters.","x":2350,"y":6150},"nordvik":{"name":"Nordvik","tier":"City","region":"Skar Mountains","height":280,"release":"Coastal expansion","open":false,"blurb":"The mountain city: regional hospital, rail yard, a military logistics warehouse.","x":8500,"y":7900},"fjordbotn":{"name":"Fjordbotn","tier":"Hamlet","region":"Sorfjord Forest","height":12,"release":"Coastal expansion","open":false,"blurb":"Boathouses and a smokehouse at the head of the southern fjord.","x":5350,"y":1250}};
 /* PLACES:END */
-/* FALLBACK:START */
-var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},"releases":[{"build":202610132280,"version":"Pre-alpha 0.2.6.0","date":"2026-10-13 20:38","url":"https://dl.rode.live/ZombieDawn_2026-10-13_2038.zip","sha256":"c2250a2a05a9e13f72acfec698d81cfdd1b037b8ceedae884e037262abc44c16","size":1475000000,"notes":["The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before.","Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved.","A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."],"body":[{"t":"h","text":"New"},{"t":"li","text":"The game is now called Zombie Dawn: start it with ZombieDawn.exe, and the window title says Zombie Dawn. The old zombiegame.exe still sits next to it for now and starts the same game, so shortcuts keep working. Updating from an older version works as before."},{"t":"li","text":"Quick slots: keys 1 to 9 take an item in hand, the same key again (or X, or 0) puts it away, and the mouse wheel steps through the slots. Tools, weapons and torches you pick up go on a free slot by themselves; drag any carried item onto a slot, or point at it in the inventory and press a number. The bar sits at the bottom of the screen, and the slots are kept when the world is saved."},{"t":"li","text":"A cleaner inventory screen: sections for what you wear, pockets and bags, the cupboard or wardrobe you have open and things to make, with the quick slots along the bottom. Items show their count and a wear bar, hovering shows weight, condition and freshness, and right-click opens a menu (eat, take in hand, put on a slot, split a stack, move to the cupboard, drop). Double-click uses an item. Carried weight and free space show at the top."},{"t":"h","text":"Known problems"}]},{"build":202610131670,"version":"Pre-alpha 0.2.5.0","date":"2026-10-13 14:35","url":"https://dl.rode.live/ZombieDawn_2026-10-13_1435.zip","sha256":"d67cfa5c4c9cc652ea8af8d2569d0086b3f63bd69cab7fe2f0622a2ca27bbc95","size":1464000000,"notes":["Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump.","Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference.","Street lamps along the village road switch on at dusk and off at dawn while the power grid works.","The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark.","Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die.","Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk.","No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game.","Houses have no working lamps yet, and nothing brings the power back yet.","Every zombie wears the same clothes for now (one character model); more models will follow."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Big rooms and open-plan houses (like the large front room of the corner house in the village) now count as indoors, so your eyes adjust and the room is readable at noon. Doorways and eaves no longer make the light jump."},{"t":"li","text":"Nights are dark but playable: a cold moonlight with soft shadows and a faint sky glow, so houses and trees show as shapes on a moonlit night. New-moon nights are darker. A torch or a campfire still makes a big difference."},{"t":"li","text":"Street lamps along the village road switch on at dusk and off at dawn while the power grid works."},{"t":"li","text":"The power grid fails a few days into each world (a different day per world). In the last hours before that the street lamps flicker; after it they stay dark."},{"t":"li","text":"Zombies have a real body now: a ragged zombie in a torn T-shirt and shorts instead of a grey capsule. They stand, shamble or walk, run when they chase you, swing at you when they attack, flinch when you hit them and fall when they die."},{"t":"li","text":"Zombies further away (beyond about 45 m) now wear the same skin and clothes as the ones close by, instead of showing as dark, untextured figures that were hard to make out at dusk."},{"t":"li","text":"No two zombies look quite the same: clothes are tinted differently, some are dirtier and bloodier than others, and they differ a little in height. Each zombie keeps its look for everyone in the game."},{"t":"h","text":"Known problems"},{"t":"li","text":"Houses have no working lamps yet, and nothing brings the power back yet."},{"t":"li","text":"Every zombie wears the same clothes for now (one character model); more models will follow."}]},{"build":202610131454,"version":"Pre-alpha 0.2.4.0","date":"2026-10-13 12:26","url":"","sha256":"addbbfd2d656c1d743a2a6de868c8afd5cc10f64e445202c496160e6cca54a57","size":1453000000,"notes":["Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark).","A torch held in hand now gives light (craft one, then right-click it to take it in hand).","One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river.","Trees no longer grow inside village houses, and furniture no longer pokes through house walls.","Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves.","Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot.","Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had.","Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise).","The sea has gentle moving waves and the lakes small ripples.","The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all.","Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet).","Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge.","There is no foam where the sea meets the beach yet."],"body":[{"t":"h","text":"New"},{"t":"li","text":"Houses are no longer pitch black by day: indoors your eyes adjust to the dim light (nights stay dark)."},{"t":"li","text":"A torch held in hand now gives light (craft one, then right-click it to take it in hand)."},{"t":"li","text":"One of the Haldersfield spawns is now about 170 m south of the village street, on the same side of the river."},{"t":"li","text":"Trees no longer grow inside village houses, and furniture no longer pokes through house walls."},{"t":"li","text":"Haldersfield has a village: ten furnished houses along the main road (cabins, family homes, a pensioner's house, a handyman's place and one big house) with doors, rooms and loot that fits each home: kitchens and fridges, bathroom cabinets, wardrobes, tool shelves."},{"t":"li","text":"Sheds stand behind some of the houses and a few abandoned cars along the road have something in the boot."},{"t":"li","text":"Loot, trees, rocks and zombie groups are now different in every new world. Worlds you already play keep what they had."},{"t":"li","text":"Water has a cold Nordic look: a deep blue-green sea, dark clear lakes and slightly lighter, clearer rivers (no more bright turquoise)."},{"t":"li","text":"The sea has gentle moving waves and the lakes small ripples."},{"t":"li","text":"The lakes hold water again: Storwater and the other lakes were dry beds before, and Blackwater Reservoir had no water at all."},{"t":"h","text":"Known problems"},{"t":"li","text":"Village houses have doors on the outside only; rooms inside are open, and the houses are furnished but bare (no lights, no pictures or small stories yet)."},{"t":"li","text":"Very shallow river water, mostly near the river mouths, still shows a bright turquoise edge."},{"t":"li","text":"There is no foam where the sea meets the beach yet."}]},{"build":202610131158,"version":"Pre-alpha 0.2.3.0","date":"2026-10-13 09:37","url":"","sha256":"cfea8e618e69355a08fdcf1f57ce39aa9c5355b3204472663f0f67c8aabd03d1","size":1442000000,"notes":["A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom.","The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right.","The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge.","A small \"Talking\" mark shows bottom left while you hold V.","Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world.","Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version.","Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept.","Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days.","The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels).","The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor.","The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."],"body":[{"t":"h","text":"New"},{"t":"li","text":"A new look for the start screen: the Zombie Dawn title over a calm winter mountain scene with falling snow, and a cleaner menu. Find games and Join by IP open in a panel on the right; the version is at the bottom."},{"t":"li","text":"The Esc menu and the settings screen have the same new look: rounded panels, clearer rows, Save and Cancel at the bottom right."},{"t":"li","text":"The HUD reads better on bright snow and at night: the interaction prompt shows its key in a key cap, and messages, symptoms and what is in your hands sit on soft dark plates. Serious symptoms get a coloured edge."},{"t":"li","text":"A small \"Talking\" mark shows bottom left while you hold V."},{"t":"li","text":"Solo play and several saved worlds: Play on the start screen opens your list of worlds (day, time played, last played, version and size on disk). Play solo keeps the world to yourself; Host co-op opens the same world to friends. New world asks for a name, the zombie difficulty (Casual, Standard, Hardcore) and PvP; Delete asks before it removes a world."},{"t":"li","text":"Your earlier world shows up as \"Old world\" in the list, with a note if it was saved by an older version."},{"t":"li","text":"Saves are much smaller (compressed, typically a few dozen KB) and stay small however long you play: trees that have grown back and long-dropped items are no longer kept."},{"t":"li","text":"Items you drop on the ground (and logs from felled trees) are now saved; they rot away after about 10 in-game days."},{"t":"li","text":"The seven rivers now have water in them, running from their sources down into the lakes and the sea (they were dry channels)."},{"t":"li","text":"The sea now reaches every coast: off the west coast (around the Lund River mouth) there was only bare sea floor."},{"t":"li","text":"The download is about 0.2 GB smaller: removed the debug symbols and two unused denoiser plugins from the game files."}]}]};
-/* FALLBACK:END */
 (function () {
   "use strict";
   var root = document.documentElement;
@@ -866,9 +939,11 @@ var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0",
     return b;
   }
   function zipName(url) { var m = /([^\/]+\.zip)(?:$|\?)/.exec(url || ""); return m ? m[1] : "ZombieDawn.zip"; }
-  function mb(bytes) { return Math.max(1, Math.round(bytes / (1024 * 1024))) + " MB"; }
+  function mb(bytes) { var g = bytes / 1073741824; return g >= 1 ? g.toFixed(1) + " GB" : Math.max(1, Math.round(bytes / 1048576)) + " MB"; }
   function showLatest(latest, sample) {
-    ["dl", "dl2"].forEach(function (id) { var b = document.getElementById(id); if (latest.url && !sample) { b.href = latest.url; b.removeAttribute("aria-disabled"); } });
+    ["dl", "dl2", "dl3"].forEach(function (id) { var b = document.getElementById(id); if (latest.url && !sample) b.href = latest.url; });
+    var ver = String(latest.version || "").replace(/^Pre-alpha\s+/, "");
+    document.getElementById("dl3-text").textContent = "Download for Windows \u00b7 " + ver + (latest.size ? " \u00b7 " + mb(latest.size) : "");
     var dt = document.getElementById("dl-text");
     dt.textContent = "Download"; dt.appendChild(el("span", "ver", " \u00b7 " + String(latest.version || "").replace(/^Pre-alpha\s+/, "")));
     var m = document.getElementById("dl-meta");
@@ -879,7 +954,7 @@ var ZD_FALLBACK = {"latest":{"build":202610132280,"version":"Pre-alpha 0.2.6.0",
     if (/^[0-9a-f]{64}$/i.test(latest.sha256 || "")) slot.appendChild(shaBox(latest.sha256, zipName(latest.url)));
   }
   fetch("latest.json?t=" + Date.now()).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (l) { showLatest(l, false); })
-    .catch(function () { if (ZD_FALLBACK && ZD_FALLBACK.latest) showLatest(ZD_FALLBACK.latest, true); else document.getElementById("dl-meta").textContent = "No version is out yet. Soon."; });
+    .catch(function () { document.getElementById("dl-meta").textContent = "The buttons open the releases page, where the newest version is."; });
 
   // ---- hero clip: plays only while on screen; if the files are missing the slow pan of the still stays
   var hm = document.getElementById("hero-media"), hv = document.getElementById("hero-video");
