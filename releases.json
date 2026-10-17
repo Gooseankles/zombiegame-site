@@ -1,5 +1,170 @@
 [
     {
+        "build":  202610170844,
+        "version":  "Pre-alpha 0.2.9.0",
+        "date":  "2026-10-17 08:54",
+        "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610170844/ZombieDawn_2026-10-17_0844.zip",
+        "sha256":  "AA39EE2BEBD8EB9EEC62299DFDE30EF7BBF5AF31036924036D185FEDFEF04514",
+        "size":  1290284367,
+        "notes":  [
+                      "Water from lakes and rivers: look at the water and press F to drink, or hold an empty bottle and press F to fill it. The prompt says what kind of water it is (not on Hardcore). The sea is salt: you spit it out.",
+                      "Dirty water can make you ill (a bottle from a lake is about a coin flip). A few hours later your stomach cramps; one bottle passes by itself, more turns into a fever with vomiting, thirst and short breath, and a severe illness can kill. Boil water at a campfire with a pot first to stay safe. Throwing up is loud.",
+                      "Antibiotic tablets (rare: bathroom cabinets, car boots, hikers\u0027 bags, caches, the helicopter wreck and the dam station lab). Take one, wait a few hours, take the next and finish the strip; too soon and it comes back up. They do nothing against the bite.",
+                      "Water bottles leave an empty bottle when you drink them.",
+                      "When you die, everything you carried lies in a bag where you fell. Anyone can open it, and it stays for two game days (four on Casual). On Hardcore your things are lost.",
+                      "Zombies near you now find their way: round hedges, fences and house corners, through gates and garden paths, instead of pushing against them. A chasing pack reaches the house you ran into. Lakes, rivers and the sea are not walkable for them (a bridge is).",
+                      "Lit rooms draw zombies at night: a lamp left on shows through the windows and nearby zombies come to look. Boarded windows hide the light, and the blackout ends it.",
+                      "Zombies can no longer bite through walls, closed doors or closed windows.",
+                      "A zombie bite now makes a sound, for you and for anyone nearby.",
+                      "Windows in the village houses open and close (F from inside); they swing outward. Boarded-up windows stay shut. Opening one makes a little noise.",
+                      "A locked front door can now be opened from inside the house: press F to unlock and open it. From outside it stays locked.",
+                      "Stepping out of a house no longer leaves the street looking dark for seconds: the eye adapts in about a second, and daylight outside is brighter.",
+                      "A proper television in the living rooms; it stands in the middle of its bench instead of hanging off the end.",
+                      "Plates, cutlery and food sit on the tables and counters instead of hanging in the air beside them, and no bread is left in the kitchen sink.",
+                      "A chest of drawers no longer faces the stairwell.",
+                      "Footsteps inside some houses (the red one on the main road among them) no longer sound like walking on metal.",
+                      "Every item in the inventory now has a picture instead of only its name.",
+                      "Double-clicking clothing puts it on. If you already wear something there, the two swap.",
+                      "A weapon no longer wears down on blows that do nothing: a swing at another player with PvP off, or the wrong tool on a tree or rock.",
+                      "Your empty right hand no longer floats into view when you jump while holding something.",
+                      "The world is saved within a couple of seconds when a player leaves, and shortly after a death (before, a leaving player\u0027s state stayed in memory until the next autosave).",
+                      "Playing without Steam: you now keep the same survivor on a friend\u0027s server from one launch to the next (before, a second copy of the game on the same PC got a new survivor every time).",
+                      "The game statistics sent to the dashboard now include the graphics card, processor, memory and the 95th percentile frame time, so slow machines can be told apart from a slow build. Nothing personal is added; the settings switch still turns everything off.",
+                      "Zombies cannot yet vault hedges or cross rivers by fords; they walk round or wait for a bridge.",
+                      "The water and illness numbers are first guesses and will be tuned."
+                  ],
+        "body":  [
+                     {
+                         "t":  "h",
+                         "text":  "New"
+                     },
+                     {
+                         "t":  "p",
+                         "text":  "\u003e Water, illness and medicine"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Water from lakes and rivers: look at the water and press F to drink, or hold an empty bottle and press F to fill it. The prompt says what kind of water it is (not on Hardcore). The sea is salt: you spit it out."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Dirty water can make you ill (a bottle from a lake is about a coin flip). A few hours later your stomach cramps; one bottle passes by itself, more turns into a fever with vomiting, thirst and short breath, and a severe illness can kill. Boil water at a campfire with a pot first to stay safe. Throwing up is loud."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Antibiotic tablets (rare: bathroom cabinets, car boots, hikers\u0027 bags, caches, the helicopter wreck and the dam station lab). Take one, wait a few hours, take the next and finish the strip; too soon and it comes back up. They do nothing against the bite."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Water bottles leave an empty bottle when you drink them."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "When you die, everything you carried lies in a bag where you fell. Anyone can open it, and it stays for two game days (four on Casual). On Hardcore your things are lost."
+                     },
+                     {
+                         "t":  "p",
+                         "text":  "\u003e Zombies"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies near you now find their way: round hedges, fences and house corners, through gates and garden paths, instead of pushing against them. A chasing pack reaches the house you ran into. Lakes, rivers and the sea are not walkable for them (a bridge is)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Lit rooms draw zombies at night: a lamp left on shows through the windows and nearby zombies come to look. Boarded windows hide the light, and the blackout ends it."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies can no longer bite through walls, closed doors or closed windows."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A zombie bite now makes a sound, for you and for anyone nearby."
+                     },
+                     {
+                         "t":  "p",
+                         "text":  "\u003e Houses and look"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Windows in the village houses open and close (F from inside); they swing outward. Boarded-up windows stay shut. Opening one makes a little noise."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A locked front door can now be opened from inside the house: press F to unlock and open it. From outside it stays locked."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Stepping out of a house no longer leaves the street looking dark for seconds: the eye adapts in about a second, and daylight outside is brighter."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A proper television in the living rooms; it stands in the middle of its bench instead of hanging off the end."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Plates, cutlery and food sit on the tables and counters instead of hanging in the air beside them, and no bread is left in the kitchen sink."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A chest of drawers no longer faces the stairwell."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Footsteps inside some houses (the red one on the main road among them) no longer sound like walking on metal."
+                     },
+                     {
+                         "t":  "p",
+                         "text":  "\u003e Inventory and items"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Every item in the inventory now has a picture instead of only its name."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Double-clicking clothing puts it on. If you already wear something there, the two swap."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "A weapon no longer wears down on blows that do nothing: a swing at another player with PvP off, or the wrong tool on a tree or rock."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Your empty right hand no longer floats into view when you jump while holding something."
+                     },
+                     {
+                         "t":  "p",
+                         "text":  "\u003e Saving and online"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The world is saved within a couple of seconds when a player leaves, and shortly after a death (before, a leaving player\u0027s state stayed in memory until the next autosave)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Playing without Steam: you now keep the same survivor on a friend\u0027s server from one launch to the next (before, a second copy of the game on the same PC got a new survivor every time)."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The game statistics sent to the dashboard now include the graphics card, processor, memory and the 95th percentile frame time, so slow machines can be told apart from a slow build. Nothing personal is added; the settings switch still turns everything off."
+                     },
+                     {
+                         "t":  "h",
+                         "text":  "Known problems"
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "Zombies cannot yet vault hedges or cross rivers by fords; they walk round or wait for a bridge."
+                     },
+                     {
+                         "t":  "li",
+                         "text":  "The water and illness numbers are first guesses and will be tuned."
+                     }
+                 ]
+    },
+    {
         "build":  202610170023,
         "version":  "Pre-alpha 0.2.8.2",
         "date":  "2026-10-17 00:33",
