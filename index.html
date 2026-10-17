@@ -934,7 +934,7 @@ var ZD_PLACES = {"lundford":{"name":"Lundford","tier":"Village","region":"Centra
   function showLatest(latest, sample) {
     ["dl", "dl2", "dl3"].forEach(function (id) { var b = document.getElementById(id); if (latest.url && !sample) b.href = latest.url; });
     var ver = String(latest.version || "").replace(/^Pre-alpha\s+/, "");
-    var d3 = document.getElementById("dl3-text"); d3.textContent = "Download"; d3.appendChild(el("span", "hide-sm", " for Windows")); d3.appendChild(document.createTextNode(" 00b7 " + ver + (latest.size ? " 00b7 " + mb(latest.size) : "")));
+    var d3 = document.getElementById("dl3-text"); d3.textContent = "Download"; d3.appendChild(el("span", "hide-sm", " for Windows")); d3.appendChild(document.createTextNode(" · " + ver + (latest.size ? " · " + mb(latest.size) : "")));
     var dt = document.getElementById("dl-text");
     dt.textContent = "Download"; dt.appendChild(el("span", "ver", " \u00b7 " + String(latest.version || "").replace(/^Pre-alpha\s+/, "")));
     var m = document.getElementById("dl-meta");
