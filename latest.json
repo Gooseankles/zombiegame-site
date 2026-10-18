@@ -1,27 +1,36 @@
 {
-    "build":  202610171940,
-    "version":  "Pre-alpha 0.2.10.0",
-    "date":  "2026-10-17 19:51",
-    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610171940/ZombieDawn_2026-10-17_1940.zip",
-    "sha256":  "1020177918E8F4B90CF798DBCEB998DC7CFE25A8E9238497A97B4869C472194A",
-    "size":  1365841543,
+    "build":  202610181820,
+    "version":  "Pre-alpha 0.2.11.0",
+    "date":  "2026-10-18 18:32",
+    "url":  "https://github.com/Gooseankles/zombiegame-site/releases/download/b202610181820/ZombieDawn_2026-10-18_1820.zip",
+    "sha256":  "A48C30DF1E148038874126EC96F10873E890FBE408434B1A19041583091F9D6C",
+    "size":  1371559816,
     "notes":  [
-                  "Food can spoil.",
-                  "Loot is better the further you get from the starting valley.",
-                  "Three hidden places with very rare loot.",
-                  "Zombies no longer appear in front of you.",
-                  "Walls and doors muffle noise for zombies.",
-                  "Killed zombies stay dead for a long time.",
-                  "Zombies have voices (placeholders for now).",
-                  "Forests grow in clumps with clearings, and ferns grow on the forest floor.",
-                  "Buildings and mountains stay visible from far away.",
-                  "Five backup copies of your world save.",
-                  "Forest sounds, and echo and muffling indoors. New setting: Ambience volume.",
-                  "You hear your breathing and heartbeat. New setting: Heartbeat and breathing sounds.",
-                  "Axes and pickaxes sound different on trees and rocks.",
-                  "Zombie voices are placeholders, and the new sounds are not balanced yet.",
-                  "Far hills look bare, and ferns are thin.",
-                  "Some furniture near the Lundford start floats, and one village car sits too low."
+                  "Generators bring the lights back after the blackout.",
+                  "Fuel cans and fuses in garages, sheds and cars.",
+                  "Food that is going off or spoiled is tinted in the inventory.",
+                  "Loud or long noises draw zombies from far away.",
+                  "Zombies see less in the dark, in rain, in snow and in fog.",
+                  "Clothes get wet in rain and water, and dry slowly.",
+                  "Firewood from trees, and a wood stove to warm and dry a room.",
+                  "Fixed floating furniture at the Lundford start and a car sunk in the road.",
+                  "A radio in Haldersfield picks up a broadcast.",
+                  "A locked storeroom at the water works.",
+                  "Build a storage chest that keeps your things.",
+                  "Build a bed and wake beside it after you die.",
+                  "Board up windows and doors; zombies can break through.",
+                  "Felled trees near your camp grow back when nobody is looking.",
+                  "Basements and dry ditches no longer soak you as if you were in the sea.",
+                  "Fixed a stutter when the first zombies appear in a new world.",
+                  "Chests, beds, stoves and fires can no longer be placed inside each other or on furniture.",
+                  "Placing things indoors works in more spots.",
+                  "Carried chests, beds and boards no longer block the view.",
+                  "Haldersfield has a new layout: side lanes, a small square and some houses with their gable to the road.",
+                  "A footbridge crosses the river by Haldersfield.",
+                  "The Haldersfield start is further south, with a track into the village.",
+                  "A second village, Lundford, by the ford: a shop, a co-op, market stalls and a footbridge.",
+                  "Woodsheds and tool sheds no longer stand in front of back doors.",
+                  "Fixed a back porch where a workbench blocked the way to the door."
               ],
     "body":  [
                  {
@@ -30,72 +39,108 @@
                  },
                  {
                      "t":  "li",
-                     "text":  "Food can spoil."
+                     "text":  "Generators bring the lights back after the blackout."
                  },
                  {
                      "t":  "li",
-                     "text":  "Loot is better the further you get from the starting valley."
+                     "text":  "Fuel cans and fuses in garages, sheds and cars."
                  },
                  {
                      "t":  "li",
-                     "text":  "Three hidden places with very rare loot."
+                     "text":  "Food that is going off or spoiled is tinted in the inventory."
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies no longer appear in front of you."
+                     "text":  "Loud or long noises draw zombies from far away."
                  },
                  {
                      "t":  "li",
-                     "text":  "Walls and doors muffle noise for zombies."
+                     "text":  "Zombies see less in the dark, in rain, in snow and in fog."
                  },
                  {
                      "t":  "li",
-                     "text":  "Killed zombies stay dead for a long time."
+                     "text":  "Clothes get wet in rain and water, and dry slowly."
                  },
                  {
                      "t":  "li",
-                     "text":  "Zombies have voices (placeholders for now)."
+                     "text":  "Firewood from trees, and a wood stove to warm and dry a room."
                  },
                  {
                      "t":  "li",
-                     "text":  "Forests grow in clumps with clearings, and ferns grow on the forest floor."
+                     "text":  "Fixed floating furniture at the Lundford start and a car sunk in the road."
                  },
                  {
                      "t":  "li",
-                     "text":  "Buildings and mountains stay visible from far away."
+                     "text":  "A radio in Haldersfield picks up a broadcast."
                  },
                  {
                      "t":  "li",
-                     "text":  "Five backup copies of your world save."
+                     "text":  "A locked storeroom at the water works."
                  },
                  {
                      "t":  "li",
-                     "text":  "Forest sounds, and echo and muffling indoors. New setting: Ambience volume."
+                     "text":  "Build a storage chest that keeps your things."
                  },
                  {
                      "t":  "li",
-                     "text":  "You hear your breathing and heartbeat. New setting: Heartbeat and breathing sounds."
+                     "text":  "Build a bed and wake beside it after you die."
                  },
                  {
                      "t":  "li",
-                     "text":  "Axes and pickaxes sound different on trees and rocks."
+                     "text":  "Board up windows and doors; zombies can break through."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Felled trees near your camp grow back when nobody is looking."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Basements and dry ditches no longer soak you as if you were in the sea."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Fixed a stutter when the first zombies appear in a new world."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Chests, beds, stoves and fires can no longer be placed inside each other or on furniture."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Placing things indoors works in more spots."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Carried chests, beds and boards no longer block the view."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Haldersfield has a new layout: side lanes, a small square and some houses with their gable to the road."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "A footbridge crosses the river by Haldersfield."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "The Haldersfield start is further south, with a track into the village."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "A second village, Lundford, by the ford: a shop, a co-op, market stalls and a footbridge."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Woodsheds and tool sheds no longer stand in front of back doors."
+                 },
+                 {
+                     "t":  "li",
+                     "text":  "Fixed a back porch where a workbench blocked the way to the door."
                  },
                  {
                      "t":  "h",
                      "text":  "Known problems"
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Zombie voices are placeholders, and the new sounds are not balanced yet."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Far hills look bare, and ferns are thin."
-                 },
-                 {
-                     "t":  "li",
-                     "text":  "Some furniture near the Lundford start floats, and one village car sits too low."
                  }
              ],
-    "sig":  "FGTtiqtoNfpMttZOJk53MkghhMBp/qZZtdiu0epqvRlzPc9r7YoWGDv6RLwowZJlRaYfkzl3ZM98nOur/p7RTD7mI9QlU716Z+3w4w8+PmAOipzhZdYUGR7QTY3eqf/IWO/M+rSV9UrIhf/E0MrVwHP+f2YCtqa4DhDJEII2vVZN+f2kl9LJfCnFlIkJZ7eEYvqI3isw8zMJLJZ99GN/FcKb0pwF5r4iU5GRFRSZzh+RohJ6/PpCSEStyegOTkPaNIyARkds2MGB14xnClhvdFuG1tZ65MSurFndH3g6RqZPcQD+yBPOZiLCBOETGfepm+fwwNwfRGRqDYtlHn7oKw=="
+    "sig":  "Tz//oIa7FwHN1uaf3eqJvF/JLS20kc7a32GRR1Oes6x3EQNZJjS7dz7yUZWsvihHrgOMEhirrJal2xX0Edg7Mfhjl8kCq/qp9aQc1fz9T2iNc1Edh329VXseRwsoGFL8yIUr68qE8y29+DESifCnDE3uFdFprjhS9JBJ9OlBhZHFL3Cb6+0x0I0AAW+xbu8T3H76OOZlb9IRclFfqa/Hu16zdgDTQzvq41q6O4KqxkwSoVnhh8GX3GF4Jua4Gq1qPX37PF+o6YtbCl29nPVn44YHQc1Peda8frNscl2B+baG/hoXNl0+AtjFFeu9v8PzBQMOXDC8QGf5qN0jK90YTg=="
 }
